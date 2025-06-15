@@ -25,6 +25,7 @@
 
         <!-- Customized Bootstrap Stylesheet -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
+    
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
@@ -41,39 +42,49 @@
         <!-- Spinner End -->
 
 
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid header position-relative overflow-hidden p-0">
-
-            <nav class="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="display-6 text-primary m-0"><i class="fas fa-envelope me-3"></i>Mailler</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Services</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="feature.html" class="dropdown-item">Features</a>
-                                <a href="pricing.html" class="dropdown-item">Pricing</a>
-                                <a href="blog.html" class="dropdown-item">Blog</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-                    </div>
-                    <a href="#" class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4">Log In</a>
-                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4">Sign Up</a>
+         <!-- Navbar -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand ms-4 ms-lg-0 d-flex align-items-center">
+                <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+                <div class="d-flex flex-column">
+                    <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
+                    <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
                 </div>
-            </nav>
 
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav ms-auto py-0">
+      <a class="nav-item nav-link active" href="index.html">Home</a>
+      <a class="nav-item nav-link" href="about.html">About</a>
+
+      <!-- Academic Information Dropdown -->
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Academic Information
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+          <li><a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a></li>
+          <li><a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a></li>
+        </ul>
+      </div>
+
+      <!-- Campus Echo Dropdown -->
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Campus Echo
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+          <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
+          <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
+          <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
+        </ul>
+      </div>
+
+      <a class="nav-item nav-link" href="contact.html">Contact Us</a>
+    </div>
+  </div>
+</nav>
+ <!-- Navbar end -->
 
             <!-- Hero Header Start -->
             <div class="hero-header overflow-hidden px-5">
