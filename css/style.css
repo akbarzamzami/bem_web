@@ -132,7 +132,11 @@
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
+<<<<<<< HEAD
     color: #f8ae00 !important;
+=======
+      color: #e05800 !important; 
+>>>>>>> 3f2c532a234f8586ce9655f8b1329c7273e26a2e
 }
 
 .navbar-light .navbar-brand img {
@@ -975,3 +979,21 @@
     background: var(--bs-dark) !important;
 }
 /*** copyright end ***/
+
+@media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 1001;
+    }
+  
+    .nav-menu {
+      display: none;
+    }
+  
+    .nav-menu.show {
+      display: block;
+    }
+  }

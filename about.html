@@ -40,41 +40,57 @@
         </div>
         <!-- Spinner End -->
 
-
-        <!-- Navbar & Hero Start -->
-        <div class="container-fluid p-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0">
-                <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="display-6 text-primary m-0"><i class="fas fa-envelope me-3"></i>Mailler</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link active">About</a>
-                        <a href="service.html" class="nav-item nav-link">Services</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="feature.html" class="dropdown-item">Features</a>
-                                <a href="pricing.html" class="dropdown-item">Pricing</a>
-                                <a href="blog.html" class="dropdown-item">Blog</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-                    </div>
-                    <a href="#" class="btn btn-light border border-primary rounded-pill text-primary py-2 px-4 me-4">Log In</a>
-                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4">Sign Up</a>
-                </div>
-            </nav>
+       <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative">
+    <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
+      <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+      <div class="d-flex flex-column">
+        <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
+        <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
+      </div>
+    </a>
+  
+    <!-- Toggle button for mobile -->
+    <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto py-0">
+        <a class="nav-item nav-link" href="index.html">Home</a>
+        <a class="nav-item nav-link" href="about.html">About</a>
+  
+        <!-- Academic Info Dropdown -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Academic Information
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+            <li><a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a></li>
+            <li><a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a></li>
+          </ul>
         </div>
-        <!-- Navbar & Hero End -->
-
+  
+        <!-- Campus Echo Dropdown -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Campus Echo
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+            <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
+            <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
+            <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
+          </ul>
+        </div>
+  
+        <a class="nav-item nav-link active" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar end -->
+  
+           
 
          <!-- Header Start -->
          <div class="container-fluid bg-breadcrumb">
@@ -311,88 +327,49 @@
             </div>
         </div>
         <!-- Blog End -->
-
-
-        <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="text-dark mb-4">Company</h4>
-                            <a href=""> Why Mailler?</a>
-                            <a href=""> Our Features</a>
-                            <a href=""> Our Portfolio</a>
-                            <a href=""> About Us</a>
-                            <a href=""> Our Blog & News</a>
-                            <a href=""> Get In Touch</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-dark">Quick Links</h4>
-                            <a href=""> About Us</a>
-                            <a href=""> Contact Us</a>
-                            <a href=""> Privacy Policy</a>
-                            <a href=""> Terms & Conditions</a>
-                            <a href=""> Our Blog & News</a>
-                            <a href=""> Our Team</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-dark">Services</h4>
-                            <a href=""> All Services</a>
-                            <a href=""> Promotional Emails</a>
-                            <a href=""> Product Updates</a>
-                            <a href=""> Email Marketing</a>
-                            <a href=""> Acquistion Emails</a>
-                            <a href=""> Retention Emails</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-3">
-                        <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-dark">Contact Info</h4>
-                            <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-share fa-2x text-secondary me-2"></i>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-
         
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright py-4">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end text-white">
-                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+  <!-- Footer Start -->
+<footer class="footer-gradient">
+    <div class="container py-5" style="font-family: serif;">
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="fw-bold mb-3">FOLLOW US</div>
+                <div class="d-flex mb-3">
+                    <a href="#" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="social-icon me-2"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="d-flex align-items-center">
+                    <img src="img/logo.png" alt="Logo" height="35" class="me-2">
+                    <div class="small">
+                        BEM POLITEKNIK NEGERI SRIWIJAYA<br>
+                        KABINET LENTERA SRIWIJAYA
                     </div>
                 </div>
             </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="fw-bold mb-3">More Information</div>
+                <a href="#" class="footer-link d-block mb-1">Contact Us</a>
+                <a href="#" class="footer-link d-block mb-1">About Us</a>
+                <a href="Terms and Conditions.html" class="footer-link d-block">Terms and Conditions</a>
+            </div>
+            <div class="col-12 col-xl-4">
+                <div class="fw-bold mb-3">Developed By</div>
+                <div class="small">Departemen Media Informasi</div>
+                <div class="small">BEM POLSRI 2025</div>
+            </div>
         </div>
-        <!-- Copyright End -->
+        <hr class="my-4">
+        <div class="footer-bottom text-center small">
+            &copy; 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
+        </div>
+    </div>
+</footer>
+<!-- Footer End -->
 
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+ <!-- Back to Top -->
+ <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
 
         
     <!-- JavaScript Libraries -->
