@@ -976,3 +976,20 @@
 }
 /*** copyright end ***/
 
+@media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 1001;
+    }
+  
+    .nav-menu {
+      display: none;
+    }
+  
+    .nav-menu.show {
+      display: block;
+    }
+  }

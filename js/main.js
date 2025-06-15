@@ -94,35 +94,35 @@
     
     
    // Back to top button
-   $(window).scroll(function () {
+$(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
         $('.back-to-top').fadeIn('slow');
     } else {
         $('.back-to-top').fadeOut('slow');
     }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
+});
 
+$('.back-to-top').click(function () {
+    window.scrollTo(0, 0); // langsung lompat ke atas tanpa animasi
+    return false;
+});
 
-    function myMove() {
-        let id = null;
-        const elem = document.getElementById("animate");   
-        let pos = 0;
-        clearInterval(id);
-        id = setInterval(frame, 5);
-        function frame() {
-          if (pos == 350) {
+function myMove() {
+    let id = null;
+    const elem = document.getElementById("animate");   
+    let pos = 0;
+    clearInterval(id);
+    id = setInterval(frame, 5);
+    function frame() {
+        if (pos == 350) {
             clearInterval(id);
-          } else {
+        } else {
             pos++; 
             elem.style.top = pos + "px"; 
             elem.style.left = pos + "px"; 
-          }
         }
-      }
+    }
+}
 
 
    
