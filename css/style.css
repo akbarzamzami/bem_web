@@ -197,13 +197,13 @@
     }
 
     .navbar {
-        position: relative;
+        position: relative !important;
         background: var(--bs-light);
         z-index: 2;
     }
 
     .sticky-top.navbar-light {
-        position: relative;
+        position: sticky !important;
         background: var(--bs-white) !important;
         padding: 0 20px 20px 20px !important;
     }
@@ -255,7 +255,7 @@
     }
     
     .sticky-top.navbar-light {
-        position: fixed;
+        position: sticky !important;
         background: var(--bs-light) !important;
     }
 }
@@ -265,13 +265,14 @@
 .bg-breadcrumb {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(102, 16, 242, 0.05), rgba(102, 16, 242, 0.05));
+    background: linear-gradient(rgba(255, 217, 0, 0.05), rgba(102, 16, 242, 0.05));
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 150px 0 60px 0;
     margin-bottom: 6rem;
     transition: 0.5s;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
 }
 
 .bg-breadcrumb::after {
