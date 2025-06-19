@@ -28,6 +28,121 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+        <style>
+            .org-section {
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            }
+            
+            .card-placeholder {
+                border: 2px dashed #ddd;
+                background-color: #f8f9fa;
+                min-height: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .card-placeholder::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 100%;
+                bottom: 0;
+                background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.5) 50%, transparent 70%);
+                animation: shimmer 2s infinite;
+            }
+            
+            @keyframes shimmer {
+                0% { right: 100%; }
+                100% { right: -100%; }
+            }
+            
+            .card-placeholder .diagonal-line {
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background: #ddd;
+                transform: rotate(45deg);
+            }
+            
+            .card-placeholder .diagonal-line:nth-child(2) {
+                transform: rotate(-45deg);
+            }
+            
+            .dept-card {
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                overflow: hidden;
+            }
+            
+            .dept-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            }
+            
+            .section-title {
+                font-family: 'Cinzel', serif;
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #2c3e50;
+                text-align: center;
+                margin-bottom: 3rem;
+                position: relative;
+            }
+            
+            .section-title::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 3px;
+                background: linear-gradient(90deg, #3498db, #2ecc71);
+                border-radius: 2px;
+            }
+            
+            .logo-section {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 80px 0;
+            }
+            
+            .logo-container {
+                background: rgba(255,255,255,0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 40px;
+                border: 1px solid rgba(255,255,255,0.2);
+            }
+            
+            .logo-main {
+                width: 200px;
+                height: 200px;
+                background: rgba(255,255,255,0.9);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 30px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            }
+            
+            .info-box {
+                background: rgba(255,255,255,0.1);
+                border-radius: 15px;
+                padding: 20px;
+                margin: 15px;
+                backdrop-filter: blur(5px);
+                border: 1px solid rgba(255,255,255,0.2);
+            }
+        </style>
     </head>
 
     <body>
@@ -156,112 +271,213 @@
         </div>
         <!-- About End -->
 
-        <!-- Team Section Start -->
-        <div class="container-fluid py-5" style="background-color: #f8f9fa;">
+        <!-- Logo Kabinet Section Start -->
+        <div class="logo-section">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                    <h4 class="text-primary" style="font-family: 'Cinzel', serif; font-size: 32px;">Struktur Organisasi</h4>
-                    <p class="mb-0" style="font-family: 'Plus Jakarta Sans', sans-serif;">
-                        Mengenal lebih dekat dengan pengurus BEM Politeknik Negeri Sriwijaya periode 2025
-                    </p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item bg-white rounded shadow-sm p-4 text-center">
-                            <div class="team-img mb-3">
-                                <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 100px; height: 100px;">
-                                    <i class="fas fa-user fa-3x text-white"></i>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="logo-container wow fadeInUp" data-wow-delay="0.1s">
+                            <h2 class="section-title text-white mb-4">MAKNA LOGO KABINET</h2>
+                            <h5 class="text-center mb-5" style="font-family: 'Plus Jakarta Sans', sans-serif;">LENTERA SRIWIJAYA</h5>
+                            
+                            <div class="logo-main wow fadeInUp" data-wow-delay="0.3s">
+                                <i class="fas fa-fire-flame-curved fa-5x text-primary"></i>
+                            </div>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6 wow fadeInLeft" data-wow-delay="0.5s">
+                                    <div class="info-box">
+                                        <h6 class="fw-bold mb-2">LORIEM</h6>
+                                        <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aliquam sed diam urna tempor.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 wow fadeInRight" data-wow-delay="0.5s">
+                                    <div class="info-box">
+                                        <h6 class="fw-bold mb-2">LORIEM</h6>
+                                        <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aliquam sed diam urna tempor.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 wow fadeInLeft" data-wow-delay="0.7s">
+                                    <div class="info-box">
+                                        <h6 class="fw-bold mb-2">LORIEM</h6>
+                                        <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aliquam sed diam urna tempor.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 wow fadeInRight" data-wow-delay="0.7s">
+                                    <div class="info-box">
+                                        <h6 class="fw-bold mb-2">LORIEM</h6>
+                                        <p class="small mb-0">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aliquam sed diam urna tempor.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <h5 class="mb-1" style="font-family: 'Plus Jakarta Sans', sans-serif;">Presiden BEM</h5>
-                            <p class="text-muted small mb-0">Pemimpin Organisasi</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item bg-white rounded shadow-sm p-4 text-center">
-                            <div class="team-img mb-3">
-                                <div class="bg-secondary rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 100px; height: 100px;">
-                                    <i class="fas fa-user fa-3x text-white"></i>
-                                </div>
-                            </div>
-                            <h5 class="mb-1" style="font-family: 'Plus Jakarta Sans', sans-serif;">Wakil Presiden BEM</h5>
-                            <p class="text-muted small mb-0">Wakil Pemimpin Organisasi</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item bg-white rounded shadow-sm p-4 text-center">
-                            <div class="team-img mb-3">
-                                <div class="bg-success rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 100px; height: 100px;">
-                                    <i class="fas fa-users fa-3x text-white"></i>
-                                </div>
-                            </div>
-                            <h5 class="mb-1" style="font-family: 'Plus Jakarta Sans', sans-serif;">Departemen</h5>
-                            <p class="text-muted small mb-0">Tim Kerja Organisasi</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Team Section End -->
+        <!-- Logo Kabinet Section End -->
 
-        <!-- Values Section Start -->
+        <!-- Organizational Structure Section Start -->
+        <div class="org-section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="section-title wow fadeInUp" data-wow-delay="0.1s">PENJABAT TERAS</h2>
+                        <h5 class="text-center mb-5 text-muted wow fadeInUp" data-wow-delay="0.2s">Badan Eksekutif Mahasiswa Politeknik Negeri Sriwijaya</h5>
+                        
+                        <!-- PENGURUS INTI Section -->
+                        <div class="text-center mb-4 wow fadeInUp" data-wow-delay="0.3s">
+                            <span class="badge bg-secondary px-4 py-2 fs-6">PENGURUS INTI</span>
+                        </div>
+                        
+                        <div class="row g-4 mb-5 justify-content-center">
+                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="card-placeholder rounded">
+                                    <div class="diagonal-line"></div>
+                                    <div class="diagonal-line"></div>
+                                    <div class="position-absolute bottom-0 start-0 p-3 w-100 bg-white bg-opacity-75">
+                                        <small class="text-muted d-block">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="card-placeholder rounded">
+                                    <div class="diagonal-line"></div>
+                                    <div class="diagonal-line"></div>
+                                    <div class="position-absolute bottom-0 start-0 p-3 w-100 bg-white bg-opacity-75">
+                                        <small class="text-muted d-block">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
+                                <div class="card-placeholder rounded">
+                                    <div class="diagonal-line"></div>
+                                    <div class="diagonal-line"></div>
+                                    <div class="position-absolute bottom-0 start-0 p-3 w-100 bg-white bg-opacity-75">
+                                        <small class="text-muted d-block">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.7s">
+                                <div class="card-placeholder rounded">
+                                    <div class="diagonal-line"></div>
+                                    <div class="diagonal-line"></div>
+                                    <div class="position-absolute bottom-0 start-0 p-3 w-100 bg-white bg-opacity-75">
+                                        <small class="text-muted d-block">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- KOORDINATOR BIDANG Section -->
+                        <div class="text-center mb-4 wow fadeInUp" data-wow-delay="0.8s">
+                            <span class="badge bg-secondary px-4 py-2 fs-6">KOORDINATOR BIDANG</span>
+                        </div>
+                        
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.9s">
+                                <div class="card-placeholder rounded">
+                                    <div class="diagonal-line"></div>
+                                    <div class="diagonal-line"></div>
+                                    <div class="position-absolute bottom-0 start-0 p-3 w-100 bg-white bg-opacity-75">
+                                        <small class="text-muted d-block">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="1.0s">
+                                <div class="card-placeholder rounded">
+                                    <div class="diagonal-line"></div>
+                                    <div class="diagonal-line"></div>
+                                    <div class="position-absolute bottom-0 start-0 p-3 w-100 bg-white bg-opacity-75">
+                                        <small class="text-muted d-block">Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Organizational Structure Section End -->
+
+        <!-- Departemen Section Start -->
         <div class="container-fluid py-5">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                    <h4 class="text-primary" style="font-family: 'Cinzel', serif; font-size: 32px;">Nilai-Nilai Kami</h4>
-                    <p class="mb-0" style="font-family: 'Plus Jakarta Sans', sans-serif;">
-                        Prinsip dan nilai yang menjadi landasan dalam setiap kegiatan BEM POLSRI
-                    </p>
+                <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <span class="badge bg-secondary px-4 py-2 fs-6">DEPARTEMEN</span>
                 </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="text-center p-4">
-                            <div class="d-inline-block rounded bg-primary p-4 mb-4">
-                                <i class="fas fa-handshake fa-3x text-white"></i>
+                
+                <div class="row g-4 justify-content-center">
+                    <!-- Row 1 -->
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="dept-card">
+                            <div class="card-placeholder" style="height: 200px;">
+                                <div class="diagonal-line"></div>
+                                <div class="diagonal-line"></div>
                             </div>
-                            <h5 class="mb-3" style="font-family: 'Plus Jakarta Sans', sans-serif;">Integritas</h5>
-                            <p class="text-muted" style="font-family: 'Plus Jakarta Sans', sans-serif;">
-                                Menjunjung tinggi kejujuran dan transparansi dalam setiap tindakan
-                            </p>
+                            <div class="p-4">
+                                <p class="text-muted small mb-1">PEMILIK</p>
+                                <h6 class="fw-bold mb-0">DEPARTEMEN HUBUNGAN KEMAHASISWAAN</h6>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="text-center p-4">
-                            <div class="d-inline-block rounded bg-secondary p-4 mb-4">
-                                <i class="fas fa-lightbulb fa-3x text-white"></i>
+                    
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="dept-card">
+                            <div class="card-placeholder" style="height: 200px;">
+                                <div class="diagonal-line"></div>
+                                <div class="diagonal-line"></div>
                             </div>
-                            <h5 class="mb-3" style="font-family: 'Plus Jakarta Sans', sans-serif;">Inovasi</h5>
-                            <p class="text-muted" style="font-family: 'Plus Jakarta Sans', sans-serif;">
-                                Mengembangkan ide-ide kreatif untuk kemajuan mahasiswa
-                            </p>
+                            <div class="p-4">
+                                <p class="text-muted small mb-1">PEMILIK</p>
+                                <h6 class="fw-bold mb-0">DEPARTEMEN MEDIA KOMUNIKASI DAN INFORMASI</h6>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="text-center p-4">
-                            <div class="d-inline-block rounded bg-success p-4 mb-4">
-                                <i class="fas fa-users fa-3x text-white"></i>
+                    
+                    <!-- Row 2 -->
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="dept-card">
+                            <div class="card-placeholder" style="height: 200px;">
+                                <div class="diagonal-line"></div>
+                                <div class="diagonal-line"></div>
                             </div>
-                            <h5 class="mb-3" style="font-family: 'Plus Jakarta Sans', sans-serif;">Kolaborasi</h5>
-                            <p class="text-muted" style="font-family: 'Plus Jakarta Sans', sans-serif;">
-                                Bekerja sama untuk mencapai tujuan bersama
-                            </p>
+                            <div class="p-4">
+                                <p class="text-muted small mb-1">PEMILIK</p>
+                                <h6 class="fw-bold mb-0">DEPARTEMEN KAJIAN DAN AKSI STRATEGIS</h6>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="text-center p-4">
-                            <div class="d-inline-block rounded bg-warning p-4 mb-4">
-                                <i class="fas fa-star fa-3x text-white"></i>
+                    
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="dept-card">
+                            <div class="card-placeholder" style="height: 200px;">
+                                <div class="diagonal-line"></div>
+                                <div class="diagonal-line"></div>
                             </div>
-                            <h5 class="mb-3" style="font-family: 'Plus Jakarta Sans', sans-serif;">Ekselen</h5>
-                            <p class="text-muted" style="font-family: 'Plus Jakarta Sans', sans-serif;">
-                                Selalu berusaha memberikan yang terbaik
-                            </p>
+                            <div class="p-4">
+                                <p class="text-muted small mb-1">PEMILIK</p>
+                                <h6 class="fw-bold mb-0">DEPARTEMEN PENGEMBANGAN SUMBER DAYA MANUSIA</h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="dept-card">
+                            <div class="card-placeholder" style="height: 200px;">
+                                <div class="diagonal-line"></div>
+                                <div class="diagonal-line"></div>
+                            </div>
+                            <div class="p-4">
+                                <p class="text-muted small mb-1">PEMILIK</p>
+                                <h6 class="fw-bold mb-0">DEPARTEMEN ADVOKASI KESEJAHTERAAN MASYARAKAT</h6>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Values Section End -->
+        <!-- Departemen Section End -->
         
         <!-- Footer Start -->
         <footer class="footer-gradient">
