@@ -132,7 +132,7 @@
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link.active {
-    color: var(--bs-primary) !important;
+    color: #e05800 !important;
 }
 
 .navbar-light .navbar-brand img {
@@ -168,7 +168,7 @@
 }
 
 .dropdown .dropdown-menu a:hover {
-    background: var(--bs-primary);
+    background: #e05800;
     color: var(--bs-white);
 }
 
@@ -197,13 +197,13 @@
     }
 
     .navbar {
-        position: relative;
+        position: relative !important;
         background: var(--bs-light);
         z-index: 2;
     }
 
     .sticky-top.navbar-light {
-        position: relative;
+        position: sticky !important;
         background: var(--bs-white) !important;
         padding: 0 20px 20px 20px !important;
     }
@@ -255,7 +255,7 @@
     }
     
     .sticky-top.navbar-light {
-        position: fixed;
+        position: sticky !important;
         background: var(--bs-light) !important;
     }
 }
@@ -265,13 +265,14 @@
 .bg-breadcrumb {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(102, 16, 242, 0.05), rgba(102, 16, 242, 0.05));
+    background: linear-gradient(rgba(255, 217, 0, 0.05), rgba(102, 16, 242, 0.05));
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 150px 0 60px 0;
     margin-bottom: 6rem;
     transition: 0.5s;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
 }
 
 .bg-breadcrumb::after {
@@ -975,3 +976,33 @@
     background: var(--bs-dark) !important;
 }
 /*** copyright end ***/
+
+@media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 1001;
+    }
+  
+    .nav-menu {
+      display: none;
+    }
+  
+    .nav-menu.show {
+      display: block;
+    }
+  }
+
+
+.img-visi-misi {
+    border-radius: 32px;
+    border-image: linear-gradient(135deg, #e05800, #fffbe6, #e05800) 1;
+    box-shadow: 0 8px 32px 0 rgba(248, 174, 0, 0.18);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+.img-visi-misi:hover {
+    transform: scale(1.03) rotate(1deg);
+    box-shadow: 0 16px 48px 0 #e05800, 0 4px 16px 0 rgba(0,0,0,0.13);
+}
