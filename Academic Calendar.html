@@ -3,12 +3,13 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Mailler - SaaS Website Template</title>
+        <title>Academic Calendar - BEM POLSRI</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
 
         <!-- Google Web Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
@@ -18,321 +19,1044 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <style>
+            .footer-gradient {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+            }
+            
+            .social-icon {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                border-radius: 50%;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+            
+            .social-icon:hover {
+                background: rgba(255, 255, 255, 0.2);
+                color: white;
+                transform: translateY(-2px);
+            }
+            
+            .footer-link {
+                color: rgba(255, 255, 255, 0.8);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            
+            .footer-link:hover {
+                color: white;
+            }
+            
+            .back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 99;
+                border: none;
+                outline: none;
+                background-color: #e05800;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 50%;
+                font-size: 18px;
+                transition: background-color 0.3s;
+            }
+            
+            .back-to-top:hover {
+                background-color: #e05800;
+            }
+
+        
+
+            .breadcrumb-animation {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .breadcrumb-animation li {
+                position: absolute;
+                display: block;
+                list-style: none;
+                width: 20px;
+                height: 20px;
+                background: rgba(255, 255, 255, 0.1);
+                animation: animate 25s linear infinite;
+                bottom: -150px;
+            }
+
+            @keyframes animate {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 1;
+                    border-radius: 0;
+                }
+                100% {
+                    transform: translateY(-1000px) rotate(720deg);
+                    opacity: 0;
+                    border-radius: 50%;
+                }
+            }
+
+            .calendar-wireframe {
+                border: 2px solid #ddd;
+                background: #f8f9fa;
+                padding: 40px;
+                margin: 40px 0;
+                position: relative;
+            }
+
+            .calendar-wireframe::before,
+            .calendar-wireframe::after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+            }
+
+            .calendar-wireframe::before {
+                top: -10px;
+                left: -10px;
+                background: linear-gradient(45deg, transparent 40%, #999 40%, #999 60%, transparent 60%),
+                           linear-gradient(-45deg, transparent 40%, #999 40%, #999 60%, transparent 60%);
+            }
+
+            .calendar-wireframe::after {
+                top: -10px;
+                right: -10px;
+                background: linear-gradient(45deg, transparent 40%, #999 40%, #999 60%, transparent 60%),
+                           linear-gradient(-45deg, transparent 40%, #999 40%, #999 60%, transparent 60%);
+            }
+
+            .calendar-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 15px;
+                margin: 30px 0;
+            }
+
+            .calendar-month {
+                border: 1px solid #ddd;
+                padding: 15px;
+                background: white;
+                border-radius: 8px;
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .calendar-month:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            }
+
+            .month-header {
+                font-family: 'Cinzel', serif;
+                font-size: 16px;
+                font-weight: bold;
+                color: #e05800;
+                margin-bottom: 10px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .calendar-days {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                gap: 2px;
+                font-size: 12px;
+            }
+
+            .day-header {
+                font-weight: bold;
+                color: #666;
+                padding: 3px;
+                font-size: 10px;
+            }
+
+            .day-number {
+                padding: 3px;
+                color: #333;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+
+            .day-number:hover {
+                background-color: #e05800;
+                color: white;
+                border-radius: 3px;
+            }
+
+            .info-section {
+                margin-top: 50px;
+                padding: 40px 0;
+            }
+
+            .info-card {
+                background: white;
+                border-radius: 10px;
+                padding: 30px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                height: 100%;
+                transition: transform 0.3s ease;
+            }
+
+            .info-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .semester-title {
+                font-family: 'Cinzel', serif;
+                color: #e05800;
+                font-size: 20px;
+                margin-bottom: 20px;
+                text-align: center;
+                border-bottom: 2px solid #e05800;
+                padding-bottom: 10px;
+            }
+
+            .event-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                font-size: 14px;
+            }
+
+            .event-item:last-child {
+                border-bottom: none;
+            }
+
+            .event-name {
+                flex: 1;
+                margin-right: 15px;
+                color: #333;
+            }
+
+            .event-date {
+                color: #666;
+                font-weight: 500;
+                white-space: nowrap;
+                font-size: 12px;
+            }
+
+            @media (max-width: 992px) {
+                .calendar-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 576px) {
+                .calendar-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .calendar-wireframe {
+                    padding: 20px;
+                }
+            }
+        </style>
     </head>
 
     <body>
 
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
-
-
-               <!-- Navbar -->
-
-              <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative">
-    <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
-      <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
-      <div class="d-flex flex-column">
-        <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
-        <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
-      </div>
-    </a>
-  
-    <!-- Toggle button for mobile -->
-    <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <div class="navbar-nav ms-auto py-0">
-        <a class="nav-item nav-link" href="index.html">Home</a>
-        <a class="nav-item nav-link" href="about.html">About</a>
-  
-        <!-- Academic Info Dropdown -->
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Academic Information
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="academicDropdown">
-            <li><a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a></li>
-            <li><a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a></li>
-          </ul>
-        </div>
-  
-        <!-- Campus Echo Dropdown -->
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Campus Echo
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="campusDropdown">
-            <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
-            <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
-            <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
-          </ul>
-        </div>
-  
-        <a class="nav-item nav-link active" href="contact.html">Contact Us</a>
-      </div>
-    </div>
-  </nav>
-  <!-- Navbar end -->
-
-         <!-- Header Start -->
-         <div class="container-fluid bg-breadcrumb">
-            <ul class="breadcrumb-animation">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Features</h1>
-                <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-primary">Feature</li>
-                </ol>    
-            </div>
-        </div>
-        <!-- Header End -->
-
-
-        <!-- Feature Start -->
-        <div class="container-fluid feature overflow-hidden py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                    <h4 class="text-primary">Our Feature</h4>
-                    <h1 class="display-5 mb-4">Important Features For Email Marketing</h1>
-                    <p class="mb-0">Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime. Vel animi eveniet doloremque reiciendis soluta iste provident non rerum illum perferendis earum est architecto dolores vitae quia vero quod incidunt culpa corporis, porro doloribus. Voluptates nemo doloremque cum.
-                    </p>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative sticky-top">
+            <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
+              <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+              <div class="d-flex flex-column">
+                <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
+                <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
+              </div>
+            </a>
+          
+            <!-- Toggle button for mobile -->
+            <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <div class="navbar-nav ms-auto py-0">
+                <a class="nav-item nav-link" href="index.html">Home</a>
+                <a class="nav-item nav-link" href="about.html">About</a>
+          
+                <!-- Academic Info Dropdown -->
+                <div class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle active" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Academic Information
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+                    <li><a class="dropdown-item active" href="Academic Calendar.html">Academic Calendar</a></li>
+                    <li><a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a></li>
+                  </ul>
                 </div>
-                <div class="row g-4 justify-content-center text-center mb-5">
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="text-center p-4">
-                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-envelope fa-5x text-secondary"></i></div>
-                            <div class="feature-content">
-                                <a href="#" class="h4">Email Marketing <i class="fa fa-long-arrow-alt-right"></i></a>
-                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="text-center p-4">
-                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-mail-bulk fa-5x text-secondary"></i></div>
-                            <div class="feature-content">
-                                <a href="#" class="h4">Email Builder <i class="fa fa-long-arrow-alt-right"></i></a>
-                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="text-center rounded p-4">
-                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-sitemap fa-5x text-secondary"></i></div>
-                            <div class="feature-content">
-                                <a href="#" class="h4">Customer Builder <i class="fa fa-long-arrow-alt-right"></i></a>
-                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="text-center rounded p-4">
-                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-tasks fa-5x text-secondary"></i></div>
-                            <div class="feature-content">
-                                <a href="#" class="h4">Campaign Manager <i class="fa fa-long-arrow-alt-right"></i></a>
-                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="my-3">
-                            <a href="#" class="btn btn-primary d-inline rounded-pill px-5 py-3">More Features</a>
-                        </div>
-                    </div>
+          
+                <!-- Campus Echo Dropdown -->
+                <div class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Campus Echo
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+                    <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
+                    <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
+                    <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
+                  </ul>
                 </div>
-                <div class="row g-5 pt-5" style="margin-top: 6rem;">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                        <div class="feature-img RotateMoveLeft h-100" style="object-fit: cover;">
-                            <img src="img/features-1.png" class="img-fluid w-100 h-100" alt="">
+          
+                <a class="nav-item nav-link" href="contact.html">Contact Us</a>
+              </div>
+            </div>
+        </nav>
+        <!-- Navbar end -->
+
+
+        <!-- Academic Calendar Section Start -->
+        <div class="container-fluid py-5">
+            <div class="container">
+                <!-- Wireframe Calendar Section -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="text-center mb-5 animate__animated animate__fadeInUp">
+                            <h4 class="fw-bold text-primary mb-3" style="font-family: 'Cinzel', serif; font-size: 28px;">KALENDER AKADEMIK</h4>
+                            <h5 class="text-muted mb-4" style="font-family: 'Plus Jakarta Sans', sans-serif;">POLITEKNIK NEGERI SRIWIJAYA</h5>
+                            <h6 class="text-dark" style="font-family: 'Plus Jakarta Sans', sans-serif;">TAHUN 2024/2025</h6>
                         </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
-                        <h4 class="text-primary">Fearutes</h4>
-                        <h1 class="display-5 mb-4">Push Your Visitors Into Happy Customers</h1>
-                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, suscipit itaque quaerat dicta porro illum, autem, molestias ut animi ab aspernatur dolorum officia nam dolore. Voluptatibus aliquam earum labore atque.
-                        </p>
-                        <div class="row g-4">
-                            <div class="col-6">
-                                <div class="d-flex">
-                                    <i class="fas fa-newspaper fa-4x text-secondary"></i>
-                                    <div class="d-flex flex-column ms-3">
-                                        <h2 class="mb-0 fw-bold">285</h2>
-                                        <small class="text-dark">Created Projects</small>
+
+                        <!-- Calendar Grid -->
+                        <div class="calendar-wireframe animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                            <div class="calendar-grid">
+                                <!-- September 2024 -->
+                                <div class="calendar-month">
+                                    <div class="month-header">September 2024</div>
+                                    <div class="calendar-days">
+                                        <div class="day-header">M</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">R</div>
+                                        <div class="day-header">K</div>
+                                        <div class="day-header">J</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number">1</div>
+                                        <div class="day-number">2</div>
+                                        <div class="day-number">3</div>
+                                        <div class="day-number">4</div>
+                                        <div class="day-number">5</div>
+                                        <div class="day-number">6</div>
+                                        <div class="day-number">8</div>
+                                        <div class="day-number">9</div>
+                                        <div class="day-number">10</div>
+                                        <div class="day-number">11</div>
+                                        <div class="day-number">12</div>
+                                        <div class="day-number">13</div>
+                                        <div class="day-number">14</div>
+                                        <div class="day-number">15</div>
+                                        <div class="day-number">16</div>
+                                        <div class="day-number">17</div>
+                                        <div class="day-number">18</div>
+                                        <div class="day-number">19</div>
+                                        <div class="day-number">20</div>
+                                        <div class="day-number">21</div>
+                                        <div class="day-number">22</div>
+                                        <div class="day-number">23</div>
+                                        <div class="day-number">24</div>
+                                        <div class="day-number">25</div>
+                                        <div class="day-number">26</div>
+                                        <div class="day-number">27</div>
+                                        <div class="day-number">28</div>
+                                        <div class="day-number">29</div>
+                                        <div class="day-number">30</div>
+                                    </div>
+                                </div>
+
+                                <!-- Oktober 2024 -->
+                                <div class="calendar-month">
+                                    <div class="month-header">Oktober 2024</div>
+                                    <div class="calendar-days">
+                                        <div class="day-header">M</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">R</div>
+                                        <div class="day-header">K</div>
+                                        <div class="day-header">J</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number">1</div>
+                                        <div class="day-number">2</div>
+                                        <div class="day-number">3</div>
+                                        <div class="day-number">4</div>
+                                        <div class="day-number">5</div>
+                                        <div class="day-number">6</div>
+                                        <div class="day-number">7</div>
+                                        <div class="day-number">8</div>
+                                        <div class="day-number">9</div>
+                                        <div class="day-number">10</div>
+                                        <div class="day-number">11</div>
+                                        <div class="day-number">12</div>
+                                        <div class="day-number">13</div>
+                                        <div class="day-number">14</div>
+                                        <div class="day-number">15</div>
+                                        <div class="day-number">16</div>
+                                        <div class="day-number">17</div>
+                                        <div class="day-number">18</div>
+                                        <div class="day-number">19</div>
+                                        <div class="day-number">20</div>
+                                        <div class="day-number">21</div>
+                                        <div class="day-number">22</div>
+                                        <div class="day-number">23</div>
+                                        <div class="day-number">24</div>
+                                        <div class="day-number">25</div>
+                                        <div class="day-number">26</div>
+                                        <div class="day-number">27</div>
+                                        <div class="day-number">28</div>
+                                        <div class="day-number">29</div>
+                                        <div class="day-number">30</div>
+                                        <div class="day-number">31</div>
+                                    </div>
+                                </div>
+
+                                <!-- November 2024 -->
+                                <div class="calendar-month">
+                                    <div class="month-header">November 2024</div>
+                                    <div class="calendar-days">
+                                        <div class="day-header">M</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">R</div>
+                                        <div class="day-header">K</div>
+                                        <div class="day-header">J</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number">1</div>
+                                        <div class="day-number">2</div>
+                                        <div class="day-number">3</div>
+                                        <div class="day-number">4</div>
+                                        <div class="day-number">5</div>
+                                        <div class="day-number">6</div>
+                                        <div class="day-number">7</div>
+                                        <div class="day-number">8</div>
+                                        <div class="day-number">9</div>
+                                        <div class="day-number">10</div>
+                                        <div class="day-number">11</div>
+                                        <div class="day-number">12</div>
+                                        <div class="day-number">13</div>
+                                        <div class="day-number">14</div>
+                                        <div class="day-number">15</div>
+                                        <div class="day-number">16</div>
+                                        <div class="day-number">17</div>
+                                        <div class="day-number">18</div>
+                                        <div class="day-number">19</div>
+                                        <div class="day-number">20</div>
+                                        <div class="day-number">21</div>
+                                        <div class="day-number">22</div>
+                                        <div class="day-number">23</div>
+                                        <div class="day-number">24</div>
+                                        <div class="day-number">25</div>
+                                        <div class="day-number">26</div>
+                                        <div class="day-number">27</div>
+                                        <div class="day-number">28</div>
+                                        <div class="day-number">29</div>
+                                        <div class="day-number">30</div>
+                                    </div>
+                                </div>
+
+                                <!-- Desember 2024 -->
+                                <div class="calendar-month">
+                                    <div class="month-header">Desember 2024</div>
+                                    <div class="calendar-days">
+                                        <div class="day-header">M</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">R</div>
+                                        <div class="day-header">K</div>
+                                        <div class="day-header">J</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number">1</div>
+                                        <div class="day-number">2</div>
+                                        <div class="day-number">3</div>
+                                        <div class="day-number">4</div>
+                                        <div class="day-number">5</div>
+                                        <div class="day-number">6</div>
+                                        <div class="day-number">7</div>
+                                        <div class="day-number">8</div>
+                                        <div class="day-number">9</div>
+                                        <div class="day-number">10</div>
+                                        <div class="day-number">11</div>
+                                        <div class="day-number">12</div>
+                                        <div class="day-number">13</div>
+                                        <div class="day-number">14</div>
+                                        <div class="day-number">15</div>
+                                        <div class="day-number">16</div>
+                                        <div class="day-number">17</div>
+                                        <div class="day-number">18</div>
+                                        <div class="day-number">19</div>
+                                        <div class="day-number">20</div>
+                                        <div class="day-number">21</div>
+                                        <div class="day-number">22</div>
+                                        <div class="day-number">23</div>
+                                        <div class="day-number">24</div>
+                                        <div class="day-number">25</div>
+                                        <div class="day-number">26</div>
+                                        <div class="day-number">27</div>
+                                        <div class="day-number">28</div>
+                                        <div class="day-number">29</div>
+                                        <div class="day-number">30</div>
+                                        <div class="day-number">31</div>
+                                    </div>
+                                </div>
+
+                                <!-- Januari 2025 -->
+                                <div class="calendar-month">
+                                    <div class="month-header">Januari 2025</div>
+                                    <div class="calendar-days">
+                                        <div class="day-header">M</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">R</div>
+                                        <div class="day-header">K</div>
+                                        <div class="day-header">J</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number">1</div>
+                                        <div class="day-number">2</div>
+                                        <div class="day-number">3</div>
+                                        <div class="day-number">4</div>
+                                        <div class="day-number">5</div>
+                                        <div class="day-number">6</div>
+                                        <div class="day-number">7</div>
+                                        <div class="day-number">8</div>
+                                        <div class="day-number">9</div>
+                                        <div class="day-number">10</div>
+                                        <div class="day-number">11</div>
+                                        <div class="day-number">12</div>
+                                        <div class="day-number">13</div>
+                                        <div class="day-number">14</div>
+                                        <div class="day-number">15</div>
+                                        <div class="day-number">16</div>
+                                        <div class="day-number">17</div>
+                                        <div class="day-number">18</div>
+                                        <div class="day-number">19</div>
+                                        <div class="day-number">20</div>
+                                        <div class="day-number">21</div>
+                                        <div class="day-number">22</div>
+                                        <div class="day-number">23</div>
+                                        <div class="day-number">24</div>
+                                        <div class="day-number">25</div>
+                                        <div class="day-number">26</div>
+                                        <div class="day-number">27</div>
+                                        <div class="day-number">28</div>
+                                        <div class="day-number">29</div>
+                                        <div class="day-number">30</div>
+                                        <div class="day-number">31</div>
+                                    </div>
+                                </div>
+
+                                <!-- Februari 2025 -->
+                                <div class="calendar-month">
+                                    <div class="month-header">Februari 2025</div>
+                                    <div class="calendar-days">
+                                        <div class="day-header">M</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">R</div>
+                                        <div class="day-header">K</div>
+                                        <div class="day-header">J</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number">1</div>
+                                        <div class="day-number">2</div>
+                                        <div class="day-number">3</div>
+                                        <div class="day-number">4</div>
+                                        <div class="day-number">5</div>
+                                        <div class="day-number">6</div>
+                                        <div class="day-number">7</div>
+                                        <div class="day-number">8</div>
+                                        <div class="day-number">9</div>
+                                        <div class="day-number">10</div>
+                                        <div class="day-number">11</div>
+                                        <div class="day-number">12</div>
+                                        <div class="day-number">13</div>
+                                        <div class="day-number">14</div>
+                                        <div class="day-number">15</div>
+                                        <div class="day-number">16</div>
+                                        <div class="day-number">17</div>
+                                        <div class="day-number">18</div>
+                                        <div class="day-number">19</div>
+                                        <div class="day-number">20</div>
+                                        <div class="day-number">21</div>
+                                        <div class="day-number">22</div>
+                                        <div class="day-number">23</div>
+                                        <div class="day-number">24</div>
+                                        <div class="day-number">25</div>
+                                        <div class="day-number">26</div>
+                                        <div class="day-number">27</div>
+                                        <div class="day-number">28</div>
+                                    </div>
+                                </div>
+
+                               <!-- Maret 2025 -->
+                                <div class="calendar-month">
+                                    <div class="month-header">Maret 2025</div>
+                                    <div class="calendar-days">
+                                        <div class="day-header">M</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">R</div>
+                                        <div class="day-header">K</div>
+                                        <div class="day-header">J</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number">1</div>
+                                        <div class="day-number">2</div>
+                                        <div class="day-number">3</div>
+                                        <div class="day-number">4</div>
+                                        <div class="day-number">5</div>
+                                        <div class="day-number">6</div>
+                                        <div class="day-number">7</div>
+                                        <div class="day-number">8</div>
+                                        <div class="day-number">9</div>
+                                        <div class="day-number">10</div>
+                                        <div class="day-number">11</div>
+                                        <div class="day-number">12</div>
+                                        <div class="day-number">13</div>
+                                        <div class="day-number">14</div>
+                                        <div class="day-number">15</div>
+                                        <div class="day-number">16</div>
+                                        <div class="day-number">17</div>
+                                        <div class="day-number">18</div>
+                                        <div class="day-number">19</div>
+                                        <div class="day-number">20</div>
+                                        <div class="day-number">21</div>
+                                        <div class="day-number">22</div>
+                                        <div class="day-number">23</div>
+                                        <div class="day-number">24</div>
+                                        <div class="day-number">25</div>
+                                        <div class="day-number">26</div>
+                                        <div class="day-number">27</div>
+                                        <div class="day-number">28</div>
+                                        <div class="day-number">29</div>
+                                        <div class="day-number">30</div>
+                                        <div class="day-number">31</div>
+                                    </div>
+                                </div>
+
+                                <!-- April 2025 -->
+                                <div class="calendar-month">
+                                    <div class="month-header">April 2025</div>
+                                    <div class="calendar-days">
+                                        <div class="day-header">M</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">R</div>
+                                        <div class="day-header">K</div>
+                                        <div class="day-header">J</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number">1</div>
+                                        <div class="day-number">2</div>
+                                        <div class="day-number">3</div>
+                                        <div class="day-number">4</div>
+                                        <div class="day-number">5</div>
+                                        <div class="day-number">6</div>
+                                        <div class="day-number">7</div>
+                                        <div class="day-number">8</div>
+                                        <div class="day-number">9</div>
+                                        <div class="day-number">10</div>
+                                        <div class="day-number">11</div>
+                                        <div class="day-number">12</div>
+                                        <div class="day-number">13</div>
+                                        <div class="day-number">14</div>
+                                        <div class="day-number">15</div>
+                                        <div class="day-number">16</div>
+                                        <div class="day-number">17</div>
+                                        <div class="day-number">18</div>
+                                        <div class="day-number">19</div>
+                                        <div class="day-number">20</div>
+                                        <div class="day-number">21</div>
+                                        <div class="day-number">22</div>
+                                        <div class="day-number">23</div>
+                                        <div class="day-number">24</div>
+                                        <div class="day-number">25</div>
+                                        <div class="day-number">26</div>
+                                        <div class="day-number">27</div>
+                                        <div class="day-number">28</div>
+                                        <div class="day-number">29</div>
+                                        <div class="day-number">30</div>
+                                    </div>
+                                </div>
+
+                                <!-- Mei 2025 -->
+                                <div class="calendar-month">
+                                    <div class="month-header">Mei 2025</div>
+                                    <div class="calendar-days">
+                                        <div class="day-header">M</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">R</div>
+                                        <div class="day-header">K</div>
+                                        <div class="day-header">J</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number">1</div>
+                                        <div class="day-number">2</div>
+                                        <div class="day-number">3</div>
+                                        <div class="day-number">4</div>
+                                        <div class="day-number">5</div>
+                                        <div class="day-number">6</div>
+                                        <div class="day-number">7</div>
+                                        <div class="day-number">8</div>
+                                        <div class="day-number">9</div>
+                                        <div class="day-number">10</div>
+                                        <div class="day-number">11</div>
+                                        <div class="day-number">12</div>
+                                        <div class="day-number">13</div>
+                                        <div class="day-number">14</div>
+                                        <div class="day-number">15</div>
+                                        <div class="day-number">16</div>
+                                        <div class="day-number">17</div>
+                                        <div class="day-number">18</div>
+                                        <div class="day-number">19</div>
+                                        <div class="day-number">20</div>
+                                        <div class="day-number">21</div>
+                                        <div class="day-number">22</div>
+                                        <div class="day-number">23</div>
+                                        <div class="day-number">24</div>
+                                        <div class="day-number">25</div>
+                                        <div class="day-number">26</div>
+                                        <div class="day-number">27</div>
+                                        <div class="day-number">28</div>
+                                        <div class="day-number">29</div>
+                                        <div class="day-number">30</div>
+                                        <div class="day-number">31</div>
+                                    </div>
+                                </div>
+
+                                <!-- Juni 2025 -->
+                                <div class="calendar-month">
+                                    <div class="month-header">Juni 2025</div>
+                                    <div class="calendar-days">
+                                        <div class="day-header">M</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">R</div>
+                                        <div class="day-header">K</div>
+                                        <div class="day-header">J</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number">1</div>
+                                        <div class="day-number">2</div>
+                                        <div class="day-number">3</div>
+                                        <div class="day-number">4</div>
+                                        <div class="day-number">5</div>
+                                        <div class="day-number">6</div>
+                                        <div class="day-number">7</div>
+                                        <div class="day-number">8</div>
+                                        <div class="day-number">9</div>
+                                        <div class="day-number">10</div>
+                                        <div class="day-number">11</div>
+                                        <div class="day-number">12</div>
+                                        <div class="day-number">13</div>
+                                        <div class="day-number">14</div>
+                                        <div class="day-number">15</div>
+                                        <div class="day-number">16</div>
+                                        <div class="day-number">17</div>
+                                        <div class="day-number">18</div>
+                                        <div class="day-number">19</div>
+                                        <div class="day-number">20</div>
+                                        <div class="day-number">21</div>
+                                        <div class="day-number">22</div>
+                                        <div class="day-number">23</div>
+                                        <div class="day-number">24</div>
+                                        <div class="day-number">25</div>
+                                        <div class="day-number">26</div>
+                                        <div class="day-number">27</div>
+                                        <div class="day-number">28</div>
+                                        <div class="day-number">29</div>
+                                        <div class="day-number">30</div>
+                                    </div>
+                                </div>
+
+                                <!-- Juli 2025 -->
+                                <div class="calendar-month">
+                                    <div class="month-header">Juli 2025</div>
+                                    <div class="calendar-days">
+                                        <div class="day-header">M</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">R</div>
+                                        <div class="day-header">K</div>
+                                        <div class="day-header">J</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number">1</div>
+                                        <div class="day-number">2</div>
+                                        <div class="day-number">3</div>
+                                        <div class="day-number">4</div>
+                                        <div class="day-number">5</div>
+                                        <div class="day-number">6</div>
+                                        <div class="day-number">7</div>
+                                        <div class="day-number">8</div>
+                                        <div class="day-number">9</div>
+                                        <div class="day-number">10</div>
+                                        <div class="day-number">11</div>
+                                        <div class="day-number">12</div>
+                                        <div class="day-number">13</div>
+                                        <div class="day-number">14</div>
+                                        <div class="day-number">15</div>
+                                        <div class="day-number">16</div>
+                                        <div class="day-number">17</div>
+                                        <div class="day-number">18</div>
+                                        <div class="day-number">19</div>
+                                        <div class="day-number">20</div>
+                                        <div class="day-number">21</div>
+                                        <div class="day-number">22</div>
+                                        <div class="day-number">23</div>
+                                        <div class="day-number">24</div>
+                                        <div class="day-number">25</div>
+                                        <div class="day-number">26</div>
+                                        <div class="day-number">27</div>
+                                        <div class="day-number">28</div>
+                                        <div class="day-number">29</div>
+                                        <div class="day-number">30</div>
+                                        <div class="day-number">31</div>
+                                    </div>
+                                </div>
+
+                                <!-- Agustus 2025 -->
+                                <div class="calendar-month">
+                                    <div class="month-header">Agustus 2025</div>
+                                    <div class="calendar-days">
+                                        <div class="day-header">M</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">R</div>
+                                        <div class="day-header">K</div>
+                                        <div class="day-header">J</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number"></div>
+                                        <div class="day-number">1</div>
+                                        <div class="day-number">2</div>
+                                        <div class="day-number">3</div>
+                                        <div class="day-number">4</div>
+                                        <div class="day-number">5</div>
+                                        <div class="day-number">6</div>
+                                        <div class="day-number">7</div>
+                                        <div class="day-number">8</div>
+                                        <div class="day-number">9</div>
+                                        <div class="day-number">10</div>
+                                        <div class="day-number">11</div>
+                                        <div class="day-number">12</div>
+                                        <div class="day-number">13</div>
+                                        <div class="day-number">14</div>
+                                        <div class="day-number">15</div>
+                                        <div class="day-number">16</div>
+                                        <div class="day-number">17</div>
+                                        <div class="day-number">18</div>
+                                        <div class="day-number">19</div>
+                                        <div class="day-number">20</div>
+                                        <div class="day-number">21</div>
+                                        <div class="day-number">22</div>
+                                        <div class="day-number">23</div>
+                                        <div class="day-number">24</div>
+                                        <div class="day-number">25</div>
+                                        <div class="day-number">26</div>
+                                        <div class="day-number">27</div>
+                                        <div class="day-number">28</div>
+                                        <div class="day-number">29</div>
+                                        <div class="day-number">30</div>
+                                        <div class="day-number">31</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="d-flex">
-                                    <i class="fas fa-users fa-4x text-secondary"></i>
-                                    <div class="d-flex flex-column ms-3">
-                                        <h2 class="mb-0 fw-bold">6560</h2>
-                                        <small class="text-dark">Happy Clients</small>
+                        </div>
+
+                        <!-- Academic Information Section -->
+                        <div class="info-section animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                            <div class="row">
+                                <!-- Semester Ganjil -->
+                                <div class="col-lg-6 mb-4">
+                                    <div class="info-card">
+                                        <h5 class="semester-title">SEMESTER GANJIL 2024/2025</h5>
+                                        <div class="event-item">
+                                            <div class="event-name">Libur Hari Raya Idul Fitri TA 24/25</div>
+                                            <div class="event-date">10-11 Apr 2024</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Daftar Ulang Mhs Hari 24/25</div>
+                                            <div class="event-date">Juli 2024</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">DIKSARLIN TA 24/25</div>
+                                            <div class="event-date">29 Juli - 10 Agustus 2024</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">SISDIKTI</div>
+                                            <div class="event-date">12-15 Agustus 2024</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Yudisium Semester Genap TA 23/24</div>
+                                            <div class="event-date">2 Agustus 2024</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Libur Semester Genap TA 23/24</div>
+                                            <div class="event-date">5-16 Agustus 2024</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Daftar Ulang SMT. Ganjil TA. 24/25</div>
+                                            <div class="event-date">5-16 Agustus 2024</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Wisuda ke-40</div>
+                                            <div class="event-date">14, 15 September 2024</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Awal Kegiatan SMT Ganjil TA. 24/25</div>
+                                            <div class="event-date">Senin, 2 September 2024</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Semester Ganjil TA 24/25</div>
+                                            <div class="event-date">2 Sept. 2024 - 24 Jan. 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Libur Akhir Tahun 2024</div>
+                                            <div class="event-date">25 Desember 2024</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Ujian Semester Ganjil TA 24/25</div>
+                                            <div class="event-date">13 - 17 Januari 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Yudisium Semester Ganjil TA 24/25</div>
+                                            <div class="event-date">24 Januari 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Libur Semester Ganjil TA 24/25</div>
+                                            <div class="event-date">27 Jan. - 7 Feb. 2025</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Semester Genap -->
+                                <div class="col-lg-6 mb-4">
+                                    <div class="info-card">
+                                        <h5 class="semester-title">SEMESTER GENAP 2024/2025</h5>
+                                        <div class="event-item">
+                                            <div class="event-name">Daftar Ulang SMT. Genap TA. 24/25</div>
+                                            <div class="event-date">27 Jan. - 7 Feb. 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Awal Kegiatan SMT Genap TA. 24/25</div>
+                                            <div class="event-date">Senin, 10 Februari 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Semester Genap TA 24/25</div>
+                                            <div class="event-date">10 Feb. - 1 Agustus 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Pendadaran Mhs Baru TA. 25/26</div>
+                                            <div class="event-date">Maret - Juli 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Libur Hari Raya Idul Fitri TA 24/25</div>
+                                            <div class="event-date">31 Maret - 1 April 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Ujian Tengah Semester TA. 24/25</div>
+                                            <div class="event-date">8-12 April 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Ujian KP</div>
+                                            <div class="event-date">1-26 Juli 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Ujian Semester Genap TA 24/25</div>
+                                            <div class="event-date">7-12 Juli 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Ujian Laporan Akhir TA 24/25</div>
+                                            <div class="event-date">14-19 Juli 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Diskarlin TA. 25/26</div>
+                                            <div class="event-date">28 Juli - 2 Agustus 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Yudisium Semester Genap TA 24/25</div>
+                                            <div class="event-date">4 Agustus - 9 Agustus 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Libur Semester Genap TA 24/25</div>
+                                            <div class="event-date">11 - 14 Agustus 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Daftar Ulang SMT. Ganjil TA. 25/26</div>
+                                            <div class="event-date">4 - 29 Agustus 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Wisuda ke-41</div>
+                                            <div class="event-date">23 - 24 Agustus 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Awal Kegiatan SMT Ganjil TA. 25/26</div>
+                                            <div class="event-date">Senin, 1 September 2025</div>
+                                        </div>
+                                        <div class="event-item">
+                                            <div class="event-name">Audit Mutu Internal (AMI)</div>
+                                            <div class="event-date">8 - 30 September 2025</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="my-4">
-                            <a href="#" class="btn btn-primary rounded-pill py-3 px-5">Read More</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Feature End -->
-
-
-        <!-- FAQ Start -->
-        <div class="container-fluid FAQ bg-light overflow-hidden py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                       <div class="accordion" id="accordionExample">
-                            <div class="accordion-item border-0 mb-4">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseTOne">
-                                        Why did you choose Our Email Services?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body my-2">
-                                        <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit, sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta distinctio hic fuga odio excepturi ducimus sequi at. Doloribus, non aspernatur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0 mb-4">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Are there any hidden charges? 
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body my-2">
-                                        <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit, sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta distinctio hic fuga odio excepturi ducimus sequi at. Doloribus, non aspernatur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        What are the key challenges of email marketing?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body my-2">
-                                        <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit, sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta distinctio hic fuga odio excepturi ducimus sequi at. Doloribus, non aspernatur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-                        <div class="FAQ-img RotateMoveRight rounded">
-                            <img src="img/about-1.png" class="img-fluid w-100" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- FAQ End -->
-
-
-          <!-- Footer Start -->
-<footer class="footer-gradient">
-    <div class="container py-5" style="font-family: serif;">
-        <div class="row g-4">
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="fw-bold mb-3">FOLLOW US</div>
-                <div class="d-flex mb-3">
-                    <a href="#" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" class="social-icon me-2"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                </div>
-                <div class="d-flex align-items-center">
-                    <img src="img/logo.png" alt="Logo" height="35" class="me-2">
-                    <div class="small">
-                        BEM POLITEKNIK NEGERI SRIWIJAYA<br>
-                        KABINET LENTERA SRIWIJAYA
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="fw-bold mb-3">More Information</div>
-                <a href="#" class="footer-link d-block mb-1">Contact Us</a>
-                <a href="#" class="footer-link d-block mb-1">About Us</a>
-                <a href="Terms and Conditions.html" class="footer-link d-block">Terms and Conditions</a>
-            </div>
-            <div class="col-12 col-xl-4">
-                <div class="fw-bold mb-3">Developed By</div>
-                <div class="small">Departemen Media Informasi</div>
-                <div class="small">BEM POLSRI 2025</div>
-            </div>
-        </div>
-        <hr class="my-4">
-        <div class="footer-bottom text-center small">
-            &copy; 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
-        </div>
-    </div>
-</footer>
-<!-- Footer End -->
-     <!-- Back to Top -->
-     <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
-
-        
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    </body>
-
-</html>
+        <!-- Academic Calendar Section End -->
