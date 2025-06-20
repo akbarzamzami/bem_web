@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Mailler - SaaS Website Template</title>
+    <title>BEM POLSRI</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
-
+  <link rel="icon" type="image/png" href="/img/logo.png">
     <!-- Google Web Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap"
@@ -36,6 +36,11 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
       rel="stylesheet"
+    />
+    <!-- Swiper Css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
     <!-- Libraries Stylesheet -->
@@ -107,7 +112,7 @@
 
     <!-- Navbar -->
     <nav
-      class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative sticky-top"
+      class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative"
     >
       <a
         href="index.html"
@@ -278,34 +283,37 @@
           </div>
         </div>
         <div class="col-lg-6 wow fadeInUp text-center" data-wow-delay="0.3s">
-          <img
-            src="img/pengurus.JPG"
-            class="img-visi-misi w-100"
-            alt=""
-          />
+          <div class="position-relative d-inline-block w-100">
+            <img
+              src="img/pengurus.JPG"
+              class="img-visi-misi w-100 rounded-4"
+              alt=""
+            />
+            <img src="img/logo-bem-2.png" class="logo-overlay" alt="Logo" />
+          </div>
         </div>
       </div>
     </section>
     <!-- Visi Misi Section End -->
 
     <!-- kalender -->
-    <section style="background-image: url(/img/bgweb.png);">
-    <div class="container py-5">
-      <div class="row">
-        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-          <div>
-            <h3 class="display-7 text-primary" style="font-family: cinzel">
-              Timeline
-            </h3>
-            <h3 class="display-7 text-primary" style="font-family: cinzel">
-              BEM POLSRI 2025
-            </h3>
+    <section>
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div>
+              <h3 class="display-7 text-primary" style="font-family: cinzel">
+                Timeline
+              </h3>
+              <h3 class="display-7 text-primary" style="font-family: cinzel">
+                BEM POLSRI 2025
+              </h3>
+            </div>
           </div>
         </div>
-    </div>
 
         <!-- Kalender -->
-        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
           <div class="card shadow-lg border-0">
             <div class="card-header calendar-header">
               <div class="row align-items-center">
@@ -341,35 +349,596 @@
           </div>
         </div>
 
-      <!-- Row kedua untuk info -->
-      <div class="row g-4 mt-4">
-        <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
-          <div class="card info-card border-0 shadow">
-            <div class="card-body">
-              <h5 class="card-title text-primary">
-                <i class="bi bi-calendar-event"></i> Informasi Tanggal
-              </h5>
-              <p class="card-text mb-0" id="selectedDateInfo">
-                Pilih tanggal pada kalender untuk melihat informasi kegiatan BEM
-                POLSRI
-              </p>
+        <!-- Row kedua untuk info -->
+        <div class="row g-4 mt-4">
+          <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="card info-card border-0 shadow">
+              <div class="card-body">
+                <h5 class="card-title text-primary">
+                  <i class="bi bi-calendar-event"></i> Informasi Tanggal
+                </h5>
+                <p class="card-text mb-0" id="selectedDateInfo">
+                  Pilih tanggal pada kalender untuk melihat informasi kegiatan
+                  BEM POLSRI
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
-          <div class="card border-0 shadow">
-            <div class="card-body text-center">
-              <div class="display-4 text-primary fw-bold" id="todayDate"></div>
-              <h6 class="text-muted mb-0">Hari Ini</h6>
-              <small class="text-muted" id="todayName"></small>
+          <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="card border-0 shadow">
+              <div class="card-body text-center">
+                <div
+                  class="display-4 text-primary fw-bold"
+                  id="todayDate"
+                ></div>
+                <h6 class="text-muted mb-0">Hari Ini</h6>
+                <small class="text-muted" id="todayName"></small>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </section>
     <!-- end kalender -->
+
+    <!-- Program Section Start -->
+    <section class="container py-5 mb-5">
+      <div class="container py-5">
+        <div
+          class="text-center mx-auto mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 900px"
+        >
+          <h6>LIST OF</h6>
+          <h1 class="display-5 mb-4 text-primary" style="font-family: cinzel">
+            Our Program
+          </h1>
+          <p class="mb-0">
+            Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime.
+            Vel animi eveniet doloremque reiciendis soluta iste provident non
+            rerum illum perferendis earum est architecto dolores vitae quia vero
+            quod incidunt culpa corporis, porro doloribus. Voluptates nemo
+            doloremque cum.
+          </p>
+        </div>
+        <div class="row g-4 justify-content-center text-center mb-5">
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="my-3">
+              <a
+                href="#"
+                class="btn btn-primary d-inline rounded-pill px-5 py-3"
+                >More Features</a
+              >
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <!-- Program Section End -->
+
+    <!-- Update info section strart -->
+    <section class="container py-5 mb-5">
+      <div class="container">
+        <div
+          class="text-center mx-auto mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 900px"
+        >
+          <h6>LIST OF</h6>
+          <h1 class="display-5 mb-4 text-primary" style="font-family: cinzel">
+            Update Info
+          </h1>
+          <p class="mb-0">
+            Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime.
+            Vel animi eveniet doloremque reiciendis soluta iste provident non
+            rerum illum perferendis earum est architecto dolores vitae quia vero
+            quod incidunt culpa corporis, porro doloribus. Voluptates nemo
+            doloremque cum.
+          </p>
+        </div>
+      </div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="image-item">
+              <img
+                src="/img/blog-2.png"
+              />
+              <div class="image-overlay">
+                <div class="image-title">Haloooo</div>
+                <div class="image-description">
+                  nama saya adalah hallo
+                </div>
+              </div>
+            </div>
+            <div class="image-item">
+              <img
+                src="/img/blog-3.png"
+              />
+              <div class="image-overlay">
+                <div class="image-title">Haloooo</div>
+                <div class="image-description">
+                  nama saya adalah hallo
+                </div>
+              </div>
+            </div>
+            <div class="image-item">
+              <img
+                src="/img/blog-2.png"
+              />
+              <div class="image-overlay">
+                <div class="image-title">Haloooo</div>
+                <div class="image-description">
+                  nama saya adalah hallo
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="image-item">
+              <img
+                src="/img/blog-3.png"
+              />
+              <div class="image-overlay">
+                <div class="image-title">Haloooo</div>
+                <div class="image-description">
+                  nama saya adalah hallo
+                </div>
+              </div>
+            </div>
+            <div class="image-item">
+              <img
+                src="/img/blog-2.png"
+              />
+              <div class="image-overlay">
+                <div class="image-title">Haloooo</div>
+                <div class="image-description">
+                  nama saya adalah hallo
+                </div>
+              </div>
+            </div>
+            <div class="image-item">
+              <img
+                src="/img/blog-3.png"
+              />
+              <div class="image-overlay">
+                <div class="image-title">Haloooo</div>
+                <div class="image-description">
+                  nama saya adalah hallo
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <!-- update info section end -->
+
+        <!-- Student info Section Start -->
+    <section class="container py-5 mb-5">
+      <div class="container py-5">
+        <div
+          class="text-center mx-auto mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 900px"
+        >
+          <h6>choose plan</h6>
+          <h1 class="display-5 mb-4 text-primary" style="font-family: cinzel">
+            Student Info
+          </h1>
+          <p class="mb-0">
+            Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime.
+            Vel animi eveniet doloremque reiciendis soluta iste provident non
+            rerum illum perferendis earum est architecto dolores vitae quia vero
+            quod incidunt culpa corporis, porro doloribus. Voluptates nemo
+            doloremque cum.
+          </p>
+        </div>
+        <div class="row g-4 justify-content-center text-center mb-5">
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="my-3">
+              <a
+                href="#"
+                class="btn btn-primary d-inline rounded-pill px-5 py-3"
+                >More Features</a
+              >
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <!-- Student info Section End -->
+
+<section class="bg-overlay">
+    <div class="container py-5 mb-5">
+      <div class="container-fluid">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h4 class="display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s" style="font-family: cinzel; color: white;">Butuh informasi lebih lanjut hubungi kami</h4>
+                  <a 
+                href="/contact.html"
+                class="bi-telephone btn btn-primary rounded-pill py-3 px-5"
+                > Contact</a
+              >
+            </div>
+      </div>
+      </div>
+    </section>
+    
 
     <!-- Footer Start -->
     <footer class="footer-gradient">
@@ -434,6 +1003,7 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
@@ -601,6 +1171,90 @@
       setInterval(() => {
         calendar.updateCurrentDay();
       }, 60000);
+    </script>
+
+    <!-- script swiper -->
+    <script>
+      // Initialize Swiper
+      var swiper = new Swiper(".mySwiper", {
+        // Enable loop mode
+        loop: true,
+
+        // Auto play
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        // Pagination dots
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+
+        // Effects
+        effect: "slide",
+        speed: 800,
+
+        // Touch settings
+        touchRatio: 1,
+        touchAngle: 45,
+        grabCursor: true,
+
+        // Slides per view (always 1 since we have 3 images per slide)
+        slidesPerView: 1,
+        spaceBetween: 0,
+
+        // Responsive breakpoints for different layouts
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+        },
+      });
+
+      // Pause autoplay on hover
+      const swiperContainer = document.querySelector(".swiper");
+      swiperContainer.addEventListener("mouseenter", () => {
+        swiper.autoplay.stop();
+      });
+
+      swiperContainer.addEventListener("mouseleave", () => {
+        swiper.autoplay.start();
+      });
+
+      // Add loading effect
+      const images = document.querySelectorAll(".image-item img");
+      images.forEach((img) => {
+        img.addEventListener("load", function () {
+          this.parentElement.classList.add("loaded");
+        });
+      });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") {
+          swiper.slidePrev();
+        } else if (e.key === "ArrowRight") {
+          swiper.slideNext();
+        }
+      });
     </script>
   </body>
 </html>
