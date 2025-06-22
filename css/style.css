@@ -1420,4 +1420,37 @@
   position: relative;
   z-index: 2;
 }
+
+/* hover  background  Maps */
+.map-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease, background-color 0.4s ease;
+}
+
+.map-wrapper:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.4); /* neon kuning tipis */
+  background-color: rgba(255, 165, 0, 0.2);    /* latar oranye */
+}
+
+  .hover-box {
+    transition: all 0.3s ease;
+  }
+
+  .hover-box:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: #fefefe;
+    border-radius: 10px;
+  }
+
+  .hover-box a {
+    color: inherit;
+  }
+
+  .hover-box:hover a {
+    text-decoration: none;
+  }
+
  
