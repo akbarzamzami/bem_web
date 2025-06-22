@@ -1,170 +1,998 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>BEM POLSRI</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+  <link rel="icon" type="image/png" href="/img/logo.png">
+    <!-- Google Web Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Swiper Css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-    <head>
-        <meta charset="utf-8">
-        <title>Mailler - SaaS Website Template</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
 
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- css kalender -->
+    <style>
+      .calendar-day {
+        height: 40px;
+        border: 1px solid #dee2e6;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .calendar-day:hover {
+        background-color: #e9ecef;
+      }
+      .calendar-day.today {
+        background-color: var(--bs-primary);
+        color: white;
+      }
+      .calendar-day.selected {
+        background-color: #f8ae00;
+        color: white;
+      }
+      .calendar-day.other-month {
+        color: #6c757d;
+        background-color: #f8f9fa;
+      }
+      .calendar-header {
+        background-color: var(--bs-primary);
+        color: white;
+      }
+      .photo-card {
+        max-height: 500px;
+        overflow-y: auto;
+      }
+      .photo-item {
+        transition: transform 0.2s;
+      }
+      .photo-item:hover {
+        transform: scale(1.02);
+      }
+    </style>
+  </head>
 
-
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-    
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-
-    <body>
-
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-        <!-- Spinner End -->
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative">
-    <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
-      <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
-      <div class="d-flex flex-column">
-        <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
-        <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
-      </div>
-    </a>
-  
-    <!-- Toggle button for mobile -->
-    <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <div class="navbar-nav ms-auto py-0">
-        <a class="nav-item nav-link" href="index.html">Home</a>
-        <a class="nav-item nav-link" href="about.html">About</a>
-  
-        <!-- Academic Info Dropdown -->
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Academic Information
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="academicDropdown">
-            <li><a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a></li>
-            <li><a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a></li>
-          </ul>
-        </div>
-  
-        <!-- Campus Echo Dropdown -->
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Campus Echo
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="campusDropdown">
-            <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
-            <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
-            <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
-          </ul>
-        </div>
-  
-        <a class="nav-item nav-link active" href="contact.html">Contact Us</a>
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
       </div>
     </div>
-  </nav>
-  <!-- Navbar end -->
-  
-        <!-- About Start -->
-        <div class="container-fluid overflow-hidden py-4" style="margin-top: 3rem;">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="RotateMoveLeft">
-                            <img src="img/about-1.png" class="img-fluid w-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <h4 class="mb-1 text-primary">About Us</h4>
-                        <h1 class="display-5 mb-4">Get Started Easily With a Personalized Product Tour</h1>
-                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, suscipit itaque quaerat dicta porro illum, autem, molestias ut animi ab aspernatur dolorum officia nam dolore. Voluptatibus aliquam earum labore atque.
-                        </p>
-                        <a href="#" class="btn btn-primary rounded-pill py-3 px-5">About More</a>
-                    </div>
-                </div>
-            </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative"
+    >
+      <a
+        href="index.html"
+        class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center"
+      >
+        <img
+          src="img/logo.png"
+          alt="Logo"
+          style="height: 40px; margin-right: 10px"
+        />
+        <div class="d-flex flex-column">
+          <span class="text-black fw-bold" style="font-size: 18px"
+            >Kabinet Lentera Sriwijaya</span
+          >
+          <small class="text-black" style="font-size: 14px"
+            >BEM Politeknik Negeri Sriwijaya</small
+          >
         </div>
-        <!-- About End -->
+      </a>
 
+      <!-- Toggle button for mobile -->
+      <button
+        class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <!-- Service Start -->
-      <div class="container-fluid service py-4">
-        <div class="container py-4" style="margin-bottom: 80px;">
-        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-            <h4 class="mb-1 text-primary">Our Service</h4>
-            <h1 class="display-5 mb-4">What We Can Do For You</h1>
-            <p class="mb-0">Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime. Vel animi eveniet doloremque...</p>
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+          <a class="nav-item nav-link active" href="index.html">Home</a>
+          <a class="nav-item nav-link" href="about.html">About</a>
+
+          <!-- Academic Info Dropdown -->
+          <div class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="academicDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Academic Information
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+              <li>
+                <a class="dropdown-item" href="Academic Calendar.html"
+                  >Academic Calendar</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="Scholarship Info.html"
+                  >Scholarship Info</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Campus Echo Dropdown -->
+          <div class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="campusDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Campus Echo
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+              <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
+              <li>
+                <a class="dropdown-item" href="Bisik Kampus.html"
+                  >Bisik Kampus</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="Polsrifess.html">Polsrifess</a>
+              </li>
+            </ul>
+          </div>
+
+          <a class="nav-item nav-link" href="contact.html">Contact Us</a>
+        </div>
       </div>
-<!-- Service End -->
-              
-    <!-- Footer Start -->
-<footer class="footer-gradient">
-  <div class="container py-5" style="font-family: serif;">
-      <div class="row g-4">
-          <div class="col-12 col-md-6 col-xl-4">
-              <div class="fw-bold mb-3">FOLLOW US</div>
-              <div class="d-flex mb-3">
-                  <a href="#" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
-                  <a href="#" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
-                  <a href="#" class="social-icon me-2"><i class="fab fa-tiktok"></i></a>
-                  <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+    </nav>
+    <!-- Navbar end -->
+
+    <!-- About Section Start -->
+    <section
+      class="container-fluid bg-breadcrumb py-4"
+      style="background-size: cover; height: 100vh"
+    >
+      <ul class="breadcrumb-animation">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div>
+              <h4 class="mb-1">WELCOME TO</h4>
+              <h1
+                class="display-5 mb-2 text-primary"
+                style="font-family: cinzel"
+              >
+                BEM POLITEKNIK NEGERI SRIWIJAYA
+              </h1>
+              <p class="mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Accusantium, suscipit itaque quaerat dicta porro illum, autem,
+                molestias ut animi ab aspernatur dolorum officia nam dolore.
+                Voluptatibus aliquam earum labore atque.
+              </p>
+              <a
+                href="/about.html"
+                class="btn btn-primary rounded-pill py-3 px-5"
+                >About More</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6 wow fadeInUp text-center" data-wow-delay="0.3s">
+            <img src="img/logo.png" class="img-fluid w-50" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Visi Misi Section Start -->
+    <section class="container py-5 mb-5">
+      <div class="row g-5">
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div>
+            <h6 class="mb-1">WHO WE ARE</h6>
+            <h3 class="display-7 text-primary" style="font-family: cinzel">
+              Our Vision
+            </h3>
+            <p class="mb-4">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusantium, suscipit itaque quaerat dicta porro illum, autem,
+              molestias ut animi ab aspernatur dolorum officia nam dolore.
+              Voluptatibus aliquam earum labore atque.
+            </p>
+          </div>
+          <div>
+            <h3 class="display-7 text-primary" style="font-family: cinzel">
+              Our Mision
+            </h3>
+            <p class="mb-4">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Accusantium, suscipit itaque quaerat dicta porro illum, autem,
+              molestias ut animi ab aspernatur dolorum officia nam dolore.
+              Voluptatibus aliquam earum labore atque.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInUp text-center" data-wow-delay="0.3s">
+          <div class="position-relative d-inline-block w-100">
+            <img
+              src="img/pengurus.JPG"
+              class="img-visi-misi w-100 rounded-4"
+              alt=""
+            />
+            <img src="img/logo-bem-2.png" class="logo-overlay" alt="Logo" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Visi Misi Section End -->
+
+    <!-- kalender -->
+    <section>
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div>
+              <h3 class="display-7 text-primary" style="font-family: cinzel">
+                Timeline
+              </h3>
+              <h3 class="display-7 text-primary" style="font-family: cinzel">
+                BEM POLSRI 2025
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kalender -->
+        <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="card shadow-lg border-0">
+            <div class="card-header calendar-header">
+              <div class="row align-items-center">
+                <div class="col-3">
+                  <button class="btn btn-light btn-sm" id="prevMonth">
+                    <i class="bi bi-chevron-left"></i>
+                  </button>
+                </div>
+                <div class="col-6 text-center">
+                  <h5 class="mb-0 fw-bold" id="currentMonth"></h5>
+                </div>
+                <div class="col-3 text-end">
+                  <button class="btn btn-light btn-sm" id="nextMonth">
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                </div>
               </div>
-              <div class="d-flex align-items-center">
-                  <img src="img/logo.png" alt="Logo" height="35" class="me-2">
-                  <div class="small">
-                      BEM POLITEKNIK NEGERI SRIWIJAYA<br>
-                      KABINET LENTERA SRIWIJAYA
+            </div>
+            <div class="card-body p-0">
+              <!-- Header hari -->
+              <div class="row g-0 bg-light">
+                <div class="col text-center py-2 fw-bold text-muted">Min</div>
+                <div class="col text-center py-2 fw-bold text-muted">Sen</div>
+                <div class="col text-center py-2 fw-bold text-muted">Sel</div>
+                <div class="col text-center py-2 fw-bold text-muted">Rab</div>
+                <div class="col text-center py-2 fw-bold text-muted">Kam</div>
+                <div class="col text-center py-2 fw-bold text-muted">Jum</div>
+                <div class="col text-center py-2 fw-bold text-muted">Sab</div>
+              </div>
+              <!-- Grid kalender -->
+              <div id="calendarGrid"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row kedua untuk info -->
+        <div class="row g-4 mt-4">
+          <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="card info-card border-0 shadow">
+              <div class="card-body">
+                <h5 class="card-title text-primary">
+                  <i class="bi bi-calendar-event"></i> Informasi Tanggal
+                </h5>
+                <p class="card-text mb-0" id="selectedDateInfo">
+                  Pilih tanggal pada kalender untuk melihat informasi kegiatan
+                  BEM POLSRI
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="card border-0 shadow">
+              <div class="card-body text-center">
+                <div
+                  class="display-4 text-primary fw-bold"
+                  id="todayDate"
+                ></div>
+                <h6 class="text-muted mb-0">Hari Ini</h6>
+                <small class="text-muted" id="todayName"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end kalender -->
+
+    <!-- Program Section Start -->
+    <section class="container py-5 mb-5">
+      <div class="container py-5">
+        <div
+          class="text-center mx-auto mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 900px"
+        >
+          <h6>LIST OF</h6>
+          <h1 class="display-5 mb-4 text-primary" style="font-family: cinzel">
+            Our Program
+          </h1>
+          <p class="mb-0">
+            Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime.
+            Vel animi eveniet doloremque reiciendis soluta iste provident non
+            rerum illum perferendis earum est architecto dolores vitae quia vero
+            quod incidunt culpa corporis, porro doloribus. Voluptates nemo
+            doloremque cum.
+          </p>
+        </div>
+        <div class="row g-4 justify-content-center text-center mb-5">
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
                   </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
               </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="my-3">
+              <a
+                href="#"
+                class="btn btn-primary d-inline rounded-pill px-5 py-3"
+                >More Features</a
+              >
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <!-- Program Section End -->
+
+    <!-- Update info section strart -->
+    <section class="container py-5 mb-5">
+      <div class="container">
+        <div
+          class="text-center mx-auto mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 900px"
+        >
+          <h6>LIST OF</h6>
+          <h1 class="display-5 mb-4 text-primary" style="font-family: cinzel">
+            Update Info
+          </h1>
+          <p class="mb-0">
+            Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime.
+            Vel animi eveniet doloremque reiciendis soluta iste provident non
+            rerum illum perferendis earum est architecto dolores vitae quia vero
+            quod incidunt culpa corporis, porro doloribus. Voluptates nemo
+            doloremque cum.
+          </p>
+        </div>
+      </div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="image-item">
+              <img
+                src="/img/blog-2.png"
+              />
+              <div class="image-overlay">
+                <div class="image-title">Haloooo</div>
+                <div class="image-description">
+                  nama saya adalah hallo
+                </div>
+              </div>
+            </div>
+            <div class="image-item">
+              <img
+                src="/img/blog-3.png"
+              />
+              <div class="image-overlay">
+                <div class="image-title">Haloooo</div>
+                <div class="image-description">
+                  nama saya adalah hallo
+                </div>
+              </div>
+            </div>
+            <div class="image-item">
+              <img
+                src="/img/blog-2.png"
+              />
+              <div class="image-overlay">
+                <div class="image-title">Haloooo</div>
+                <div class="image-description">
+                  nama saya adalah hallo
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="image-item">
+              <img
+                src="/img/blog-3.png"
+              />
+              <div class="image-overlay">
+                <div class="image-title">Haloooo</div>
+                <div class="image-description">
+                  nama saya adalah hallo
+                </div>
+              </div>
+            </div>
+            <div class="image-item">
+              <img
+                src="/img/blog-2.png"
+              />
+              <div class="image-overlay">
+                <div class="image-title">Haloooo</div>
+                <div class="image-description">
+                  nama saya adalah hallo
+                </div>
+              </div>
+            </div>
+            <div class="image-item">
+              <img
+                src="/img/blog-3.png"
+              />
+              <div class="image-overlay">
+                <div class="image-title">Haloooo</div>
+                <div class="image-description">
+                  nama saya adalah hallo
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+    <!-- update info section end -->
+
+        <!-- Student info Section Start -->
+    <section class="container py-5 mb-5">
+      <div class="container py-5">
+        <div
+          class="text-center mx-auto mb-5 wow fadeInUp"
+          data-wow-delay="0.1s"
+          style="max-width: 900px"
+        >
+          <h6>choose plan</h6>
+          <h1 class="display-5 mb-4 text-primary" style="font-family: cinzel">
+            Student Info
+          </h1>
+          <p class="mb-0">
+            Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime.
+            Vel animi eveniet doloremque reiciendis soluta iste provident non
+            rerum illum perferendis earum est architecto dolores vitae quia vero
+            quod incidunt culpa corporis, porro doloribus. Voluptates nemo
+            doloremque cum.
+          </p>
+        </div>
+        <div class="row g-4 justify-content-center text-center mb-5">
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.7s"
+          >
+            <div class="card-3">
+              <div class="card-3-inner">
+                <div class="card-3-front">
+                  <img src="/img/blog-4.png" alt="Ocean View" />
+                  <div class="content">
+                    <h3>Ocean Paradise</h3>
+                    <p>
+                      Nikmati ketenangan pantai dengan ombak yang menenangkan.
+                    </p>
+                  </div>
+                </div>
+                <div class="card-3-back">
+                  <h3>Special Offer!</h3>
+                  <p>
+                    Dapatkan diskon 30% untuk paket liburan pantai. Termasuk
+                    akomodasi dan aktivitas water sports.
+                  </p>
+                  <button class="btn btn-primary">Claim Offer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="my-3">
+              <a
+                href="#"
+                class="btn btn-primary d-inline rounded-pill px-5 py-3"
+                >More Features</a
+              >
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <!-- Student info Section End -->
+
+<section class="bg-overlay">
+    <div class="container py-5 mb-5">
+      <div class="container-fluid">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h4 class="display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s" style="font-family: cinzel; color: white;">Butuh informasi lebih lanjut hubungi kami</h4>
+                  <a 
+                href="/contact.html"
+                class="bi-telephone btn btn-primary rounded-pill py-3 px-5"
+                > Contact</a
+              >
+            </div>
+      </div>
+      </div>
+    </section>
+    
+
+    <!-- Footer Start -->
+    <footer class="footer-gradient">
+      <div class="container py-5" style="font-family: serif">
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="fw-bold mb-3">FOLLOW US</div>
+            <div class="d-flex mb-3">
+              <a href="#" class="social-icon me-2"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon me-2"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+              <a href="#" class="social-icon me-2"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="d-flex align-items-center">
+              <img src="img/logo.png" alt="Logo" height="35" class="me-2" />
+              <div class="small">
+                BEM POLITEKNIK NEGERI SRIWIJAYA<br />
+                KABINET LENTERA SRIWIJAYA
+              </div>
+            </div>
           </div>
           <div class="col-12 col-md-6 col-xl-4">
-              <div class="fw-bold mb-3">More Information</div>
-              <a href="#" class="footer-link d-block mb-1">Contact Us</a>
-              <a href="#" class="footer-link d-block mb-1">About Us</a>
-              <a href="Terms and Conditions.html" class="footer-link d-block">Terms and Conditions</a>
+            <div class="fw-bold mb-3">More Information</div>
+            <a href="#" class="footer-link d-block mb-1">Contact Us</a>
+            <a href="#" class="footer-link d-block mb-1">About Us</a>
+            <a href="Terms and Conditions.html" class="footer-link d-block"
+              >Terms and Conditions</a
+            >
           </div>
           <div class="col-12 col-xl-4">
-              <div class="fw-bold mb-3">Developed By</div>
-              <div class="small">Departemen Media Informasi</div>
-              <div class="small">BEM POLSRI 2025</div>
+            <div class="fw-bold mb-3">Developed By</div>
+            <div class="small">Departemen Media Informasi</div>
+            <div class="small">BEM POLSRI 2025</div>
           </div>
+        </div>
+        <hr class="my-4" />
+        <div class="footer-bottom text-center small">
+          &copy; 2025 Departemen Media Informasi BEM POLSRI. All rights
+          reserved.
+        </div>
       </div>
-      <hr class="my-4">
-      <div class="footer-bottom text-center small">
-          &copy; 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
-      </div>
-  </div>
-</footer>
-<!-- Footer End -->
+    </footer>
+    <!-- Footer End -->
 
-     <!-- Back to Top -->
-     <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top"
+      ><i class="fa fa-arrow-up"></i
+    ></a>
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -174,10 +1002,259 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    </body>
 
+    <!-- Script kalender -->
+    <script>
+      class BootstrapCalendar {
+        constructor() {
+          this.currentDate = new Date();
+          this.selectedDate = null;
+          this.today = new Date();
+
+          this.monthNames = [
+            "Januari",
+            "Februari",
+            "Maret",
+            "April",
+            "Mei",
+            "Juni",
+            "Juli",
+            "Agustus",
+            "September",
+            "Oktober",
+            "November",
+            "Desember",
+          ];
+
+          this.init();
+        }
+
+        init() {
+          this.renderCalendar();
+          this.bindEvents();
+          this.updateCurrentDay();
+        }
+
+        bindEvents() {
+          document.getElementById("prevMonth").addEventListener("click", () => {
+            this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+            this.renderCalendar();
+          });
+
+          document.getElementById("nextMonth").addEventListener("click", () => {
+            this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+            this.renderCalendar();
+          });
+        }
+
+        renderCalendar() {
+          const year = this.currentDate.getFullYear();
+          const month = this.currentDate.getMonth();
+
+          // Update header
+          document.getElementById(
+            "currentMonth"
+          ).textContent = `${this.monthNames[month]} ${year}`;
+
+          // Get first day of month and number of days
+          const firstDay = new Date(year, month, 1);
+          const lastDay = new Date(year, month + 1, 0);
+          const daysInMonth = lastDay.getDate();
+          const startingDayOfWeek = firstDay.getDay();
+
+          // Get previous month days
+          const prevMonth = new Date(year, month, 0);
+          const daysInPrevMonth = prevMonth.getDate();
+
+          let html = "";
+          let dayCount = 1;
+          let nextMonthDay = 1;
+
+          // Generate 6 weeks
+          for (let week = 0; week < 6; week++) {
+            html += '<div class="row g-0">';
+
+            for (let day = 0; day < 7; day++) {
+              const cellIndex = week * 7 + day;
+              let cellContent = "";
+              let cellClass =
+                "col calendar-day d-flex align-items-center justify-content-center";
+              let cellDate = "";
+
+              if (cellIndex < startingDayOfWeek) {
+                // Previous month days
+                const prevDay =
+                  daysInPrevMonth - startingDayOfWeek + cellIndex + 1;
+                cellContent = prevDay;
+                cellClass += " other-month";
+                cellDate = `${year}-${month}-${prevDay}`;
+              } else if (dayCount <= daysInMonth) {
+                // Current month days
+                cellContent = dayCount;
+                cellDate = `${year}-${month + 1}-${dayCount}`;
+
+                // Check if today
+                if (
+                  year === this.today.getFullYear() &&
+                  month === this.today.getMonth() &&
+                  dayCount === this.today.getDate()
+                ) {
+                  cellClass += " today";
+                }
+
+                dayCount++;
+              } else {
+                // Next month days
+                cellContent = nextMonthDay;
+                cellClass += " other-month";
+                cellDate = `${year}-${month + 2}-${nextMonthDay}`;
+                nextMonthDay++;
+              }
+
+              html += `<div class="${cellClass}" data-date="${cellDate}" onclick="calendar.selectDate('${cellDate}', ${cellContent})">${cellContent}</div>`;
+            }
+
+            html += "</div>";
+          }
+
+          document.getElementById("calendarGrid").innerHTML = html;
+        }
+
+        selectDate(dateStr, day) {
+          // Remove previous selection
+          document.querySelectorAll(".calendar-day.selected").forEach((el) => {
+            el.classList.remove("selected");
+          });
+
+          // Add selection to clicked date
+          event.target.classList.add("selected");
+
+          // Update selected date info
+          const [year, month, dayNum] = dateStr.split("-");
+          const monthName = this.monthNames[parseInt(month) - 1];
+          const dateObj = new Date(year, month - 1, dayNum);
+          const dayNames = [
+            "Minggu",
+            "Senin",
+            "Selasa",
+            "Rabu",
+            "Kamis",
+            "Jumat",
+            "Sabtu",
+          ];
+          const dayName = dayNames[dateObj.getDay()];
+
+          document.getElementById("selectedDateInfo").innerHTML = `
+                    <strong>Tanggal Terpilih:</strong><br>
+                    ${dayName}, ${day} ${monthName} ${year}<br>
+                    <small class="text-muted">Klik tanggal lain untuk mengubah pilihan</small>
+                `;
+        }
+
+        updateCurrentDay() {
+          const today = new Date();
+          document.getElementById("todayDate").textContent = today.getDate();
+          document.getElementById("todayName").textContent =
+            this.monthNames[today.getMonth()] + " " + today.getFullYear();
+        }
+      }
+
+      // Initialize calendar
+      const calendar = new BootstrapCalendar();
+
+      // Update current day every minute
+      setInterval(() => {
+        calendar.updateCurrentDay();
+      }, 60000);
+    </script>
+
+    <!-- script swiper -->
+    <script>
+      // Initialize Swiper
+      var swiper = new Swiper(".mySwiper", {
+        // Enable loop mode
+        loop: true,
+
+        // Auto play
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        // Pagination dots
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+
+        // Effects
+        effect: "slide",
+        speed: 800,
+
+        // Touch settings
+        touchRatio: 1,
+        touchAngle: 45,
+        grabCursor: true,
+
+        // Slides per view (always 1 since we have 3 images per slide)
+        slidesPerView: 1,
+        spaceBetween: 0,
+
+        // Responsive breakpoints for different layouts
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          1024: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+        },
+      });
+
+      // Pause autoplay on hover
+      const swiperContainer = document.querySelector(".swiper");
+      swiperContainer.addEventListener("mouseenter", () => {
+        swiper.autoplay.stop();
+      });
+
+      swiperContainer.addEventListener("mouseleave", () => {
+        swiper.autoplay.start();
+      });
+
+      // Add loading effect
+      const images = document.querySelectorAll(".image-item img");
+      images.forEach((img) => {
+        img.addEventListener("load", function () {
+          this.parentElement.classList.add("loaded");
+        });
+      });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") {
+          swiper.slidePrev();
+        } else if (e.key === "ArrowRight") {
+          swiper.slideNext();
+        }
+      });
+    </script>
+  </body>
 </html>
