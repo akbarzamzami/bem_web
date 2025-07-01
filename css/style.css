@@ -1453,4 +1453,28 @@
     text-decoration: none;
   }
 
- 
+  .kajian-image {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.4); /* bayangan kuning */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.kajian-image:hover {
+    transform: scale(1.05);
+}
+
+.kajian-btn {
+  background-color: #e05800;
+  color: #fff;
+  border: 2px solid #e05800;
+  transition: all 0.3s ease;
+}
+
+.kajian-btn:hover {
+  background-color: #d7ad23;
+  border-color: #d7ad23;
+  color: #fff;
+}
