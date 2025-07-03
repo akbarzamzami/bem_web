@@ -1,424 +1,766 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Academic Calendar - BEM POLSRI</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+    <link rel="icon" type="image/png" href="/img/logo.png" />
+    <!-- Google Web Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Swiper Css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-    <head>
-        <meta charset="utf-8">
-        <title>Mailler - SaaS Website Template</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-
-    <body>
-
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+ 
+</head>
+</html>
+<body>
+             <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative"
+    >
+      <a
+        href="index.html"
+        class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center"
+      >
+        <img
+          src="img/logo.png"
+          alt="Logo"
+          style="height: 40px; margin-right: 10px"
+        />
+        <div class="d-flex flex-column">
+          <span class="text-black fw-bold" style="font-size: 18px"
+            >Kabinet Lentera Sriwijaya</span
+          >
+          <small class="text-black" style="font-size: 14px"
+            >BEM Politeknik Negeri Sriwijaya</small
+          >
         </div>
-        <!-- Spinner End -->
+      </a>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative">
-    <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
-      <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
-      <div class="d-flex flex-column">
-        <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
-        <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
-      </div>
-    </a>
-  
-    <!-- Toggle button for mobile -->
-    <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <div class="navbar-nav ms-auto py-0">
-        <a class="nav-item nav-link" href="index.html">Home</a>
-        <a class="nav-item nav-link" href="about.html">About</a>
-  
-        <!-- Academic Info Dropdown -->
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Academic Information
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="academicDropdown">
-            <li><a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a></li>
-            <li><a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a></li>
-          </ul>
-        </div>
-  
-        <!-- Campus Echo Dropdown -->
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Campus Echo
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="campusDropdown">
-            <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
-            <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
-            <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
-          </ul>
-        </div>
-  
-        <a class="nav-item nav-link active" href="contact.html">Contact Us</a>
-      </div>
-    </div>
-  </nav>
-  <!-- Navbar end -->
-  
+      <!-- Toggle button for mobile -->
+      <button
+        class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-         <!-- Header Start -->
-         <div class="container-fluid bg-breadcrumb">
-            <ul class="breadcrumb-animation">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-0">
+          <a class="nav-item nav-link" href="index.html">Home</a>
+          <a class="nav-item nav-link" href="about.html">About</a>
+
+          <!-- Academic Info Dropdown -->
+          <div class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="academicDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Academic Information
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+              <li>
+                <a class="dropdown-item active" href="Academic Calendar.html">Academic Calendar</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="Scholarship Info.html"
+                  >Scholarship Info</a
+                >
+              </li>
             </ul>
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Price Plan</h1>
-                <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-primary">Price</li>
-                </ol>    
-            </div>
+          </div>
+
+          <!-- Campus Echo Dropdown -->
+          <div class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="campusDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Campus Echo
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+              <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
+              <li>
+                <a class="dropdown-item" href="Bisik Kampus.html"
+                  >Bisik Kampus</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="Polsrifess.html">Polsrifess</a>
+              </li>
+            </ul>
+          </div>
+
+          <a class="nav-item nav-link" href="contact.html">Contact Us</a>
         </div>
-        <!-- Header End -->
-
-
-        <!-- Pricing Start -->
-        <div class="container-fluid price py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                    <h4 class="text-primary">Pricing Plan</h4>
-                    <h1 class="display-5 mb-4">Not Sure Which Plan Is For You?</h1>
-                    <p class="mb-0">Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime. Vel animi eveniet doloremque reiciendis soluta iste provident non rerum illum perferendis earum est architecto dolores vitae quia vero quod incidunt culpa corporis, porro doloribus. Voluptates nemo doloremque cum.
-                    </p>
-                </div>
-                <div class="row g-5 justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="price-item bg-light rounded text-center">
-                            <div class="text-center text-dark border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 160px;">
-                                <p class="fs-2 fw-bold text-uppercase mb-0">BASIC</p>
-                                <div class="d-flex justify-content-center">
-                                    <strong class="align-self-start">$</strong>
-                                    <p class="mb-0"><span class="display-5">00</span>/mo</p>
-                                </div>                        
-                            </div>
-                            <div class="text-start p-5">
-                                <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
-                                <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
-                                <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
-                                <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
-                                <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="price-item bg-light rounded text-center">
-                            <div class="pice-item-offer">Popular</div>
-                            <div class="text-center text-primary border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 160px;">
-                                <p class="fs-2 fw-bold text-uppercase mb-0">Standard</p>
-                                <div class="d-flex justify-content-center">
-                                    <strong class="align-self-start">$</strong>
-                                    <p class="mb-0"><span class="display-5">23</span>/mo</p>
-                                </div>                        
-                            </div>
-                            <div class="text-start p-5">
-                                <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
-                                <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
-                                <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
-                                <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
-                                <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="price-item bg-light rounded text-center">
-                            <div class="text-center text-secondary border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 160px;">
-                                <p class="fs-2 fw-bold text-uppercase mb-0">Premium</p>
-                                <div class="d-flex justify-content-center">
-                                    <strong class="align-self-start">$</strong>
-                                    <p class="mb-0"><span class="display-5">49</span>/mo</p>
-                                </div>                        
-                            </div>
-                            <div class="text-start p-5">
-                                <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
-                                <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
-                                <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
-                                <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
-                                <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
-                                <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Pricing End -->
-
-
-        <!-- FAQ Start -->
-        <div class="container-fluid FAQ bg-light overflow-hidden py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                       <div class="accordion" id="accordionExample">
-                            <div class="accordion-item border-0 mb-4">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseTOne">
-                                        Why did you choose Our Email Services?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body my-2">
-                                        <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit, sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta distinctio hic fuga odio excepturi ducimus sequi at. Doloribus, non aspernatur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0 mb-4">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Are there any hidden charges? 
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body my-2">
-                                        <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit, sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta distinctio hic fuga odio excepturi ducimus sequi at. Doloribus, non aspernatur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        What are the key challenges of email marketing?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body my-2">
-                                        <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit, sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta distinctio hic fuga odio excepturi ducimus sequi at. Doloribus, non aspernatur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-                        <div class="FAQ-img RotateMoveRight rounded">
-                            <img src="img/about-1.png" class="img-fluid w-100" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- FAQ End -->
-
-
-        <!-- Feature Start -->
-        <div class="container-fluid feature overflow-hidden py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                    <h4 class="text-primary">Our Feature</h4>
-                    <h1 class="display-5 mb-4">Important Features For Email Marketing</h1>
-                    <p class="mb-0">Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime. Vel animi eveniet doloremque reiciendis soluta iste provident non rerum illum perferendis earum est architecto dolores vitae quia vero quod incidunt culpa corporis, porro doloribus. Voluptates nemo doloremque cum.
-                    </p>
-                </div>
-                <div class="row g-4 justify-content-center text-center mb-5">
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="text-center p-4">
-                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-envelope fa-5x text-secondary"></i></div>
-                            <div class="feature-content">
-                                <a href="#" class="h4">Email Marketing <i class="fa fa-long-arrow-alt-right"></i></a>
-                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="text-center p-4">
-                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-mail-bulk fa-5x text-secondary"></i></div>
-                            <div class="feature-content">
-                                <a href="#" class="h4">Email Builder <i class="fa fa-long-arrow-alt-right"></i></a>
-                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="text-center rounded p-4">
-                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-sitemap fa-5x text-secondary"></i></div>
-                            <div class="feature-content">
-                                <a href="#" class="h4">Customer Builder <i class="fa fa-long-arrow-alt-right"></i></a>
-                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="text-center rounded p-4">
-                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-tasks fa-5x text-secondary"></i></div>
-                            <div class="feature-content">
-                                <a href="#" class="h4">Campaign Manager <i class="fa fa-long-arrow-alt-right"></i></a>
-                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="my-3">
-                            <a href="#" class="btn btn-primary d-inline rounded-pill px-5 py-3">More Features</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-5 pt-5" style="margin-top: 6rem;">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                        <div class="feature-img RotateMoveLeft h-100" style="object-fit: cover;">
-                            <img src="img/features-1.png" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
-                        <h4 class="text-primary">Fearutes</h4>
-                        <h1 class="display-5 mb-4">Push Your Visitors Into Happy Customers</h1>
-                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, suscipit itaque quaerat dicta porro illum, autem, molestias ut animi ab aspernatur dolorum officia nam dolore. Voluptatibus aliquam earum labore atque.
-                        </p>
-                        <div class="row g-4">
-                            <div class="col-6">
-                                <div class="d-flex">
-                                    <i class="fas fa-newspaper fa-4x text-secondary"></i>
-                                    <div class="d-flex flex-column ms-3">
-                                        <h2 class="mb-0 fw-bold">285</h2>
-                                        <small class="text-dark">Created Projects</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex">
-                                    <i class="fas fa-users fa-4x text-secondary"></i>
-                                    <div class="d-flex flex-column ms-3">
-                                        <h2 class="mb-0 fw-bold">6560</h2>
-                                        <small class="text-dark">Happy Clients</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="my-4">
-                            <a href="#" class="btn btn-primary rounded-pill py-3 px-5">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Feature End -->
-
-   <!-- Footer Start -->
-<footer class="footer-gradient">
-    <div class="container py-5" style="font-family: serif;">
-        <div class="row g-4">
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="fw-bold mb-3">FOLLOW US</div>
-                <div class="d-flex mb-3">
-                    <a href="#" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" class="social-icon me-2"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                </div>
-                <div class="d-flex align-items-center">
-                    <img src="img/logo.png" alt="Logo" height="35" class="me-2">
-                    <div class="small">
-                        BEM POLITEKNIK NEGERI SRIWIJAYA<br>
-                        KABINET LENTERA SRIWIJAYA
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="fw-bold mb-3">More Information</div>
-                <a href="#" class="footer-link d-block mb-1">Contact Us</a>
-                <a href="#" class="footer-link d-block mb-1">About Us</a>
-                <a href="Terms and Conditions.html" class="footer-link d-block">Terms and Conditions</a>
-            </div>
-            <div class="col-12 col-xl-4">
-                <div class="fw-bold mb-3">Developed By</div>
-                <div class="small">Departemen Media Informasi</div>
-                <div class="small">BEM POLSRI 2025</div>
-            </div>
-        </div>
-        <hr class="my-4">
-        <div class="footer-bottom text-center small">
-            &copy; 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
-        </div>
-    </div>
-</footer>
-<!-- Footer End -->
-
-     <!-- Back to Top -->
-     <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
-        
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+      </div>
+    </nav>
+    <!-- Navbar end -->   
     
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Beasiswa - Politeknik Negeri Sriwijaya</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title h1 {
+            font-size: 2.5rem;
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        .page-title p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Scholarship Grid */
+        .scholarship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .scholarship-card {
+            background: white;
+            border: 2px solid #ff6b35;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scholarship-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #ff6b35;
+        }
+
+        .scholarship-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            border-color: #e55a2b;
+        }
+
+        .scholarship-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .scholarship-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .scholarship-provider {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .scholarship-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .scholarship-amount {
+            background: #ff6b35;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .scholarship-deadline {
+            background: #ff8c66;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+
+        .scholarship-summary {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-detail {
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .btn-detail:hover {
+            background: #e55a2b;
+            transform: scale(1.02);
+        }
+
+        /* Detail Section (Hidden by default) */
+        .scholarship-details {
+            display: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #ff6b35;
+        }
+
+        .scholarship-details.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 1000px;
+            }
+        }
+
+        .detail-section {
+            margin-bottom: 2rem;
+        }
+
+        .detail-section h3 {
+            color: #ff6b35;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .detail-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .detail-section li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .detail-section li:last-child {
+            border-bottom: none;
+        }
+
+        .detail-section li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .close-details {
+            background: #666;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .close-details:hover {
+            background: #555;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #ff6b35;
+            min-width: 200px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ff6b35;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.8rem;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .page-title h1 {
+                font-size: 2rem;
+            }
+
+            .scholarship-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                gap: 2rem;
+            }
+
+            .stat-item {
+                min-width: auto;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Page Title -->
+        <section class="page-title">
+            <h1>Explore scholarship</h1>
+            <p>Politeknik Negeri Sriwijaya</p>
+            <p>Politeknik Negeri Sriwijaya (Polsri) menyediakan berbagai program beasiswa bagi mahasiswa berprestasi maupun yang membutuhkan bantuan finansial, sebagai bentuk komitmen dalam mendukung pendidikan yang merata dan berkualitas. Melalui kerja sama dengan instansi pemerintah maupun swasta, Polsri membuka kesempatan luas bagi seluruh mahasiswa untuk mendapatkan dukungan biaya pendidikan selama masa studi.</p>
+        </section>
+
+    
+        <!-- Scholarship Grid -->
+        <section class="scholarship-grid" id="scholarshipGrid">
+            <!-- Cards will be generated by JavaScript -->
+        </section>
+    </main>
+
+    
+    <script>
+        // Sample scholarship data
+        const scholarships = [
+            {
+                id: 1,
+                title: "Beasiswa KIP Kuliah 2025",
+                provider: "Kementerian Pendidikan dan Kebudayaan",
+                amount: "Rp 2.400.000/semester",
+                deadline: "31 Maret 2025",
+                summary: " Beasiswa dari pemerintah pusat yang ditujukan untuk mahasiswa baru yang berasal dari keluarga kurang mampu namun memiliki prestasi akademik yang baik. Beasiswa ini mencakup biaya kuliah penuh serta bantuan biaya hidup.",
+                 requirements: [
+                ],
+                benefits: [
+                ]
+            },
+            {
+                id: 2,
+                title: "Beasiswa Bidikmisi",
+                provider: "Direktorat Jenderal Pendidikan Tinggi",
+                amount: "Rp 2.400.000/semester",
+                deadline: "15 April 2025",
+                summary: "Beasiswa Bidikmisi adalah program bantuan biaya pendidikan dari pemerintah yang ditujukan untuk mahasiswa dari keluarga kurang mampu secara ekonomi namun memiliki potensi akademik yang baik. Beasiswa ini tidak hanya membebaskan biaya kuliah, tetapi juga memberikan tunjangan biaya hidup setiap semester.",
+                requirements: [
+                ],
+                benefits: [
+                ]
+            },
+            {
+                id: 3,
+                title: "Beasiswa Prestasi Akademik",
+                provider: "Politeknik Negeri Sriwijaya",
+                amount: "Rp 1.500.000/semester",
+                deadline: "20 Mei 2025",
+                summary: "Beasiswa Prestasi Akademik diberikan oleh Politeknik Negeri Sriwijaya sebagai bentuk apresiasi kepada mahasiswa aktif yang memiliki pencapaian akademik tinggi. Beasiswa ini bertujuan untuk memotivasi mahasiswa agar terus meningkatkan prestasi dan berkontribusi positif bagi institusi.",
+                requirements: [
+                ],
+                benefits: [
+                ]
+            },
+            {
+                id: 4,
+                title: "Beasiswa Karya Salemba Empat",
+                provider: "Yayasan Karya Salemba Empat",
+                amount: "Rp 750.000/Bulan",
+                deadline: "10 Juni 2025",
+                summary: "Beasiswa ini bertujuan untuk membantu mahasiswa yang membutuhkan bantuan finansial, serta menyiapkan mereka menjadi lulusan yang berintegritas dan memiliki wawasan kebangsaan yang tinggi.",
+                requirements: [
+                ],
+                benefits: [
+                ]
+            },
+            {
+                id: 5,
+                title: "Beasiswa Bank Indonesia",
+                provider: "Bank Indonesia",
+                amount: "Rp 1.200.000/bulan",
+                deadline: "25 Juli 2025",
+                summary: "Diberikan kepada mahasiswa berprestasi dari berbagai jurusan. Selain bantuan dana, penerima beasiswa juga mendapat pelatihan soft skill dan jaringan alumni GenBI (Generasi Baru Indonesia).",
+                requirements: [  
+                ],
+                benefits: [
+                ]
+            },
+            {
+                id: 6,
+                title: "Beasiswa Djarum Plus",
+                provider: "Djarum Foundation",
+                amount: "Rp 1.000.000/bulan",
+                deadline: "30 September 2025",
+                summary: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit.",
+                requirements: [
+                    
+                ],
+                benefits: [
+                   
+                ]
+            }
+        ];
+
+        // Generate scholarship cards
+        function generateScholarshipCards() {
+            const grid = document.getElementById('scholarshipGrid');
+            grid.innerHTML = '';
+
+            scholarships.forEach(scholarship => {
+                const card = document.createElement('div');
+                card.className = 'scholarship-card';
+                card.innerHTML = `
+                    <div class="scholarship-header">
+                        <h3 class="scholarship-title">${scholarship.title}</h3>
+                        <p class="scholarship-provider">${scholarship.provider}</p>
+                        <div class="scholarship-meta">
+                            <div class="scholarship-amount">${scholarship.amount}</div>
+                            <div class="scholarship-deadline">Deadline: ${scholarship.deadline}</div>
+                        </div>
+                    </div>
+                    <p class="scholarship-summary">${scholarship.summary}</p>
+                    <button class="btn-detail" onclick="toggleDetails(${scholarship.id}, this)">Lihat Detail</button>
+                    
+                    <div class="scholarship-details" id="details-${scholarship.id}">
+                        <div class="detail-section">
+                            <h3></h3>
+                            <ul>
+                                ${scholarship.requirements.map(req => `<li>${req}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3></h3>
+                            <ul>
+                                ${scholarship.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        <button class="close-details" onclick="closeDetails(${scholarship.id})">Tutup Detail</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Toggle scholarship details
+        function toggleDetails(scholarshipId, button) {
+            const detailsDiv = document.getElementById(`details-${scholarshipId}`);
+            
+            if (detailsDiv.classList.contains('show')) {
+                detailsDiv.classList.remove('show');
+                button.textContent = 'Lihat Detail';
+            } else {
+                // Close all other details first
+                document.querySelectorAll('.scholarship-details.show').forEach(detail => {
+                    detail.classList.remove('show');
+                });
+                document.querySelectorAll('.btn-detail').forEach(btn => {
+                    btn.textContent = 'Lihat Detail';
+                });
+                
+                // Show current details
+                detailsDiv.classList.add('show');
+                button.textContent = 'Sembunyikan';
+            }
+        }
+
+        // Close scholarship details
+        function closeDetails(scholarshipId) {
+            const detailsDiv = document.getElementById(`details-${scholarshipId}`);
+            const button = detailsDiv.parentElement.querySelector('.btn-detail');
+            
+            detailsDiv.classList.remove('show');
+            button.textContent = 'Lihat Detail';
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            generateScholarshipCards();
+        });
+    </script>
+</body>
+</html>
+
+
+     <!-- Footer Start -->
+        <footer class="footer-gradient">
+            <div class="container py-5" style="font-family: serif;">
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div class="fw-bold mb-3">FOLLOW US</div>
+                        <div class="d-flex mb-3">
+                            <a href="#" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" class="social-icon me-2"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img src="img/logo.png" alt="Logo" height="35" class="me-2">
+                            <div class="small">
+                                BEM POLITEKNIK NEGERI SRIWIJAYA<br>
+                                KABINET LENTERA SRIWIJAYA
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div class="fw-bold mb-3">More Information</div>
+                        <a href="#" class="footer-link d-block mb-1">Contact Us</a>
+                        <a href="#" class="footer-link d-block mb-1">About Us</a>
+                        <a href="Terms and Conditions.html" class="footer-link d-block">Terms and Conditions</a>
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="fw-bold mb-3">Developed By</div>
+                        <div class="small">Departemen Media Informasi</div>
+                        <div class="small">BEM POLSRI 2025</div>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="footer-bottom text-center small">
+                    &copy; 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+         
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
     </body>
 
 </html>
+</body>
+    
