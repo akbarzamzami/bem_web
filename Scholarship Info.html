@@ -1,359 +1,641 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Beasiswa - Politeknik Negeri Sriwijaya</title>
+    
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
 
-    <head>
-        <meta charset="utf-8">
-        <title>Mailler - SaaS Website Template</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+    <!-- Bootstrap CSS -->
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+    .judul-beasiswa,
+    .subjudul-beasiswa {
+    color: #e05800; /* Warna oranye senada */
+}
 
-    <body>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
 
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+        
+
+    .navbar-nav .nav-link {
+        font-weight: 500;
+        margin-left: 1rem;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+        color: #e65c00;
+    }
+
+    .navbar-nav .nav-link.active {
+        font-weight: 600;
+    }
+
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 10px 0;
+        }
+
+        .dropdown-item {
+            padding: 8px 20px;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .dropdown-item.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Spinner */
+        #spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            color: #007bff;
+        }
+
+         /* Hero Section */
+        .bg-breadcrumb {
+            background: none; /* menghapus gradient hijau */
+            color: #2c5530;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .breadcrumb-animation {
+            display: none; /* menyembunyikan animasi bulat putih */
+        }
+        .breadcrumb-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .breadcrumb-animation li {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+
+        .display-3 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin: 0;
+        }
+
+        .breadcrumb-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .breadcrumb-item a:hover {
+            color: white;
+        }
+
+        .breadcrumb-item.active {
+            color: #ffd700;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #2c5530;
+            font-weight: 700;
+        }
+
+        /* Scholarship Grid */
+        .scholarship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .scholarship-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .scholarship-card:nth-child(1) { animation-delay: 0.1s; }
+        .scholarship-card:nth-child(2) { animation-delay: 0.2s; }
+        .scholarship-card:nth-child(3) { animation-delay: 0.3s; }
+        .scholarship-card:nth-child(4) { animation-delay: 0.4s; }
+        .scholarship-card:nth-child(5) { animation-delay: 0.5s; }
+        .scholarship-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scholarship-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .scholarship-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #e0e0e0, #f0f0f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #666;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scholarship-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .scholarship-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+        }
+
+        .scholarship-content {
+            padding: 25px;
+        }
+
+        .scholarship-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fda00a;
+        }
+
+        .scholarship-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .scholarship-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .deadline {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .amount {
+            background-color: #4ecdc4;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .scholarship-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #2c5530, #4a7c59);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .scholarship-button:hover {
+            background: linear-gradient(135deg, #4a7c59, #2c5530);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear (135deg, #2c3e50 0%, #ffffff 100%);
+            color: white;
+            padding: 50px 0 20px;
+            font-family: serif;
+        }
+
+       .social-icon {
+            width: 35px;
+            height: 35px;
+            color: #000;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 20px;
+            background: none; /* menghapus background oranye */
+        }
+
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #ffca09;
+        }
+
+        .footer-bottom {
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+            color: #000;
+            font-size: 12px;
+            border-top: none; /* Hapus garis abu-abu */
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 45px;
+            height: 45px;
+            background: #000000;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar-brand .text-black {
+                font-size: 16px;
+            }
+
+            .navbar-brand small {
+                font-size: 12px;
+            }
+
+            .display-3 {
+                font-size: 2rem;
+            }
+
+            .scholarship-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scholarship-details {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .d-flex.mb-3 {
+                justify-content: center;
+            }
+
+            .d-flex.align-items-center {
+                justify-content: center;
+            }
+        }
+
+        /* Additional Animations */
+        .section-title {
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        <!-- Spinner End -->
+    </div>
+    <!-- Spinner End -->
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative">
+    <!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative shadow-sm">
     <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
-      <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
-      <div class="d-flex flex-column">
-        <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
-        <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
-      </div>
+        <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+        <div class="d-flex flex-column">
+            <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
+            <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
+        </div>
     </a>
-  
+
     <!-- Toggle button for mobile -->
     <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <!-- Collapsible content -->
     <div class="collapse navbar-collapse" id="navbarCollapse">
-      <div class="navbar-nav ms-auto py-0">
-        <a class="nav-item nav-link" href="index.html">Home</a>
-        <a class="nav-item nav-link" href="about.html">About</a>
-  
-        <!-- Academic Info Dropdown -->
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Academic Information
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="academicDropdown">
-            <li><a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a></li>
-            <li><a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a></li>
-          </ul>
-        </div>
-  
-        <!-- Campus Echo Dropdown -->
-        <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Campus Echo
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="campusDropdown">
-            <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
-            <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
-            <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
-          </ul>
-        </div>
-  
-        <a class="nav-item nav-link active" href="contact.html">Contact Us</a>
-      </div>
-    </div>
-  </nav>
-  <!-- Navbar end -->
-  
+        <div class="navbar-nav ms-auto py-0">
+            <a class="nav-item nav-link" href="index.html">Home</a>
+            <a class="nav-item nav-link" href="about.html">About</a>
 
-         <!-- Header Start -->
-<div class="container-fluid bg-breadcrumb">
-    <ul class="breadcrumb-animation">
-      <li></li>
-      <li></li>
-    </ul>
-    <div class="text-center mx-auto mb-5" data-aos="zoom-in" data-aos-duration="1000" data-aos-once="false" style="max-width: 900px;">
-      <h4 class="text-primary mb-2" data-aos="fade-down" data-aos-delay="100" data-aos-once="false">Contact Us</h4>
-      <h1 class="display-3 mb-3" data-aos="fade-down" data-aos-delay="300" data-aos-once="false" style="font-family: 'Cinzel', serif;">Scholarship Info</h1>
-      <p class="mb-4" data-aos="fade-down" data-aos-delay="500" data-aos-once="false" style="font-family: 'Plus Jakarta Sans', sans-serif;">
-        Kami dari BEM POLSRI siap mendengarkan suara dan aspirasi kalian. Apapun yang ingin disampaikan—baik kritik, saran, pertanyaan, maupun kerja sama, kalian bisa langsung hubungi kami lewat kontak yang tersedia.
-      </p>
-    </div>
-  </div>
-  <!-- Header End -->
-
-                   <!-- Blog Start -->
-        <div class="container-fluid blog py-5">
-            <div class="container py-5">
-                    </p>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/blog-1.png" class="img-fluid w-100" alt="">
-                                <div class="blog-info">
-                                    <span><i class="fa fa-clock"></i> Dec 01.2024</span>
-                                    <div class="d-flex">
-                                        <span class="me-3"> 3 <i class="fa fa-heart"></i></span>
-                                        <a href="#" class="text-white">0 <i class="fa fa-comment"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content text-dark border p-4 ">
-                                <h5 class="mb-4">Dolor, sit amet consectetur adipisicing</h5>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectur adip sed eiusmod amet consectur adip.</p>
-                                <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/blog-2.png" class="img-fluid w-100" alt="">
-                                <div class="blog-info">
-                                    <span><i class="fa fa-clock"></i> Dec 01.2024</span>
-                                    <div class="d-flex">
-                                        <span class="me-3"> 3 <i class="fa fa-heart"></i></span>
-                                        <a href="#" class="text-white">0 <i class="fa fa-comment"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content text-dark border p-4 ">
-                                <h5 class="mb-4">Dolor, sit amet consectetur adipisicing</h5>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectur adip sed eiusmod amet consectur adip.</p>
-                                <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/blog-3.png" class="img-fluid w-100" alt="">
-                                <div class="blog-info">
-                                    <span><i class="fa fa-clock"></i> Dec 01.2024</span>
-                                    <div class="d-flex">
-                                        <span class="me-3"> 3 <i class="fa fa-heart"></i></span>
-                                        <a href="#" class="text-white">0 <i class="fa fa-comment"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content text-dark border p-4 ">
-                                <h5 class="mb-4">Dolor, sit amet consectetur adipisicing</h5>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectur adip sed eiusmod amet consectur adip.</p>
-                                <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="img/blog-4.png" class="img-fluid w-100" alt="">
-                                <div class="blog-info">
-                                    <span><i class="fa fa-clock"></i> Dec 01.2024</span>
-                                    <div class="d-flex">
-                                        <span class="me-3"> 3 <i class="fa fa-heart"></i></span>
-                                        <a href="#" class="text-white">0 <i class="fa fa-comment"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="blog-content text-dark border p-4 ">
-                                <h5 class="mb-4">Dolor, sit amet consectetur adipisicing</h5>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectur adip sed eiusmod amet consectur adip.</p>
-                                <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Academic Info Dropdown -->
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Academic Information
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+                    <li><a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a></li>
+                    <li><a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a></li>
+                </ul>
             </div>
-        </div>
-        <!-- Blog End -->
 
-
-
-        <!-- FAQ Start -->
-        <div class="container-fluid FAQ bg-light overflow-hidden py-5">
-            <div class="container py-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                       <div class="accordion" id="accordionExample">
-                            <div class="accordion-item border-0 mb-4">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseTOne">
-                                        Why did you choose Our Email Services?
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body my-2">
-                                        <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit, sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta distinctio hic fuga odio excepturi ducimus sequi at. Doloribus, non aspernatur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0 mb-4">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Are there any hidden charges? 
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body my-2">
-                                        <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit, sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta distinctio hic fuga odio excepturi ducimus sequi at. Doloribus, non aspernatur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item border-0">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        What are the key challenges of email marketing?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body my-2">
-                                        <h5>Dolor sit amet consectetur adipisicing elit.</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nemo impedit, sapiente quis illo quia nulla atque maxime fuga minima ipsa quae cum consequatur, sit, delectus exercitationem odit officiis maiores! Neque, quidem corrupti modi architecto eos saepe incidunt dignissimos rerum.</p>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta distinctio hic fuga odio excepturi ducimus sequi at. Doloribus, non aspernatur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-                        <div class="FAQ-img RotateMoveRight rounded">
-                            <img src="img/about-1.png" class="img-fluid w-100" alt="">
-                        </div>
-                    </div>
-                </div>
+            <!-- Campus Echo Dropdown -->
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Campus Echo
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+                    <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
+                    <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
+                    <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
+                </ul>
             </div>
+
+            <a class="nav-item nav-link" href="contact.html">Contact Us</a>
         </div>
-        <!-- FAQ End -->
+    </div>
+</nav>
+<!-- Navbar End -->
 
 
-        <!-- Feature Start -->
-        <div class="container-fluid feature overflow-hidden py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                    <h4 class="text-primary">Our Feature</h4>
-                    <h1 class="display-5 mb-4">Important Features For Email Marketing</h1>
-                    <p class="mb-0">Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime. Vel animi eveniet doloremque reiciendis soluta iste provident non rerum illum perferendis earum est architecto dolores vitae quia vero quod incidunt culpa corporis, porro doloribus. Voluptates nemo doloremque cum.
-                    </p>
-                </div>
-                <div class="row g-4 justify-content-center text-center mb-5">
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="text-center p-4">
-                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-envelope fa-5x text-secondary"></i></div>
-                            <div class="feature-content">
-                                <a href="#" class="h4">Email Marketing <i class="fa fa-long-arrow-alt-right"></i></a>
-                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                            </div>
-                        </div>
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb mb-0">
+        <ul class="breadcrumb-animation">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h3 class="display-3 mb-4">Info Beasiswa</h3>   
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title">Explore Scholarship Politeknik Negeri Sriwijaya</h2>
+            
+            <div class="scholarship-grid">
+                <!-- Scholarship Card 1 -->
+                <div class="scholarship-card">
+                    <div class="scholarship-image">
+                        <img src="http://4.bp.blogspot.com/-gPqELTKhC5c/UNhPmQHgaxI/AAAAAAAAETQ/uMQfEKx7_xM/s1600/Logo%2BBank%2BIndonesia.jpg" alt="Beasiswa Prestasi Akademik">
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="text-center p-4">
-                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-mail-bulk fa-5x text-secondary"></i></div>
-                            <div class="feature-content">
-                                <a href="#" class="h4">Email Builder <i class="fa fa-long-arrow-alt-right"></i></a>
-                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="text-center rounded p-4">
-                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-sitemap fa-5x text-secondary"></i></div>
-                            <div class="feature-content">
-                                <a href="#" class="h4">Customer Builder <i class="fa fa-long-arrow-alt-right"></i></a>
-                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="text-center rounded p-4">
-                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-tasks fa-5x text-secondary"></i></div>
-                            <div class="feature-content">
-                                <a href="#" class="h4">Campaign Manager <i class="fa fa-long-arrow-alt-right"></i></a>
-                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="my-3">
-                            <a href="#" class="btn btn-primary d-inline rounded-pill px-5 py-3">More Features</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-5 pt-5" style="margin-top: 6rem;">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                        <div class="feature-img RotateMoveLeft h-100" style="object-fit: cover;">
-                            <img src="img/features-1.png" class="img-fluid w-100 h-100" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
-                        <h4 class="text-primary">Fearutes</h4>
-                        <h1 class="display-5 mb-4">Push Your Visitors Into Happy Customers</h1>
-                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, suscipit itaque quaerat dicta porro illum, autem, molestias ut animi ab aspernatur dolorum officia nam dolore. Voluptatibus aliquam earum labore atque.
+                    <div class="scholarship-content">
+                        <h3 class="scholarship-title">Beasiswa Bank Indonesia</h3>
+                        <p class="scholarship-description">
+                            Beasiswa prestisius dari Bank Indonesia untuk mahasiswa aktif Politeknik Negeri Sriwijaya yang memiliki prestasi akademik dengan IPK minimal 3.25 dan aktif dalam kegiatan organisasi. 
+            Beasiswa ini juga membentuk Generasi Baru Indonesia (GenBI) sebagai komunitas penerima yang aktif dalam pengembangan diri, kepemimpinan, dan kegiatan sosial.
                         </p>
-                        <div class="row g-4">
-                            <div class="col-6">
-                                <div class="d-flex">
-                                    <i class="fas fa-newspaper fa-4x text-secondary"></i>
-                                    <div class="d-flex flex-column ms-3">
-                                        <h2 class="mb-0 fw-bold">285</h2>
-                                        <small class="text-dark">Created Projects</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="d-flex">
-                                    <i class="fas fa-users fa-4x text-secondary"></i>
-                                    <div class="d-flex flex-column ms-3">
-                                        <h2 class="mb-0 fw-bold">6560</h2>
-                                        <small class="text-dark">Happy Clients</small>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="scholarship-details">
+                            <span class="deadline">Deadline: 30 Agt 2025</span>
+                            <span class="amount">Rp 10,000,000</span>
                         </div>
-                        <div class="my-4">
-                            <a href="#" class="btn btn-primary rounded-pill py-3 px-5">Read More</a>
+                        <a href="https://www.bi.go.id/id/default.aspx" class="scholarship-button">
+                            Lihat Detail Beasiswa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Scholarship Card 2 -->
+                <div class="scholarship-card">
+                    <div class="scholarship-image">
+                        <img src="https://filantropi.or.id/web2020/wp-content/uploads/2023/01/logo-Karya-Salemba-Empat-KSE.jpg" alt="Beasiswa KIP Kuliah">
+                    </div>
+                    <div class="scholarship-content">
+                        <h3 class="scholarship-title">Beasiswa Karya Salemba Empat</h3>
+                        <p class="scholarship-description">
+                            Beasiswa dari Yayasan Karya Salemba Empat untuk mahasiswa Politeknik Negeri Sriwijaya semester 2 ke atas yang berasal dari keluarga kurang mampu namun memiliki motivasi belajar tinggi.
+            Selain bantuan dana, penerima beasiswa juga berkesempatan mengikuti pelatihan soft skill dan networking bersama penerima dari kampus lain se-Indonesia.
+                        </p>
+                        <div class="scholarship-details">
+                            <span class="deadline">Deadline: 15 Sep 2025</span>
+                            <span class="amount">Full Scholarship</span>
                         </div>
+                        <a href="hhttp://beasiswa.or.id/" class="scholarship-button">
+                            Lihat Detail Beasiswa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Scholarship Card 3 -->
+                <div class="scholarship-card">
+                    <div class="scholarship-image">
+                        <img src="https://ikmb.ac.id/wp-content/uploads/2021/08/kip.png" alt="Beasiswa Kerjasama Industri">
+                    </div>
+                    <div class="scholarship-content">
+                        <h3 class="scholarship-title">Beasiswa KIP-K</h3>
+                        <p class="scholarship-description">
+                            Beasiswa dari pemerintah Indonesia untuk calon mahasiswa baru Politeknik Negeri Sriwijaya dari keluarga tidak mampu secara ekonomi namun berprestasi.
+            Penerima mendapatkan pembebasan biaya kuliah penuh serta bantuan biaya hidup hingga lulus tepat waktu sesuai program studi.
+                        </p>
+                        <div class="scholarship-details">
+                            <span class="deadline">Deadline: 10 Okt 2025</span>
+                            <span class="amount">Rp 25,000,000</span>
+                        </div>
+                        <a href="https://kip-kuliah.kemdiktisaintek.go.id/" class="scholarship-button">
+                            Lihat Detail Beasiswa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Scholarship Card 4 -->
+                <div class="scholarship-card">
+                    <div class="scholarship-image">
+                        <img src="https://via.placeholder.com/350x200/6a9c79/ffffff?text=Beasiswa+Riset" alt="Beasiswa Riset">
+                    </div>
+                    <div class="scholarship-content">
+                        <h3 class="scholarship-title">Beasiswa Riset Mahasiswa</h3>
+                        <p class="scholarship-description">
+                            Program beasiswa untuk mahasiswa yang tertarik melakukan penelitian inovatif. 
+                            Didampingi oleh dosen pembimbing berpengalaman.
+                        </p>
+                        <div class="scholarship-details">
+                            <span class="deadline">Deadline: 20 Nov 2025</span>
+                            <span class="amount">Rp 8,000,000</span>
+                        </div>
+                        <a href="https://polsri.ac.id/beasiswa-riset" class="scholarship-button">
+                            Lihat Detail Beasiswap
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Scholarship Card 5 -->
+                <div class="scholarship-card">
+                    <div class="scholarship-image">
+                        <img src="https://via.placeholder.com/350x200/7aac89/ffffff?text=Beasiswa+Luar+Negeri" alt="Beasiswa Luar Negeri">
+                    </div>
+                    <div class="scholarship-content">
+                        <h3 class="scholarship-title">Beasiswa Pertukaran Luar Negeri</h3>
+                        <p class="scholarship-description">
+                            Kesempatan study abroad ke universitas partner di Malaysia, Singapura, dan Australia. 
+                            Program semester exchange dengan full funding.
+                        </p>
+                        <div class="scholarship-details">
+                            <span class="deadline">Deadline: 5 Des 2025</span>
+                            <span class="amount">Full Funded</span>
+                        </div>
+                        <a href="https://polsri.ac.id/exchange-program" class="scholarship-button">
+                            Lihat Detail Beasiswa
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Scholarship Card 6 -->
+                <div class="scholarship-card">
+                    <div class="scholarship-image">
+                        <img src="https://via.placeholder.com/350x200/8abc99/ffffff?text=Beasiswa+Olahraga" alt="Beasiswa Olahraga">
+                    </div>
+                    <div class="scholarship-content">
+                        <h3 class="scholarship-title">Beasiswa Prestasi Olahraga</h3>
+                        <p class="scholarship-description">
+                            Beasiswa untuk mahasiswa yang memiliki prestasi di bidang olahraga tingkat regional atau nasional. 
+                            Mendukung pengembangan talent atletik.
+                        </p>
+                        <div class="scholarship-details">
+                            <span class="deadline">Deadline: 15 Jan 2026</span>
+                            <span class="amount">Rp 12,000,000</span>
+                        </div>
+                        <a href="https://polsri.ac.id/beasiswa-olahraga" class="scholarship-button">
+                            Lihat Detail Beasiswa
+                            p
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Feature End -->
+    </main>
 
-   <!-- Footer Start -->
+    <!-- Footer Start -->
 <footer class="footer-gradient">
     <div class="container py-5" style="font-family: serif;">
         <div class="row g-4">
@@ -385,30 +667,33 @@
                 <div class="small">BEM POLSRI 2025</div>
             </div>
         </div>
+
         <hr class="my-4">
-        <div class="footer-bottom text-center small">
+        <div class="footer-bottom text-center small mt-4 pt-2">
             &copy; 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
         </div>
     </div>
 </footer>
 <!-- Footer End -->
 
-     <!-- Back to Top -->
-     <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
-        
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    </body>
 
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- JavaScript to hide spinner -->
+<script>
+    window.addEventListener('load', function () {
+        const spinner = document.getElementById('spinner');
+        if (spinner) {
+            spinner.remove(); // langsung hapus spinner saat halaman selesai dimuat
+        }
+    });
+</script>
+
+<!-- Bootstrap JS (wajib untuk dropdown & collapse navbar) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
 </html>
