@@ -25,6 +25,7 @@
   justify-content: center;
   transition: 0.5s;
   z-index: 99;
+  
 }
 
 /*** Button Start ***/
@@ -1492,4 +1493,109 @@
   border-color: #d7ad23;
   color: #fff;
 }
+
+.image-item {
+  width: 30%;
+  margin: 0 10px;
+  display: inline-block;
+  position: relative;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.image-item img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+/* Styling untuk kartu koordinator secara keseluruhan */
+.koordinator-card {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: white;
+}
+
+/* Styling untuk placeholder gambar koordinator */
+.koordinator-image-placeholder {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(248, 174, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Styling untuk gambar di dalam placeholder */
+.koordinator-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Styling untuk overlay gradasi pada gambar koordinator */
+.koordinator-image-gradient-overlay {
+  background: linear-gradient(
+    45deg,
+    rgba(248, 174, 0, 0.1),
+    rgba(224, 88, 0, 0.1)
+  );
+}
+
+/* Styling untuk ikon peran koordinator (topi toga/grup) */
+.koordinator-role-icon {
+  width: 40px;
+  height: 40px;
+  transform: translate(10px, 10px);
+  background: linear-gradient(45deg, #f8ae00, #e05800);
+  box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3);
+}
+
+/* Styling untuk ikon di dalam ikon peran koordinator */
+.koordinator-role-icon i {
+  font-size: 16px;
+}
+
+/* Styling untuk nama koordinator */
+.koordinator-card h5.koordinator-name { /* Menambahkan kelas untuk lebih spesifik */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #333;
+  font-size: 20px;
+}
+
+/* Styling untuk badge jabatan koordinator */
+.koordinator-badge {
+  background: linear-gradient(45deg, #f8ae00, #e05800);
+  color: white;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  border-radius: 15px;
+}
+
+/* Styling untuk paragraf deskripsi koordinator */
+.koordinator-card p.koordinator-description { /* Menambahkan kelas untuk lebih spesifik */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Styling untuk garis gradasi di bagian bawah kartu */
+.koordinator-card-bottom-line {
+  background: linear-gradient(90deg, #f8ae00, #e05800);
+}
+
 }
