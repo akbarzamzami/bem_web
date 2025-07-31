@@ -1394,9 +1394,9 @@
 
 .bg-overlay {
   position: relative;
-  background-image: url("/img/polsri.jpg");
+  background-image: url("/img/pengurus.JPG");
   background-size: cover;
-  background-position: center;
+  background-position: center 80%;
   background-repeat: no-repeat;
   overflow: hidden;
 }
