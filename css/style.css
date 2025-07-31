@@ -1435,6 +1435,7 @@
   overflow: hidden;
   background-position: right center;
   background-position-x: calc(100% + 50px);
+}
 
 /* hover  background  Maps */
 .map-wrapper {
@@ -1596,6 +1597,4 @@
 /* Styling untuk garis gradasi di bagian bawah kartu */
 .koordinator-card-bottom-line {
   background: linear-gradient(90deg, #f8ae00, #e05800);
-}
-
 }
