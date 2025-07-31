@@ -422,7 +422,7 @@
                 <div class="card-3-front">
                   <img src="/img/blog-4.png" alt="Ocean View" />
                   <div class="content">
-                    <h3>Ocean Paradise</h3>
+                    <h3>Synchro</h3>
                     <p>
                       Nikmati ketenangan pantai dengan ombak yang menenangkan.
                     </p>
@@ -659,66 +659,7 @@
           </p>
         </div>
       </div>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <!-- Slide 1 -->
-          <div class="swiper-slide">
-            <div class="image-item">
-              <img src="/img/blog-2.png" />
-              <div class="image-overlay">
-                <div class="image-title">Haloooo</div>
-                <div class="image-description">nama saya adalah hallo</div>
-              </div>
-            </div>
-            <div class="image-item">
-              <img src="/img/blog-3.png" />
-              <div class="image-overlay">
-                <div class="image-title">Haloooo</div>
-                <div class="image-description">nama saya adalah hallo</div>
-              </div>
-            </div>
-            <div class="image-item">
-              <img src="/img/blog-2.png" />
-              <div class="image-overlay">
-                <div class="image-title">Haloooo</div>
-                <div class="image-description">nama saya adalah hallo</div>
-              </div>
-            </div>
-          </div>
 
-          <!-- Slide 2 -->
-          <div class="swiper-slide">
-            <div class="image-item">
-              <img src="/img/blog-3.png" />
-              <div class="image-overlay">
-                <div class="image-title">Haloooo</div>
-                <div class="image-description">nama saya adalah hallo</div>
-              </div>
-            </div>
-            <div class="image-item">
-              <img src="/img/blog-2.png" />
-              <div class="image-overlay">
-                <div class="image-title">Haloooo</div>
-                <div class="image-description">nama saya adalah hallo</div>
-              </div>
-            </div>
-            <div class="image-item">
-              <img src="/img/blog-3.png" />
-              <div class="image-overlay">
-                <div class="image-title">Haloooo</div>
-                <div class="image-description">nama saya adalah hallo</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Navigation buttons -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-
-        <!-- Pagination -->
-        <div class="swiper-pagination"></div>
-      </div>
     </section>
     <!-- update info section end -->
 
@@ -983,90 +924,6 @@
       setInterval(() => {
         calendar.updateCurrentDay();
       }, 60000);
-    </script>
-
-    <!-- script swiper -->
-    <script>
-      // Initialize Swiper
-      var swiper = new Swiper(".mySwiper", {
-        // Enable loop mode
-        loop: true,
-
-        // Auto play
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-
-        // Navigation arrows
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-
-        // Pagination dots
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-          dynamicBullets: true,
-        },
-
-        // Effects
-        effect: "slide",
-        speed: 800,
-
-        // Touch settings
-        touchRatio: 1,
-        touchAngle: 45,
-        grabCursor: true,
-
-        // Slides per view (always 1 since we have 3 images per slide)
-        slidesPerView: 1,
-        spaceBetween: 0,
-
-        // Responsive breakpoints for different layouts
-        breakpoints: {
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 0,
-          },
-          768: {
-            slidesPerView: 1,
-            spaceBetween: 0,
-          },
-          1024: {
-            slidesPerView: 1,
-            spaceBetween: 0,
-          },
-        },
-      });
-
-      // Pause autoplay on hover
-      const swiperContainer = document.querySelector(".swiper");
-      swiperContainer.addEventListener("mouseenter", () => {
-        swiper.autoplay.stop();
-      });
-
-      swiperContainer.addEventListener("mouseleave", () => {
-        swiper.autoplay.start();
-      });
-
-      // Add loading effect
-      const images = document.querySelectorAll(".image-item img");
-      images.forEach((img) => {
-        img.addEventListener("load", function () {
-          this.parentElement.classList.add("loaded");
-        });
-      });
-
-      // Keyboard navigation
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "ArrowLeft") {
-          swiper.slidePrev();
-        } else if (e.key === "ArrowRight") {
-          swiper.slideNext();
-        }
-      });
     </script>
   </body>
 </html>
