@@ -1184,7 +1184,7 @@
 }
 
 .card-3-back {
-  background: linear-gradient(135deg, #d7ad23 0%, #fc12fc 100%);
+  background: linear-gradient(45deg, #f8ae00, #df7f3f);
   color: white;
   transform: rotateY(180deg);
   display: flex;
