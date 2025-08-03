@@ -38,6 +38,91 @@
 
   <!-- css kalender -->
   <style>
+    /* Grid container */
+    .kartu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Flip card styling */
+    .kartu {
+      perspective: 1000px;
+    }
+
+    .kartu-inner {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      border-radius: 18px;
+    }
+
+    .kartu:hover .kartu-inner {
+      transform: rotateY(180deg);
+    }
+
+    .kartu-front,
+    .kartu-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+      backface-visibility: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    .kartu-front {
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .kartu-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .kartu-back {
+      background: linear-gradient(45deg, #f8ae00, #df7f3f);
+      transform: rotateY(180deg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+      color: white;
+      overflow-y: auto;
+      word-wrap: break-word;
+      text-align: justify;
+    }
+
+    .kartu-back h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .kartu-back p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .kartu-back::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .kartu-back::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 10px;
+    }
+
     .calendar-day {
       height: 40px;
       border: 1px solid #dee2e6;
@@ -80,6 +165,90 @@
 
     .photo-item:hover {
       transform: scale(1.02);
+    }
+
+    .kartu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Flip card styling */
+    .kartu {
+      perspective: 1000px;
+    }
+
+    .kartu-inner {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      border-radius: 18px;
+    }
+
+    .kartu:hover .kartu-inner {
+      transform: rotateY(180deg);
+    }
+
+    .kartu-front,
+    .kartu-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+      backface-visibility: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    .kartu-front {
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .kartu-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .kartu-back {
+      background: linear-gradient(45deg, #f8ae00, #df7f3f);
+      transform: rotateY(180deg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+      color: white;
+      overflow-y: auto;
+      word-wrap: break-word;
+      text-align: justify;
+    }
+
+    .kartu-back h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .kartu-back p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .kartu-back::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .kartu-back::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -549,6 +718,58 @@
           konten ini secara berkala agar semua mahasiswa tetap terinformasikan dengan baik dan tidak tertinggal hal-hal
           penting yang bisa memengaruhi jalannya proses perkuliahan maupun aktivitas organisasi.
         </p>
+      </div>
+      <div class="kartu-grid">
+        <!-- Kartu 1 -->
+        <div class="kartu wow fadeInUp" data-wow-delay="0.1s">
+          <div class="kartu-inner">
+            <div class="kartu-front">
+              <img src="/img/update info 1.jpg" alt="Poster 1">
+            </div>
+            <div class="kartu-back">
+              <h3>Program Kreatifitas Mahasiswa</h3>
+              <p>Program Kreatifitas Mahasiswa (PKM) adalah kegiatan yang diselenggarkan
+                oleh Ditjenbelmawa (Direktorat Jendral Pembelajaran dan Kemahasiswaan)
+
+                Serta Kemendikbudristek dengan tujuan untuk memberi ruang kepada mahasiswa dalam mengembangkan potensi
+                dan keahlian pada inovasi dan kreatifitas</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kartu 2 -->
+        <div class="kartu wow fadeInUp" data-wow-delay="0.1s">
+          <div class="kartu-inner">
+            <div class="kartu-front">
+              <img src="/img/update info 2.jpg" alt="Poster 2">
+            </div>
+            <div class="kartu-back">
+              <h3>PPK ORMAWA</h3>
+              <p>PPK ORMAWA (Program Penguatan Kapasitas Organisasi Kemahasiswaan) Tahun 2025 merupakan program yang
+                bertujuan untuk memperkuat peran organisasi kemahasiswaan dalam pengembangan kapasitas, kepemimpinan,
+                serta kontribusi nyata terhadap masyarakat. Program ini menyeleksi proposal kegiatan dari berbagai
+                organisasi mahasiswa. Sebanyak 10 proposal terbaik diumumkan sebagai bentuk apresiasi atas gagasan dan
+                rencana kegiatan yang dinilai unggul dan berdampak.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kartu 3 -->
+        <div class="kartu wow fadeInUp" data-wow-delay="0.1s">
+          <div class="kartu-inner">
+            <div class="kartu-front">
+              <img src="/img/update info 3.jpg" alt="Poster 3">
+            </div>
+            <div class="kartu-back">
+              <h3>Program Mahasiswa Wirausaha (PMW)</h3>
+              <p>Program Mahasiswa Wirausaha (PMW) Tahun 2025 adalah program yang diselenggarakan oleh Politeknik Negeri
+                Sriwijaya melalui Unit Pengembangan Karir dan Kewirausahaan. Tujuannya adalah membekali mahasiswa dengan
+                pengetahuan dan pengalaman berwirausaha secara nyata. Tahapan program meliputi seleksi proposal,
+                pembekalan, pendampingan bisnis, program magang, monitoring dan evaluasi, hingga kompetisi dan expo
+                rencana bisnis.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
