@@ -213,11 +213,31 @@
                     padding: 20px;
                 }
             }
+
+             .beasiswa-banner h1 {
+            color: #f8ae00;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0);
+}
+
+.beasiswa-banner {
+    height: 55vh;
+    background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)), 
+                url('img/bg-beasiswa.jpg') center/cover no-repeat;
+    position: relative;
+
+    /* Bayangan bawah halus */
+    box-shadow: inset 0 -100px 100px -10px white;
+}
+
+  .text-orange {
+    color: orange;
+  }
+
         </style>
     </head>
 
     <body>
-
            <!-- Navbar -->
     <nav
       class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative"
@@ -311,19 +331,26 @@
       </div>
     </nav>
     <!-- Navbar end -->
+<section class="beasiswa-banner d-flex align-items-center justify-content-center text-center text-white" style="height: 65vh; background: linear-gradient(rgba(255, 255, 255, 0.813), rgb(255, 255, 255, 0.813)), url('http://akuntansi.polsri.ac.id/wp-content/uploads/2023/08/IMG_0958.jpg') center/cover no-repeat;">
+</section>
+
+<div class="container text-center">
+  <h1 class="display-4 fw-bold mb-3 text-orange">KALENDER AKADEMIK</h1>
+  <p class="lead fw-medium mx-auto text-orange">
+    POLITEKNIK NEGERI SRIWIJAYA
+  </p>
+  <p class="lead fw-medium mx-auto text-orange">
+    TAHUN AJARAN 2024/2025
+  </p>
+</div>
 
 
-        <!-- Academic Calendar Section Start -->
+        <!-- Academic Calendar Section Start --><
         <div class="container-fluid py-5">
             <div class="container">
                 <!-- Wireframe Calendar Section -->
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <div class="text-center mb-5 animate__animated animate__fadeInUp">
-                            <h4 class="fw-bold text-primary mb-3" style="font-family: 'Cinzel', serif; font-size: 28px;">KALENDER AKADEMIK</h4>
-                            <h5 class="text-muted mb-4" style="font-family: 'Plus Jakarta Sans', sans-serif;">POLITEKNIK NEGERI SRIWIJAYA</h5>
-                            <h6 class="text-dark" style="font-family: 'Plus Jakarta Sans', sans-serif;">TAHUN 2024/2025</h6>
-                        </div>
 
                         <!-- Calendar Grid -->
                         <div class="calendar-wireframe animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
@@ -1043,7 +1070,8 @@
             </div>
         </div>
         <!-- Academic Calendar Section End -->
-                 <!-- Footer Start -->
+        
+        <!-- Footer Start -->
         <footer class="footer-gradient">
             <div class="container py-5" style="font-family: serif;">
                 <div class="row g-4">

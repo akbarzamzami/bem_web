@@ -270,6 +270,286 @@
 }
 /*** Navbar End ***/
 
+/*** Visi Misi Start ***/
+.decorative-element {
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+/* Geometric Shapes */
+.geometric-shape {
+  position: relative;
+  height: 200px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shape-circle {
+  width: 120px;
+  height: 120px;
+  border: 3px solid #f8ae00;
+  border-radius: 50%;
+  position: absolute;
+  animation: rotate 8s linear infinite;
+}
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 70px solid #ff8800;
+  position: absolute;
+  opacity: 0.8;
+  animation: float 3s ease-in-out infinite;
+}
+
+.shape-square {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  position: absolute;
+  border-radius: 8px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Quote Box */
+.quote-box {
+  background: linear-gradient(135deg, #fff, #f8f9fa);
+  padding: 30px 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-left: 4px solid #f8ae00;
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 48px;
+  color: #f8ae00;
+  font-family: serif;
+  line-height: 1;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  opacity: 0.3;
+}
+
+.quote-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #333;
+  margin: 0 0 15px 0;
+  line-height: 1.6;
+}
+
+.quote-author {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  color: #f8ae00;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Animations */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .geometric-shape {
+    height: 150px;
+    margin-bottom: 30px;
+  }
+  
+  .shape-circle {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .shape-triangle {
+    border-left-width: 30px;
+    border-right-width: 30px;
+    border-bottom-width: 50px;
+  }
+  
+  .shape-square {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .quote-box {
+    padding: 25px 20px;
+  }
+  
+  .quote-text {
+    font-size: 14px;
+  }
+  
+  .quote-mark {
+    font-size: 36px;
+    top: 5px;
+    left: 15px;
+  }
+}
+/*** Visi Misi End ***/
+/*** About ***/
+.fade-bottom {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  z-index: 3;
+}
+
+.about-header {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  min-height: 600px; /* Fallback minimum height */
+}
+
+.about-header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.about-header-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Improved image brightness and contrast */
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.about-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Improved gradient overlay for better text readability */
+  background: linear-gradient(
+    135deg, 
+    rgba(248, 174, 0, 0.15) 0%,
+    rgba(255, 255, 255, 0.85) 30%,
+    rgba(255, 255, 255, 0.95) 70%,
+    rgba(248, 174, 0, 0.1) 100%
+  );
+  z-index: 2;
+}
+
+.about-header .container {
+  position: relative;
+  z-index: 3;
+}
+
+/* Decorative accent line */
+.accent-line {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #f8ae00, #ff6b35);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(248, 174, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-header {
+    height: 70vh;
+    min-height: 500px;
+  }
+  
+  .about-header h1 {
+    font-size: 2.5rem !important;
+    letter-spacing: 1px !important;
+  }
+  
+  .about-header p {
+    font-size: 1.3rem !important;
+  }
+  
+  .accent-line {
+    width: 80px;
+    height: 3px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-header {
+    height: 60vh;
+    min-height: 450px;
+  }
+  
+  .about-header h1 {
+    font-size: 2rem !important;
+  }
+  
+  .about-header p {
+    font-size: 1.1rem !important;
+  }
+  
+  .accent-line {
+    width: 60px;
+  }
+}
+
+/* Hover effect for the entire section */
+.about-header:hover .about-header-background img {
+  transform: scale(1.02);
+  transition: transform 0.5s ease;
+}
+
+/* Animation improvements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-header h1 {
+  animation: fadeInUp 1s ease-out;
+}
+
+.about-header p {
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.accent-line {
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+
 /*** Single Page Hero Header Start ***/
 .bg-breadcrumb {
   position: relative;
@@ -1158,20 +1438,33 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .card-3-front {
   background: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-3-front img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card-3-front .content {
+  padding: 15px;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  flex-grow: 1;
 }
 
 .card-3-back {
-  background: linear-gradient(135deg, #d7ad23 0%, #fc12fc 100%);
+  background: linear-gradient(45deg, #f8ae00, #df7f3f);
   color: white;
   transform: rotateY(180deg);
   display: flex;
@@ -1179,7 +1472,9 @@
   justify-content: center;
   flex-direction: column;
   padding: 30px;
+  text-align: center;
 }
+
 
 .swiper {
   width: 100%;
@@ -1395,9 +1690,9 @@
 
 .bg-overlay {
   position: relative;
-  background-image: url("/img/polsri.jpg");
+  background-image: url("/img/pengurus.JPG");
   background-size: cover;
-  background-position: center;
+  background-position: center 80%;
   background-repeat: no-repeat;
   overflow: hidden;
 }
@@ -1421,20 +1716,34 @@
   z-index: 2;
 }
 
-.bg-web{
+.bg-web {
   position: relative;
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.148), rgba(255, 255, 255, 0.044)),
     linear-gradient(to bottom, rgba(255,255,255,0) 80%, rgba(255,255,255,0.9) 90%, rgba(255,255,255,1)),
     url('/img/home-page.png');
   background-size: 70%;
-  background-position: right;
-  background-position: center;
   background-repeat: no-repeat;
-  height: 85vh;
-  overflow: hidden;
   background-position: right center;
   background-position-x: calc(100% + 50px);
+  height: 85vh;
+  overflow: hidden;
+}
+
+/* Responsif untuk layar kecil (HP) */
+@media (max-width: 768px) {
+  .bg-web {
+    background-size: cover;
+    background-position: center; /* Geser gambar ke kiri */
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)),
+      linear-gradient(to bottom, rgba(255,255,255,0.2) 70%, rgba(255,255,255,0.9) 95%, rgba(255,255,255,1)),
+      url('/img/home-page.png');
+    height: 60vh;
+  }
+}
+
+
 
 /* hover  background  Maps */
 .map-wrapper {
@@ -1598,4 +1907,5 @@
   background: linear-gradient(90deg, #f8ae00, #e05800);
 }
 
-}
+
+/* update info */

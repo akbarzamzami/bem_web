@@ -1,105 +1,245 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Section Departemen BEM Polsri</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
-
-<!-- Departemen Section Start -->
+ <!-- Pengurus Section Start -->
 <div class="container-fluid py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
     <div class="container">
-        <!-- Departemen Title -->
+        <!-- Main Title - Centered -->
+        <div class="text-center mb-4">
+            <h1 class="display-4 mb-3" style="font-family: 'Cinzel', serif; color: #f8ae00; font-weight: 700;">
+                Penjabat Teras
+            </h1>
+            <h4 class="fw-bold mb-5" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 18px; line-height: 1.6;">
+                Badan Eksekutif Mahasiswa Politeknik Negeri Sriwijaya
+            </h4>
+        </div>
+          <!-- Pengurus Inti Title -->
         <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="d-inline-block px-4 py-2 mb-3" style="background: linear-gradient(45deg, #6c757d, #495057); border-radius: 50px;">
-                <h3 class="fw-bold text-white mb-0" style="font-family: 'Cinzel', serif; font-size: 24px; letter-spacing: 2px;">DEPARTEMEN</h3>
+                <h3 class="fw-bold text-white mb-0" style="font-family: 'Cinzel', serif; font-size: 24px; letter-spacing: 2px;">PENGURUS INTI</h3>
             </div>
-            <h4 class="fw-bold" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 18px; margin-top: 10px;">Badan Eksekutif Mahasiswa Politeknik Negeri Sriwijaya</h4>
+        </div>
+<!-- Slider Container for Pengurus Inti -->
+        <div class="position-relative wow fadeInUp" data-wow-delay="0.3s">
+            <div class="pengurus-slider-container" style="overflow: hidden; position: relative; padding: 0 20px;">
+                <div class="pengurus-slider d-flex transition-all" id="pengurusSlider" style="transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);">
+                    <!-- Pengurus 1 -->
+                    <div class="pengurus-card flex-shrink-0" style="width: 320px; margin-right: 2rem;">
+                        <div class="card border-0 h-100 position-relative overflow-hidden" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; background: white;">
+                            <div class="card-body text-center p-4">
+                                <div class="pengurus-image-container mb-4 position-relative">
+                                    <div class="pengurus-image-placeholder mx-auto position-relative" style="width: 200px; height: 200px; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(248, 174, 0, 0.3); transition: all 0.3s ease;">
+                                        <img src="img/bintang.jpg" alt="Ketum" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1));"></div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; transform: translate(10px, 10px); box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);">
+                                        <i class="fas fa-crown" style="font-size: 16px;"></i>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 20px;">Bintang</h5>
+                                <div class="mb-3">
+                                    <span class="badge px-3 py-2" style="background: linear-gradient(45deg, #f8ae00, #e05800); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; border-radius: 15px;">Ketua Umum</span>
+                                </div>
+                                <p class="text-muted" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; line-height: 1.6;">
+                                    Memimpin organisasi dengan visi menyala membara untuk kemajuan mahasiswa Polsri.
+                                </p>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 w-100 h-1" style="background: linear-gradient(90deg, #f8ae00, #e05800);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Pengurus 2 -->
+                    <div class="pengurus-card flex-shrink-0" style="width: 320px; margin-right: 2rem;">
+                        <div class="card border-0 h-100 position-relative overflow-hidden" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; background: white;">
+                            <div class="card-body text-center p-4">
+                                <div class="pengurus-image-container mb-4 position-relative">
+                                    <div class="pengurus-image-placeholder mx-auto position-relative" style="width: 200px; height: 200px; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(248, 174, 0, 0.3); transition: all 0.3s ease;">
+                                       <img src="img/ridho.jpg" alt="Waketum" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1));"></div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; transform: translate(10px, 10px); box-shadow: 0 4px 15px rgba(25, 135, 84, 0.3);">
+                                        <i class="fas fa-star" style="font-size: 16px;"></i>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 20px;">Ridho</h5>
+                                <div class="mb-3">
+                                    <span class="badge px-3 py-2" style="background: linear-gradient(45deg, #f8ae00, #e05800); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; border-radius: 15px;">Wakil Ketua Umum</span>
+                                </div>
+                                <p class="text-muted" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; line-height: 1.6;">
+                                    Mendukung kepemimpinan dengan dedikasi tinggi untuk kesejahteraan mahasiswa.
+                                </p>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 w-100 h-1" style="background: linear-gradient(90deg, #f8ae00, #e05800);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Pengurus 3 -->
+                    <div class="pengurus-card flex-shrink-0" style="width: 320px; margin-right: 2rem;">
+                        <div class="card border-0 h-100 position-relative overflow-hidden" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; background: white;">
+                            <div class="card-body text-center p-4">
+                                <div class="pengurus-image-container mb-4 position-relative">
+                                    <div class="pengurus-image-placeholder mx-auto position-relative" style="width: 200px; height: 200px; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(248, 174, 0, 0.3); transition: all 0.3s ease;">
+                                        <img src="img/sekum.jpg" alt="Sekum" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1));"></div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 bg-info text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; transform: translate(10px, 10px); box-shadow: 0 4px 15px rgba(13, 202, 240, 0.3);">
+                                        <i class="fas fa-file-alt" style="font-size: 16px;"></i>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 20px;">Melisa</h5>
+                                <div class="mb-3">
+                                    <span class="badge px-3 py-2" style="background: linear-gradient(45deg, #f8ae00, #e05800); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; border-radius: 15px;">Sekretaris Umum</span>
+                                </div>
+                                <p class="text-muted" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; line-height: 1.6;">
+                                    Mengelola administrasi organisasi dengan transparansi dan akuntabilitas.
+                                </p>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 w-100 h-1" style="background: linear-gradient(90deg, #f8ae00, #e05800);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Pengurus 4 -->
+                    <div class="pengurus-card flex-shrink-0" style="width: 320px; margin-right: 2rem;">
+                        <div class="card border-0 h-100 position-relative overflow-hidden" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; background: white;">
+                            <div class="card-body text-center p-4">
+                                <div class="pengurus-image-container mb-4 position-relative">
+                                    <div class="pengurus-image-placeholder mx-auto position-relative" style="width: 200px; height: 200px; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(248, 174, 0, 0.3); transition: all 0.3s ease;">
+                                    <img src="img/lidya.jpg" alt="Wasekum" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1));"></div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 bg-warning text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; transform: translate(10px, 10px); box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);">
+                                        <i class="fas fa-edit" style="font-size: 16px;"></i>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 20px;">Lidya</h5>
+                                <div class="mb-3">
+                                    <span class="badge px-3 py-2" style="background: linear-gradient(45deg, #f8ae00, #e05800); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; border-radius: 15px;">Wakil Sekretaris Umum</span>
+                                </div>
+                                <p class="text-muted" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; line-height: 1.6;">
+                                    Membantu mengelola administrasi dengan profesional dan bertanggung jawab.
+                                </p>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 w-100 h-1" style="background: linear-gradient(90deg, #f8ae00, #e05800);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Pengurus 5 -->
+                    <div class="pengurus-card flex-shrink-0" style="width: 320px; margin-right: 2rem;">
+                        <div class="card border-0 h-100 position-relative overflow-hidden" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; background: white;">
+                            <div class="card-body text-center p-4">
+                                <div class="pengurus-image-container mb-4 position-relative">
+                                    <div class="pengurus-image-placeholder mx-auto position-relative" style="width: 200px; height: 200px; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(248, 174, 0, 0.3); transition: all 0.3s ease;">
+                                        <img src="img/tiara.jpg" alt="Bendum" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1));"></div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 bg-danger text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; transform: translate(10px, 10px); box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);">
+                                        <i class="fas fa-coins" style="font-size: 16px;"></i>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 20px;">Tiara</h5>
+                                <div class="mb-3">
+                                    <span class="badge px-3 py-2" style="background: linear-gradient(45deg, #f8ae00, #e05800); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; border-radius: 15px;">Bendahara Umum</span>
+                                </div>
+                                <p class="text-muted" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; line-height: 1.6;">
+                                    Mengelola keuangan organisasi dengan profesional dan bertanggung jawab.
+                                </p>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 w-100 h-1" style="background: linear-gradient(90deg, #f8ae00, #e05800);"></div>
+                        </div>
+                    </div>
+
+                    <!-- Pengurus 6 -->
+                    <div class="pengurus-card flex-shrink-0" style="width: 320px; margin-right: 2rem;">
+                        <div class="card border-0 h-100 position-relative overflow-hidden" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; background: white;">
+                            <div class="card-body text-center p-4">
+                                <div class="pengurus-image-container mb-4 position-relative">
+                                    <div class="pengurus-image-placeholder mx-auto position-relative" style="width: 200px; height: 200px; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(248, 174, 0, 0.3); transition: all 0.3s ease;">
+                                         <img src="img/nissya.jpg" alt="Wabendum" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1));"></div>
+                                    </div>
+                                    <div class="position-absolute bottom-0 end-0 bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; transform: translate(10px, 10px); box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);">
+                                        <i class="fas fa-wallet" style="font-size: 16px;"></i>
+                                    </div>
+                                </div>
+                                <h5 class="fw-bold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 20px;">Nissya</h5>
+                                <div class="mb-3">
+                                    <span class="badge px-3 py-2" style="background: linear-gradient(45deg, #f8ae00, #e05800); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; border-radius: 15px;">Wakil Bendahara Umum</span>
+                                </div>
+                                <p class="text-muted" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; line-height: 1.6;">
+                                    Membantu mengelola keuangan organisasi dengan akuntabilitas tinggi.
+                                </p>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 w-100 h-1" style="background: linear-gradient(90deg, #6c757d, #495057);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Enhanced Navigation Arrows - Dipindahkan lebih keluar -->
+            <button class="btn position-absolute top-50 translate-middle-y nav-arrow" id="prevBtn" style="left: -80px; width: 50px; height: 50px; border-radius: 50%; z-index: 10; border: 2px solid #f8ae00; background: white; color: #f8ae00; box-shadow: 0 4px 15px rgba(248, 174, 0, 0.2); transition: all 0.3s ease;">
+                <i class="fas fa-chevron-left" style="font-size: 18px;"></i>
+            </button>
+            <button class="btn position-absolute top-50 translate-middle-y nav-arrow" id="nextBtn" style="right: -80px; width: 50px; height: 50px; border-radius: 50%; z-index: 10; border: 2px solid #f8ae00; background: white; color: #f8ae00; box-shadow: 0 4px 15px rgba(248, 174, 0, 0.2); transition: all 0.3s ease;">
+                <i class="fas fa-chevron-right" style="font-size: 18px;"></i>
+            </button>
         </div>
 
-        <!-- Departemen Grid - Semua ukuran sama -->
-        <div class="row g-4 justify-content-center wow fadeInUp" data-wow-delay="0.2s">
-            <!-- PSDM -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card border-0 h-100 position-relative overflow-hidden departemen-card" style="border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s ease; background: white;">
-                    <div class="card-body text-center p-3">
-                        <div class="departemen-image-container mb-3 position-relative">
-                            <div class="departemen-image-placeholder mx-auto position-relative" style="width: 100%; height: 160px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3); transition: all 0.3s ease;">
-                                <img src="https://via.placeholder.com/400x200/f8ae00/ffffff?text=PSDM+DEPT" alt="PSDM" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1));"></div>
-                            </div>
-                        </div>
-                        <h5 class="fw-bold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 14px; line-height: 1.3;">DEPARTEMEN PENGEMBANGAN SUMBER DAYA MANUSIA</h5>
-                    </div>
-                    <div class="position-absolute bottom-0 start-0 w-100 h-1" style="background: linear-gradient(90deg, #f8ae00, #e05800);"></div>
-                </div>
+<!-- Koordinator Bidang Section -->
+        <div class="mt-5 pt-5">
+               <!-- Koordinator Title -->
+        <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="d-inline-block px-4 py-2 mb-3" style="background: linear-gradient(45deg, #6c757d, #495057); border-radius: 50px;">
+                <h3 class="fw-bold text-white mb-0" style="font-family: 'Cinzel', serif; font-size: 24px; letter-spacing: 2px;">KOORDINATOR BIDANG</h3>
             </div>
+        </div>
 
-            <!-- ADKESMA -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card border-0 h-100 position-relative overflow-hidden departemen-card" style="border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s ease; background: white;">
-                    <div class="card-body text-center p-3">
-                        <div class="departemen-image-container mb-3 position-relative">
-                            <div class="departemen-image-placeholder mx-auto position-relative" style="width: 100%; height: 160px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3); transition: all 0.3s ease;">
-                                <img src="https://via.placeholder.com/400x200/f8ae00/ffffff?text=ADKESMA+DEPT" alt="ADKESMA" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1));"></div>
+            <!-- Koordinator Bidang Grid -->
+            <div class="row g-4 justify-content-center wow fadeInUp" data-wow-delay="0.5s">
+                <!-- Koordinator 1 -->
+                <div class="col-lg-5">
+                    <div class="card border-0 h-100 position-relative overflow-hidden" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; background: white;">
+                        <div class="card-body text-center p-4">
+                            <div class="koordinator-image-container mb-4 position-relative">
+                                <div class="koordinator-image-placeholder mx-auto position-relative" style="width: 200px; height: 200px; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(248, 174, 0, 0.3); transition: all 0.3s ease;">
+                                    <img src="img/wahyudi.jpeg" alt="Wahyudi" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1));"></div>
+                                </div>
+                                <div class="position-absolute bottom-0 end-0 text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; transform: translate(10px, 10px); background: linear-gradient(45deg, #e05800, #f8ae00); box-shadow: 0 4px 15px rgba(224, 88, 0, 0.3);">
+                                    <i class="fas fa-graduation-cap" style="font-size: 16px;"></i>
+                                </div>
                             </div>
+                            <h5 class="fw-bold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 20px;">Wahyudi Firmansyah</h5>
+                            <div class="mb-3">
+                                <span class="badge px-3 py-2" style="background: linear-gradient(45deg, #f8ae00, #e05800); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; border-radius: 15px;">Koordinator Bidang 1</span>
+                            </div>
+                            <p class="text-muted" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; line-height: 1.6;">
+                                Memimpin departemen yang fokus pada peningkatan kualitas akademik mahasiswa melalui berbagai program inovatif dan komprehensif.
+                            </p>
                         </div>
-                        <h5 class="fw-bold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 14px; line-height: 1.3;">DEPARTEMEN ADVOKASI DAN KESEJAHTERAAN MAHASISWA</h5>
+                        <div class="position-absolute bottom-0 start-0 w-100 h-1" style="background: linear-gradient(90deg, #f8ae00, #e05800);"></div>
                     </div>
-                    <div class="position-absolute bottom-0 start-0 w-100 h-1" style="background: linear-gradient(90deg, #f8ae00, #e05800);"></div>
                 </div>
-            </div>
 
-            <!-- KASTRAT -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card border-0 h-100 position-relative overflow-hidden departemen-card" style="border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s ease; background: white;">
-                    <div class="card-body text-center p-3">
-                        <div class="departemen-image-container mb-3 position-relative">
-                            <div class="departemen-image-placeholder mx-auto position-relative" style="width: 100%; height: 160px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3); transition: all 0.3s ease;">
-                                <img src="https://via.placeholder.com/400x200/f8ae00/ffffff?text=KASTRAT+DEPT" alt="KASTRAT" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1));"></div>
+                <!-- Koordinator 2 -->
+                <div class="col-lg-5">
+                    <div class="card border-0 h-100 position-relative overflow-hidden" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s ease; background: white;">
+                        <div class="card-body text-center p-4">
+                            <div class="koordinator-image-container mb-4 position-relative">
+                                <div class="koordinator-image-placeholder mx-auto position-relative" style="width: 200px; height: 200px; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(248, 174, 0, 0.3); transition: all 0.3s ease;">
+                                    <img src="https://via.placeholder.com/200x200/f8ae00/ffffff?text=Aidil" alt="Muhammad Aidil Akbar" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
+                                    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1));"></div>
+                                </div>
+                                <div class="position-absolute bottom-0 end-0 text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; transform: translate(10px, 10px); background: linear-gradient(45deg, #f8ae00, #e05800); box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3);">
+                                    <i class="fas fa-users" style="font-size: 16px;"></i>
+                                </div>
                             </div>
-                        </div>
-                        <h5 class="fw-bold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 14px; line-height: 1.3;">DEPARTEMEN KAJIAN DAN AKSI STRATEGI</h5>
-                    </div>
-                    <div class="position-absolute bottom-0 start-0 w-100 h-1" style="background: linear-gradient(90deg, #f8ae00, #e05800);"></div>
-                </div>
-            </div>
-
-            <!-- HUMAS -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card border-0 h-100 position-relative overflow-hidden departemen-card" style="border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s ease; background: white;">
-                    <div class="card-body text-center p-3">
-                        <div class="departemen-image-container mb-3 position-relative">
-                            <div class="departemen-image-placeholder mx-auto position-relative" style="width: 100%; height: 160px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3); transition: all 0.3s ease;">
-                                <img src="https://via.placeholder.com/400x200/f8ae00/ffffff?text=HUMAS+DEPT" alt="HUMAS" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1));"></div>
+                            <h5 class="fw-bold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 20px;">Muhammad Aidil Akbar</h5>
+                            <div class="mb-3">
+                                <span class="badge px-3 py-2" style="background: linear-gradient(45deg, #f8ae00, #e05800); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; border-radius: 15px;">Koordinator Bidang 2</span>
                             </div>
+                            <p class="text-muted" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; line-height: 1.6;">
+                                Mengembangkan potensi mahasiswa dalam bidang non-akademik dengan program yang kreatif dan berkelanjutan untuk kemajuan bersama.
+                            </p>
                         </div>
-                        <h5 class="fw-bold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 14px; line-height: 1.3;">DEPARTEMEN HUBUNGAN MAHASISWA</h5>
+                        <div class="position-absolute bottom-0 start-0 w-100 h-1" style="background: linear-gradient(90deg, #f8ae00, #e05800);"></div>
                     </div>
-                    <div class="position-absolute bottom-0 start-0 w-100 h-1" style="background: linear-gradient(90deg, #f8ae00, #e05800);"></div>
-                </div>
-            </div>
-
-            <!-- MEDINFO -->
-            <div class="col-lg-4 col-md-6">
-                <div class="card border-0 h-100 position-relative overflow-hidden departemen-card" style="border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: all 0.3s ease; background: white;">
-                    <div class="card-body text-center p-3">
-                        <div class="departemen-image-container mb-3 position-relative">
-                            <div class="departemen-image-placeholder mx-auto position-relative" style="width: 100%; height: 160px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3); transition: all 0.3s ease;">
-                                <img src="https://via.placeholder.com/400x200/f8ae00/ffffff?text=MEDINFO+DEPT" alt="MEDINFO" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease;">
-                                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1));"></div>
-                            </div>
-                        </div>
-                        <h5 class="fw-bold mb-2" style="font-family: 'Plus Jakarta Sans', sans-serif; color: #333; font-size: 14px; line-height: 1.3;">DEPARTEMEN MEDIA KOMUNIKASI DAN INFORMASI</h5>
-                    </div>
-                    <div class="position-absolute bottom-0 start-0 w-100 h-1" style="background: linear-gradient(90deg, #f8ae00, #e05800);"></div>
                 </div>
             </div>
         </div>
@@ -108,92 +248,300 @@
 
 <!-- Enhanced Custom Styles -->
 <style>
-.departemen-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important;
+    
+.pengurus-card:hover .card {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
 }
 
-.departemen-card:hover .departemen-image-placeholder img {
+.pengurus-card:hover .pengurus-image-placeholder img {
     transform: scale(1.05);
 }
 
-.departemen-image-placeholder {
-    transition: all 0.3s ease;
+.nav-arrow:hover {
+    background: linear-gradient(45deg, #f8ae00, #e05800) !important;
+    color: white !important;
+    border-color: transparent !important;
+    transform: scale(1.1);
 }
 
-.departemen-card:hover .departemen-image-placeholder {
-    box-shadow: 0 8px 25px rgba(248, 174, 0, 0.4) !important;
+.koordinator-image-placeholder:hover img {
+    transform: scale(1.05);
 }
 
-.departemen-card:hover h5 {
-    color: #e05800 !important;
-    transition: color 0.3s ease;
+.koordinator-image-container:hover .koordinator-image-placeholder {
+    box-shadow: 0 15px 40px rgba(248, 174,0, 0.5) !important;
 }
 
-/* Ensure all cards have the same height */
-.departemen-card {
-    min-height: 260px;
+.card:hover {
+   transform: translateY(-8px);
+   box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
 }
 
-/* Responsive adjustments */
+.badge {
+   transition: all 0.3s ease;
+}
+
+.card:hover .badge {
+   transform: scale(1.05);
+}
+
+/* Slider Animation */
+.pengurus-slider {
+   will-change: transform;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .departemen-image-placeholder {
-        height: 140px !important;
-    }
-    
-    .card-body {
-        padding: 1.25rem !important;
-    }
-    
-    h5 {
-        font-size: 13px !important;
-    }
+   .pengurus-card {
+       width: 280px !important;
+       margin-right: 1rem !important;
+   }
+   
+   .koordinator-image-placeholder {
+       width: 180px !important;
+       height: 180px !important;
+   }
+   
+   .pengurus-image-placeholder {
+       width: 160px !important;
+       height: 160px !important;
+   }
+   
+   .pengurus-slider-container {
+       padding: 0 40px !important;
+   }
+   
+   .nav-arrow {
+       width: 40px !important;
+       height: 40px !important;
+   }
+   
+   .nav-arrow i {
+       font-size: 14px !important;
+   }
 }
 
 @media (max-width: 576px) {
-    .col-lg-4 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-    
-    .departemen-image-placeholder {
-        height: 120px !important;
-    }
-    
-    .card-body {
-        padding: 1rem !important;
-    }
-    
-    h5 {
-        font-size: 12px !important;
-    }
+   .pengurus-card {
+       width: 250px !important;
+   }
+   
+   .koordinator-image-placeholder {
+       width: 150px !important;
+       height: 150px !important;
+   }
+   
+   .pengurus-image-placeholder {
+       width: 140px !important;
+       height: 140px !important;
+   }
+   
+   .card-body {
+       padding: 2rem !important;
+   }
+   
+   h5 {
+       font-size: 18px !important;
+   }
+   
+   .badge {
+       font-size: 11px !important;
+       padding: 6px 12px !important;
+   }
 }
 
-/* Animation for fade in effect */
+/* Animation Effects */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+   from {
+       opacity: 0;
+       transform: translateY(30px);
+   }
+   to {
+       opacity: 1;
+       transform: translateY(0);
+   }
 }
 
 .wow {
-    animation: fadeInUp 0.6s ease-out;
+   animation: fadeInUp 0.6s ease-out forwards;
 }
 
-[data-wow-delay="0.1s"] {
-    animation-delay: 0.1s;
+
+
+.pengurus-image-placeholder:hover::before {
+   left: 100%;
 }
 
-[data-wow-delay="0.2s"] {
-    animation-delay: 0.2s;
+.koordinator-image-placeholder::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -100%;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+   transition: left 0.5s;
+   z-index: 1;
+}
+
+.koordinator-image-placeholder:hover::before {
+   left: 100%;
+}
+
+/* Button Hover Effects */
+.btn:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 8px 25px rgba(0,0,0,0.2) !important;
+}
+
+/* Gradient Animation */
+.position-relative::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: linear-gradient(45deg, transparent, rgba(248, 174, 0, 0.1), transparent);
+   opacity: 0;
+   transition: opacity 0.3s ease;
+   pointer-events: none;
+}
+
+.card:hover::before {
+   opacity: 1;
 }
 </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<!-- JavaScript for Slider Functionality -->
+<script>
+  
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('pengurusSlider');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const cards = document.querySelectorAll('.pengurus-card');
+    
+    let currentIndex = 0;
+    const cardWidth = 320 + 32; // card width + margin
+    
+    function getVisibleCards() {
+        const containerWidth = slider.parentElement.offsetWidth;
+        return Math.floor(containerWidth / cardWidth);
+    }
+    
+    function getMaxIndex() {
+        const visibleCards = getVisibleCards();
+        // Pastikan ada minimal 1 card yang bisa di-scroll
+        return Math.max(0, cards.length - visibleCards);
+    }
+    
+    function updateSlider() {
+        const maxIndex = getMaxIndex();
+        
+        // Pastikan currentIndex tidak melebihi maxIndex
+        if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+        }
+        
+        const translateX = -currentIndex * cardWidth;
+        slider.style.transform = `translateX(${translateX}px)`;
+        
+        // Update button states
+        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+        
+        console.log(`Current Index: ${currentIndex}, Max Index: ${maxIndex}, Total Cards: ${cards.length}, Visible Cards: ${getVisibleCards()}`);
+    }
+    
+    prevBtn.addEventListener('click', function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    });
+    
+    nextBtn.addEventListener('click', function() {
+        const maxIndex = getMaxIndex();
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateSlider();
+        }
+    });
+    
+    // Auto-slide functionality
+    let autoSlideInterval;
+    
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            const maxIndex = getMaxIndex();
+            if (currentIndex >= maxIndex) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+            updateSlider();
+        }, 4000);
+    }
+    
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+    
+    // Pause auto-slide on hover
+    slider.parentElement.addEventListener('mouseenter', stopAutoSlide);
+    slider.parentElement.addEventListener('mouseleave', startAutoSlide);
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        // Recalculate everything on resize
+        updateSlider();
+    });
+    
+    // Initialize
+    updateSlider();
+    startAutoSlide();
+    
+    // Add smooth transition
+    slider.style.transition = 'transform 0.3s ease-in-out';
+    
+    // Touch/swipe support for mobile
+    let startX = 0;
+    let isDragging = false;
+    
+    slider.parentElement.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        stopAutoSlide();
+    });
+    
+    slider.parentElement.addEventListener('touchmove', function(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+    });
+    
+    slider.parentElement.addEventListener('touchend', function(e) {
+        if (!isDragging) return;
+        
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        const maxIndex = getMaxIndex();
+        
+        if (Math.abs(diff) > 50) {
+            if (diff > 0 && currentIndex < maxIndex) {
+                currentIndex++;
+            } else if (diff < 0 && currentIndex > 0) {
+                currentIndex--;
+            }
+            updateSlider();
+        }
+        
+        isDragging = false;
+        startAutoSlide();
+    });
+});
+</script>
+<!-- End Pengurus Section -->

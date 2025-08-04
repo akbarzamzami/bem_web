@@ -4,696 +4,634 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Info Beasiswa - Politeknik Negeri Sriwijaya</title>
-    
+    <meta name="description" content="Informasi lengkap berbagai beasiswa untuk mahasiswa Politeknik Negeri Sriwijaya. Jelajahi kesempatan bantuan biaya pendidikan, prestasi, riset, dan pertukaran luar negeri.">
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            
+        :root {
+            --orange: #ff8800;
+            --orange-hover: #f8ae00;
+            --green-dark: #f36d00;
+            --green-mid: #f36d00;
+            --gray-100: #ffffff;
+            --gray-200: #f1f3f5;
+            --gray-300: #e9ecef;
+            --gray-600: #666666;
+            --radius-lg: 15px;
+            --transition-base: all 0.3s ease;
         }
 
-    .judul-beasiswa,
-    .subjudul-beasiswa {
-    color: #e05800; /* Warna oranye senada */
-}
+        * {margin:0;padding:0;box-sizing:border-box;}
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f8f9fa;
+            background-color: var(--gray-100);
         }
 
-        
-
-    .navbar-nav .nav-link {
-        font-weight: 500;
-        margin-left: 1rem;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link:focus {
-        color: #e65c00;
-    }
-
-    .navbar-nav .nav-link.active {
-        font-weight: 600;
-    }
-
-
+        /* ------------------------------
+           NAVBAR
+        ------------------------------ */
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            margin-left: 1rem;
+            transition: var(--transition-base);
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: var(--orange);
+        }
+        .navbar-nav .nav-link.active {
+            font-weight: 600;
+            color: var(--orange);
+        }
         .dropdown-menu {
             border: none;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             border-radius: 8px;
             padding: 10px 0;
         }
-
         .dropdown-item {
             padding: 8px 20px;
             color: #333;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-
         .dropdown-item:hover {
-            background-color: #f8f9fa;
+            background-color: var(--gray-100);
+            color: var(--orange);
         }
-
         .dropdown-item.active {
-            background-color: #007bff;
-            color: white;
+            background-color: var(--orange);
+            color: #fff;
         }
 
-        /* Spinner */
+        /* ------------------------------
+           SPINNER
+        ------------------------------ */
         #spinner {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0;left: 0;width: 100%;height: 100%;
             background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: flex;justify-content: center;align-items: center;
             z-index: 9999;
         }
+        .spinner-border {width:3rem;height:3rem;color:var(--orange);}
 
-        .spinner-border {
-            width: 3rem;
-            height: 3rem;
-            color: #007bff;
+        /* ------------------------------
+           HERO (gambar + teks)
+        ------------------------------ */
+        .hero-beasiswa-wrapper {
+            background-color: #fff;
+            border-bottom: 1px solid var(--gray-300);
         }
-
-         /* Hero Section */
-        .bg-breadcrumb {
-            background: none; /* menghapus gradient hijau */
-            color: #2c5530;
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .breadcrumb-animation {
-            display: none; /* menyembunyikan animasi bulat putih */
-        }
-        .breadcrumb-animation {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        .breadcrumb-animation li {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-
-        .display-3 {
-            font-size: 3rem;
+        .hero-beasiswa h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
+            color: #f8ae00;
+        }
+        .hero-beasiswa p {
+            font-size: 1.125rem;
+            max-width: 480px;
+            color: var(--gray-600);
+        }
+        .hero-beasiswa-img-wrapper {
+            position: relative;
+        }
+        .hero-beasiswa-img-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        .breadcrumb {
-            background: transparent;
-            padding: 0;
-            margin: 0;
-        }
-
-        .breadcrumb-item a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-
-        .breadcrumb-item a:hover {
-            color: white;
-        }
-
-        .breadcrumb-item.active {
-            color: #ffd700;
-        }
-
-        /* Main Content */
-        .main-content {
-            padding: 60px 0;
-        }
-
+        /* ------------------------------
+           SECTION TITLE
+        ------------------------------ */
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: #2c5530;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 2.5rem;
             font-weight: 700;
+            line-height: 1.25;
+            color:#f8ae00;
+        }
+        .section-title span {
+            color: var(#f8ae00);
         }
 
-        /* Scholarship Grid */
+        /* ------------------------------
+           SCHOLARSHIP GRID
+        ------------------------------ */
+        .scholarship-section {
+            background-color: #fff;
+            border-top: 1px solid var(--gray-300);
+            border-bottom: 1px solid var(--gray-300);
+            padding-top: 4rem;
+            padding-bottom: 5rem;
+        }
         .scholarship-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-bottom: 60px;
         }
-
         .scholarship-card {
-            background: white;
-            border-radius: 15px;
+            background: #fff;
+            border-radius: var(--radius-lg);
             overflow: hidden;
+            border: 1px solid transparent;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.6s ease forwards;
         }
-
-        .scholarship-card:nth-child(1) { animation-delay: 0.1s; }
-        .scholarship-card:nth-child(2) { animation-delay: 0.2s; }
-        .scholarship-card:nth-child(3) { animation-delay: 0.3s; }
-        .scholarship-card:nth-child(4) { animation-delay: 0.4s; }
-        .scholarship-card:nth-child(5) { animation-delay: 0.5s; }
-        .scholarship-card:nth-child(6) { animation-delay: 0.6s; }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .scholarship-card:nth-child(1){animation-delay:0.1s;}
+        .scholarship-card:nth-child(2){animation-delay:0.2s;}
+        .scholarship-card:nth-child(3){animation-delay:0.3s;}
+        .scholarship-card:nth-child(4){animation-delay:0.4s;}
+        .scholarship-card:nth-child(5){animation-delay:0.5s;}
+        .scholarship-card:nth-child(6){animation-delay:0.6s;}
+        @keyframes fadeInUp {to{opacity:1;transform:translateY(0);}}
 
         .scholarship-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(243, 131, 12, 0.2);
+            border-left: 5px solid var(--orange);
         }
-
         .scholarship-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(45deg, #e0e0e0, #f0f0f0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: #666;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(45deg, #e0e0e0, #f0f0f0);
         }
-
         .scholarship-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 100%;height: 100%;object-fit: cover;
+            transition: transform 0.4s ease;
         }
-
-        .scholarship-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+        .scholarship-card:hover .scholarship-image img {
+            transform: scale(1.05);
         }
-
-        .scholarship-content {
-            padding: 25px;
-        }
-
+        .scholarship-content {padding: 25px;}
         .scholarship-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #fda00a;
+            font-size: 1.3rem;font-weight:700;margin-bottom:15px;color:var(--orange);
+            transition: color 0.3s ease;
         }
-
+        .scholarship-card:hover .scholarship-title {color:var(--orange-hover);}
         .scholarship-description {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            color: #666;
+            font-size: 1rem;line-height:1.6;margin-bottom:20px;color:var(--gray-600);
         }
-
-        .scholarship-details {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-        }
-
-        .deadline {
-            background-color: #ff6b6b;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-
-        .amount {
-            background-color: #4ecdc4;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-
         .scholarship-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #2c5530, #4a7c59);
-            color: white;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s;
-            text-align: center;
-            border: none;
-            cursor: pointer;
-            width: 100%;
+            display:inline-block;width:100%;text-align:center;
+            background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+            color:#fff;text-decoration:none;padding:12px 25px;border-radius:25px;font-weight:600;
+            border:none;cursor:pointer;transition:var(--transition-base);
+            margin-top: 10px; /* Added margin for spacing */
         }
-
         .scholarship-button:hover {
-            background: linear-gradient(135deg, #4a7c59, #2c5530);
-            transform: translateY(-2px);
-            color: white;
+            background: linear-gradient(135deg, var(--orange), var(--orange-hover));
+            color:#fff;transform:translateY(-2px);
         }
 
-        /* Footer */
-        .footer {
-            background: linear (135deg, #2c3e50 0%, #ffffff 100%);
-            color: white;
-            padding: 50px 0 20px;
-            font-family: serif;
+        /* ------------------------------
+           FOOTER
+        ------------------------------ */
+        /* Link di footer */
+    footer a {
+        color: #e65100; /* Warna oranye */
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
         }
 
-       .social-icon {
-            width: 35px;
-            height: 35px;
-            color: #000;
-            border-radius: 0;
+/* Hover link */
+    footer a:hover {
+        color: #ff9800; /* Oranye terang saat hover */
+        text-decoration: underline;
+        }
+        /* Ikon sosial media */
+        footer .social-icons a {
+        margin-right: 10px;
+        color: #e65100;
+        font-size: 20px;
+        }
+        .social-icon:hover {transform:scale(1.2);color:var(--orange);}
+        .footer-bottom {padding-top:20px;margin-top:30px;text-align:center;color:#000;font-size:12px;border-top:none;}
+
+        /* Adjust footer logo alignment */
+        .footer-logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            font-size: 20px;
-            background: none; /* menghapus background oranye */
         }
 
-        .social-icon:hover {
-            transform: scale(1.2);
-            color: #ffca09;
-        }
-
-        .footer-bottom {
-            padding-top: 20px;
-            margin-top: 30px;
-            text-align: center;
-            color: #000;
-            font-size: 12px;
-            border-top: none; /* Hapus garis abu-abu */
-        }
-
-        /* Back to Top */
+        /* ------------------------------
+           BACK TO TOP BUTTON
+        ------------------------------ */
         .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 45px;
-            height: 45px;
-            background: #000000;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 18px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
+            position: fixed;bottom:30px;right:30px;width:45px;height:45px;
+            background:var(--orange);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+            text-decoration:none;font-size:18px;box-shadow:0 4px 12px rgba(0,0,0,0.2);
+            transition:var(--transition-base);z-index:1000;opacity:0;visibility:hidden;
         }
+        .back-to-top.show {opacity:1;visibility:visible;}
+        .back-to-top:hover {background:var(--white);transform:translateY(-2px);color:rgb(255, 137, 2);}
 
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: #0056b3;
-            transform: translateY(-2px);
-            color: white;
-        }
-
-        /* Responsive Design */
+        /* ------------------------------
+           RESPONSIVE
+        ------------------------------ */
         @media (max-width: 768px) {
-            .navbar-brand .text-black {
-                font-size: 16px;
-            }
-
-            .navbar-brand small {
-                font-size: 12px;
-            }
-
-            .display-3 {
-                font-size: 2rem;
-            }
-
-            .scholarship-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .scholarship-details {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .d-flex.mb-3 {
-                justify-content: center;
-            }
-
-            .d-flex.align-items-center {
-                justify-content: center;
-            }
+            .navbar-brand .text-black {font-size:16px;}
+            .navbar-brand small {font-size:12px;}
+            .hero-beasiswa h1 {font-size:2rem;}
+            .hero-beasiswa p {font-size:1rem;}
+            .scholarship-grid {grid-template-columns:1fr;}
         }
 
-        /* Additional Animations */
-        .section-title {
-            animation: fadeInDown 0.8s ease;
-        }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .beasiswa-banner h1 {
+            color: #f8ae00;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-shadow: 2px 2px 8px rgb(205, 205, 205);
+}
+
+.beasiswa-banner {
+    height: 55vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                url('img/bg-beasiswa.jpg') center/cover no-repeat;
+    position: relative;
+
+    /* Bayangan bawah halus */
+    box-shadow: inset 0 -100px 100px -30px white;
+}
+
+
+.beasiswa-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+}
+
+  .text-orange {
+    color: orange;
+  }
+
+  @keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Warna teks oranye */
+.text-orange {
+  color: orange;
+}
+
+/* Animasi Fade In dari Bawah */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-bottom {
+  animation: fadeInUp 1s ease;
+}
+
+/* Animasi Fade In dari Atas */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-top {
+  animation: fadeInDown 1s ease;
+}
+
+/* Zoom In */
+@keyframes zoomIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-zoom {
+  animation: zoomIn 1s ease;
+}
+
+/* Fade In Biasa */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade {
+  animation: fadeIn 1s ease;
+}
+
+/* Tambahan styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdfdfd;
+}
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.03);
+}
+/* Warna teks oranye */
+.text-orange {
+  color: orange;
+}
+
+/* Animasi Fade In dari Bawah */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-bottom {
+  animation: fadeInUp 1s ease;
+}
+
+/* Animasi Fade In dari Atas */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-top {
+  animation: fadeInDown 1s ease;
+}
+
+/* Zoom In */
+@keyframes zoomIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-zoom {
+  animation: zoomIn 1s ease;
+}
+
+/* Fade In Biasa */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade {
+  animation: fadeIn 1s ease;
+}
+
+/* Tambahan styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdfdfd;
+}
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.03);
+}
+
+
+
     </style>
 </head>
 <body>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
         </div>
     </div>
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative shadow-sm">
-    <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
-        <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
-        <div class="d-flex flex-column">
-            <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
-            <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
-        </div>
-    </a>
-
-    <!-- Toggle button for mobile -->
-    <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto py-0">
-            <a class="nav-item nav-link" href="index.html">Home</a>
-            <a class="nav-item nav-link" href="about.html">About</a>
-
-            <!-- Academic Info Dropdown -->
-            <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Academic Information
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="academicDropdown">
-                    <li><a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a></li>
-                    <li><a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a></li>
-                </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative shadow-sm">
+        <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
+            <img src="img/logo.png" alt="Logo BEM Polsri" style="height: 40px; margin-right: 10px;">
+            <div class="d-flex flex-column">
+                <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
+                <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
             </div>
+        </a>
 
-            <!-- Campus Echo Dropdown -->
-            <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Campus Echo
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="campusDropdown">
-                    <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
-                    <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
-                    <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
-                </ul>
+        <!-- Toggle button for mobile -->
+        <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a class="nav-item nav-link" href="index.html">Home</a>
+                <a class="nav-item nav-link" href="about.html">About</a>
+
+                <!-- Academic Info Dropdown -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Academic Information</a>
+                    <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+                        <li><a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a></li>
+                        <li><a class="dropdown-item active" href="Scholarship Info.html">Scholarship Info</a></li>
+                    </ul>
+                </div>
+
+                <!-- Campus Echo Dropdown -->
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Campus Echo</a>
+                    <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+                        <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
+                        <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
+                        <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
+                    </ul>
+                </div>
+
+                <a class="nav-item nav-link" href="contact.html">Contact Us</a>
             </div>
-
-            <a class="nav-item nav-link" href="contact.html">Contact Us</a>
         </div>
-    </div>
-</nav>
-<!-- Navbar End -->
+    </nav>
+    <!-- Navbar End -->
 
 
+<section class="beasiswa-banner d-flex align-items-center justify-content-center text-center text-white" style="height: 75vh; background: linear-gradient(rgba(255, 255, 255, 0.813), rgb(255, 255, 255, 0.813)), url('http://akuntansi.polsri.ac.id/wp-content/uploads/2023/08/IMG_0958.jpg') center/cover no-repeat;">
+</section>
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb mb-0">
-        <ul class="breadcrumb-animation">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <div class="container text-center py-5" style="max-width: 900px;">
-            <h3 class="display-3 mb-4">Info Beasiswa</h3>   
-        </div>
-    </div>
-    <!-- Header End -->
+<<div class="container text-center animate-fade-in">
+  <h1 class="display-4 fw-bold mb-3 text-orange">INFORMASI BEASISWA</h1>
+  <p class="lead fw-medium mx-auto text-orange">
+    Dapatkan informasi terkini mengenai beasiswa untuk mendukung pendidikan dan pengembangan diri mahasiswa Politeknik Negeri Sriwijaya.
+  </p>
+</div>
 
-    <!-- Main Content -->
-    <main class="main-content">
+    <!-- Scholarship Section Start -->
+    <section class="scholarship-section">
         <div class="container">
-            <h2 class="section-title">Explore Scholarship Politeknik Negeri Sriwijaya</h2>
-            
+
             <div class="scholarship-grid">
                 <!-- Scholarship Card 1 -->
-                <div class="scholarship-card">
+                <article class="scholarship-card">
                     <div class="scholarship-image">
-                        <img src="http://4.bp.blogspot.com/-gPqELTKhC5c/UNhPmQHgaxI/AAAAAAAAETQ/uMQfEKx7_xM/s1600/Logo%2BBank%2BIndonesia.jpg" alt="Beasiswa Prestasi Akademik">
+                        <img src="http://4.bp.blogspot.com/-gPqELTKhC5c/UNhPmQHgaxI/AAAAAAAAETQ/uMQfEKx7_xM/s1600/Logo%2BBank%2BIndonesia.jpg" alt="Beasiswa Bank Indonesia">
                     </div>
                     <div class="scholarship-content">
                         <h3 class="scholarship-title">Beasiswa Bank Indonesia</h3>
-                        <p class="scholarship-description">
-                            Beasiswa prestisius dari Bank Indonesia untuk mahasiswa aktif Politeknik Negeri Sriwijaya yang memiliki prestasi akademik dengan IPK minimal 3.25 dan aktif dalam kegiatan organisasi. 
-            Beasiswa ini juga membentuk Generasi Baru Indonesia (GenBI) sebagai komunitas penerima yang aktif dalam pengembangan diri, kepemimpinan, dan kegiatan sosial.
-                        </p>
-                        <div class="scholarship-details">
-                            <span class="deadline">Deadline: 30 Agt 2025</span>
-                            <span class="amount">Rp 10,000,000</span>
-                        </div>
-                        <a href="https://www.bi.go.id/id/default.aspx" class="scholarship-button">
-                            Lihat Detail Beasiswa
-                        </a>
+                        <p class="card-text" style="text-align: justify;">
+            Beasiswa dari Bank Indonesia bagi mahasiswa minimal semester 2 dengan IPK ≥ 3.00, aktif dan berprestasi. 
+            Penerima tergabung dalam komunitas GenBI dan memperoleh pembinaan kepemimpinan. Program ini mendukung pengembangan generasi muda yang unggul dan berdaya saing, termasuk di POLSRI.
+            Melalui program ini, Bank Indonesia berkomitmen untuk mengembangkan kemampuan kepemimpinan, mencetak generasi muda yang unggul,
+            dan memiliki daya saing tinggi dalam menghadapi tantangan pembangunan nasional di masa depan.
+          </p>
+                        <a href="https://www.bi.go.id/id/default.aspx" class="scholarship-button" target="_blank" rel="noopener">Lihat Detail Beasiswa</a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Scholarship Card 2 -->
-                <div class="scholarship-card">
+                <article class="scholarship-card">
                     <div class="scholarship-image">
-                        <img src="https://filantropi.or.id/web2020/wp-content/uploads/2023/01/logo-Karya-Salemba-Empat-KSE.jpg" alt="Beasiswa KIP Kuliah">
+                        <img src="https://kse.or.id/application/files/thumbnails/small/5016/4318/7878/logo_KSE.jpg" alt="Beasiswa Karya Salemba Empat">
                     </div>
                     <div class="scholarship-content">
                         <h3 class="scholarship-title">Beasiswa Karya Salemba Empat</h3>
-                        <p class="scholarship-description">
-                            Beasiswa dari Yayasan Karya Salemba Empat untuk mahasiswa Politeknik Negeri Sriwijaya semester 2 ke atas yang berasal dari keluarga kurang mampu namun memiliki motivasi belajar tinggi.
-            Selain bantuan dana, penerima beasiswa juga berkesempatan mengikuti pelatihan soft skill dan networking bersama penerima dari kampus lain se-Indonesia.
-                        </p>
-                        <div class="scholarship-details">
-                            <span class="deadline">Deadline: 15 Sep 2025</span>
-                            <span class="amount">Full Scholarship</span>
-                        </div>
-                        <a href="hhttp://beasiswa.or.id/" class="scholarship-button">
-                            Lihat Detail Beasiswa
-                        </a>
+                        <p class="card-text" style="text-align: justify;">
+            Diselenggarakan oleh Yayasan KSE bagi mahasiswa semester ≥2 dari keluarga kurang mampu. 
+            Bantuan berupa tunjangan hidup Rp750.000/bulan selama 1 tahun, dan pelatihan soft skill, jaringan nasional, 
+            serta pengembangan karakter. KSE mendorong mahasiswa POLSRI menjadi individu yang aktif dan mandiri.
+            KSE berupaya menciptakan mahasiswa yang tidak hanya unggul secara akademik, tetapi juga aktif, mandiri, 
+            dan siap menghadapi tantangan masa depan sebagai pemimpin yang berintegritas.
+          </p>
+                        <a href="http://beasiswa.or.id/" class="scholarship-button" target="_blank" rel="noopener">Lihat Detail Beasiswa</a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Scholarship Card 3 -->
-                <div class="scholarship-card">
+                <article class="scholarship-card">
                     <div class="scholarship-image">
-                        <img src="https://ikmb.ac.id/wp-content/uploads/2021/08/kip.png" alt="Beasiswa Kerjasama Industri">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLR-vw-c3u9hV_SGHZ67VZR7FOq7j2Rn-6zdE1WcyWz1SpprQ-zpUlh9gEgD_cKXEQ2Rn57l4LMLyciAIlDqMj98kbf-7Z078Y3MazMU5TygDoBW_ZAfutXMftGndzE8S5g4m2ANX2LOREY3yPgCyVQ1Z0ZuFbTIzWnLBwdN5qvWWiM8POGoBujBtH/s1066/KIP%20BELAKANG.jpeg" alt="Beasiswa KIP-Kuliah">
                     </div>
                     <div class="scholarship-content">
-                        <h3 class="scholarship-title">Beasiswa KIP-K</h3>
-                        <p class="scholarship-description">
-                            Beasiswa dari pemerintah Indonesia untuk calon mahasiswa baru Politeknik Negeri Sriwijaya dari keluarga tidak mampu secara ekonomi namun berprestasi.
-            Penerima mendapatkan pembebasan biaya kuliah penuh serta bantuan biaya hidup hingga lulus tepat waktu sesuai program studi.
-                        </p>
-                        <div class="scholarship-details">
-                            <span class="deadline">Deadline: 10 Okt 2025</span>
-                            <span class="amount">Rp 25,000,000</span>
-                        </div>
-                        <a href="https://kip-kuliah.kemdiktisaintek.go.id/" class="scholarship-button">
-                            Lihat Detail Beasiswa
-                        </a>
+                        <h3 class="scholarship-title">Beasiswa KIP-Kuliah</h3>
+                         <p class="card-text" style="text-align: justify;">
+            Program pemerintah bagi mahasiswa baru dari keluarga tidak mampu namun berprestasi. 
+            Beasiswa ini mencakup pembebasan biaya kuliah penuh dan bantuan biaya hidup hingga lulus. 
+            KIP-Kuliah membantu mahasiswa Politeknik Negeri Sriwijaya untuk mengakses pendidikan tinggi 
+            tanpa hambatan finansial, mendukung peningkatan kualitas SDM nasional.
+            KIP Kuliah diharapkan mampu mencetak lulusan Politeknik Negeri Sriwijaya yang unggul, berdaya saing, dan siap membangun bangsa.
+          </p>
+                        <a href="https://kip-kuliah.kemdiktisaintek.go.id/" class="scholarship-button" target="_blank" rel="noopener">Lihat Detail Beasiswa</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Scholarship Card 4 -->
-                <div class="scholarship-card">
-                    <div class="scholarship-image">
-                        <img src="https://via.placeholder.com/350x200/6a9c79/ffffff?text=Beasiswa+Riset" alt="Beasiswa Riset">
-                    </div>
-                    <div class="scholarship-content">
-                        <h3 class="scholarship-title">Beasiswa Riset Mahasiswa</h3>
-                        <p class="scholarship-description">
-                            Program beasiswa untuk mahasiswa yang tertarik melakukan penelitian inovatif. 
-                            Didampingi oleh dosen pembimbing berpengalaman.
-                        </p>
-                        <div class="scholarship-details">
-                            <span class="deadline">Deadline: 20 Nov 2025</span>
-                            <span class="amount">Rp 8,000,000</span>
-                        </div>
-                        <a href="https://polsri.ac.id/beasiswa-riset" class="scholarship-button">
-                            Lihat Detail Beasiswap
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Scholarship Card 5 -->
-                <div class="scholarship-card">
-                    <div class="scholarship-image">
-                        <img src="https://via.placeholder.com/350x200/7aac89/ffffff?text=Beasiswa+Luar+Negeri" alt="Beasiswa Luar Negeri">
-                    </div>
-                    <div class="scholarship-content">
-                        <h3 class="scholarship-title">Beasiswa Pertukaran Luar Negeri</h3>
-                        <p class="scholarship-description">
-                            Kesempatan study abroad ke universitas partner di Malaysia, Singapura, dan Australia. 
-                            Program semester exchange dengan full funding.
-                        </p>
-                        <div class="scholarship-details">
-                            <span class="deadline">Deadline: 5 Des 2025</span>
-                            <span class="amount">Full Funded</span>
-                        </div>
-                        <a href="https://polsri.ac.id/exchange-program" class="scholarship-button">
-                            Lihat Detail Beasiswa
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Scholarship Card 6 -->
-                <div class="scholarship-card">
-                    <div class="scholarship-image">
-                        <img src="https://via.placeholder.com/350x200/8abc99/ffffff?text=Beasiswa+Olahraga" alt="Beasiswa Olahraga">
-                    </div>
-                    <div class="scholarship-content">
-                        <h3 class="scholarship-title">Beasiswa Prestasi Olahraga</h3>
-                        <p class="scholarship-description">
-                            Beasiswa untuk mahasiswa yang memiliki prestasi di bidang olahraga tingkat regional atau nasional. 
-                            Mendukung pengembangan talent atletik.
-                        </p>
-                        <div class="scholarship-details">
-                            <span class="deadline">Deadline: 15 Jan 2026</span>
-                            <span class="amount">Rp 12,000,000</span>
-                        </div>
-                        <a href="https://polsri.ac.id/beasiswa-olahraga" class="scholarship-button">
-                            Lihat Detail Beasiswa
-                            p
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
-    </main>
+    </section>
+    <!-- Scholarship Section End -->
 
     <!-- Footer Start -->
-<footer class="footer-gradient">
-    <div class="container py-5" style="font-family: serif;">
+    <footer class="footer-gradient">
+      <div class="container py-5" style="font-family: serif">
         <div class="row g-4">
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="fw-bold mb-3">FOLLOW US</div>
-                <div class="d-flex mb-3">
-                    <a href="#" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" class="social-icon me-2"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                </div>
-                <div class="d-flex align-items-center">
-                    <img src="img/logo.png" alt="Logo" height="35" class="me-2">
-                    <div class="small">
-                        BEM POLITEKNIK NEGERI SRIWIJAYA<br>
-                        KABINET LENTERA SRIWIJAYA
-                    </div>
-                </div>
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="fw-bold mb-3">FOLLOW US</div>
+            <div class="d-flex mb-3">
+              <a href="#" class="social-icon me-2"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon me-2"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
             </div>
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="fw-bold mb-3">More Information</div>
-                <a href="#" class="footer-link d-block mb-1">Contact Us</a>
-                <a href="#" class="footer-link d-block mb-1">About Us</a>
-                <a href="Terms and Conditions.html" class="footer-link d-block">Terms and Conditions</a>
+            <div class="d-flex align-items-center">
+              <img src="img/logo.png" alt="Logo" height="35" class="me-2" />
+              <div class="small">
+                BEM POLITEKNIK NEGERI SRIWIJAYA<br />
+                KABINET LENTERA SRIWIJAYA
+              </div>
             </div>
-            <div class="col-12 col-xl-4">
-                <div class="fw-bold mb-3">Developed By</div>
-                <div class="small">Departemen Media Informasi</div>
-                <div class="small">BEM POLSRI 2025</div>
-            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="fw-bold mb-3">More Information</div>
+            <a href="#" class="footer-link d-block mb-1">Contact Us</a>
+            <a href="#" class="footer-link d-block mb-1">About Us</a>
+            <a href="Terms and Conditions.html" class="footer-link d-block"
+              >Terms and Conditions</a
+            >
+          </div>
+          <div class="col-12 col-xl-4">
+            <div class="fw-bold mb-3">Developed By</div>
+            <div class="small">Departemen Media Informasi</div>
+            <div class="small">BEM POLSRI 2025</div>
+          </div>
         </div>
-
-        <hr class="my-4">
-        <div class="footer-bottom text-center small mt-4 pt-2">
-            &copy; 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
+        <hr class="my-4" />
+        <div class="footer-bottom text-center small">
+          &copy; 2025 Departemen Media Informasi BEM POLSRI. All rights
+          reserved.
         </div>
-    </div>
-</footer>
-<!-- Footer End -->
-
-
-
+      </div>
+    </footer>
+    <!-- Footer End -->
     <!-- Back to Top -->
-    <a href="#" class="back-to-top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#" class="back-to-top" aria-label="Kembali ke atas"><i class="fa fa-arrow-up"></i></a>
 
-    <!-- JavaScript to hide spinner -->
-<script>
-    window.addEventListener('load', function () {
-        const spinner = document.getElementById('spinner');
-        if (spinner) {
-            spinner.remove(); // langsung hapus spinner saat halaman selesai dimuat
-        }
-    });
-</script>
+    <!-- Bootstrap JS (wajib untuk dropdown & collapse navbar) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Bootstrap JS (wajib untuk dropdown & collapse navbar) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Hilangkan spinner setelah load
+        window.addEventListener('load', function () {
+            const spinner = document.getElementById('spinner');
+            if (spinner) {
+                spinner.remove();
+            }
+        });
 
-
+        // Tombol Back to Top
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function(){
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        backToTop.addEventListener('click', function(e){
+            e.preventDefault();
+            window.scrollTo({top:0, behavior:'smooth'});
+        });
+    </script>
 </body>
 </html>
