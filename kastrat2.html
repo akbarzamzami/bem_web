@@ -54,12 +54,28 @@
     margin-top: -10px; /* Beri sedikit jarak dari jabatan */
   }
 
-  /* Style untuk ikon Instagram */
+  /* Gaya untuk logo Instagram pemimpin departemen */
+  .leader-instagram-icon {
+    background: linear-gradient(45deg, #feda77, #f58529, #dd2a7b, #8134af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.2rem; /* Nilai yang diperbarui */
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  .leader-instagram-icon-wrapper {
+      text-align: center;
+  }
+  .leader-instagram-icon:hover {
+    transform: scale(1.1);
+  }
+
+  /* Style untuk ikon Instagram anggota divisi (kembali normal) */
   .member-card .instagram-icon {
     background: linear-gradient(45deg, #feda77, #f58529, #dd2a7b, #8134af);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Ukuran normal */
     transition: all 0.3s ease;
     display: inline-block;
   }
@@ -246,21 +262,6 @@
         margin-bottom: 15px;
       }
 
-      /* Instagram icon styles */
-      .member-card .instagram-icon {
-        background: linear-gradient(45deg, #feda77, #f58529, #dd2a7b, #8134af);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 1.8rem; /* Increased icon size */
-        transition: all 0.3s ease;
-        display: inline-block; /* Agar gradient terlihat */
-        margin-top: 0px; /* Add margin-top to position it below jabatan */
-      }
-
-      .member-card .instagram-icon:hover {
-        transform: scale(1.1); /* Slightly enlarge on hover */
-      }
-
       /* Gradient for jabatan badge */
       .member-card .badge-jabatan {
         background: linear-gradient(45deg, #f8ae00, #e05800); /* Gradiasi orange-kuning */
@@ -356,8 +357,8 @@
           left: auto;
         }
 
-        .swiper-container.member-swiper .swiper-button-prev::after,
-        .swiper-container.member-swiper .swiper-button-next::after {
+        .swiper-container.member-swiper .swiper-button-next::after,
+        .swiper-container.member-swiper .swiper-button-prev::after {
           font-size: 1rem; /* Smaller icon */
         }
 
@@ -690,7 +691,7 @@
               >
               Reynaldi Agustino Putra
               </h5>
-              <div class="mb-3">
+              <div class="mb-3 mt-3">
                 <span
                   class="badge px-3 py-2"
                   style="
@@ -702,6 +703,15 @@
                   "
                   >Kepala Departemen</span
                 >
+              </div>
+              <div class="leader-instagram-icon-wrapper mt-1">
+                  <a
+                    href="https://www.instagram.com/rey_polsri"
+                    class="leader-instagram-icon"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
               </div>
               <p
                 class="text-muted"
@@ -788,7 +798,7 @@
               >
              Vina Rahmadiany
               </h5>
-              <div class="mb-3">
+              <div class="mb-3 mt-3">
                 <span
                   class="badge px-3 py-2"
                   style="
@@ -800,6 +810,15 @@
                   "
                   >Sekretaris Departemen</span
                 >
+              </div>
+              <div class="leader-instagram-icon-wrapper mt-1">
+                  <a
+                    href="https://www.instagram.com/vina_polsri"
+                    class="leader-instagram-icon"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
               </div>
               <p
                 class="text-muted"
@@ -848,13 +867,13 @@
               <div class="col-md-12 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="member-card">
                   <img
-                    src="img/kastrat/AFIQ AL BUKHARI.jpg"
+                    src="img/kastrat/MUHAMMAD PRASETYO PRAWIRA.jpg"
                     class="img-fluid"
-                    alt="Afiq Al-Bukhari"
+                    alt="MUHAMMAD PRASETYO PRAWIRA"
                   />
                   <div>
-                    <h5>Afiq Al-Bukhari</h5>
-                    <p class="badge-jabatan">Ketua Divisi</p>
+                    <h5>Muhammad Prasetyo Prawira</h5>
+                    <p class="badge-jabatan">Kepala Divisi</p>
                     <div class="social-icons">
                       <a
                         href="https://www.instagram.com/afiqalbukhari_"
@@ -872,12 +891,12 @@
               <div class="col-md-12 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="member-card">
                   <img
-                    src="img/kastrat/ANNISAH RAHMADANIA.jpg"
+                    src="img/kastrat/AFRI RIVALDO.jpg"
                     class="img-fluid"
-                    alt="Annisyah Ramadhaniah"
+                    alt="AFRI RIVALDO"
                   />
                   <div>
-                    <h5>Annisyah Ramadhaniah</h5>
+                    <h5>Afri Rivaldo</h5>
                     <p class="badge-jabatan">Staff</p>
                     <div class="social-icons">
                       <a
@@ -896,12 +915,12 @@
               <div class="col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="member-card">
                   <img
-                    src="img/kastrat/M. AIDIL FAHMI.jpg"
+                    src="img/kastrat/KENZA GHEA ANANTA.jpg"
                     class="img-fluid"
-                    alt="Muhammad Aidil Fahmi"
+                    alt="KENZA GHEA ANANTA"
                   />
                   <div>
-                    <h5>Muhammad Aidil Fahmi</h5>
+                    <h5>Kenza Ghea Ananta</h5>
                     <p class="badge-jabatan">Staff</p>
                     <div class="social-icons">
                       <a
@@ -920,13 +939,13 @@
               <div class="col-md-12 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="member-card">
                   <img
-                    src="img/kastrat/Iqbal Yoga Pranata.png"
+                    src="img/kastrat/Hartanti Adiningtyas_.jpg"
                     class="img-fluid"
-                    alt="Iqbal Yoga Pranata"
+                    alt="Hartanti Adiningtyas "
                   />
                   <div>
-                    <h5>Iqbal Yoga Pranata</h5>
-                    <p class="badge-jabatan">Staff Muda</p>
+                    <h5>Hartanti Adiningtyas </h5>
+                    <p class="badge-jabatan">Staff</p>
                     <div class="social-icons">
                       <a
                         href="https://www.instagram.com/iqbalyogapranata"
@@ -944,13 +963,13 @@
               <div class="col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="member-card">
                   <img
-                    src="img/kastrat/KAZIA DWI FRISKA RAMADHANI.png"
+                    src="img/kastrat/INDAH NUR SALSABILA.jpg"
                     class="img-fluid"
-                    alt="Muhammad Aidil Fahmi"
+                    alt="INDAH NUR SALSABILA"
                   />
                   <div>
-                    <h5>Kazia Dwi Driska R</h5>
-                    <p class="badge-jabatan">Staff Muda</p>
+                    <h5>Indah Nur Salsabila</h5>
+                    <p class="badge-jabatan">Staff</p>
                     <div class="social-icons">
                       <a
                         href="https://www.instagram.com/m.aidilfahmii_"
@@ -992,12 +1011,13 @@
               <div class="col-md-12 wow fadeInUp" data-wow-delay="1.3s">
                 <div class="member-card">
                   <img
-                    src="img/kastrat/REZA SULISTOMO MARWAH.png"
+                    src="img/kastrat/KAZIA DWI FRISKA RAMADHANI.png"
                     class="img-fluid"
-                    alt="Reza Sulistomo Marwah"
+                    alt="Kazia Dwi Friska 
+                    Ramadhani"
                   />
                   <div>
-                    <h5>Reza Sulistomo Marwah</h5>
+                    <h5>Kazia Dwi Friska Ramadhani</h5>
                     <p class="badge-jabatan">Staff Muda</p>
                     <div class="social-icons">
                       <a
@@ -1053,7 +1073,7 @@
                   />
                   <div>
                     <h5>Afiq Al-Bukhari</h5>
-                    <p class="badge-jabatan">Ketua Divisi</p>
+                    <p class="badge-jabatan">Kepala Divisi</p>
                     <div class="social-icons">
                       <a
                         href="https://www.instagram.com/afiqalbukhari_"
