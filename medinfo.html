@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>BEM POLSRI</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <meta content="" name="description" />
+    <link rel="icon" type="image/png" href="/img/logo.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <style>
+      
+.card-3-back {
+  background: linear-gradient(45deg, #f8ae00, #df7f3f); /* Gradien oranye-kuning */
+  color: white; /* Mengatur warna teks agar kontras dengan latar belakang */
+  /* Pastikan properti lain yang relevan seperti display, position, dll. tetap ada */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transform: rotateY(180deg); /* Ini harus ada untuk efek flip */
+  backface-visibility: hidden; /* Ini juga penting untuk efek flip */
+}
+  .member-card .social-icons {
+    display: flex;
+    justify-content: center; /* Membuat ikon berada di tengah */
+    margin-top: -10px; /* Beri sedikit jarak dari jabatan */
+  }
+
+  /* Gaya untuk logo Instagram pemimpin departemen */
+  .leader-instagram-icon {
+    background: linear-gradient(45deg, #feda77, #f58529, #dd2a7b, #8134af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.2rem; /* Nilai yang diperbarui */
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  .leader-instagram-icon-wrapper {
+      text-align: center;
+  }
+  .leader-instagram-icon:hover {
+    transform: scale(1.1);
+  }
+
+  /* Style untuk ikon Instagram anggota divisi (kembali normal) */
+  .member-card .instagram-icon {
+    background: linear-gradient(45deg, #feda77, #f58529, #dd2a7b, #8134af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem; /* Ukuran normal */
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .member-card .instagram-icon:hover {
+    transform: scale(1.1);
+  }
+      .calendar-day {
+        height: 40px;
+        border: 1px solid #dee2e6;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .calendar-day:hover {
+        background-color: #e9ecef;
+      }
+      .calendar-day.today {
+        background-color: var(--bs-primary);
+        color: white;
+      }
+      .calendar-day.selected {
+        background-color: #f8ae00;
+        color: white;
+      }
+      .calendar-day.other-month {
+        color: #6c757d;
+        background-color: #f8f9fa;
+      }
+      .calendar-header {
+        background-color: var(--bs-primary);
+        color: white;
+      }
+      .photo-card {
+        max-height: 500px;
+        overflow-y: auto;
+      }
+      .photo-item {
+        transition: transform 0.2s;
+      }
+      .photo-item:hover {
+        transform: scale(1.02);
+      }
+      /* Style untuk Swiper */
+      .swiper-container {
+        width: 100%;
+        padding-bottom: 50px; /* Ruang untuk pagination dan mungkin teks */
+      }
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .swiper-slide .image-container {
+        text-align: center; /* Untuk memusatkan gambar dan teks */
+      }
+      .swiper-slide img {
+        max-width: 300px;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+        margin-bottom: 10px; /* Ruang antara gambar dan link */
+      }
+      .swiper-slide .ig-link {
+        display: block;
+        font-size: 0.9em;
+        color: #000; /* Warna link */
+        text-decoration: none;
+      }
+      .swiper-slide .ig-link:hover {
+        text-decoration: underline;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: white; /* Warna tombol navigasi */
+        background-color: rgba(248, 174, 0, 0.8); /* Warna tombol */
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        transition: background-color 0.3s ease;
+      }
+
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+        background-color: #e05800; /* Warna hover tombol */
+      }
+
+      .swiper-button-prev {
+        left: 10px;
+      }
+
+      .swiper-button-next {
+        right: 10px;
+      }
+
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 1.2rem; /* Ukuran ikon panah */
+        color: white; /* Pastikan ikon tetap putih */
+      }
+      .swiper-pagination-bullet {
+        background: #ccc; /* Warna bullet pagination tidak aktif */
+      }
+      .swiper-pagination-bullet-active {
+        background: #000; /* Warna bullet pagination aktif */
+      }
+
+      /* Styles for image-item, image-overlay */
+      .image-item {
+        position: relative;
+        overflow: hidden; /* Penting untuk overlay */
+        border-radius: 10px; /* Sesuai dengan gambar */
+      }
+
+      .image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        text-align: center; /* Memastikan teks di tengah overlay */
+      }
+
+      .image-item:hover .image-overlay {
+        opacity: 1;
+      }
+
+      .image-title {
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+      .image-description {
+        font-size: 0.9em;
+      }
+
+      /* Custom styles for the new member cards */
+      .member-card {
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 20px; /* Spasi antar kartu di layout grid */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%; /* Memastikan tinggi kartu sama */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative; /* Untuk efek hover cahaya */
+      }
+
+      .member-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .member-card .img-fluid {
+        border-radius: 15px; /* Sesuai dengan gambar di contoh */
+        width: 100%; /* Lebar gambar mengikuti parent */
+        max-width: 300px; /* Increased max-width for larger images */
+        height: 300px; /* Increased height for larger images */
+        object-fit: cover; /* Memastikan gambar terisi penuh tanpa distorsi */
+        margin: 0 auto 15px auto; /* Pusatkan gambar dan beri margin bawah */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Shadow untuk gambar */
+      }
+
+      .member-card h5 {
+    color: #333;
+    font-weight: 800; /* Mengubah menjadi 900 untuk ketebalan maksimal jika didukung font */
+    margin-bottom: 5px;
+    font-size: 1.0rem; /* Increased font size for name */
+    font-family: 'Cinzel', serif;
+}
+
+      .member-card p.text-muted {
+        /* Warna tulisan jabatan akan diambil dari background badge */
+        font-size: 1.1rem; /* Increased font size for jabatan */
+        margin-bottom: 15px;
+      }
+
+      /* Gradient for jabatan badge */
+      .member-card .badge-jabatan {
+        background: linear-gradient(45deg, #f8ae00, #e05800); /* Gradiasi orange-kuning */
+        color: white; /* Warna teks putih agar kontras dengan gradien */
+        font-family:'Cinzel', serif;
+        font-size: 12px;
+        border-radius: 25px;
+        padding: 8px 15px; /* Sesuaikan padding agar badge terlihat bagus */
+        display: inline-block; /* Agar padding dan background diterapkan dengan baik */
+        margin-top:5px;
+      }
+
+      /* Hover effect for member-card */
+      .member-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at center, rgba(255, 165, 0, 0.1) 0%, rgba(255, 165, 0, 0) 70%); /* Kuning-orange transparan */
+        border-radius: 15px;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        pointer-events: none; /* Penting agar tidak menghalangi klik pada konten kartu */
+        z-index: 0; /* Pastikan di bawah konten kartu */
+      }
+
+      .member-card:hover::before {
+        opacity: 1;
+      }
+
+
+      /* Swiper adjustments for member cards */
+      .swiper-container.member-swiper {
+        padding-bottom: 30px; /* Adjust as needed */
+      }
+
+      .swiper-container.member-swiper .swiper-button-prev,
+      .swiper-container.member-swiper .swiper-button-next {
+        top: 50%; /* Default ke tengah untuk desktop */
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: rgba(248, 174, 0, 0.8); /* Warna tombol */
+        border-radius: 50%;
+        color: white;
+        font-size: 1.2rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .swiper-container.member-swiper .swiper-button-prev:hover,
+      .swiper-container.member-swiper .swiper-button-next:hover {
+        background-color: #e05800; /* Warna hover tombol */
+      }
+
+      .swiper-container.member-swiper .swiper-button-prev {
+        left: 10px;
+      }
+
+      .swiper-container.member-swiper .swiper-button-next {
+        right: 10px;
+      }
+
+      .swiper-container.member-swiper .swiper-button-next::after,
+      .swiper-container.member-swiper .swiper-button-prev::after {
+        font-size: 1.2rem; /* Ukuran ikon panah */
+      }
+
+      .swiper-container.member-swiper .swiper-pagination {
+        bottom: 0px;
+      }
+
+     
+      @media (max-width: 767.98px) {
+        .swiper-container.member-swiper .swiper-button-prev,
+        .swiper-container.member-swiper .swiper-button-next {
+        
+          top: 80%; /* Sesuaikan nilai ini untuk mengubah ketinggian */
+          transform: translateY(-50%); /* Tetap di tengah vertikal relatif terhadap nilai 'top' baru */
+          width: 35px; /* Slightly smaller for mobile */
+          height: 35px; /* Slightly smaller for mobile */
+          font-size: 1rem; /* Smaller icon */
+        }
+
+        .swiper-container.member-swiper .swiper-button-prev {
+          left: 5px; /* Jarak dari kiri untuk mobile */
+          right: auto;
+        }
+
+        .swiper-container.member-swiper .swiper-button-next {
+          right: 5px; /* Jarak dari kanan untuk mobile */
+          left: auto;
+        }
+
+        .swiper-container.member-swiper .swiper-button-next::after,
+        .swiper-container.member-swiper .swiper-button-prev::after {
+          font-size: 1rem; /* Smaller icon */
+        }
+
+        .swiper-container.member-swiper .swiper-pagination {
+          bottom: 10px; /* Adjust pagination position */
+        }
+          
+        /* 🚨 Penambahan CSS khusus untuk mobile di sini 🚨 */
+        .divisi-title-container {
+            padding-top: 10px !important;
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+        }
+        .divisi-title-container h1 {
+            margin-bottom: 5px !important;
+        }
+        .divisi-desc-container {
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+            margin-bottom: 10px !important;
+        }
+      }
+
+      /* Styles for header-kastrat background with transparency */
+      .header-kastrat {
+          position: relative;
+          overflow: hidden;
+          /* Add padding-bottom to ensure content below the header isn't hidden by the transparent part */
+          padding-bottom: 50px; /* Adjust as needed based on how much transparency you want */
+      }
+
+      .header-kastrat-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1; /* Place it behind the content */
+      }
+
+      .header-kastrat-background img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          /* Apply the mask to make the bottom transparent */
+          -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+          mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+      }
+
+      /* Custom style for the logo container in the header */
+      .header-logo-container {
+        margin-bottom: 20px; /* Adjust this value to control spacing */
+        padding-top: 20px; /* Add some padding if needed at the top of the logo */
+      }
+      .header-logo-container {
+  margin-top: -5s0px; /* Sesuaikan nilai negatif ini untuk menggeser logo lebih ke atas */
+  margin-bottom: 20px; /* Pertahankan atau sesuaikan jarak di bawah logo */
+  padding-top: 20px; /* Jika ada padding di atas yang ingin dipertahankan */
+}
+/* Gaya baru untuk card Program Kerja */
+.proker-card-front h3, .proker-card-back h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px; /* Spasi bawah untuk judul */
+}
+.proker-card-front {
+    background: linear-gradient(45deg, #ffc107, #ff9800);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+}
+.proker-card-back {
+    background: linear-gradient(45deg, #ff9800, #ff5722);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    border-radius: 15px;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+/* Modifikasi .card-3 dan .card-3-inner untuk efek flip dan hover */
+.card-3 {
+    perspective: 1000px;
+    height: 300px; /* Sesuaikan tinggi card */
+    position: relative;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.3);
+    border-radius: 15px;
+    transition: box-shadow 0.5s ease, transform 0.3s ease;
+}
+
+.card-3:hover {
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.5), 0 0 25px rgba(255, 140, 0, 0.4), 0 0 40px rgba(255, 99, 71, 0.3), 0 0 60px rgba(255, 69, 0, 0.2);
+    transform: translateY(-5px) scale(1.05);
+}
+
+.card-3-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-3:hover .card-3-inner {
+    transform: rotateY(180deg);
+}
+
+.card-3-front, .card-3-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.proker-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+
+    </style>
+  </head>
+
+  <body>
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+          <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative">
+        <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
+            <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+            <div class="d-flex flex-column">
+                <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
+                <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
+            </div>
+        </a>
+
+        <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a class="nav-item nav-link" href="index.html">Home</a>
+                <a class="nav-item nav-link active" href="about.html">About</a>
+
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Academic Information
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+                        <li><a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a></li>
+                        <li><a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Campus Echo
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+                        <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
+                        <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
+                        <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
+                    </ul>
+                </div>
+
+                <a class="nav-item nav-link" href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+    <div class="header-kastrat position-relative overflow-hidden">
+        <div class="header-kastrat-background">
+            <img src="img/kastrat/kastrat2.png" alt="Background Kastrat" class="img-fluid w-100 h-100 object-fit-cover">
+        </div>
+        <div class="container py-5">
+            <div
+                class="text-center mx-auto mb-5"
+                data-aos="zoom-in"
+                data-aos-duration="1000"
+                data-aos-once="false"
+                style="max-width: 900px"
+            >
+                <div class="header-logo-container">
+                    <img src="img/kastrat/Logo Kastrat.png" alt="Logo Kastrat" class="img-fluid" style="max-width: 130px;">
+                </div>
+                <h4
+                    class="text-primary mb-2"
+                    data-aos="fade-down"
+                    data-aos-delay="100"
+                    data-aos-once="false"
+                    style="font-family: 'Cinzel', serif; font-weight: 400"
+                >
+                    DEPARTEMEN
+                </h4>
+                <h1
+                    class="display-3 mb-3"
+                    data-aos="fade-down"
+                    data-aos-delay="300"
+                    data-aos-once="false"
+                    style="font-family: 'Cinzel', serif; color: #f8ae00"
+                >
+                    MEDIA KOMUNIKASI DAN INFORMASI
+                </h1>
+                    
+                <p
+                    class="mb-4"
+                    data-aos="fade-down"
+                    data-aos-delay="500"
+                    data-aos-once="false"
+                    style="font-family: 'Plus Jakarta Sans', sans-serif"
+                >
+                    Departemen ini berperan sebagai wadah bagi mahasiswa Politeknik Negeri Sriwijaya dalam mengkaji dan merespons berbagai isu sosial, politik, hukum, dan HAM secara kritis dan konstruktif. Selain itu, Kastrat juga bertanggung jawab dalam pergerakan mahasiswa melalui aksi nyata yang bersifat responsif terhadap isu-isu penting, baik di lingkungan kampus maupun skala yang lebih luas.
+                </p>
+            </div>
+        </div>
+    </div>
+      
+    <div class="container py-5">
+      <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div
+          class="d-inline-block px-4 py-2 mb-3"
+          style="
+            background: linear-gradient(45deg, #f8ae00, #e05800);
+            border-radius: 50px;
+          "
+        >
+          <h3
+            class="fw-bold text-white mb-0"
+            style="
+              font-family: 'Cinzel', serif;
+              font-size: 24px;
+              letter-spacing: 2px;
+            "
+          >
+            STRUKTURAL DEPARTEMENT KASTRAT
+          </h3>
+        </div>
+      </div>
+      <div
+        class="row g-4 justify-content-center wow fadeInUp"
+        data-wow-delay="0.5s"
+      >
+        <div class="col-lg-5">
+          <div
+            class="card border-0 h-100 position-relative overflow-hidden"
+            style="
+              border-radius: 20px;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+              transition: all 0.3s ease;
+              background: white;
+            "
+          >
+            <div class="card-body text-center p-4">
+              <div class="koordinator-image-container mb-4 position-relative">
+                <div
+                  class="koordinator-image-placeholder mx-auto position-relative"
+                  style="
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    box-shadow: 0 8px 25px rgba(248, 174, 0, 0.3);
+                    transition: all 0.3s ease;
+                  "
+                >
+                  <img
+                    src="img/kastrat/REYNALDI AGUSTINO PUTRA.jpg"
+                    alt="REYNALDI AGUSTINO PUTRA"
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      transition: transform 0.3s ease;
+                    "
+                  />
+                  <div
+                    class="position-absolute top-0 start-0 w-100 h-100"
+                    style="
+                      background: linear-gradient(
+                        45deg,
+                        rgba(248, 174, 0, 0.1),
+                        rgba(224, 88, 0, 0.1)
+                      );
+                    "
+                  ></div>
+                </div>
+                <div
+                  class="position-absolute bottom-0 end-0 text-white rounded-circle d-flex align-items-center justify-content-center"
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    transform: translate(10px, 10px);
+                    background: linear-gradient(45deg, #e05800, #f8ae00);
+                    box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3);
+                  "
+                >
+                  <i class="fas fa-chess-knight" style="font-size: 16px"></i>
+                </div>
+              </div>
+              <h5
+                class="fw-bold mb-2"
+                style="
+                  font-family: 'Plus Jakarta Sans', sans-serif;
+                  color: #333;
+                  font-size: 20px;
+                "
+              >
+              Reynaldi Agustino Putra
+              </h5>
+              <div class="mb-3 mt-3">
+                <span
+                  class="badge px-3 py-2"
+                  style="
+                    background: linear-gradient(45deg, #f8ae00, #e05800);
+                    color: white;
+                    font-family: 'Plus Jakarta Sans', sans-serif;
+                    font-size: 12px;
+                    border-radius: 15px;
+                  "
+                  >Kepala Departemen</span
+                >
+              </div>
+              <div class="leader-instagram-icon-wrapper mt-1">
+                  <a
+                    href="https://www.instagram.com/rey_polsri"
+                    class="leader-instagram-icon"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+              </div>
+              <p
+                class="text-muted"
+                style="
+                  font-family: 'Plus Jakarta Sans', sans-serif;
+                  font-size: 14px;
+                  line-height: 1.6;
+                "
+              >
+              Bertanggung jawab dalam merancang arah gerak departemen melalui kajian isu strategis, koordinasi tim, dan pelaksanaan aksi nyata.
+              </p>
+            </div>
+            <div
+              class="position-absolute bottom-0 start-0 w-100 h-1"
+              style="background: linear-gradient(90deg, #f8ae00, #e05800)"
+            ></div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div
+            class="card border-0 h-100 position-relative overflow-hidden"
+            style="
+              border-radius: 20px;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+              transition: all 0.3s ease;
+              background: white;
+            "
+          >
+            <div class="card-body text-center p-4">
+              <div class="koordinator-image-container mb-4 position-relative">
+                <div
+                  class="koordinator-image-placeholder mx-auto position-relative"
+                  style="
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    box-shadow: 0 8px 25px rgba(248, 174, 0, 0.3);
+                    transition: all 0.3s ease;
+                  "
+                >
+                  <img
+                    src="img/kastrat/VINA RAHMADIANY.jpg"
+                    alt="VINA RAHMADIANY"
+                    style="
+                      width: 100%;
+                      height: 100%;
+                      object-fit: cover;
+                      transition: transform 0.3s ease;
+                    "
+                  />
+                  <div
+                    class="position-absolute top-0 start-0 w-100 h-100"
+                    style="
+                      background: linear-gradient(
+                        45deg,
+                        rgba(248, 174, 0, 0.1),
+                        rgba(224, 88, 0, 0.1)
+                      );
+                    "
+                  ></div>
+                </div>
+                <div
+                  class="position-absolute bottom-0 end-0 text-white rounded-circle d-flex align-items-center justify-content-center"
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    transform: translate(10px, 10px);
+                    background: linear-gradient(45deg, #f8ae00, #e05800);
+                    box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3);
+                  "
+                >
+                  <i class="fas fa-compass" style="font-size: 16px"></i>
+                </div>
+              </div>
+              <h5
+                class="fw-bold mb-2"
+                style="
+                  font-family: 'Plus Jakarta Sans', sans-serif;
+                  color: #333;
+                  font-size: 20px;
+                "
+              >
+             Vina Rahmadiany
+              </h5>
+              <div class="mb-3 mt-3">
+                <span
+                  class="badge px-3 py-2"
+                  style="
+                    background: linear-gradient(45deg, #f8ae00, #e05800);
+                    color: white;
+                    font-family: 'Plus Jakarta Sans', sans-serif;
+                    font-size: 12px;
+                    border-radius: 15px;
+                  "
+                  >Sekretaris Departemen</span
+                >
+              </div>
+              <div class="leader-instagram-icon-wrapper mt-1">
+                  <a
+                    href="https://www.instagram.com/vina_polsri"
+                    class="leader-instagram-icon"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+              </div>
+              <p
+                class="text-muted"
+                style="
+                  font-family: 'Plus Jakarta Sans', sans-serif;
+                  font-size: 14px;
+                  line-height: 1.6;
+                "
+              >
+              Bertanggung jawab sebagai penghubung komunikasi internal departemen dan mendampingi kepala departemen dalam pelaksanaan seluruh agenda strategis dan aksi.
+              </p>
+            </div>
+            <div
+              class="position-absolute bottom-0 start-0 w-100 h-1"
+              style="background: linear-gradient(90deg, #f8ae00, #e05800)"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container text-center py-0 mb-0 divisi-title-container" style="max-width: 1100px">
+        <h1
+          class="display-3 mb-4 wow fadeInDown"
+          data-wow-delay="0.1s"
+          style="font-family: 'Cinzel', serif; color: #f8ae00">
+          DIVISI KAJIAN
+        </h1>
+      </div>
+
+      <section class="container py-1 mt-0 mb-3 bg-breadcrumb divisi-desc-container">
+        <div class="container">
+          <div
+            class="text-center mx-auto mb-4 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="max-width: 2100px">
+            <p class="mb-2">
+              Divisi ini merupakan bagian dari Departemen Kastrat yang fokus pada pengkajian dan respons terhadap berbagai isu sosial, politik, hukum, dan HAM, serta mengkaji permasalahan secara kritis dan konstruktif.
+            </p>
+          </div>
+        </div>
+
+        <div class="swiper-container member-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/MUHAMMAD PRASETYO PRAWIRA.jpg"
+                    class="img-fluid"
+                    alt="MUHAMMAD PRASETYO PRAWIRA"
+                  />
+                  <div>
+                    <h5>Muhammad Prasetyo Prawira</h5>
+                    <p class="badge-jabatan">Kepala Divisi</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/afiqalbukhari_"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/AFRI RIVALDO.jpg"
+                    class="img-fluid"
+                    alt="AFRI RIVALDO"
+                  />
+                  <div>
+                    <h5>Afri Rivaldo</h5>
+                    <p class="badge-jabatan">Staff</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/annisahrahmadanih_"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/KENZA GHEA ANANTA.jpg"
+                    class="img-fluid"
+                    alt="KENZA GHEA ANANTA"
+                  />
+                  <div>
+                    <h5>Kenza Ghea Ananta</h5>
+                    <p class="badge-jabatan">Staff</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/m.aidilfahmii_"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/Hartanti Adiningtyas_.jpg"
+                    class="img-fluid"
+                    alt="Hartanti Adiningtyas "
+                  />
+                  <div>
+                    <h5>Hartanti Adiningtyas </h5>
+                    <p class="badge-jabatan">Staff</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/iqbalyogapranata"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/INDAH NUR SALSABILA.jpg"
+                    class="img-fluid"
+                    alt="INDAH NUR SALSABILA"
+                  />
+                  <div>
+                    <h5>Indah Nur Salsabila</h5>
+                    <p class="badge-jabatan">Staff</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/m.aidilfahmii_"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="1.1s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/Supra Yogi.png"
+                    class="img-fluid"
+                    alt="Supra Yogi"
+                  />
+                  <div>
+                    <h5>Supra Yogi</h5>
+                    <p class="badge-jabatan">Staff Muda</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/polsri_student"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="1.3s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/KAZIA DWI FRISKA RAMADHANI.png"
+                    class="img-fluid"
+                    alt="Kazia Dwi Friska 
+                    Ramadhani"
+                  />
+                  <div>
+                    <h5>Kazia Dwi Friska Ramadhani</h5>
+                    <p class="badge-jabatan">Staff Muda</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/polsri_student"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </section>
+
+      <div class="container text-center py-0 mb-0 divisi-title-container" style="max-width: 1100px">
+        <h1
+          class="display-3 mb-4 wow fadeInDown"
+          data-wow-delay="0.1s"
+          style="font-family: 'Cinzel', serif; color: #f8ae00">
+          DIVISI AKSI DAN STRATEGIS PUBLIK
+        </h1>
+      </div>
+
+      <section class="container py-1 mt-0 mb-3 bg-breadcrumb divisi-desc-container">
+        <div class="container">
+          <div
+            class="text-center mx-auto mb-4 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="max-width: 2100px">
+            <p class="mb-2">
+              Divisi ini merupakan bagian dari Departemen Kastrat yang bertanggung jawab dalam pergerakan mahasiswa melalui aksi nyata yang bersifat responsif terhadap isu-isu penting, baik di lingkungan kampus maupun skala yang lebih luas.
+            </p>
+          </div>
+        </div>
+
+        <div class="swiper-container member-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/AFIQ AL BUKHARI.jpg"
+                    class="img-fluid"
+                    alt="Afiq Al-Bukhari"
+                  />
+                  <div>
+                    <h5>Afiq Al-Bukhari</h5>
+                    <p class="badge-jabatan">Kepala Divisi</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/afiqalbukhari_"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/ANNISAH RAHMADANIA.jpg"
+                    class="img-fluid"
+                    alt="Annisyah Ramadhaniah"
+                  />
+                  <div>
+                    <h5>Annisyah Ramadhaniah</h5>
+                    <p class="badge-jabatan">Staff</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/annisahrahmadanih_"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/M. AIDIL FAHMI.jpg"
+                    class="img-fluid"
+                    alt="Muhammad Aidil Fahmi"
+                  />
+                  <div>
+                    <h5>Muhammad Aidil Fahmi</h5>
+                    <p class="badge-jabatan">Staff</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/m.aidilfahmii_"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/Iqbal Yoga Pranata.png"
+                    class="img-fluid"
+                    alt="Iqbal Yoga Pranata"
+                  />
+                  <div>
+                    <h5>Iqbal Yoga Pranata</h5>
+                    <p class="badge-jabatan">Staff Muda</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/iqbalyogapranata"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/KAZIA DWI FRISKA RAMADHANI.png"
+                    class="img-fluid"
+                    alt="Muhammad Aidil Fahmi"
+                  />
+                  <div>
+                    <h5>Kazia Dwi Driska R</h5>
+                    <p class="badge-jabatan">Staff Muda</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/m.aidilfahmii_"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="1.1s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/Supra Yogi.png"
+                    class="img-fluid"
+                    alt="Supra Yogi"
+                  />
+                  <div>
+                    <h5>Supra Yogi</h5>
+                    <p class="badge-jabatan">Staff Muda</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/polsri_student"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="1.3s">
+                <div class="member-card">
+                  <img
+                    src="img/kastrat/REZA SULISTOMO MARWAH.png"
+                    class="img-fluid"
+                    alt="Reza Sulistomo Marwah"
+                  />
+                  <div>
+                    <h5>Reza Sulistomo Marwah</h5>
+                    <p class="badge-jabatan">Staff Muda</p>
+                    <div class="social-icons">
+                      <a
+                        href="https://www.instagram.com/polsri_student"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </section>
+
+<section class="container py-3 mb-0">
+  <div class="container py-3">
+    <div
+      class="text-center mx-auto mb-3 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="max-width: 800px"
+    >
+      <h1
+        class="display-4 mb-4"
+        style="font-family: cinzel; color: #f8ae00"
+      >
+        PROGRAM KERJA
+      </h1>
+      <p class="mb-0">
+        Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime.
+        Vel animi eveniet doloremque reiciendis soluta iste provident non
+        rerum illum perferendis earum est architecto dolores vitae quia vero
+        quod incidunt culpa corporis, porro doloribus. Voluptates nemo
+        doloremque cum.
+      </p>
+    </div>
+    <div class="row g-4 justify-content-center text-center mb-5">
+      <div
+        class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.1s"
+      >
+        <div class="card-3">
+          <div class="card-3-inner">
+            <div class="proker-card-front">
+              <h3>Sekolah Pergerakan</h3>
+            </div>
+            <div class="proker-card-back">
+              <h3>Sekolah Pergerakan</h3>
+              <p>
+                Dengan ini diharapkan kita memiliki kesadaran awal tentang peran mahasiswa dalam pergerakan, serta memahami pola komunikasi dan koordinasi yang baik dalam merespons isu.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.3s"
+      >
+        <div class="card-3">
+          <div class="card-3-inner">
+            <div class="proker-card-front">
+              <h3>Kajian</h3>
+            </div>
+            <div class="proker-card-back">
+              <h3>Kajian</h3>
+              <p>
+                Menganalisis isu-isu secara mendalam dan kritis agar memiliki landasan yang kuat sebelum mengambil sikap atau aksi dan memastikan gerakan mahasiswa tidak bersifat reaktif, tetapi berdasarkan data dan argumen yang valid dan logis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.5s"
+      >
+        <div class="card-3">
+          <div class="card-3-inner">
+            <div class="proker-card-front">
+              <h3>Penjelasan Hari Penting</h3>
+            </div>
+            <div class="proker-card-back">
+              <h3>Penjelasan Hari Penting</h3>
+              <p>
+                Edukasi tentang hari-hari nasional yang memiliki nilai sejarah dan sosial tinggi
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.7s"
+      >
+        <div class="card-3">
+          <div class="card-3-inner">
+            <div class="proker-card-front">
+              <h3>Konsolidasi</h3>
+            </div>
+            <div class="proker-card-back">
+              <h3>Konsolidasi</h3>
+              <p>
+                Pertemuan antar elemen mahasiswa untuk menyamakan persepsi dan menyusun langkah aksi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.9s"
+      >
+        <div class="card-3">
+          <div class="card-3-inner">
+            <div class="proker-card-front">
+              <h3>Press Release</h3>
+            </div>
+            <div class="proker-card-back">
+              <h3>Press Release</h3>
+              <p>
+                Pernyataan sikap resmi dari BEM terhadap isu yang telah dikaji dan dirilis ke publik.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+        data-wow-delay="1.1s"
+      >
+        <div class="card-3">
+          <div class="card-3-inner">
+            <div class="proker-card-front">
+              <h3>Garda Terdepan Aksi</h3>
+            </div>
+            <div class="proker-card-back">
+              <h3>Garda Terdepan Aksi</h3>
+              <p>
+                Tujuannya adalah memastikan aksi berjalan tertib, aman, dan sesuai strategi; sekaligus sebagai representasi nyata dari konsistensi gerakan mahasiswa terhadap isu yang dikawal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <footer class="footer-gradient">
+        <div class="container" style="font-family: serif">
+          <div class="row">
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="fw-bold mb-2">FOLLOW US</div>
+              <div class="d-flex mb-3">
+                <a
+                  href="https://www.instagram.com/bempolsri_/"
+                  class="social-icon me-2"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="https://x.com/polsrimenfess" class="social-icon me-2"
+                  ><i class="fab fa-x-twitter"></i
+                ></a>
+                <a href="https://www.youtube.com/@bemkmpolsri3259" class="social-icon"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+              <div class="d-flex align-items-center">
+                <img src="img/logo.png" alt="Logo" height="35" class="me-2" />
+                <div class="small">
+                  BEM POLITEKNIK NEGERI SRIWIJAYA<br />
+                  KABINET LENTERA SRIWIJAYA
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="fw-bold mb-2">More Information</div>
+              <a href="#" class="footer-link d-block mb-1">Contact Us</a>
+              <a href="about.html" class="about.html">About Us</a>
+              <a href="Terms and Conditions.html" class="footer-link d-block"
+                >Terms and Conditions</a
+              >
+            </div>
+            <div class="col-12 col-xl-4">
+              <div class="fw-bold mb-2">Developed By</div>
+              <div class="small">Departemen Media Informasi</div>
+              <div class="small">BEM POLSRI 2025</div>
+            </div>
+          </div>
+          <hr class="my-4" />
+          <div class="footer-bottom text-center small">
+            © 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
+          </div>
+        </div>
+      </footer>
+      <a href="#" class="btn btn-primary btn-lg-square back-to-top"
+      ><i class="fa fa-arrow-up"></i
+    ></a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var memberSwiper = new Swiper('.member-swiper', {
+          // Optional parameters
+          loop: true,
+          slidesPerView: 1,
+          spaceBetween: 20,
+
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+
+          // Autoplay configuration
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+
+          // Responsive breakpoints (optional, but good for different screen sizes)
+          breakpoints: {
+            // when window width is >= 768px
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 30
+            },
+            // when window width is >= 992px
+            992: {
+              slidesPerView: 3,
+              spaceBetween: 40
+            }
+          }
+        });
+      });
+    </script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>
