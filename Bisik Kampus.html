@@ -21,7 +21,7 @@
 
   <!-- Icon Font Stylesheets -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -604,9 +604,6 @@
               <a href="https://x.com/polsrimenfess" class="social-icon me-2"
                 ><i class="fab fa-x-twitter"></i
               ></a>
-              <a href="#" class="social-icon me-2"
-                ><i class="fab fa-tiktok"></i
-              ></a>
               <a
                 href="https://www.youtube.com/@bemkmpolsri3259"
                 class="social-icon"
@@ -779,10 +776,10 @@
             const hero = document.querySelector('.hero-section');
             const rate = scrolled * -0.5;
             
-            if (hero) {
-                hero.style.transform = translateY(${rate}px);
-            }
-        });
+           if (hero) {
+    hero.style.transform = 'translateY(' + rate + 'px)';
+}
+    });
 
         // Add hover effects to social icons
         document.querySelectorAll('.social-icon').forEach(icon => {
