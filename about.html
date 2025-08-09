@@ -30,13 +30,12 @@
     />
     <!-- Icon Font Stylesheet -->
     <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
     <!-- Swiper Css -->
     <link
       rel="stylesheet"
@@ -93,81 +92,52 @@
             >BEM Politeknik Negeri Sriwijaya</small
           >
         </div>
-      </a>
+    </a>
 
-      <!-- Toggle button for mobile -->
-      <button
-        class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
+    <!-- Hamburger Button -->
+    <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" 
+            type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" 
+            aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+    </button>
 
-      <!-- Collapsible content -->
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+    <!-- Navbar Menu -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-0">
-          <a class="nav-item nav-link" href="index.html">Home</a>
-          <a class="nav-item nav-link active" href="about.html">About</a>
+            <a class="nav-item nav-link" href="index.html">Home</a>
+            <a class="nav-item nav-link active" href="about.html">About</a>
 
-          <!-- Academic Info Dropdown -->
-          <div class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="academicDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Academic Information
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="academicDropdown">
-              <li>
-                <a class="dropdown-item" href="Academic Calendar.html"
-                  >Academic Calendar</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="Scholarship Info.html"
-                  >Scholarship Info</a
-                >
-              </li>
-            </ul>
-          </div>
+            <!-- Academic Dropdown -->
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" 
+                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Academic Information
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+                    <li><a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a></li>
+                    <li><a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a></li>
+                </ul>
+            </div>
 
-          <!-- Campus Echo Dropdown -->
-          <div class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="campusDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Campus Echo
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="campusDropdown">
-              <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
-              <li>
-                <a class="dropdown-item" href="Bisik Kampus.html"
-                  >Bisik Kampus</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="Polsrifess.html">Polsrifess</a>
-              </li>
-            </ul>
-          </div>
+            <!-- Campus Echo Dropdown -->
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" 
+                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Campus Echo
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+                    <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
+                    <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
+                    <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
+                </ul>
+            </div>
 
-          <a class="nav-item nav-link" href="contact.html">Contact Us</a>
+            <a class="nav-item nav-link" href="contact.html">Contact Us</a>
         </div>
-      </div>
-    </nav>
-    <!-- Navbar end -->
-  
+    </div>
+</nav>
+<!-- Navbar End -->
 <!-- About Section Header - Improved Version -->
 <section class="about-header position-relative overflow-hidden mb-0">
   <div class="about-header-background">
@@ -274,6 +244,12 @@
     justify-content: center; /* Membuat ikon berada di tengah */
     margin-top: -10px; /* Beri sedikit jarak dari jabatan */
   }
+.leader-instagram-icon i {
+  font-size: 28px;
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
   /* Style untuk ikon Instagram */
   .member-card .instagram-icon {
@@ -646,7 +622,7 @@
               background: white;
             "
           >
-            <div class="card-body text-center p-4">
+           <div class="card-body text-center p-4">
               <div class="koordinator-image-container mb-4 position-relative">
                 <div
                   class="koordinator-image-placeholder mx-auto position-relative"
@@ -661,7 +637,7 @@
                 >
                   <img
                     src="img/bintang.JPG"
-                    alt="M. BINTANG ROMADHON"
+                    alt="M. Bintang Romadhon"
                     style="
                       width: 100%;
                       height: 100%;
@@ -680,9 +656,18 @@
                     "
                   ></div>
                 </div>
-               <a href="https://instagram.com/reynaldi.agustino" target="_blank" class="position-absolute bottom-0 end-0 text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; transform: translate(10px, 10px); background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3); text-decoration: none;">
-  <i class="fab fa-instagram" style="font-size: 16px; color: white;"></i>
-</a>
+                <div
+                  class="position-absolute bottom-0 end-0 text-white rounded-circle d-flex align-items-center justify-content-center"
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    transform: translate(10px, 10px);
+                    background: linear-gradient(45deg, #e05800, #f8ae00);
+                    box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3);
+                  "
+                >
+                  <i class="fas fa-user-tie" style="font-size: 16px"></i>
+                </div>
               </div>
               <h5
                 class="fw-bold mb-2"
@@ -694,7 +679,7 @@
               >
               M. Bintang Romadhon
               </h5>
-              <div class="mb-3">
+              <div class="mb-3 mt-3">
                 <span
                   class="badge px-3 py-2"
                   style="
@@ -707,6 +692,15 @@
                   >Ketua Umum</span
                 >
               </div>
+              <div class="leader-instagram-icon-wrapper mt-1">
+                  <a
+                    href="https://instagram.com/bintangmadon"
+                    class="leader-instagram-icon"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+              </div>
               <p
                 class="text-muted"
                 style="
@@ -715,7 +709,7 @@
                   line-height: 1.6;
                 "
               >
-              Memimpin organisasi secara umum, bertanggung jawab terhadap kebijakan eksternal, menjalin relasi, dan memastikan visi organisasi tercapai.
+               Memimpin organisasi secara umum, bertanggung jawab terhadap kebijakan eksternal, menjalin relasi, dan memastikan visi organisasi tercapai.
               </p>
             </div>
             <div
@@ -750,7 +744,7 @@
                 >
                   <img
                     src="img/ridho.JPG"
-                    alt="AHMAD RIDHO"
+                    alt="Ahmad Ridho"
                     style="
                       width: 100%;
                       height: 100%;
@@ -769,9 +763,18 @@
                     "
                   ></div>
                 </div>
-               <a href="https://instagram.com/reynaldi.agustino" target="_blank" class="position-absolute bottom-0 end-0 text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; transform: translate(10px, 10px); background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3); text-decoration: none;">
-  <i class="fab fa-instagram" style="font-size: 16px; color: white;"></i>
-</a>
+                <div
+                  class="position-absolute bottom-0 end-0 text-white rounded-circle d-flex align-items-center justify-content-center"
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    transform: translate(10px, 10px);
+                    background: linear-gradient(45deg, #f8ae00, #e05800);
+                    box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3);
+                  "
+                >
+                  <i class="fas fa-user-friends" style="font-size: 16px"></i>
+                </div>
               </div>
               <h5
                 class="fw-bold mb-2"
@@ -783,7 +786,7 @@
               >
              Ahmad Ridho
               </h5>
-              <div class="mb-3">
+              <div class="mb-3 mt-3">
                 <span
                   class="badge px-3 py-2"
                   style="
@@ -796,6 +799,15 @@
                   >Wakil Ketua Umum</span
                 >
               </div>
+              <div class="leader-instagram-icon-wrapper mt-1">
+                  <a
+                    href="https://instagram.com/ahmad_ar17"
+                    class="leader-instagram-icon"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+              </div>
               <p
                 class="text-muted"
                 style="
@@ -804,7 +816,7 @@
                   line-height: 1.6;
                 "
               >
-              Mendukung Ketua Umum dalam kepemimpinan, fokus pada pengelolaan internal pengurus serta memastikan koordinasi antar divisi berjalan baik.
+             Mendukung Ketua Umum dalam kepemimpinan, fokus pada pengelolaan internal pengurus serta memastikan koordinasi antar divisi berjalan baik.
               </p>
             </div>
             <div
@@ -847,7 +859,7 @@
                                 </p>
                   <div class="social-icons">
                     <a
-                      href="https://www.instagram.com/afiqalbukhari_"
+                      href="https://instagram.com/melisaafrz"
                       class="instagram-icon"
                       target="_blank"
                     >
@@ -875,7 +887,7 @@
                                 </p>
                   <div class="social-icons">
                     <a
-                      href="https://www.instagram.com/annisahrahmadanih_"
+                      href="https:instagram.com/syafitrilidya"
                       class="instagram-icon"
                       target="_blank"
                     >
@@ -903,7 +915,7 @@
                                 </p>
                   <div class="social-icons">
                     <a
-                      href="https://www.instagram.com/m.aidilfahmii_"
+                      href="https://instagram.com/nbilaa_11"
                       class="instagram-icon"
                       target="_blank"
                     >
@@ -931,7 +943,7 @@
                                 </p>
                   <div class="social-icons">
                     <a
-                      href="https://www.instagram.com/iqbalyogapranata"
+                      href="https://instagram.com/nissyanrl"
                       class="instagram-icon"
                       target="_blank"
                     >
@@ -960,7 +972,7 @@
                                 </p>
                   <div class="social-icons">
                     <a
-                      href="https://www.instagram.com/m.aidilfahmii_"
+                      href="https://instagram.com/wahyudii_firmansyah_"
                       class="instagram-icon"
                       target="_blank"
                     >
@@ -988,7 +1000,7 @@
                                 </p>
                   <div class="social-icons">
                     <a
-                      href="https://www.instagram.com/polsri_student"
+                      href="https://instagram.com/aidil.akb_"
                       class="instagram-icon"
                       target="_blank"
                     >
@@ -1012,57 +1024,7 @@
 
       <!-- petras End -->
  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var memberSwiper = new Swiper('.member-swiper', {
-          // Optional parameters
-          loop: true,
-          slidesPerView: 1,
-          spaceBetween: 20,
 
-          // If we need pagination
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-
-          // Navigation arrows
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-
-          // Autoplay configuration
-          autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-          },
-
-          // Responsive breakpoints (optional, but good for different screen sizes)
-          breakpoints: {
-            // when window width is >= 768px
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 30
-            },
-            // when window width is >= 992px
-            992: {
-              slidesPerView: 3,
-              spaceBetween: 40
-            }
-          }
-        });
-      });
-    </script>
-    <script src="js/main.js"></script>
 
 <!-- Departemen Section Start -->
 <div class="container-fluid py-5" style="background: linear-gradient(135deg,  100%);">
@@ -1420,71 +1382,96 @@
 }
 </style>
 
+</div>
+</div>
 
-
-      <!-- Footer Start -->
-      <footer class="footer-gradient">
+      <footer class="footer-gradient pt-5">
         <div class="container" style="font-family: serif">
-          <div class="row">
-            <div class="col-12 col-md-6 col-xl-4">
-              <div class="fw-bold mb-2">FOLLOW US</div>
-              <div class="d-flex mb-3">
-                <a
-                  href="https://www.instagram.com/bempolsri_/"
-                  class="social-icon me-2"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <a href="https://x.com/polsrimenfess" class="social-icon me-2"
-                  ><i class="fab fa-x-twitter"></i
-                ></a>
-                <a href="https://www.youtube.com/@bemkmpolsri3259" class="social-icon"
-                  ><i class="fab fa-youtube"></i
-                ></a>
-              </div>
-              <div class="d-flex align-items-center">
-                <img src="img/logo.png" alt="Logo" height="35" class="me-2" />
-                <div class="small">
-                  BEM POLITEKNIK NEGERI SRIWIJAYA<br />
-                  KABINET LENTERA SRIWIJAYA
+            <div class="row pb-4">
+                <div class="col-12 col-md-6 col-xl-4 mb-4">
+                    <div class="fw-bold mb-3">FOLLOW US</div>
+                    <div class="d-flex mb-4">
+                        <a href="https://www.instagram.com/bempolsri_/" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/polsrimenfess" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/@bemkmpolsri3259" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="img/logo.png" alt="Logo" height="35" class="me-2" />
+                        <div class="small">
+                            BEM POLITEKNIK NEGERI SRIWIJAYA<br />
+                            KABINET LENTERA SRIWIJAYA
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="col-12 col-md-6 col-xl-4 mb-4">
+                    <div class="fw-bold mb-3">More Information</div>
+                    <a href="contact.html" class="footer-link d-block mb-1">Contact Us</a>
+                    <a href="about.html" class="footer-link d-block mb-1">About Us</a>
+                    <a href="Terms and Conditions.html" class="footer-link d-block">
+                        Terms and Conditions
+                    </a>
+                </div>
+                <div class="col-12 col-xl-4">
+                    <div class="fw-bold mb-3">Developed By</div>
+                    <div class="small">Departemen Media Informasi</div>
+                    <div class="small">BEM POLSRI 2025</div>
+                </div>
             </div>
-            <div class="col-12 col-md-6 col-xl-4">
-              <div class="fw-bold mb-2">More Information</div>
-              <a href="#" class="footer-link d-block mb-1">Contact Us</a>
-              <a href="about.html" class="about.html">About Us</a>
-              <a href="Terms and Conditions.html" class="footer-link d-block"
-                >Terms and Conditions</a
-              >
+            <hr class="mt-4" />
+            <div class="footer-bottom text-center small">
+                © 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
             </div>
-            <div class="col-12 col-xl-4">
-              <div class="fw-bold mb-2">Developed By</div>
-              <div class="small">Departemen Media Informasi</div>
-              <div class="small">BEM POLSRI 2025</div>
-            </div>
-          </div>
-          <hr class="my-4" />
-          <div class="footer-bottom text-center small">
-            © 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
-          </div>
         </div>
-      </footer>
-      <!-- Footer End -->
+    </footer>
 
          <!-- Back to Top -->
     <a href="#" class="btn btn-primary btn-lg-square back-to-top"
       ><i class="fa fa-arrow-up"></i
     ></a> 
-      <!-- JavaScript Libraries -->
+     
+<!-- jQuery (opsional) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<!-- Bootstrap Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Library lain -->
 <script src="lib/wow/wow.min.js"></script>
 <script src="lib/easing/easing.min.js"></script>
 <script src="lib/waypoints/waypoints.min.js"></script>
 <script src="lib/counterup/counterup.min.js"></script>
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-<!-- Template Javascript -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Inisialisasi Swiper -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var memberSwiper = new Swiper('.member-swiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      768: { slidesPerView: 2, spaceBetween: 30 },
+      992: { slidesPerView: 3, spaceBetween: 40 }
+    }
+  });
+});
+</script>
+
+<!-- Script custom -->
 <script src="js/main.js"></script>
+
 </body>
 </html>
