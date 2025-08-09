@@ -1,1175 +1,1043 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>BEM POLSRI</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
-    <link rel="icon" type="image/png" href="/img/logo.png" />
-    <!-- Google Web Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap Icons -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <!-- Icon Font Stylesheet -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <!-- Swiper Css -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+<head>
+  <meta charset="utf-8" />
+  <title>BEM POLSRI</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
+  <link rel="icon" type="image/png" href="/img/logo.png" />
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <!-- Icon Font Stylesheet -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Swiper Css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- css kalender -->
-    <style>
-      /* Grid container */
-      .kartu-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        padding: 2rem;
-        max-width: 1200px;
-        margin: auto;
-      }
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
 
-      /* Flip card styling */
-      .kartu {
-        perspective: 1000px;
-      }
+  <!-- css kalender -->
+  <style>
+    /* Grid container */
+    .kartu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-      .kartu-inner {
-        position: relative;
-        width: 100%;
-        height: 560px;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-        border-radius: 18px;
-      }
+    /* Flip card styling */
+    .kartu {
+      perspective: 1000px;
+    }
 
-      .kartu:hover .kartu-inner {
-        transform: rotateY(180deg);
-      }
+    .kartu-inner {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      border-radius: 18px;
+    }
 
-      .kartu-front,
-      .kartu-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 18px;
-        backface-visibility: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        overflow: hidden;
-      }
+    .kartu:hover .kartu-inner {
+      transform: rotateY(180deg);
+    }
 
-      .kartu-front {
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+    .kartu-front,
+    .kartu-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+      backface-visibility: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
 
-      .kartu-front img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+    .kartu-front {
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      .kartu-back {
-        background: linear-gradient(45deg, #f8ae00, #df7f3f);
-        transform: rotateY(180deg);
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: start;
-        color: white;
-        overflow-y: auto;
-        word-wrap: break-word;
-        text-align: justify;
-      }
+    .kartu-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-      .kartu-back h3 {
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-      }
+    .kartu-back {
+      background: linear-gradient(45deg, #f8ae00, #df7f3f);
+      transform: rotateY(180deg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+      color: white;
+      overflow-y: auto;
+      word-wrap: break-word;
+      text-align: justify;
+    }
 
-      .kartu-back p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-      }
+    .kartu-back h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
 
-      .kartu-back::-webkit-scrollbar {
-        width: 6px;
-      }
+    .kartu-back p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
 
-      .kartu-back::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.4);
-        border-radius: 10px;
-      }
+    .kartu-back::-webkit-scrollbar {
+      width: 6px;
+    }
 
-      .calendar-day {
-        height: 40px;
-        border: 1px solid #dee2e6;
-        cursor: pointer;
-        transition: all 0.2s;
-      }
+    .kartu-back::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 10px;
+    }
 
-      .calendar-day:hover {
-        background-color: #e9ecef;
-      }
+    .calendar-day {
+      height: 40px;
+      border: 1px solid #dee2e6;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
 
-      .calendar-day.today {
-        background-color: var(--bs-primary);
-        color: white;
-      }
+    .calendar-day:hover {
+      background-color: #e9ecef;
+    }
 
-      .calendar-day.selected {
-        background-color: #f8ae00;
-        color: white;
-      }
+    .calendar-day.today {
+      background-color: var(--bs-primary);
+      color: white;
+    }
 
-      .calendar-day.other-month {
-        color: #6c757d;
-        background-color: #f8f9fa;
-      }
+    .calendar-day.selected {
+      background-color: #f8ae00;
+      color: white;
+    }
 
-      .calendar-header {
-        background-color: var(--bs-primary);
-        color: white;
-      }
+    .calendar-day.other-month {
+      color: #6c757d;
+      background-color: #f8f9fa;
+    }
 
-      .photo-card {
-        max-height: 500px;
-        overflow-y: auto;
-      }
+    .calendar-header {
+      background-color: var(--bs-primary);
+      color: white;
+    }
 
-      .photo-item {
-        transition: transform 0.2s;
-      }
+    .photo-card {
+      max-height: 500px;
+      overflow-y: auto;
+    }
 
-      .photo-item:hover {
-        transform: scale(1.02);
-      }
+    .photo-item {
+      transition: transform 0.2s;
+    }
 
-      .kartu-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        padding: 2rem;
-        max-width: 1200px;
-        margin: auto;
-      }
+    .photo-item:hover {
+      transform: scale(1.02);
+    }
 
-      /* Flip card styling */
-      .kartu {
-        perspective: 1000px;
-      }
+    .kartu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-      .kartu-inner {
-        position: relative;
-        width: 100%;
-        height: 505px;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-        border-radius: 18px;
-      }
+    /* Flip card styling */
+    .kartu {
+      perspective: 1000px;
+    }
 
-      .kartu:hover .kartu-inner {
-        transform: rotateY(180deg);
-      }
+    .kartu-inner {
+      position: relative;
+      width: 100%;
+      height: 505px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      border-radius: 18px;
+    }
 
-      .kartu-front,
-      .kartu-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 18px;
-        backface-visibility: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        overflow: hidden;
-      }
+    .kartu:hover .kartu-inner {
+      transform: rotateY(180deg);
+    }
 
-      .kartu-front {
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+    .kartu-front,
+    .kartu-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 18px;
+      backface-visibility: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
 
-      .kartu-front img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
+    .kartu-front {
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      .kartu-back {
-        background: linear-gradient(45deg, #f8ae00, #df7f3f);
-        transform: rotateY(180deg);
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: start;
-        color: white;
-        overflow-y: auto;
-        word-wrap: break-word;
-        text-align: justify;
-      }
+    .kartu-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
 
-      .kartu-back h3 {
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-      }
+    .kartu-back {
+      background: linear-gradient(45deg, #f8ae00, #df7f3f);
+      transform: rotateY(180deg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+      color: white;
+      overflow-y: auto;
+      word-wrap: break-word;
+      text-align: justify;
+    }
 
-      .kartu-back p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-      }
+    .kartu-back h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
 
-      .kartu-back::-webkit-scrollbar {
-        width: 6px;
-      }
+    .kartu-back p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
 
-      .kartu-back::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.4);
-        border-radius: 10px;
-      }
-    </style>
-  </head>
+    .kartu-back::-webkit-scrollbar {
+      width: 6px;
+    }
 
-  <body>
-    <!-- Spinner Start -->
-    <div
-      id="spinner"
-      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-    >
-      <div
-        class="spinner-border text-primary"
-        style="width: 3rem; height: 3rem"
-        role="status"
-      >
-        <span class="sr-only">Loading...</span>
+    .kartu-back::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <!-- Spinner End -->
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative">
+    <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
+      <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px" />
+      <div class="d-flex flex-column">
+        <span class="text-black fw-bold" style="font-size: 18px">Kabinet Lentera Sriwijaya</span>
+        <small class="text-black" style="font-size: 14px">BEM Politeknik Negeri Sriwijaya</small>
+      </div>
+    </a>
+
+    <!-- Toggle button for mobile -->
+    <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto py-0">
+        <a class="nav-item nav-link active" href="index.html">Home</a>
+        <a class="nav-item nav-link" href="about.html">About</a>
+
+        <!-- Academic Info Dropdown -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Academic Information
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+            <li>
+              <a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Campus Echo Dropdown -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Campus Echo
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+            <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
+            <li>
+              <a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="Polsrifess.html">Polsrifess</a>
+            </li>
+          </ul>
+        </div>
+
+        <a class="nav-item nav-link" href="contact.html">Contact Us</a>
       </div>
     </div>
-    <!-- Spinner End -->
+  </nav>
+  <!-- Navbar end -->
 
-    <!-- Navbar -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative"
-    >
-      <a
-        href="index.html"
-        class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center"
-      >
-        <img
-          src="img/logo.png"
-          alt="Logo"
-          style="height: 40px; margin-right: 10px"
-        />
-        <div class="d-flex flex-column">
-          <span class="text-black fw-bold" style="font-size: 18px"
-            >Kabinet Lentera Sriwijaya</span
-          >
-          <small class="text-black" style="font-size: 14px"
-            >BEM Politeknik Negeri Sriwijaya</small
-          >
-        </div>
-      </a>
-
-      <!-- Toggle button for mobile -->
-      <button
-        class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Collapsible content -->
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto py-0">
-          <a class="nav-item nav-link active" href="index.html">Home</a>
-          <a class="nav-item nav-link" href="about.html">About</a>
-
-          <!-- Academic Info Dropdown -->
-          <div class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="academicDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Academic Information
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="academicDropdown">
-              <li>
-                <a class="dropdown-item" href="Academic Calendar.html"
-                  >Academic Calendar</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="Scholarship Info.html"
-                  >Scholarship Info</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Campus Echo Dropdown -->
-          <div class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="campusDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Campus Echo
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="campusDropdown">
-              <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
-              <li>
-                <a class="dropdown-item" href="Bisik Kampus.html"
-                  >Bisik Kampus</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="Polsrifess.html">Polsrifess</a>
-              </li>
-            </ul>
-          </div>
-
-          <a class="nav-item nav-link" href="contact.html">Contact Us</a>
-        </div>
-      </div>
-    </nav>
-    <!-- Navbar end -->
-
-    <!-- About Section Start -->
-    <section class="bg-web py-4 wow fadeInUp" data-wow-delay="0.1s">
-      <div class="container py-5">
-        <div class="row g-5">
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <h1
-              class="display-5 mb-2"
-              style="font-family: cinzel; color: #f8ae00"
-            >
-              BEM POLITEKNIK NEGERI SRIWIJAYA
-            </h1>
-            <p
-              class="mb-4"
-              style="
+  <!-- About Section Start -->
+  <section class="bg-web py-4 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+          <h1 class="display-5 mb-2" style="font-family: cinzel; color: #f8ae00">
+            BEM POLITEKNIK NEGERI SRIWIJAYA
+          </h1>
+          <p class="mb-4" style="
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-size: 16px;
                 text-align: justify;
-              "
-            >
-              BEM Polsri adalah organisasi mahasiswa yang menjalankan fungsi
-              eksekutif di lingkungan Politeknik Negeri Sriwijaya. Kami
-              berkomitmen untuk menjadi wadah yang aktif, responsif, dan
-              konstruktif melalui berbagai program kerja, pengabdian, serta
-              pelayanan yang berdampak bagi mahasiswa dan masyarakat.
-            </p>
-            <a href="/about.html" class="btn btn-primary rounded-pill py-3 px-5"
-              >About More</a
-            >
-          </div>
-        </div>
-        <div class="col-lg-6 wow fadeInUp text-center" data-wow-delay="0.3s">
-          <!-- <img src="img/logo.png" class="img-fluid w-50" alt="" /> -->
+              ">
+            BEM Polsri adalah organisasi mahasiswa yang menjalankan fungsi
+            eksekutif di lingkungan Politeknik Negeri Sriwijaya. Kami
+            berkomitmen untuk menjadi wadah yang aktif, responsif, dan
+            konstruktif melalui berbagai program kerja, pengabdian, serta
+            pelayanan yang berdampak bagi mahasiswa dan masyarakat.
+          </p>
+          <a href="/about.html" class="btn btn-primary rounded-pill py-3 px-5">About More</a>
         </div>
       </div>
-    </section>
+      <div class="col-lg-6 wow fadeInUp text-center" data-wow-delay="0.3s">
+        <!-- <img src="img/logo.png" class="img-fluid w-50" alt="" /> -->
+      </div>
+    </div>
+  </section>
 
-    <!-- About Section End -->
+  <!-- About Section End -->
 
-    <!-- Visi Misi Section Start -->
-    <section class="container py-5 mb-5 bg-breadcrumb">
-      <div class="row g-5">
-        <div class="col-lg-6 wow fadeInUp text-center" data-wow-delay="0.3s">
-          <div class="position-relative d-inline-block w-100">
-            <img
-              src="img/pengurus.JPG"
-              class="img-visi-misi w-100 rounded-4"
-              alt=""
-            />
-            <!-- <img src="img/logo-bem-2.png" class="logo-overlay" alt="Logo" /> -->
-          </div>
+  <!-- Visi Misi Section Start -->
+  <section class="container py-5 mb-5 bg-breadcrumb">
+    <div class="row g-5">
+      <div class="col-lg-6 wow fadeInUp text-center" data-wow-delay="0.3s">
+        <div class="position-relative d-inline-block w-100">
+          <img src="img/pengurus.JPG" class="img-visi-misi w-100 rounded-4" alt="" />
+          <!-- <img src="img/logo-bem-2.png" class="logo-overlay" alt="Logo" /> -->
         </div>
+      </div>
 
-        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-          <div>
-            <h3 class="display-7" style="font-family: cinzel; color: #f8ae00">
-              Our Vision
-            </h3>
-            <p
-              class="mb-4"
-              style="
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div>
+          <h3 class="display-7" style="font-family: cinzel; color: #f8ae00">
+            Our Vision
+          </h3>
+          <p class="mb-4" style="
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-size: 16px;
                 line-height: 1.8;
                 text-align: justify;
-              "
-            >
-              Menjadi BEM Polsri 2025 yang mengedepankan harmonisasi dan
-              kolaborasi, menciptakan lingkungan kampus inklusif dan berdaya
-              saing, serta membangun hubungan eksternal strategis untuk
-              memperkuat peran Polsri di tingkat nasional dan internasional.
-            </p>
-          </div>
+              ">
+            Menjadi BEM Polsri 2025 yang mengedepankan harmonisasi dan
+            kolaborasi, menciptakan lingkungan kampus inklusif dan berdaya
+            saing, serta membangun hubungan eksternal strategis untuk
+            memperkuat peran Polsri di tingkat nasional dan internasional.
+          </p>
+        </div>
+        <div>
+          <h3 class="display-7" style="font-family: cinzel; color: #f8ae00">
+            Our Mission
+          </h3>
+          <ol style="padding-left: 1.2em">
+            <li style="
+                  font-family: 'Plus Jakarta Sans', sans-serif;
+                  font-size: 16px;
+                  line-height: 1.8;
+                  text-align: justify;
+                ">
+              Meningkatkan kualitas dan kapasitas mahasiswa Polsri melalui
+              pelatihan, kompetensi, dan kewirausahaan yang mandiri dan
+              berdaya saing.
+            </li>
+            <li style="
+                  font-family: 'Plus Jakarta Sans', sans-serif;
+                  font-size: 16px;
+                  line-height: 1.8;
+                  text-align: justify;
+                ">
+              Memperkuat hubungan internal dan eksternal melalui komunikasi
+              yang efektif dan membangun jaringan kerja sama strategis untuk
+              mendukung kegiatan BEM Polsri.
+            </li>
+            <li style="
+                  font-family: 'Plus Jakarta Sans', sans-serif;
+                  font-size: 16px;
+                  line-height: 1.8;
+                  text-align: justify;
+                ">
+              Menjaga dan meningkatkan kesejahteraan mahasiswa dengan
+              memberikan dukungan advokasi serta fasilitas yang mendukung
+              kehidupan mahasiswa yang sejahtera.
+            </li>
+            <li style="
+                  font-family: 'Plus Jakarta Sans', sans-serif;
+                  font-size: 16px;
+                  line-height: 1.8;
+                  text-align: justify;
+                ">
+              Menghasilkan kajian strategis dan aksi nyata untuk mendukung
+              perubahan positif di Polsri, serta meningkatkan kesadaran publik
+              terhadap isu-isu penting.
+            </li>
+            <li style="
+                  font-family: 'Plus Jakarta Sans', sans-serif;
+                  font-size: 16px;
+                  line-height: 1.8;
+                  text-align: justify;
+                ">
+              Mengelola media dan informasi secara kreatif untuk menyebarkan
+              informasi BEM Polsri, serta memperkuat komunikasi visual dan
+              digital di kalangan mahasiswa.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visi Misi Section End -->
+
+  <!-- kalender -->
+  <section class="bg-breadcrumb">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
           <div>
             <h3 class="display-7" style="font-family: cinzel; color: #f8ae00">
-              Our Mission
+              Timeline
             </h3>
-            <ol style="padding-left: 1.2em">
-              <li
-                style="
-                  font-family: 'Plus Jakarta Sans', sans-serif;
-                  font-size: 16px;
-                  line-height: 1.8;
-                  text-align: justify;
-                "
-              >
-                Meningkatkan kualitas dan kapasitas mahasiswa Polsri melalui
-                pelatihan, kompetensi, dan kewirausahaan yang mandiri dan
-                berdaya saing.
-              </li>
-              <li
-                style="
-                  font-family: 'Plus Jakarta Sans', sans-serif;
-                  font-size: 16px;
-                  line-height: 1.8;
-                  text-align: justify;
-                "
-              >
-                Memperkuat hubungan internal dan eksternal melalui komunikasi
-                yang efektif dan membangun jaringan kerja sama strategis untuk
-                mendukung kegiatan BEM Polsri.
-              </li>
-              <li
-                style="
-                  font-family: 'Plus Jakarta Sans', sans-serif;
-                  font-size: 16px;
-                  line-height: 1.8;
-                  text-align: justify;
-                "
-              >
-                Menjaga dan meningkatkan kesejahteraan mahasiswa dengan
-                memberikan dukungan advokasi serta fasilitas yang mendukung
-                kehidupan mahasiswa yang sejahtera.
-              </li>
-              <li
-                style="
-                  font-family: 'Plus Jakarta Sans', sans-serif;
-                  font-size: 16px;
-                  line-height: 1.8;
-                  text-align: justify;
-                "
-              >
-                Menghasilkan kajian strategis dan aksi nyata untuk mendukung
-                perubahan positif di Polsri, serta meningkatkan kesadaran publik
-                terhadap isu-isu penting.
-              </li>
-              <li
-                style="
-                  font-family: 'Plus Jakarta Sans', sans-serif;
-                  font-size: 16px;
-                  line-height: 1.8;
-                  text-align: justify;
-                "
-              >
-                Mengelola media dan informasi secara kreatif untuk menyebarkan
-                informasi BEM Polsri, serta memperkuat komunikasi visual dan
-                digital di kalangan mahasiswa.
-              </li>
-            </ol>
+            <h3 class="display-7" style="font-family: cinzel; color: #f8ae00">
+              BEM POLSRI 2025
+            </h3>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Visi Misi Section End -->
+      <!-- Kalender -->
+      <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="card shadow-lg border-0">
+          <div class="card-header calendar-header">
+            <div class="row align-items-center">
+              <div class="col-3">
+                <button class="btn btn-light btn-sm" id="prevMonth">
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+              </div>
+              <div class="col-6 text-center">
+                <h5 class="mb-0 fw-bold" id="currentMonth"></h5>
+              </div>
+              <div class="col-3 text-end">
+                <button class="btn btn-light btn-sm" id="nextMonth">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <!-- Header hari -->
+            <div class="row g-0 bg-light">
+              <div class="col text-center py-2 fw-bold text-muted">Min</div>
+              <div class="col text-center py-2 fw-bold text-muted">Sen</div>
+              <div class="col text-center py-2 fw-bold text-muted">Sel</div>
+              <div class="col text-center py-2 fw-bold text-muted">Rab</div>
+              <div class="col text-center py-2 fw-bold text-muted">Kam</div>
+              <div class="col text-center py-2 fw-bold text-muted">Jum</div>
+              <div class="col text-center py-2 fw-bold text-muted">Sab</div>
+            </div>
+            <!-- Grid kalender -->
+            <div id="calendarGrid"></div>
+          </div>
+        </div>
+      </div>
 
-    <!-- kalender -->
-    <section class="bg-breadcrumb">
-      <div class="container py-5">
-        <div class="row">
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div>
-              <h3 class="display-7" style="font-family: cinzel; color: #f8ae00">
-                Timeline
-              </h3>
-              <h3 class="display-7" style="font-family: cinzel; color: #f8ae00">
-                BEM POLSRI 2025
-              </h3>
+      <!-- Row kedua untuk info -->
+      <div class="row g-4 mt-4">
+        <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="card info-card border-0 shadow">
+            <div class="card-body">
+              <h5 class="card-title text-primary">
+                <i class="bi bi-calendar-event"></i> Informasi Tanggal
+              </h5>
+              <p class="card-text mb-0" id="selectedDateInfo">
+                Pilih tanggal pada kalender untuk melihat informasi kegiatan
+                BEM POLSRI
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- Kalender -->
-        <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
-          <div class="card shadow-lg border-0">
-            <div class="card-header calendar-header">
-              <div class="row align-items-center">
-                <div class="col-3">
-                  <button class="btn btn-light btn-sm" id="prevMonth">
-                    <i class="bi bi-chevron-left"></i>
-                  </button>
-                </div>
-                <div class="col-6 text-center">
-                  <h5 class="mb-0 fw-bold" id="currentMonth"></h5>
-                </div>
-                <div class="col-3 text-end">
-                  <button class="btn btn-light btn-sm" id="nextMonth">
-                    <i class="bi bi-chevron-right"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="card-body p-0">
-              <!-- Header hari -->
-              <div class="row g-0 bg-light">
-                <div class="col text-center py-2 fw-bold text-muted">Min</div>
-                <div class="col text-center py-2 fw-bold text-muted">Sen</div>
-                <div class="col text-center py-2 fw-bold text-muted">Sel</div>
-                <div class="col text-center py-2 fw-bold text-muted">Rab</div>
-                <div class="col text-center py-2 fw-bold text-muted">Kam</div>
-                <div class="col text-center py-2 fw-bold text-muted">Jum</div>
-                <div class="col text-center py-2 fw-bold text-muted">Sab</div>
-              </div>
-              <!-- Grid kalender -->
-              <div id="calendarGrid"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row kedua untuk info -->
-        <div class="row g-4 mt-4">
-          <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="card info-card border-0 shadow">
-              <div class="card-body">
-                <h5 class="card-title text-primary">
-                  <i class="bi bi-calendar-event"></i> Informasi Tanggal
-                </h5>
-                <p class="card-text mb-0" id="selectedDateInfo">
-                  Pilih tanggal pada kalender untuk melihat informasi kegiatan
-                  BEM POLSRI
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="card border-0 shadow">
-              <div class="card-body text-center">
-                <div
-                  class="display-4 text-primary fw-bold"
-                  id="todayDate"
-                ></div>
-                <h6 class="text-muted mb-0">Hari Ini</h6>
-                <small class="text-muted" id="todayName"></small>
-              </div>
+        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="card border-0 shadow">
+            <div class="card-body text-center">
+              <div class="display-4 text-primary fw-bold" id="todayDate"></div>
+              <h6 class="text-muted mb-0">Hari Ini</h6>
+              <small class="text-muted" id="todayName"></small>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- end kalender -->
+    </div>
+  </section>
+  <!-- end kalender -->
 
-    <!-- Program Section Start -->
-    <section class="container py-5 mb-5 bg-breadcrumb">
-      <div class="container py-5">
-        <div
-          class="text-center mx-auto mb-5 wow fadeInUp"
-          data-wow-delay="0.1s"
-          style="max-width: 900px"
-        >
-          <h6>LIST OF</h6>
-          <h1
-            class="display-5 mb-4"
-            style="font-family: cinzel; color: #f8ae00"
-          >
-            Our Program
-          </h1>
-          <p class="mb-0" style="font-family: 'Plus Jakarta Sans', sans-serif">
-            Sebagai bentuk komitmen dalam menghadirkan peran aktif mahasiswa
-            terhadap berbagai isu di lingkungan kampus dan masyarakat, BEM
-            Polsri menghadirkan sejumlah program unggulan. Mulai dari ruang
-            edukasi dan inovasi, media komunikasi mahasiswa, kegiatan sosial,
-            kewirausahaan melalui unit usaha, hingga aksi langsung di
-            lapangan—seluruh program ini dirancang untuk memperkuat
-            kepemimpinan, mendorong kolaborasi, dan memberikan dampak nyata.
-            Dengan semangat kolaboratif dan progresif, program-program ini
-            menjadi wadah kontribusi mahasiswa yang mempererat relasi, sekaligus
-            menciptakan perubahan positif bagi kampus dan masyarakat luas.
-          </p>
-        </div>
-        <div class="row g-4 justify-content-center text-center mb-5">
-          <div
-            class="col-12 col-md-6 col-lg-4 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <div class="card-3">
-              <div class="card-3-inner">
-                <div class="card-3-front">
-                  <img src="/img/proker_bem/synchro.png" alt="Ocean View" />
-                  <div class="content">
-                    <h3>Synchro</h3>
-                    <p>
-                      Synergy for Change and Innovation through Leadership and
-                      Knowledge
-                    </p>
-                  </div>
-                </div>
-                <div class="card-3-back">
+  <!-- Program Section Start -->
+  <section class="container py-5 mb-5 bg-breadcrumb">
+    <div class="container py-5">
+      <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px">
+        <h6>LIST OF</h6>
+        <h1 class="display-5 mb-4" style="font-family: cinzel; color: #f8ae00">
+          Our Program
+        </h1>
+        <p class="mb-0" style="font-family: 'Plus Jakarta Sans', sans-serif">
+          Sebagai bentuk komitmen dalam menghadirkan peran aktif mahasiswa
+          terhadap berbagai isu di lingkungan kampus dan masyarakat, BEM
+          Polsri menghadirkan sejumlah program unggulan. Mulai dari ruang
+          edukasi dan inovasi, media komunikasi mahasiswa, kegiatan sosial,
+          kewirausahaan melalui unit usaha, hingga aksi langsung di
+          lapangan—seluruh program ini dirancang untuk memperkuat
+          kepemimpinan, mendorong kolaborasi, dan memberikan dampak nyata.
+          Dengan semangat kolaboratif dan progresif, program-program ini
+          menjadi wadah kontribusi mahasiswa yang mempererat relasi, sekaligus
+          menciptakan perubahan positif bagi kampus dan masyarakat luas.
+        </p>
+      </div>
+      <div class="row g-4 justify-content-center text-center mb-5">
+        <div class="col-12 col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="card-3">
+            <div class="card-3-inner">
+              <div class="card-3-front">
+                <img src="/img/proker_bem/synchro.png" alt="Ocean View" />
+                <div class="content">
                   <h3>Synchro</h3>
                   <p>
-                    (Synergy for Change and Innovation through Leadership and
-                    Knowledge) adalah program utama BEM Polsri periode ini yang
-                    akan dilaksanakan pada 6 September 2025. Mengusung tema
-                    "Aligning the Digital Revolution with Social Evolution",
-                    SYNCHRO terdiri dari Seminar Internasional yang membahas isu
-                    global dan kecerdasan buatan (AI), serta Sekolah Politik
-                    yang mendorong literasi politik dan kepemimpinan mahasiswa.
+                    Synergy for Change and Innovation through Leadership and
+                    Knowledge
                   </p>
-                  <!--  -->
                 </div>
+              </div>
+              <div class="card-3-back">
+                <h3>Synchro</h3>
+                <p>
+                  (Synergy for Change and Innovation through Leadership and
+                  Knowledge) adalah program utama BEM Polsri periode ini yang
+                  akan dilaksanakan pada 6 September 2025. Mengusung tema
+                  "Aligning the Digital Revolution with Social Evolution",
+                  SYNCHRO terdiri dari Seminar Internasional yang membahas isu
+                  global dan kecerdasan buatan (AI), serta Sekolah Politik
+                  yang mendorong literasi politik dan kepemimpinan mahasiswa.
+                </p>
+                <!--  -->
               </div>
             </div>
           </div>
+        </div>
 
-          <div
-            class="col-12 col-md-6 col-lg-4 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <div class="card-3">
-              <div class="card-3-inner">
-                <div class="card-3-front">
-                  <img src="/img/proker_bem/polfess.png" alt="Ocean View" />
-                  <div class="content">
-                    <h3>POLFESS</h3>
-                    <p>
-                      (Polsri Menfess) Platform berbasis media sosial melalui
-                      akun X/Twitter.
-                    </p>
-                  </div>
-                </div>
-                <div class="card-3-back">
+        <div class="col-12 col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="card-3">
+            <div class="card-3-inner">
+              <div class="card-3-front">
+                <img src="/img/proker_bem/polfess.png" alt="Ocean View" />
+                <div class="content">
                   <h3>POLFESS</h3>
                   <p>
-                    (Polsri Menfess) Platform berbasis media sosial melalui akun
-                    X/Twitter yang digunakan sebagai wadah berbagi opini,
-                    keresahan, maupun informasi secara anonim oleh mahasiswa
-                    Polsri. Bertujuan membangun komunikasi dua arah yang santai
-                    namun tetap aktif dan responsif.
+                    (Polsri Menfess) Platform berbasis media sosial melalui
+                    akun X/Twitter.
                   </p>
                 </div>
               </div>
+              <div class="card-3-back">
+                <h3>POLFESS</h3>
+                <p>
+                  (Polsri Menfess) Platform berbasis media sosial melalui akun
+                  X/Twitter yang digunakan sebagai wadah berbagi opini,
+                  keresahan, maupun informasi secara anonim oleh mahasiswa
+                  Polsri. Bertujuan membangun komunikasi dua arah yang santai
+                  namun tetap aktif dan responsif.
+                </p>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div
-            class="col-12 col-md-6 col-lg-4 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <div class="card-3">
-              <div class="card-3-inner">
-                <div class="card-3-front">
-                  <img src="/img/proker_bem/gsr.jpg" alt="Ocean View" />
-                  <div class="content">
-                    <h3>Gerakan Seribu Rupiah</h3>
-                    <p>
-                      Aksi galang dana untuk pembangunan Masjid Ath Thuroiqi dan
-                      bantuan UKT mahasiswa.
-                    </p>
-                  </div>
-                </div>
-                <div class="card-3-back">
+        <div class="col-12 col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="card-3">
+            <div class="card-3-inner">
+              <div class="card-3-front">
+                <img src="/img/proker_bem/gsr.jpg" alt="Ocean View" />
+                <div class="content">
                   <h3>Gerakan Seribu Rupiah</h3>
                   <p>
-                    Merupakan bentuk aksi dan gerakan mahasiswa politeknik
-                    Negeri Sriwijaya dengan mengumpulkan dana dalam membantu
-                    membangun Masjid Ath Thuroiqi dan membantu mahasiswa yang
-                    kesulitan dalam membayar UKT.
+                    Aksi galang dana untuk pembangunan Masjid Ath Thuroiqi dan
+                    bantuan UKT mahasiswa.
                   </p>
                 </div>
               </div>
+              <div class="card-3-back">
+                <h3>Gerakan Seribu Rupiah</h3>
+                <p>
+                  Merupakan bentuk aksi dan gerakan mahasiswa politeknik
+                  Negeri Sriwijaya dengan mengumpulkan dana dalam membantu
+                  membangun Masjid Ath Thuroiqi dan membantu mahasiswa yang
+                  kesulitan dalam membayar UKT.
+                </p>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div
-            class="col-12 col-md-6 col-lg-4 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <div class="card-3">
-              <div class="card-3-inner">
-                <div class="card-3-front">
-                  <img
-                    src="/img/proker_bem/gerakan_aksi.jpg"
-                    alt="Ocean View"
-                  />
-                  <div class="content">
-                    <h3>Gerakan Aksi</h3>
-                    <p>Program pembentukan barisan mahasiswa.</p>
-                  </div>
-                </div>
-                <div class="card-3-back">
+        <div class="col-12 col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="card-3">
+            <div class="card-3-inner">
+              <div class="card-3-front">
+                <img src="/img/proker_bem/gerakan_aksi.jpg" alt="Ocean View" />
+                <div class="content">
                   <h3>Gerakan Aksi</h3>
-                  <p>
-                    Program pembentukan barisan mahasiswa yang siap menjadi
-                    pelaksana aksi sebagai respon langsung terhadap isu yang
-                    telah dikaji.
-                  </p>
-                  <!--  -->
+                  <p>Program pembentukan barisan mahasiswa.</p>
                 </div>
+              </div>
+              <div class="card-3-back">
+                <h3>Gerakan Aksi</h3>
+                <p>
+                  Program pembentukan barisan mahasiswa yang siap menjadi
+                  pelaksana aksi sebagai respon langsung terhadap isu yang
+                  telah dikaji.
+                </p>
+                <!--  -->
               </div>
             </div>
           </div>
+        </div>
 
-          <div
-            class="col-12 col-md-6 col-lg-4 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <div class="card-3">
-              <div class="card-3-inner">
-                <div class="card-3-front">
-                  <img src="/img/proker_bem/ekspedisi.jpg" alt="Ocean View" />
-                  <div class="content">
-                    <h3>EKSPEDISI</h3>
-                    <p>
-                      Kunjungan BEM Polsri ke BEM kampus lain untuk eksplorasi
-                      pengalaman, bertukar ide, dan memperluas jejaring
-                      organisasi.
-                    </p>
-                  </div>
-                </div>
-                <div class="card-3-back">
+        <div class="col-12 col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="card-3">
+            <div class="card-3-inner">
+              <div class="card-3-front">
+                <img src="/img/proker_bem/ekspedisi.jpg" alt="Ocean View" />
+                <div class="content">
                   <h3>EKSPEDISI</h3>
                   <p>
-                    (Eksplorasi Pengalaman dan Diskusi) Kegiatan kunjungan BEM
-                    Polsri ke BEM kampus lain sebagai upaya eksplorasi
-                    pengalaman, bertukar ide, serta memperluas wawasan
-                    organisasi melalui diskusi dan jejaring eksternal.
+                    Kunjungan BEM Polsri ke BEM kampus lain untuk eksplorasi
+                    pengalaman, bertukar ide, dan memperluas jejaring
+                    organisasi.
                   </p>
                 </div>
               </div>
+              <div class="card-3-back">
+                <h3>EKSPEDISI</h3>
+                <p>
+                  (Eksplorasi Pengalaman dan Diskusi) Kegiatan kunjungan BEM
+                  Polsri ke BEM kampus lain sebagai upaya eksplorasi
+                  pengalaman, bertukar ide, serta memperluas wawasan
+                  organisasi melalui diskusi dan jejaring eksternal.
+                </p>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div
-            class="col-12 col-md-6 col-lg-4 wow fadeInUp"
-            data-wow-delay="0.7s"
-          >
-            <div class="card-3">
-              <div class="card-3-inner">
-                <div class="card-3-front">
-                  <img src="/img/proker_bem/bem_kantin.jpg" alt="Ocean View" />
-                  <div class="content">
-                    <h3>BEM Kantin</h3>
-                    <p>
-                      Program ini menjadi wadah peluang usaha dengan menyajikan
-                      jajanan dan membuka kolaborasi, termasuk dengan brand Kopi
-                      Siklus.
-                    </p>
-                  </div>
-                </div>
-                <div class="card-3-back">
+        <div class="col-12 col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="card-3">
+            <div class="card-3-inner">
+              <div class="card-3-front">
+                <img src="/img/proker_bem/bem_kantin.jpg" alt="Ocean View" />
+                <div class="content">
                   <h3>BEM Kantin</h3>
                   <p>
-                    Program ini dilaksanakan sebagai bentuk peluang usaha,
-                    dengan menghadirkan jajan, dan membuka kolaborasi bagi pihak
-                    yang ingin mengajak kerjasama, salah satunya itu ada brand
-                    dari kopi siklus
+                    Program ini menjadi wadah peluang usaha dengan menyajikan
+                    jajanan dan membuka kolaborasi, termasuk dengan brand Kopi
+                    Siklus.
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Program Section End -->
-
-    <!-- Update info section strart -->
-    <section class="container py-5 mb-5 bg-breadcrumb">
-      <div class="container">
-        <div
-          class="text-center mx-auto mb-5 wow fadeInUp"
-          data-wow-delay="0.1s"
-          style="max-width: 900px"
-        >
-          <h6>LIST OF</h6>
-          <h1
-            class="display-5 mb-4"
-            style="font-family: cinzel; color: #f8ae00"
-          >
-            Update Info
-          </h1>
-          <p class="mb-0" style="font-family: 'Plus Jakarta Sans', sans-serif">
-            Sebagai bentuk komitmen dalam menyediakan informasi terkini, BEM
-            Polsri menghadirkan pusat informasi kampus. Mulai dari pengumuman
-            hasil seleksi, jadwal kegiatan, proposal terbaik, hingga program
-            magang dan wirausaha—semua informasi penting tersedia di sini. Tim
-            BEM akan berusaha mengupdate informasi secara berkala agar mahasiswa
-            tetap terinformasi dengan baik.
-          </p>
-        </div>
-        <div class="kartu-grid">
-          <!-- Kartu 1 -->
-          <div class="kartu wow fadeInUp" data-wow-delay="0.1s">
-            <div class="kartu-inner">
-              <div class="kartu-front">
-                <img src="/img/update info 1.jpg" alt="Poster 1" />
-              </div>
-              <div class="kartu-back">
-                <h3>Program Kreatifitas Mahasiswa</h3>
+              <div class="card-3-back">
+                <h3>BEM Kantin</h3>
                 <p>
-                  Program Kreatifitas Mahasiswa (PKM) adalah kegiatan yang
-                  diselenggarkan oleh Ditjenbelmawa (Direktorat Jendral
-                  Pembelajaran dan Kemahasiswaan) Serta Kemendikbudristek dengan
-                  tujuan untuk memberi ruang kepada mahasiswa dalam
-                  mengembangkan potensi dan keahlian pada inovasi dan
-                  kreatifitas
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Kartu 2 -->
-          <div class="kartu wow fadeInUp" data-wow-delay="0.1s">
-            <div class="kartu-inner">
-              <div class="kartu-front">
-                <img src="/img/update info 2.jpg" alt="Poster 2" />
-              </div>
-              <div class="kartu-back">
-                <h3>PPK ORMAWA</h3>
-                <p>
-                  PPK ORMAWA (Program Penguatan Kapasitas Organisasi
-                  Kemahasiswaan) Tahun 2025 merupakan program yang bertujuan
-                  untuk memperkuat peran organisasi kemahasiswaan dalam
-                  pengembangan kapasitas, kepemimpinan, serta kontribusi nyata
-                  terhadap masyarakat. Program ini menyeleksi proposal kegiatan
-                  dari berbagai organisasi mahasiswa. Sebanyak 10 proposal
-                  terbaik diumumkan sebagai bentuk apresiasi atas gagasan dan
-                  rencana kegiatan yang dinilai unggul dan berdampak.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Kartu 3 -->
-          <div class="kartu wow fadeInUp" data-wow-delay="0.1s">
-            <div class="kartu-inner">
-              <div class="kartu-front">
-                <img src="/img/update info 3.jpg" alt="Poster 3" />
-              </div>
-              <div class="kartu-back">
-                <h3>Program Mahasiswa Wirausaha (PMW)</h3>
-                <p>
-                  Program Mahasiswa Wirausaha (PMW) Tahun 2025 adalah program
-                  yang diselenggarakan oleh Politeknik Negeri Sriwijaya melalui
-                  Unit Pengembangan Karir dan Kewirausahaan. Tujuannya adalah
-                  membekali mahasiswa dengan pengetahuan dan pengalaman
-                  berwirausaha secara nyata. Tahapan program meliputi seleksi
-                  proposal, pembekalan, pendampingan bisnis, program magang,
-                  monitoring dan evaluasi, hingga kompetisi dan expo rencana
-                  bisnis.
+                  Program ini dilaksanakan sebagai bentuk peluang usaha,
+                  dengan menghadirkan jajan, dan membuka kolaborasi bagi pihak
+                  yang ingin mengajak kerjasama, salah satunya itu ada brand
+                  dari kopi siklus
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- update info section end -->
+    </div>
+  </section>
+  <!-- Program Section End -->
 
-    <section class="bg-overlay">
-      <div class="container py-5 mb-5">
-        <div class="container-fluid">
-          <div class="container text-center py-5" style="max-width: 900px">
-            <h4
-              class="display-5 mb-4 wow fadeInDown"
-              data-wow-delay="0.1s"
-              style="font-family: cinzel; color: white"
-            >
-              Informasi lebih lanjut
-            </h4>
-            <a
-              href="/contact.html"
-              class="bi-telephone btn btn-outline-primary rounded-pill py-2 px-3"
-            >
-              Contact</a
-            >
+  <!-- Update info section strart -->
+  <section class="container py-5 mb-5 bg-breadcrumb">
+    <div class="container">
+      <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px">
+        <h6>LIST OF</h6>
+        <h1 class="display-5 mb-4" style="font-family: cinzel; color: #f8ae00">
+          Update Info
+        </h1>
+        <p class="mb-0" style="font-family: 'Plus Jakarta Sans', sans-serif">
+          Sebagai bentuk komitmen dalam menyediakan informasi terkini, BEM
+          Polsri menghadirkan pusat informasi kampus. Mulai dari pengumuman
+          hasil seleksi, jadwal kegiatan, proposal terbaik, hingga program
+          magang dan wirausaha—semua informasi penting tersedia di sini. Tim
+          BEM akan berusaha mengupdate informasi secara berkala agar mahasiswa
+          tetap terinformasi dengan baik.
+        </p>
+      </div>
+      <div class="kartu-grid">
+        <!-- Kartu 1 -->
+        <div class="kartu wow fadeInUp" data-wow-delay="0.1s">
+          <div class="kartu-inner">
+            <div class="kartu-front">
+              <img src="/img/update info 1.jpg" alt="Poster 1" />
+            </div>
+            <div class="kartu-back">
+              <h3>Program Kreatifitas Mahasiswa</h3>
+              <p>
+                Program Kreatifitas Mahasiswa (PKM) adalah kegiatan yang
+                diselenggarkan oleh Ditjenbelmawa (Direktorat Jendral
+                Pembelajaran dan Kemahasiswaan) Serta Kemendikbudristek dengan
+                tujuan untuk memberi ruang kepada mahasiswa dalam
+                mengembangkan potensi dan keahlian pada inovasi dan
+                kreatifitas
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kartu 2 -->
+        <div class="kartu wow fadeInUp" data-wow-delay="0.1s">
+          <div class="kartu-inner">
+            <div class="kartu-front">
+              <img src="/img/update info 2.jpg" alt="Poster 2" />
+            </div>
+            <div class="kartu-back">
+              <h3>PPK ORMAWA</h3>
+              <p>
+                PPK ORMAWA (Program Penguatan Kapasitas Organisasi
+                Kemahasiswaan) Tahun 2025 merupakan program yang bertujuan
+                untuk memperkuat peran organisasi kemahasiswaan dalam
+                pengembangan kapasitas, kepemimpinan, serta kontribusi nyata
+                terhadap masyarakat. Program ini menyeleksi proposal kegiatan
+                dari berbagai organisasi mahasiswa. Sebanyak 10 proposal
+                terbaik diumumkan sebagai bentuk apresiasi atas gagasan dan
+                rencana kegiatan yang dinilai unggul dan berdampak.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kartu 3 -->
+        <div class="kartu wow fadeInUp" data-wow-delay="0.1s">
+          <div class="kartu-inner">
+            <div class="kartu-front">
+              <img src="/img/update info 3.jpg" alt="Poster 3" />
+            </div>
+            <div class="kartu-back">
+              <h3>Program Mahasiswa Wirausaha (PMW)</h3>
+              <p>
+                Program Mahasiswa Wirausaha (PMW) Tahun 2025 adalah program
+                yang diselenggarakan oleh Politeknik Negeri Sriwijaya melalui
+                Unit Pengembangan Karir dan Kewirausahaan. Tujuannya adalah
+                membekali mahasiswa dengan pengetahuan dan pengalaman
+                berwirausaha secara nyata. Tahapan program meliputi seleksi
+                proposal, pembekalan, pendampingan bisnis, program magang,
+                monitoring dan evaluasi, hingga kompetisi dan expo rencana
+                bisnis.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+</section>
+  <!-- update info section end -->
 
-    <!-- Footer Start -->
-    <footer class="footer-gradient pt-5">
-        <div class="container" style="font-family: serif">
-            <div class="row pb-4">
-                <div class="col-12 col-md-6 col-xl-4 mb-4">
-                    <div class="fw-bold mb-3">FOLLOW US</div>
-                    <div class="d-flex mb-4">
-                        <a href="https://www.instagram.com/bempolsri_/" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
-                        <a href="https://x.com/polsrimenfess" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.youtube.com/@bemkmpolsri3259" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <img src="img/logo.png" alt="Logo" height="35" class="me-2" />
-                        <div class="small">
-                            BEM POLITEKNIK NEGERI SRIWIJAYA<br />
-                            KABINET LENTERA SRIWIJAYA
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4 mb-4">
-                    <div class="fw-bold mb-3">More Information</div>
-                    <a href="contact.html" class="footer-link d-block mb-1">Contact Us</a>
-                    <a href="about.html" class="footer-link d-block mb-1">About Us</a>
-                    <a href="Terms and Conditions.html" class="footer-link d-block">
-                        Terms and Conditions
-                    </a>
-                </div>
-                <div class="col-12 col-xl-4">
-                    <div class="fw-bold mb-3">Developed By</div>
-                    <div class="small">Departemen Media Informasi</div>
-                    <div class="small">BEM POLSRI 2025</div>
-                </div>
-            </div>
-            <hr class="mt-4" />
-            <div class="footer-bottom text-center small">
-                © 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
-            </div>
+  <section class="bg-overlay">
+    <div class="container py-5 mb-5">
+      <div class="container-fluid">
+        <div class="container text-center py-5" style="max-width: 900px">
+          <h4 class="display-5 mb-4 wow fadeInDown" data-wow-delay="0.1s" style="font-family: cinzel; color: white">
+            Informasi lebih lanjut
+          </h4>
+          <a href="/contact.html" class="bi-telephone btn btn-outline-primary rounded-pill py-2 px-3">
+            Contact</a>
         </div>
-    </footer>
-    <!-- Footer End -->
+      </div>
+    </div>
+  </section>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary btn-lg-square back-to-top"
-      ><i class="fa fa-arrow-up"></i
-    ></a>
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Footer Start -->
+  <footer class="footer-gradient pt-5">
+    <div class="container" style="font-family: serif">
+      <div class="row pb-4">
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+          <div class="fw-bold mb-3">FOLLOW US</div>
+          <div class="d-flex mb-4">
+            <a href="https://www.instagram.com/bempolsri_/" class="social-icon me-2"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://x.com/polsrimenfess" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bemkmpolsri3259" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="d-flex align-items-center">
+            <img src="img/logo.png" alt="Logo" height="35" class="me-2" />
+            <div class="small">
+              BEM POLITEKNIK NEGERI SRIWIJAYA<br />
+              KABINET LENTERA SRIWIJAYA
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+          <div class="fw-bold mb-3">More Information</div>
+          <a href="contact.html" class="footer-link d-block mb-1">Contact Us</a>
+          <a href="about.html" class="footer-link d-block mb-1">About Us</a>
+          <a href="Terms and Conditions.html" class="footer-link d-block">
+            Terms and Conditions
+          </a>
+        </div>
+        <div class="col-12 col-xl-4">
+          <div class="fw-bold mb-3">Developed By</div>
+          <div class="small">Departemen Media Informasi</div>
+          <div class="small">BEM POLSRI 2025</div>
+        </div>
+      </div>
+      <hr class="mt-4" />
+      <div class="footer-bottom text-center small">
+        © 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+  <!-- JavaScript Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-    <!-- Script kalender -->
-    <script>
-      class BootstrapCalendar {
-        constructor() {
-          this.currentDate = new Date();
-          this.selectedDate = null;
-          this.today = new Date();
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
 
-          this.monthNames = [
-            "Januari",
-            "Februari",
-            "Maret",
-            "April",
-            "Mei",
-            "Juni",
-            "Juli",
-            "Agustus",
-            "September",
-            "Oktober",
-            "November",
-            "Desember",
-          ];
+  <!-- Script kalender -->
+  <script>
+    class BootstrapCalendar {
+      constructor() {
+        this.currentDate = new Date();
+        this.selectedDate = null;
+        this.today = new Date();
 
-          this.init();
-        }
+        this.monthNames = [
+          "Januari",
+          "Februari",
+          "Maret",
+          "April",
+          "Mei",
+          "Juni",
+          "Juli",
+          "Agustus",
+          "September",
+          "Oktober",
+          "November",
+          "Desember",
+        ];
 
-        init() {
+        this.init();
+      }
+
+      init() {
+        this.renderCalendar();
+        this.bindEvents();
+        this.updateCurrentDay();
+      }
+
+      bindEvents() {
+        document.getElementById("prevMonth").addEventListener("click", () => {
+          this.currentDate.setMonth(this.currentDate.getMonth() - 1);
           this.renderCalendar();
-          this.bindEvents();
-          this.updateCurrentDay();
-        }
+        });
 
-        bindEvents() {
-          document.getElementById("prevMonth").addEventListener("click", () => {
-            this.currentDate.setMonth(this.currentDate.getMonth() - 1);
-            this.renderCalendar();
-          });
+        document.getElementById("nextMonth").addEventListener("click", () => {
+          this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+          this.renderCalendar();
+        });
+      }
 
-          document.getElementById("nextMonth").addEventListener("click", () => {
-            this.currentDate.setMonth(this.currentDate.getMonth() + 1);
-            this.renderCalendar();
-          });
-        }
+      renderCalendar() {
+        const year = this.currentDate.getFullYear();
+        const month = this.currentDate.getMonth();
 
-        renderCalendar() {
-          const year = this.currentDate.getFullYear();
-          const month = this.currentDate.getMonth();
+        // Update header
+        document.getElementById(
+          "currentMonth"
+        ).textContent = `${this.monthNames[month]} ${year}`;
 
-          // Update header
-          document.getElementById(
-            "currentMonth"
-          ).textContent = `${this.monthNames[month]} ${year}`;
+        // Get first day of month and number of days
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const daysInMonth = lastDay.getDate();
+        const startingDayOfWeek = firstDay.getDay();
 
-          // Get first day of month and number of days
-          const firstDay = new Date(year, month, 1);
-          const lastDay = new Date(year, month + 1, 0);
-          const daysInMonth = lastDay.getDate();
-          const startingDayOfWeek = firstDay.getDay();
+        // Get previous month days
+        const prevMonth = new Date(year, month, 0);
+        const daysInPrevMonth = prevMonth.getDate();
 
-          // Get previous month days
-          const prevMonth = new Date(year, month, 0);
-          const daysInPrevMonth = prevMonth.getDate();
+        let html = "";
+        let dayCount = 1;
+        let nextMonthDay = 1;
 
-          let html = "";
-          let dayCount = 1;
-          let nextMonthDay = 1;
+        // Generate 6 weeks
+        for (let week = 0; week < 6; week++) {
+          html += '<div class="row g-0">';
 
-          // Generate 6 weeks
-          for (let week = 0; week < 6; week++) {
-            html += '<div class="row g-0">';
+          for (let day = 0; day < 7; day++) {
+            const cellIndex = week * 7 + day;
+            let cellContent = "";
+            let cellClass =
+              "col calendar-day d-flex align-items-center justify-content-center";
+            let cellDate = "";
 
-            for (let day = 0; day < 7; day++) {
-              const cellIndex = week * 7 + day;
-              let cellContent = "";
-              let cellClass =
-                "col calendar-day d-flex align-items-center justify-content-center";
-              let cellDate = "";
+            if (cellIndex < startingDayOfWeek) {
+              // Previous month days
+              const prevDay =
+                daysInPrevMonth - startingDayOfWeek + cellIndex + 1;
+              cellContent = prevDay;
+              cellClass += " other-month";
+              cellDate = `${year}-${month}-${prevDay}`;
+            } else if (dayCount <= daysInMonth) {
+              // Current month days
+              cellContent = dayCount;
+              cellDate = `${year}-${month + 1}-${dayCount}`;
 
-              if (cellIndex < startingDayOfWeek) {
-                // Previous month days
-                const prevDay =
-                  daysInPrevMonth - startingDayOfWeek + cellIndex + 1;
-                cellContent = prevDay;
-                cellClass += " other-month";
-                cellDate = `${year}-${month}-${prevDay}`;
-              } else if (dayCount <= daysInMonth) {
-                // Current month days
-                cellContent = dayCount;
-                cellDate = `${year}-${month + 1}-${dayCount}`;
-
-                // Check if today
-                if (
-                  year === this.today.getFullYear() &&
-                  month === this.today.getMonth() &&
-                  dayCount === this.today.getDate()
-                ) {
-                  cellClass += " today";
-                }
-
-                dayCount++;
-              } else {
-                // Next month days
-                cellContent = nextMonthDay;
-                cellClass += " other-month";
-                cellDate = `${year}-${month + 2}-${nextMonthDay}`;
-                nextMonthDay++;
+              // Check if today
+              if (
+                year === this.today.getFullYear() &&
+                month === this.today.getMonth() &&
+                dayCount === this.today.getDate()
+              ) {
+                cellClass += " today";
               }
 
-              html += `<div class="${cellClass}" data-date="${cellDate}" onclick="calendar.selectDate('${cellDate}', ${cellContent})">${cellContent}</div>`;
+              dayCount++;
+            } else {
+              // Next month days
+              cellContent = nextMonthDay;
+              cellClass += " other-month";
+              cellDate = `${year}-${month + 2}-${nextMonthDay}`;
+              nextMonthDay++;
             }
 
-            html += "</div>";
+            html += `<div class="${cellClass}" data-date="${cellDate}" onclick="calendar.selectDate('${cellDate}', ${cellContent})">${cellContent}</div>`;
           }
 
-          document.getElementById("calendarGrid").innerHTML = html;
+          html += "</div>";
         }
 
-        selectDate(dateStr, day) {
-          // Remove previous selection
-          document.querySelectorAll(".calendar-day.selected").forEach((el) => {
-            el.classList.remove("selected");
-          });
+        document.getElementById("calendarGrid").innerHTML = html;
+      }
 
-          // Add selection to clicked date
-          event.target.classList.add("selected");
+      selectDate(dateStr, day) {
+        // Remove previous selection
+        document.querySelectorAll(".calendar-day.selected").forEach((el) => {
+          el.classList.remove("selected");
+        });
 
-          // Update selected date info
-          const [year, month, dayNum] = dateStr.split("-");
-          const monthName = this.monthNames[parseInt(month) - 1];
-          const dateObj = new Date(year, month - 1, dayNum);
-          const dayNames = [
-            "Minggu",
-            "Senin",
-            "Selasa",
-            "Rabu",
-            "Kamis",
-            "Jumat",
-            "Sabtu",
-          ];
-          const dayName = dayNames[dateObj.getDay()];
+        // Add selection to clicked date
+        event.target.classList.add("selected");
 
-          document.getElementById("selectedDateInfo").innerHTML = `
+        // Update selected date info
+        const [year, month, dayNum] = dateStr.split("-");
+        const monthName = this.monthNames[parseInt(month) - 1];
+        const dateObj = new Date(year, month - 1, dayNum);
+        const dayNames = [
+          "Minggu",
+          "Senin",
+          "Selasa",
+          "Rabu",
+          "Kamis",
+          "Jumat",
+          "Sabtu",
+        ];
+        const dayName = dayNames[dateObj.getDay()];
+
+        document.getElementById("selectedDateInfo").innerHTML = `
                     <strong>Tanggal Terpilih:</strong><br>
                     ${dayName}, ${day} ${monthName} ${year}<br>
                     <small class="text-muted">Klik tanggal lain untuk mengubah pilihan</small>
                 `;
-        }
-
-        updateCurrentDay() {
-          const today = new Date();
-          document.getElementById("todayDate").textContent = today.getDate();
-          document.getElementById("todayName").textContent =
-            this.monthNames[today.getMonth()] + " " + today.getFullYear();
-        }
       }
 
-      // Initialize calendar
-      const calendar = new BootstrapCalendar();
+      updateCurrentDay() {
+        const today = new Date();
+        document.getElementById("todayDate").textContent = today.getDate();
+        document.getElementById("todayName").textContent =
+          this.monthNames[today.getMonth()] + " " + today.getFullYear();
+      }
+    }
 
-      // Update current day every minute
-      setInterval(() => {
-        calendar.updateCurrentDay();
-      }, 60000);
-    </script>
-    
-  </body>
+    // Initialize calendar
+    const calendar = new BootstrapCalendar();
+
+    // Update current day every minute
+    setInterval(() => {
+      calendar.updateCurrentDay();
+    }, 60000);
+  </script>
+
+</body>
+
 </html>

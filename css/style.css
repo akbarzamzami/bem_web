@@ -203,13 +203,13 @@
 
   .navbar.navbar-expand-lg button span {
     position: relative;
-    z-index: 99;
+    z-index: 999;
   }
 
   .navbar {
     position: relative !important;
     background: var(--bs-light);
-    z-index: 2;
+    z-index: 999;
   }
 
   .sticky-top.navbar-light {
