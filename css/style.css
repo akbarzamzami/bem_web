@@ -1322,15 +1322,16 @@
 }
 
 .img-visi-misi {
+  height: auto; 
   border-radius: 32px;
   border-image: linear-gradient(135deg, #e05800, #fffbe6, #e05800) 1;
   box-shadow: 0 8px 32px 0 rgba(248, 174, 0, 0.18);
   transition: transform 0.4s, box-shadow 0.4s;
 }
-/* .img-visi-misi:hover {
+.img-visi-misi:hover {
     transform: scale(1.03) rotate(1deg);
     box-shadow: 0 16px 48px 0 #e05800, 0 4px 16px 0 rgba(0,0,0,0.13);
-} */
+}
 
 .logo-overlay {
   position: absolute;
