@@ -54,12 +54,28 @@
     margin-top: -10px; /* Beri sedikit jarak dari jabatan */
   }
 
-  /* Style untuk ikon Instagram */
+  /* Gaya untuk logo Instagram pemimpin departemen */
+  .leader-instagram-icon {
+    background: linear-gradient(45deg, #feda77, #f58529, #dd2a7b, #8134af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.2rem; /* Nilai yang diperbarui */
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  .leader-instagram-icon-wrapper {
+      text-align: center;
+  }
+  .leader-instagram-icon:hover {
+    transform: scale(1.1);
+  }
+
+  /* Style untuk ikon Instagram anggota divisi (kembali normal) */
   .member-card .instagram-icon {
     background: linear-gradient(45deg, #feda77, #f58529, #dd2a7b, #8134af);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Ukuran normal */
     transition: all 0.3s ease;
     display: inline-block;
   }
@@ -246,21 +262,6 @@
         margin-bottom: 15px;
       }
 
-      /* Instagram icon styles */
-      .member-card .instagram-icon {
-        background: linear-gradient(45deg, #feda77, #f58529, #dd2a7b, #8134af);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 1.8rem; /* Increased icon size */
-        transition: all 0.3s ease;
-        display: inline-block; /* Agar gradient terlihat */
-        margin-top: 0px; /* Add margin-top to position it below jabatan */
-      }
-
-      .member-card .instagram-icon:hover {
-        transform: scale(1.1); /* Slightly enlarge on hover */
-      }
-
       /* Gradient for jabatan badge */
       .member-card .badge-jabatan {
         background: linear-gradient(45deg, #f8ae00, #e05800); /* Gradiasi orange-kuning */
@@ -356,8 +357,8 @@
           left: auto;
         }
 
-        .swiper-container.member-swiper .swiper-button-prev::after,
-        .swiper-container.member-swiper .swiper-button-next::after {
+        .swiper-container.member-swiper .swiper-button-next::after,
+        .swiper-container.member-swiper .swiper-button-prev::after {
           font-size: 1rem; /* Smaller icon */
         }
 
@@ -382,14 +383,14 @@
       }
 
       /* Styles for header-kastrat background with transparency */
-      .header-humas {
+      .header-kastrat {
           position: relative;
           overflow: hidden;
           /* Add padding-bottom to ensure content below the header isn't hidden by the transparent part */
           padding-bottom: 50px; /* Adjust as needed based on how much transparency you want */
       }
 
-      .header-humas-background {
+      .header-kastrat-background {
           position: absolute;
           top: 0;
           left: 0;
@@ -398,7 +399,7 @@
           z-index: -1; /* Place it behind the content */
       }
 
-      .header-humas-background img {
+      .header-kastrat-background img {
           width: 100%;
           height: 100%;
           object-fit: cover;
@@ -551,9 +552,9 @@
             </div>
         </div>
     </nav>
-    <div class="header-humas position-relative overflow-hidden">
+    <div class="header-kastrat position-relative overflow-hidden">
         <div class="header-kastrat-background">
-            <img src="img/humas/humasbg.png" alt="Background Humas" class="img-fluid w-100 h-100 object-fit-cover">
+            <img src="img/humas/humasbg.png" alt="Background Kastrat" class="img-fluid w-100 h-100 object-fit-cover">
         </div>
         <div class="container py-5">
             <div
@@ -564,7 +565,7 @@
                 style="max-width: 900px"
             >
                 <div class="header-logo-container">
-                    <img src="img/humas/Logo Humas.png" alt="Logo Humas" class="img-fluid" style="max-width: 130px;">
+                    <img src="img/humas/Logo Humas.png" alt="Logo Kastrat" class="img-fluid" style="max-width: 130px;">
                 </div>
                 <h4
                     class="text-primary mb-2"
@@ -592,7 +593,7 @@
                     data-aos-once="false"
                     style="font-family: 'Plus Jakarta Sans', sans-serif"
                 >
-                    Departemen Humas berperan untuk Mengelola dan mengembangkan saluran komunikasi yang efektif antara BEM POLSRI dengan para pemangku kepentingan (internal dan eksternal), membangun citra publik yang positif, serta menerima dan menyampaikan informasi secara akurat dan tepat waktu.
+                  Departemen Humas berperan untuk Mengelola dan mengembangkan saluran komunikasi yang efektif antara BEM POLSRI dengan para pemangku kepentingan (internal dan eksternal), membangun citra publik yang positif, serta menerima dan menyampaikan informasi secara akurat dan tepat waktu.
                 </p>
             </div>
         </div>
@@ -647,7 +648,6 @@
                   "
                 >
                   <img
-                    <img
                     src="img/humas/TNG03787.JPG"
                     alt="SITI AYU ANDINI"
                     style="
@@ -689,9 +689,9 @@
                   font-size: 20px;
                 "
               >
-              SITI AYU ANDINI
+              Siti Ayu Andini
               </h5>
-              <div class="mb-3">
+              <div class="mb-3 mt-3">
                 <span
                   class="badge px-3 py-2"
                   style="
@@ -704,6 +704,15 @@
                   >Kepala Departemen</span
                 >
               </div>
+              <div class="leader-instagram-icon-wrapper mt-1">
+                  <a
+                    href="http://instagram.com/styuandini"
+                    class="leader-instagram-icon"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+              </div>
               <p
                 class="text-muted"
                 style="
@@ -712,8 +721,7 @@
                   line-height: 1.6;
                 "
               >
-              Bertanggung jawab dalam merancang arah gerak departemen melalui kajian isu strategis, koordinasi tim, dan pelaksanaan aksi nyata.
-              </p>
+                Membangun hubungan yang baik dan terbuka dengan semua pihak, menjaga citra positif organisasi, serta menjadi penghubung yang efektif antara BEM dan masyarakat kampus              </p>
             </div>
             <div
               class="position-absolute bottom-0 start-0 w-100 h-1"
@@ -747,7 +755,7 @@
                 >
                   <img
                     src="img/humas/M. Indra Jaya Pratama Kusuma.png"
-                    alt="M. Indra Jaya Pratama Kusuma"
+                    alt="M. INDRA JAYA PRATAMA KUSUMA"
                     style="
                       width: 100%;
                       height: 120%;
@@ -755,7 +763,6 @@
                       transition: transform 0.3s ease;
                     "
                   />
-
                   <div
                     class="position-absolute top-0 start-0 w-100 h-100"
                     style="
@@ -788,9 +795,9 @@
                   font-size: 20px;
                 "
               >
-              M. Indra Jaya Pratama Kusuma
+            M. Indra Jaya Pratama Kusuma
               </h5>
-              <div class="mb-3">
+              <div class="mb-3 mt-3">
                 <span
                   class="badge px-3 py-2"
                   style="
@@ -803,6 +810,15 @@
                   >Sekretaris Departemen</span
                 >
               </div>
+              <div class="leader-instagram-icon-wrapper mt-1">
+                  <a
+                    href="http://instagram.com/indraazy"
+                    class="leader-instagram-icon"
+                    target="_blank"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+              </div>
               <p
                 class="text-muted"
                 style="
@@ -811,8 +827,7 @@
                   line-height: 1.6;
                 "
               >
-              Bertanggung jawab sebagai penghubung komunikasi internal departemen dan mendampingi kepala departemen dalam pelaksanaan seluruh agenda strategis dan aksi.
-              </p>
+                Mendukung kelancaran administrasi dan komunikasi di Departemen Humas, menjaga keteraturan data, serta membantu terwujudnya hubungan yang harmonis antara BEM dan seluruh pihak terkait.              </p>
             </div>
             <div
               class="position-absolute bottom-0 start-0 w-100 h-1"
@@ -850,20 +865,20 @@
               <div class="col-md-12 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="member-card">
                   <img
-                  src="img/humas/INNAYAH PUTRI SYAKIRAH.jpg"
-                  class="img-fluid"
-                  alt="Innayah Putri Syakirah"
-                />
-                <div>
-                  <h5>Innayah Putri Syakirah</h5>
-                  <p class="badge-jabatan">Ketua Divisi</p>
-                  <div class="social-icons">
-                    <a
-                      href="https://www.instagram.com/nayasyakirah"
-                      class="instagram-icon"
-                      target="_blank"
-                    >
-                      <i class="fab fa-instagram"></i>
+                    src="img/humas/INNAYAH PUTRI SYAKIRAH.jpg"
+                    class="img-fluid"
+                    alt="INNAYAH PUTRI SYAKIRAH"
+                  />
+                  <div>
+                    <h5>Innayah Putri Syakirah</h5>
+                    <p class="badge-jabatan">Kepala Divisi</p>
+                    <div class="social-icons">
+                      <a
+                        href="http://instagram.com/nayasyakirah"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
                       </a>
                     </div>
                   </div>
@@ -874,20 +889,21 @@
               <div class="col-md-12 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="member-card">
                   <img
-                  src="img/humas/ID CARD ELFANDARY_HUMAS.png"
-                  class="img-fluid"
-                  alt="Elfandary Shafira M"
-                />
-                <div>
-                  <h5>Elfandary Shafira M</h5>
-                  <p class="badge-jabatan">Staff</p>
-                  <div class="social-icons">
-                    <a
-                      href="https://www.instagram.com/elfandarysm_"
-                      class="instagram-icon"
-                      target="_blank"
-                    >
-                      <i class="fab fa-instagram"></i>
+                    src="img/humas/ID CARD ELFANDARY_HUMAS.png"
+                    class="img-fluid"
+                    alt="ELFANDARY SHAFIRA M"
+                  />
+                  <div>
+                    <h5>Elfandary Shafira M</h5>
+                    <p class="badge-jabatan">Staff</p>
+                    <div class="social-icons">
+                      <a
+                        href="http://instagram.com/elfandarysm_"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -897,20 +913,20 @@
               <div class="col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="member-card">
                   <img
-                  src="img/humas/Intan Nurfadillah.JPG"
-                  class="img-fluid"
-                  alt="Intan Nurfadillah"
-                />
-                <div>
-                  <h5>Intan Nurfadillah</h5>
-                  <p class="badge-jabatan">Staff</p>
-                  <div class="social-icons">
-                    <a
-                      href="https://www.instagram.com/iintannurfadillah"
-                      class="instagram-icon"
-                      target="_blank"
-                    >
-                      <i class="fab fa-instagram"></i>
+                    src="img/humas/Intan Nurfadillah.JPG"
+                    class="img-fluid"
+                    alt="INTAN NURFADILLAH"
+                  />
+                  <div>
+                    <h5>Intan Nurfadillah</h5>
+                    <p class="badge-jabatan">Staff</p>
+                    <div class="social-icons">
+                      <a
+                        href="http://instagram.com/iintannurfadillah"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
                       </a>
                     </div>
                   </div>
@@ -921,20 +937,20 @@
               <div class="col-md-12 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="member-card">
                   <img
-                  src="img/humas/aliya kaila andina_humas.JPG"
-                  class="img-fluid"
-                  alt="Aliya Kaila Andina"
-                />
-                <div>
-                  <h5>Aliya Kaila Andina</h5>
-                  <p class="badge-jabatan">Staff</p>
-                  <div class="social-icons">
-                    <a
-                      href="https://www.instagram.com/aliyaandna"
-                      class="instagram-icon"
-                      target="_blank"
-                    >
-                      <i class="fab fa-instagram"></i>
+                    src="img/humas/aliya kaila andina_humas.JPG"
+                    class="img-fluid"
+                    alt="ALIYA KAILA ANDINA"
+                  />
+                  <div>
+                    <h5>Aliya Kaila Andina</h5>
+                    <p class="badge-jabatan">Staff</p>
+                    <div class="social-icons">
+                      <a
+                        href="http://instagram.com/aliyaandna"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
                       </a>
                     </div>
                   </div>
@@ -945,20 +961,20 @@
               <div class="col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="member-card">
                   <img
-                  src="img/humas/Adinda Nadya Saphira staff muda.png"
-                  class="img-fluid"
-                  alt="Adinda Nadya Saphira"
-                />
-                <div>
-                  <h5>Adinda Nadya Saphira</h5>
-                  <p class="badge-jabatan">Staff Muda</p>
-                  <div class="social-icons">
-                    <a
-                      href="https://www.instagram.com/"
-                      class="instagram-icon"
-                      target="_blank"
-                    >
-                      <i class="fab fa-instagram"></i>
+                    src="img/humas/Adinda Nadya Saphira staff muda.png"
+                    class="img-fluid"
+                    alt="ADINDA NADYA SAPHIRA"
+                  />
+                  <div>
+                    <h5>ADINDA NADYA SAPHIRA</h5>
+                    <p class="badge-jabatan">Staff Muda</p>
+                    <div class="social-icons">
+                      <a
+                        href="http://instagram.com/"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
                       </a>
                     </div>
                   </div>
@@ -969,20 +985,20 @@
               <div class="col-md-12 wow fadeInUp" data-wow-delay="1.1s">
                 <div class="member-card">
                   <img
-                  src="img/humas/Agung Syaputra Dinata staff muda.png"
-                  class="img-fluid"
-                  alt="Agung Syaputra Dinata"
-                />
-                <div>
-                  <h5>Agung Syaputra Dinata</h5>
-                  <p class="badge-jabatan">Staff Muda</p>
-                  <div class="social-icons">
-                    <a
-                      href="https://www.instagram.com/agungsyaputrad"
-                      class="instagram-icon"
-                      target="_blank"
-                    >
-                      <i class="fab fa-instagram"></i>
+                    src="img/humas/Agung Syaputra Dinata staff muda.png"
+                    class="img-fluid"
+                    alt="AGUNG SYAPUTRA DINATA"
+                  />
+                  <div>
+                    <h5>Agung Syaputra Dinata</h5>
+                    <p class="badge-jabatan">Staff Muda</p>
+                    <div class="social-icons">
+                      <a
+                        href="http://instagram.com/agungsyaputrad"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
                       </a>
                     </div>
                   </div>
@@ -990,23 +1006,23 @@
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="col-md-12 wow fadeInUp" data-wow-delay="1.3s">
+              <div class="col-md-12 wow fadeInUp" data-wow-delay="1.1s">
                 <div class="member-card">
                   <img
-                  src="img/humas/Muhammad Diraja.png"
-                  class="img-fluid"
-                  alt="Muhammad Diraja"
-                />
-                <div>
-                  <h5>Muhammad Diraja</h5>
-                  <p class="badge-jabatan">Staff Muda</p>
-                  <div class="social-icons">
-                    <a
-                      href="https://www.instagram.com/polsri_student"
-                      class="instagram-icon"
-                      target="_blank"
-                    >
-                      <i class="fab fa-instagram"></i>
+                    src="img/humas/Muhammad Diraja.png"
+                    class="img-fluid"
+                    alt="MUHAMMAD DIRAJA"
+                  />
+                  <div>
+                    <h5>Muhammad Diraja</h5>
+                    <p class="badge-jabatan">Staff Muda</p>
+                    <div class="social-icons">
+                      <a
+                        href="http://instagram.com/drrjjaaa"
+                        class="instagram-icon"
+                        target="_blank"
+                      >
+                        <i class="fab fa-instagram"></i>
                       </a>
                     </div>
                   </div>
@@ -1050,14 +1066,14 @@
                   <img
                     src="img/humas/M Derindra Pratama.jpeg"
                     class="img-fluid"
-                    alt="M Derindra Pratama"
+                    alt="M. DERINDRA PRATAMA"
                   />
                   <div>
-                    <h5>M Derindra Pratama</h5>
-                    <p class="badge-jabatan">Ketua Divisi</p>
+                    <h5>M. Derindra Pratama</h5>
+                    <p class="badge-jabatan">Kepala Divisi</p>
                     <div class="social-icons">
                       <a
-                        href="https://www.instagram.com/derindrapratama"
+                        href="http://instagram.com/derindrapratama"
                         class="instagram-icon"
                         target="_blank"
                       >
@@ -1074,14 +1090,14 @@
                   <img
                     src="img/humas/Aisyah Syawalia Putri.JPG"
                     class="img-fluid"
-                    alt="Aisyah Syawalia Putri"
+                    alt="AISYAH SYAWALIA PUTRI"
                   />
                   <div>
                     <h5>Aisyah Syawalia Putri</h5>
                     <p class="badge-jabatan">Staff</p>
                     <div class="social-icons">
                       <a
-                        href="https://www.instagram.com/aisywildd__"
+                        href="http://instagram.com/aisywildd__"
                         class="instagram-icon"
                         target="_blank"
                       >
@@ -1098,14 +1114,14 @@
                   <img
                     src="img/humas/MEASY ANJANI.PNG"
                     class="img-fluid"
-                    alt="Measy Anjani"
+                    alt="MEASY ANJANI"
                   />
                   <div>
                     <h5>Measy Anjani</h5>
                     <p class="badge-jabatan">Staff</p>
                     <div class="social-icons">
                       <a
-                        href="https://www.instagram.com/measy.ann"
+                        href="http://instagram.com/measy.ann"
                         class="instagram-icon"
                         target="_blank"
                       >
@@ -1122,14 +1138,14 @@
                   <img
                     src="img/humas/Naila Ananta Rizma.png"
                     class="img-fluid"
-                    alt="Naila Ananta Rizma"
+                    alt="NAILA ANANTA RIZMA"
                   />
                   <div>
                     <h5>Naila Ananta Rizma</h5>
                     <p class="badge-jabatan">Staff Muda</p>
                     <div class="social-icons">
                       <a
-                        href="https://www.instagram.com/naila_ananta.r"
+                        href="http://instagram.com/naila_ananta.r"
                         class="instagram-icon"
                         target="_blank"
                       >
@@ -1146,14 +1162,14 @@
                   <img
                     src="img/humas/Tria Ramadhanti.png"
                     class="img-fluid"
-                    alt="Tria Ramadhanti"
+                    alt="TRIA RAMADHANTI"
                   />
                   <div>
                     <h5>Tria Ramadhanti</h5>
                     <p class="badge-jabatan">Staff Muda</p>
                     <div class="social-icons">
                       <a
-                        href="https://www.instagram.com/"
+                        href="http://instagram.com/tiak.knr"
                         class="instagram-icon"
                         target="_blank"
                       >
@@ -1164,6 +1180,7 @@
                 </div>
               </div>
             </div>
+          </div>
 
           <div class="swiper-pagination"></div>
           <div class="swiper-button-next"></div>
@@ -1184,7 +1201,7 @@
       >
         PROGRAM KERJA
       </h1>
-      <p class="mb-0">
+      <p class="mb-6">
         Program kerja Hubungan Mahasiswa bertujuan untuk menjalin, mempererat, dan menjaga hubungan yang harmonis antar mahasiswa, 
         baik di dalam maupun di luar lingkungan kampus. Melalui berbagai kegiatan seperti forum diskusi, kunjungan antar organisasi, serta kegiatan sosial bersama, 
         program ini menjadi wadah komunikasi, kolaborasi, dan pertukaran ide yang konstruktif. Dengan demikian, Hubungan Mahasiswa berperan penting dalam menciptakan suasana 
@@ -1204,8 +1221,7 @@
             <div class="proker-card-back">
               <h3>GASPOL (Gerakan Silaturahmi dan Kolaborasi Ormawa Polsri)</h3>
               <p>
-                Meningkatkan hubungan internal antar ormawa melalui kunjungan dan silaturahmi organisasi.
-              </p>
+                Meningkatkan hubungan internal antar ormawa melalui kunjungan dan silaturahmi organisasi.              </p>
             </div>
           </div>
         </div>
@@ -1222,8 +1238,7 @@
             <div class="proker-card-back">
               <h3>Harmonisasi Ormawa</h3>
               <p>
-                Membangun sinergi dan komunikasi serta menampung berbagai aspirasi antar ormawa se-Polsri secara kolaboratif dan berkelanjutan.
-              </p>
+                Membangun sinergi dan komunikasi serta menampung berbagai aspirasi antar ormawa se-Polsri secara kolaboratif dan berkelanjutan.              </p>
             </div>
           </div>
         </div>
@@ -1253,24 +1268,6 @@
         <div class="card-3">
           <div class="card-3-inner">
             <div class="proker-card-front">
-              <h3>Polsri Goes to School</h3>
-            </div>
-            <div class="proker-card-back">
-              <h3>Polsri Goes to School</h3>
-              <p>
-                Promosi kampus kepada siswa sekolah menengah untuk mengenalkan Polsri secara langsung.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
-        data-wow-delay="0.9s"
-      >
-        <div class="card-3">
-          <div class="card-3-inner">
-            <div class="proker-card-front">
               <h3>Konsolidasi</h3>
             </div>
             <div class="proker-card-back">
@@ -1284,57 +1281,77 @@
       </div>
       <div
         class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.9s"
+      >
+        <div class="card-3">
+          <div class="card-3-inner">
+            <div class="proker-card-front">
+              <h3>Polsri Goes to School</h3>
+            </div>
+            <div class="proker-card-back">
+              <h3>Polsri Goes to School</h3>
+              <p>
+                 Promosi kampus kepada siswa sekolah menengah untuk mengenalkan Polsri secara langsung.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
         data-wow-delay="1.1s"
       >
+      </div>
+    </div>
   </div>
 </section>
 
-      <footer class="footer-gradient">
-        <div class="container" style="font-family: serif">
-          <div class="row">
-            <div class="col-12 col-md-6 col-xl-4">
-              <div class="fw-bold mb-2">FOLLOW US</div>
-              <div class="d-flex mb-3">
-                <a
-                  href="https://www.instagram.com/bempolsri_/"
-                  class="social-icon me-2"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <a href="https://x.com/polsrimenfess" class="social-icon me-2"
-                  ><i class="fab fa-x-twitter"></i
-                ></a>
-                <a href="https://www.youtube.com/@bemkmpolsri3259" class="social-icon"
-                  ><i class="fab fa-youtube"></i
-                ></a>
-              </div>
-              <div class="d-flex align-items-center">
-                <img src="img/logo.png" alt="Logo" height="35" class="me-2" />
-                <div class="small">
-                  BEM POLITEKNIK NEGERI SRIWIJAYA<br />
-                  KABINET LENTERA SRIWIJAYA
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-xl-4">
-              <div class="fw-bold mb-2">More Information</div>
-              <a href="#" class="footer-link d-block mb-1">Contact Us</a>
-              <a href="about.html" class="about.html">About Us</a>
-              <a href="Terms and Conditions.html" class="footer-link d-block"
-                >Terms and Conditions</a
-              >
-            </div>
-            <div class="col-12 col-xl-4">
-              <div class="fw-bold mb-2">Developed By</div>
-              <div class="small">Departemen Media Informasi</div>
-              <div class="small">BEM POLSRI 2025</div>
-            </div>
-          </div>
-          <hr class="my-4" />
-          <div class="footer-bottom text-center small">
-            © 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
+<footer class="footer-gradient pt-5">
+  <div class="container" style="font-family: serif">
+    <div class="row pb-4">
+      <div class="col-12 col-md-6 col-xl-4 mb-4">
+        <div class="fw-bold mb-3">FOLLOW US</div>
+        <div class="d-flex mb-4">
+          <a
+            href="https://www.instagram.com/bempolsri_/"
+            class="social-icon me-2"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://x.com/polsrimenfess" class="social-icon me-2"
+            ><i class="fab fa-x-twitter"></i
+          ></a>
+          <a href="https://www.youtube.com/@bemkmpolsri3259" class="social-icon"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+        <div class="d-flex align-items-center">
+          <img src="img/logo.png" alt="Logo" height="35" class="me-2" />
+          <div class="small">
+            BEM POLITEKNIK NEGERI SRIWIJAYA<br />
+            KABINET LENTERA SRIWIJAYA
           </div>
         </div>
-      </footer>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4 mb-4">
+        <div class="fw-bold mb-3">More Information</div>
+        <a href="contact.html" class="footer-link d-block mb-1">Contact Us</a>
+        <a href="about.html" class="footer-link d-block mb-1">About Us</a>
+        <a href="Terms and Conditions.html" class="footer-link d-block">
+          Terms and Conditions
+        </a>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div class="fw-bold mb-3">Developed By</div>
+        <div class="small">Departemen Media Informasi</div>
+        <div class="small">BEM POLSRI 2025</div>
+      </div>
+    </div>
+    <hr class="mt-4" />
+    <div class="footer-bottom text-center small">
+      &copy; 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
+    </div>
+  </div>
+</footer>
       <a href="#" class="btn btn-primary btn-lg-square back-to-top"
       ><i class="fa fa-arrow-up"></i
     ></a>
@@ -1373,7 +1390,7 @@
             disableOnInteraction: false,
           },
 
-          // Responsive breakpoints (optional, but good for different screen sizes)
+        
           breakpoints: {
             // when window width is >= 768px
             768: {
