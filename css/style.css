@@ -203,13 +203,13 @@
 
   .navbar.navbar-expand-lg button span {
     position: relative;
-    z-index: 99;
+    z-index: 999;
   }
 
   .navbar {
     position: relative !important;
     background: var(--bs-light);
-    z-index: 2;
+    z-index: 999;
   }
 
   .sticky-top.navbar-light {
@@ -567,88 +567,18 @@
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
 }
 
-.bg-breadcrumb::after {
-  content: "";
-  position: absolute;
-  bottom: -20%;
-  left: -10%;
-  width: 600px;
-  height: 600px;
-  border-radius: 300px;
-  border: 80px solid rgba(247, 71, 128, 0.05);
-  background: transparent;
-  animation: RotateMoveSingle 5s linear infinite;
-  z-index: -1;
-}
+
 
 .bg-breadcrumb .breadcrumb {
   position: relative;
   z-index: 2;
 }
 
-@keyframes RotateMoveSingle {
-  0% {
-    -webkit-transform: rotateZ(0deg) rotate(0deg) translate3d(0, 1%, 0)
-      rotateZ(0deg);
-    transform: rotateZ(0deg) rotate(0deg) translate3d(0, 1%, 0) rotateZ(0deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg) rotate(360deg) translate3d(0, 1%, 0)
-      rotateZ(-360deg);
-    transform: rotateZ(360deg) rotate(360deg) translate3d(0, 1%, 0)
-      rotateZ(-360deg);
-  }
-
-  0% {
-    bottom: 0px;
-  }
-  50% {
-    left: -10px;
-  }
-  75% {
-    bottom: 10%;
-  }
-  100% {
-    bottom: 0px;
-  }
+.mb-6 {
+  margin-bottom: 4rem !important;
 }
-
-.bg-breadcrumb::before {
-  content: "";
-  position: absolute;
-  top: -15%;
-  right: -10%;
-  width: 600px;
-  height: 600px;
-  border-radius: 300px;
-  border: 80px solid rgba(247, 71, 128, 0.04);
-  background: transparent;
-  animation: RotateMoveSingle 5s linear infinite;
-  z-index: -1;
-}
-
-@keyframes RotateMoveSingle {
-  0% {
-    -webkit-transform: rotateZ(0deg) rotate(0deg) translate3d(0, 1%, 0)
-      rotateZ(0deg);
-    transform: rotateZ(0deg) rotate(0deg) translate3d(0, 1%, 0) rotateZ(0deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg) rotate(360deg) translate3d(0, 1%, 0)
-      rotateZ(-360deg);
-    transform: rotateZ(360deg) rotate(360deg) translate3d(0, 1%, 0)
-      rotateZ(-360deg);
-  }
-
-  0% {
-    top: 0px;
-  }
-  50% {
-    top: 10%;
-  }
-  100% {
-    top: 0px;
-  }
+.text-center.mx-auto.mb-3 p {
+  margin-bottom: 4rem; 
 }
 
 @media (max-width: 992px) {
@@ -1908,4 +1838,17 @@
 }
 
 
-/* update info */
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background-color: #e05800;
+  border-color: #e05800;
+
+}
+
+body {
+  background-image: url('../img/bg1.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
