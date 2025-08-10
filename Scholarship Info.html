@@ -2,57 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Academic Calendar - BEM POLSRI</title>
+    <title>Scholarship Info - BEM POLSRI</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
     <link rel="icon" type="image/png" href="/img/logo.png" />
-    <!-- Google Web Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap Icons -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <!-- Icon Font Stylesheet -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <!-- Swiper Css -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+<!-- Favicon -->
+  <link rel="icon" type="image/png" href="/img/logo.png" />
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&family=Cinzel:wght@700&display=swap" rel="stylesheet" />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+  <!-- Icon Font Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Libraries Stylesheets -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+  <!-- Font Awesome CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+w4hI8YzY5Z5jw5qkQYwZcNwZPbP+FZ+0rYkQ5mT1Rfbm0Bq5eUcm2s8n6d1A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
         <style>
 
              .beasiswa-banner h1 {
@@ -133,28 +124,30 @@
            SCHOLARSHIP GRID
         ------------------------------ */
         .scholarship-section {
-            background-color: #ffffff;
+            background: url('img/bg1.jpeg') center/cover no-repeat, linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1));
+            background-attachment: fixed;
             border-top: 1px solid var(--gray-300);
             border-bottom: 1px solid var(--gray-300);
-            padding-top: 4rem;
-            padding-bottom: 5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
         }
         .scholarship-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-bottom: 60px;
+            margin-bottom: 20px;
         }
         .scholarship-card {
             background: #ffffff;
-            border-radius: var(--radius-lg);
+            border-radius: 15px;
             overflow: hidden;
             border: 1px solid transparent;
-            box-shadow: 0 10px 30px rgba(244, 131, 1, 0.055);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.6s ease forwards;
+            position: relative;
         }
         .scholarship-card:nth-child(1){animation-delay:0.1s;}
         .scholarship-card:nth-child(2){animation-delay:0.2s;}
@@ -166,8 +159,7 @@
 
         .scholarship-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(255, 132, 0, 0.2);
-            border-left: 5px solid var(--orange);
+            box-shadow: 0 25px 50px rgba(249, 115, 22, 0.4);
         }
         .scholarship-image {
             width: 100%;
@@ -175,6 +167,27 @@
             position: relative;
             overflow: hidden;
             background: linear-gradient(45deg, #e0e0e0, #f0f0f0);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            box-shadow: inset 0 0 0 3px #f97316, 0 4px 15px rgba(249, 115, 22, 0.3);
+        }
+        .scholarship-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, 
+                rgba(255,255,255,0) 0%, 
+                rgba(255,255,255,0) 70%, 
+                rgba(255,255,255,0.8) 100%);
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+        .scholarship-card:hover .scholarship-image::after {
+            opacity: 1;
         }
         .scholarship-image img {
             width: 100%;height: 100%;object-fit: cover;
@@ -185,12 +198,12 @@
         }
         .scholarship-content {padding: 25px;}
         .scholarship-title {
-            font-size: 1.3rem;font-weight:700;margin-bottom:15px;color:var(--orange);
+            font-size: 1.3rem;font-weight:700;margin-bottom:15px;color:#f97316;
             transition: color 0.3s ease;
         }
-        .scholarship-card:hover .scholarship-title {color:var(--orange-hover);}
+        .scholarship-card:hover .scholarship-title {color:#ea580c;}
         .scholarship-description {
-            font-size: 1rem;line-height:1.6;margin-bottom:20px;color:var(--gray-600);
+            font-size: 1rem;line-height:1.6;margin-bottom:20px;color:#666;
         }
         .scholarship-button {
             display:inline-block;width:100%;text-align:center;
@@ -220,20 +233,19 @@
   background-color: #f97316; /* orange-500 */
   color: white;
   padding: 10px 20px;
-  border: none;
+  border: 2px solid #f97316;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none; /* remove underline */
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: inline-block;
-
+  transition: all 0.3s ease;
 }
 
 .btn-orange:hover {
-  background-color: #ea580c; /* orange-600 */
-  
+  background-color: transparent;
+  color: #f97316;
+  border: 2px solid #f97316;
 }
 
 
@@ -241,100 +253,64 @@
     </head>
 
     <body>
-           <!-- Navbar -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative"
-    >
-      <a
-        href="index.html"
-        class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center"
-      >
-        <img
-          src="img/logo.png"
-          alt="Logo"
-          style="height: 40px; margin-right: 10px"
-        />
-        <div class="d-flex flex-column">
-          <span class="text-black fw-bold" style="font-size: 18px"
-            >Kabinet Lentera Sriwijaya</span
-          >
-          <small class="text-black" style="font-size: 14px"
-            >BEM Politeknik Negeri Sriwijaya</small
-          >
+          <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
         </div>
-      </a>
+        <!-- Spinner End -->
 
-      <!-- Toggle button for mobile -->
-      <button
-        class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Collapsible content -->
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto py-0">
-          <a class="nav-item nav-link" href="index.html">Home</a>
-          <a class="nav-item nav-link" href="about.html">About</a>
-
-          <!-- Academic Info Dropdown -->
-          <div class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="academicDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Academic Information
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="academicDropdown">
-              <li>
-                <a class="dropdown-item active" href="Academic Calendar.html">Academic Calendar</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="Scholarship Info.html"
-                  >Scholarship Info</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Campus Echo Dropdown -->
-          <div class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="campusDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Campus Echo
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="campusDropdown">
-              <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
-              <li>
-                <a class="dropdown-item" href="Bisik Kampus.html"
-                  >Bisik Kampus</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="Polsrifess.html">Polsrifess</a>
-              </li>
-            </ul>
-          </div>
-
-          <a class="nav-item nav-link" href="contact.html">Contact Us</a>
-        </div>
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative">
+    <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
+      <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+      <div class="d-flex flex-column">
+        <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
+        <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
       </div>
-    </nav>
-    <!-- Navbar end -->
-<section class="beasiswa-banner d-flex align-items-center justify-content-center text-center text-white" style="height: 65vh; background: linear-gradient(rgba(255, 255, 255, 0.813), rgba(255, 255, 255, 0.813)), url('http://akuntansi.polsri.ac.id/wp-content/uploads/2023/08/IMG_0958.jpg') center/cover no-repeat;">
+    </a>
+  
+    <!-- Toggle button for mobile -->
+    <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto py-0">
+        <a class="nav-item nav-link" href="index.html">Home</a>
+        <a class="nav-item nav-link" href="about.html">About</a>
+  
+        <!-- Academic Info Dropdown -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Academic Information
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+            <li><a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a></li>
+            <li><a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a></li>
+          </ul>
+        </div>
+  
+        <!-- Campus Echo Dropdown -->
+<div class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle active" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Campus Echo
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+    <li><a class="dropdown-item active" href="Kajian.html">Kajian</a></li>
+    <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
+    <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
+  </ul>
+</div>
+
+<a class="nav-item nav-link" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar end -->
+<section class="beasiswa-banner d-flex align-items-center justify-content-center text-center text-white py-2" style="height: 65vh; background: linear-gradient(rgba(255, 255, 255, 0.813), rgba(255, 255, 255, 0.813)), url('http://akuntansi.polsri.ac.id/wp-content/uploads/2023/08/IMG_0958.jpg') center/cover no-repeat;">
   <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; width: 100%; height: 80%; padding-top: 40px;">
     <h1 class="display-5 mb-2" style="font-family: cinzel; color: #f8ae00;">
       INFORMASI BEASISWA
@@ -353,8 +329,8 @@
 
 
 <!-- Scholarship Section Start -->
-    <section class="scholarship-section">
-        <div class="container">
+    <section class="scholarship-section py-2">
+        <div class="container py-2">
 
             <div class="scholarship-grid">
                 <!-- Scholarship Card 1 -->
@@ -425,49 +401,50 @@
     </section>
     <!-- Scholarship Section End -->
 
-
-        <!-- Footer Start -->
-        <footer class="footer-gradient">
-            <div class="container py-5" style="font-family: serif;">
-                <div class="row g-4">
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <div class="fw-bold mb-3">FOLLOW US</div>
-                        <div class="d-flex mb-3">
-                            <a href="#" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
-                            <a href="#" class="social-icon me-2"><i class="fab fa-tiktok"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <img src="img/logo.png" alt="Logo" height="35" class="me-2">
-                            <div class="small">
-                                BEM POLITEKNIK NEGERI SRIWIJAYA<br>
-                                KABINET LENTERA SRIWIJAYA
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <div class="fw-bold mb-3">More Information</div>
-                        <a href="#" class="footer-link d-block mb-1">Contact Us</a>
-                        <a href="#" class="footer-link d-block mb-1">About Us</a>
-                        <a href="Terms and Conditions.html" class="footer-link d-block">Terms and Conditions</a>
-                    </div>
-                    <div class="col-12 col-xl-4">
-                        <div class="fw-bold mb-3">Developed By</div>
-                        <div class="small">Departemen Media Informasi</div>
-                        <div class="small">BEM POLSRI 2025</div>
-                    </div>
-                </div>
-                <hr class="my-4">
-                <div class="footer-bottom text-center small">
-                    &copy; 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.ss
-                </div>
+ <!-- Footer Start -->
+  <footer class="footer-gradient pt-1">
+    <div class="container" style="font-family: serif">
+      <div class="row pb-1">
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+          <div class="fw-bold mb-3">FOLLOW US</div>
+          <div class="d-flex mb-4">
+            <a href="https://www.instagram.com/bempolsri_/" class="social-icon me-2"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://x.com/polsrimenfess" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bemkmpolsri3259" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="d-flex align-items-center">
+            <img src="img/logo.png" alt="Logo" height="35" class="me-2" />
+            <div class="small">
+              BEM POLITEKNIK NEGERI SRIWIJAYA<br />
+              KABINET LENTERA SRIWIJAYA
             </div>
-        </footer>
-        <!-- Footer End -->
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+          <div class="fw-bold mb-3">More Information</div>
+          <a href="contact.html" class="footer-link d-block mb-1">Contact Us</a>
+          <a href="about.html" class="footer-link d-block mb-1">About Us</a>
+          <a href="Terms and Conditions.html" class="footer-link d-block">
+            Terms and Conditions
+          </a>
+        </div>
+        <div class="col-12 col-xl-4">
+          <div class="fw-bold mb-3">Developed By</div>
+          <div class="small">Departemen Media Informasi</div>
+          <div class="small">BEM POLSRI 2025</div>
+        </div>
+      </div>
+      <hr class="mt-4" />
+      <div class="footer-bottom text-center small">
+        © 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+   
+     <!-- Back to Top -->
+     <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>      
 
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
