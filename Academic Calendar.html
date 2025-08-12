@@ -7,59 +7,50 @@
     <meta content="" name="keywords" />
     <meta content="" name="description" />
     <link rel="icon" type="image/png" href="/img/logo.png" />
-    <!-- Google Web Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap Icons -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <!-- Icon Font Stylesheet -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <!-- Swiper Css -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/img/logo.png" />
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&family=Cinzel:wght@700&display=swap" rel="stylesheet" />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
+  <!-- Icon Font Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Libraries Stylesheets -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+  <!-- Font Awesome CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+w4hI8YzY5Z5jw5qkQYwZcNwZPbP+FZ+0rYkQ5mT1Rfbm0Bq5eUcm2s8n6d1A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
         <style>
 
             .calendar-wireframe {
                 border: 2px solid #ddd;
                 background: #f8f9fa;
                 padding: 40px;
-                margin: 40px 0;
+                margin: 20px 0;
                 position: relative;
             }
 
@@ -89,7 +80,7 @@
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 gap: 15px;
-                margin: 30px 0;
+                margin: 20px 0;
             }
 
             .calendar-month {
@@ -135,17 +126,34 @@
                 color: #333;
                 cursor: pointer;
                 transition: background-color 0.2s;
+                border-radius: 3px;
             }
 
             .day-number:hover {
                 background-color: #e05800;
                 color: white;
-                border-radius: 3px;
+            }
+
+            .day-number.has-event {
+                background-color: #f8ae00;
+                color: white;
+                font-weight: bold;
+                position: relative;
+            }
+
+            .day-number.has-event::after {
+                content: '•';
+                position: absolute;
+                bottom: -2px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #e05800;
+                font-size: 8px;
             }
 
             .info-section {
-                margin-top: 50px;
-                padding: 40px 0;
+                margin-top: 30px;
+                padding: 20px 0;
             }
 
             .info-card {
@@ -179,6 +187,15 @@
                 border-bottom: 1px solid #eee;
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-size: 14px;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+
+            .event-item:hover {
+                background-color: #f8f9fa;
+                border-radius: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
             }
 
             .event-item:last-child {
@@ -196,6 +213,71 @@
                 font-weight: 500;
                 white-space: nowrap;
                 font-size: 12px;
+            }
+
+            /* Event Detail Modal Styles */
+            .event-modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 9999;
+                animation: fadeIn 0.3s ease;
+            }
+
+            .event-modal-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                max-width: 500px;
+                width: 90%;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+                animation: slideIn 0.3s ease;
+            }
+
+            .event-modal-header {
+                font-family: 'Cinzel', serif;
+                color: #e05800;
+                font-size: 24px;
+                margin-bottom: 20px;
+                text-align: center;
+                border-bottom: 2px solid #e05800;
+                padding-bottom: 10px;
+            }
+
+            .event-modal-body {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+
+            .event-modal-close {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                font-size: 30px;
+                cursor: pointer;
+                color: #999;
+                transition: color 0.2s;
+            }
+
+            .event-modal-close:hover {
+                color: #e05800;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            @keyframes slideIn {
+                from { transform: translate(-50%, -60%); opacity: 0; }
+                to { transform: translate(-50%, -50%); opacity: 1; }
             }
 
             @media (max-width: 992px) {
@@ -238,99 +320,64 @@
     </head>
 
     <body>
-           <!-- Navbar -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative"
-    >
-      <a
-        href="index.html"
-        class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center"
-      >
-        <img
-          src="img/logo.png"
-          alt="Logo"
-          style="height: 40px; margin-right: 10px"
-        />
-        <div class="d-flex flex-column">
-          <span class="text-black fw-bold" style="font-size: 18px"
-            >Kabinet Lentera Sriwijaya</span
-          >
-          <small class="text-black" style="font-size: 14px"
-            >BEM Politeknik Negeri Sriwijaya</small
-          >
+                 <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
         </div>
-      </a>
+        <!-- Spinner End -->
 
-      <!-- Toggle button for mobile -->
-      <button
-        class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Collapsible content -->
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto py-0">
-          <a class="nav-item nav-link" href="index.html">Home</a>
-          <a class="nav-item nav-link" href="about.html">About</a>
-
-          <!-- Academic Info Dropdown -->
-          <div class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="academicDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Academic Information
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="academicDropdown">
-              <li>
-                <a class="dropdown-item active" href="Academic Calendar.html">Academic Calendar</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="Scholarship Info.html"
-                  >Scholarship Info</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Campus Echo Dropdown -->
-          <div class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="campusDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Campus Echo
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="campusDropdown">
-              <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
-              <li>
-                <a class="dropdown-item" href="Bisik Kampus.html"
-                  >Bisik Kampus</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="Polsrifess.html">Polsrifess</a>
-              </li>
-            </ul>
-          </div>
-
-          <a class="nav-item nav-link" href="contact.html">Contact Us</a>
-        </div>
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative">
+    <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
+      <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+      <div class="d-flex flex-column">
+        <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
+        <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
       </div>
-    </nav>
-    <!-- Navbar end -->
+    </a>
+  
+    <!-- Toggle button for mobile -->
+    <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto py-0">
+        <a class="nav-item nav-link" href="index.html">Home</a>
+        <a class="nav-item nav-link" href="about.html">About</a>
+  
+        <!-- Academic Info Dropdown -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Academic Information
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+            <li><a class="dropdown-item active" href="Academic Calendar.html">Academic Calendar</a></li>
+            <li><a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a></li>
+          </ul>
+        </div>
+  
+        <!-- Campus Echo Dropdown -->
+<div class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Campus Echo
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+    <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
+    <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
+    <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
+  </ul>
+</div>
+
+<a class="nav-item nav-link" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar end -->
+
 <section class="beasiswa-banner d-flex align-items-center justify-content-center text-center text-white" style="height: 65vh; background: linear-gradient(rgba(255, 255, 255, 0.813), rgba(255, 255, 255, 0.813)), url('http://akuntansi.polsri.ac.id/wp-content/uploads/2023/08/IMG_0958.jpg') center/cover no-repeat;">
   <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; width: 100%; height: 80%; padding-top: 40px;">
     <h1 class="display-5 mb-2" style="font-family: cinzel; color: #f8ae00;">
@@ -347,7 +394,7 @@
   </div>
 </section>
         <!-- Academic Calendar Section Start -->
-        <div class="container-fluid py-5">
+        <div class="container-fluid py-2">
             <div class="container">
                 <!-- Wireframe Calendar Section -->
                 <div class="row justify-content-center">
@@ -355,240 +402,7 @@
 
                         <!-- Calendar Grid -->
                         <div class="calendar-wireframe animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
-                            <div class="calendar-grid">
-                                <!-- September 2024 -->
-                                <div class="calendar-month">
-                                    <div class="month-header">September 2024</div>
-                                    <div class="calendar-days">
-                                        <div class="day-header">M</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-header">R</div>
-                                        <div class="day-header">K</div>
-                                        <div class="day-header">J</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-number"></div>
-                                        <div class="day-number">1</div>
-                                        <div class="day-number">2</div>
-                                        <div class="day-number">3</div>
-                                        <div class="day-number">4</div>
-                                        <div class="day-number">5</div>
-                                        <div class="day-number">6</div>
-                                        <div class="day-number">8</div>
-                                        <div class="day-number">9</div>
-                                        <div class="day-number">10</div>
-                                        <div class="day-number">11</div>
-                                        <div class="day-number">12</div>
-                                        <div class="day-number">13</div>
-                                        <div class="day-number">14</div>
-                                        <div class="day-number">15</div>
-                                        <div class="day-number">16</div>
-                                        <div class="day-number">17</div>
-                                        <div class="day-number">18</div>
-                                        <div class="day-number">19</div>
-                                        <div class="day-number">20</div>
-                                        <div class="day-number">21</div>
-                                        <div class="day-number">22</div>
-                                        <div class="day-number">23</div>
-                                        <div class="day-number">24</div>
-                                        <div class="day-number">25</div>
-                                        <div class="day-number">26</div>
-                                        <div class="day-number">27</div>
-                                        <div class="day-number">28</div>
-                                        <div class="day-number">29</div>
-                                        <div class="day-number">30</div>
-                                    </div>
-                                </div>
-
-                                <!-- Oktober 2024 -->
-                                <div class="calendar-month">
-                                    <div class="month-header">Oktober 2024</div>
-                                    <div class="calendar-days">
-                                        <div class="day-header">M</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-header">R</div>
-                                        <div class="day-header">K</div>
-                                        <div class="day-header">J</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-number"></div>
-                                        <div class="day-number">1</div>
-                                        <div class="day-number">2</div>
-                                        <div class="day-number">3</div>
-                                        <div class="day-number">4</div>
-                                        <div class="day-number">5</div>
-                                        <div class="day-number">6</div>
-                                        <div class="day-number">7</div>
-                                        <div class="day-number">8</div>
-                                        <div class="day-number">9</div>
-                                        <div class="day-number">10</div>
-                                        <div class="day-number">11</div>
-                                        <div class="day-number">12</div>
-                                        <div class="day-number">13</div>
-                                        <div class="day-number">14</div>
-                                        <div class="day-number">15</div>
-                                        <div class="day-number">16</div>
-                                        <div class="day-number">17</div>
-                                        <div class="day-number">18</div>
-                                        <div class="day-number">19</div>
-                                        <div class="day-number">20</div>
-                                        <div class="day-number">21</div>
-                                        <div class="day-number">22</div>
-                                        <div class="day-number">23</div>
-                                        <div class="day-number">24</div>
-                                        <div class="day-number">25</div>
-                                        <div class="day-number">26</div>
-                                        <div class="day-number">27</div>
-                                        <div class="day-number">28</div>
-                                        <div class="day-number">29</div>
-                                        <div class="day-number">30</div>
-                                        <div class="day-number">31</div>
-                                    </div>
-                                </div>
-
-                                <!-- November 2024 -->
-                                <div class="calendar-month">
-                                    <div class="month-header">November 2024</div>
-                                    <div class="calendar-days">
-                                        <div class="day-header">M</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-header">R</div>
-                                        <div class="day-header">K</div>
-                                        <div class="day-header">J</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-number"></div>
-                                        <div class="day-number"></div>
-                                        <div class="day-number"></div>
-                                        <div class="day-number"></div>
-                                        <div class="day-number">1</div>
-                                        <div class="day-number">2</div>
-                                        <div class="day-number">3</div>
-                                        <div class="day-number">4</div>
-                                        <div class="day-number">5</div>
-                                        <div class="day-number">6</div>
-                                        <div class="day-number">7</div>
-                                        <div class="day-number">8</div>
-                                        <div class="day-number">9</div>
-                                        <div class="day-number">10</div>
-                                        <div class="day-number">11</div>
-                                        <div class="day-number">12</div>
-                                        <div class="day-number">13</div>
-                                        <div class="day-number">14</div>
-                                        <div class="day-number">15</div>
-                                        <div class="day-number">16</div>
-                                        <div class="day-number">17</div>
-                                        <div class="day-number">18</div>
-                                        <div class="day-number">19</div>
-                                        <div class="day-number">20</div>
-                                        <div class="day-number">21</div>
-                                        <div class="day-number">22</div>
-                                        <div class="day-number">23</div>
-                                        <div class="day-number">24</div>
-                                        <div class="day-number">25</div>
-                                        <div class="day-number">26</div>
-                                        <div class="day-number">27</div>
-                                        <div class="day-number">28</div>
-                                        <div class="day-number">29</div>
-                                        <div class="day-number">30</div>
-                                    </div>
-                                </div>
-
-                                <!-- Desember 2024 -->
-                                <div class="calendar-month">
-                                    <div class="month-header">Desember 2024</div>
-                                    <div class="calendar-days">
-                                        <div class="day-header">M</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-header">R</div>
-                                        <div class="day-header">K</div>
-                                        <div class="day-header">J</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-number"></div>
-                                        <div class="day-number"></div>
-                                        <div class="day-number">1</div>
-                                        <div class="day-number">2</div>
-                                        <div class="day-number">3</div>
-                                        <div class="day-number">4</div>
-                                        <div class="day-number">5</div>
-                                        <div class="day-number">6</div>
-                                        <div class="day-number">7</div>
-                                        <div class="day-number">8</div>
-                                        <div class="day-number">9</div>
-                                        <div class="day-number">10</div>
-                                        <div class="day-number">11</div>
-                                        <div class="day-number">12</div>
-                                        <div class="day-number">13</div>
-                                        <div class="day-number">14</div>
-                                        <div class="day-number">15</div>
-                                        <div class="day-number">16</div>
-                                        <div class="day-number">17</div>
-                                        <div class="day-number">18</div>
-                                        <div class="day-number">19</div>
-                                        <div class="day-number">20</div>
-                                        <div class="day-number">21</div>
-                                        <div class="day-number">22</div>
-                                        <div class="day-number">23</div>
-                                        <div class="day-number">24</div>
-                                        <div class="day-number">25</div>
-                                        <div class="day-number">26</div>
-                                        <div class="day-number">27</div>
-                                        <div class="day-number">28</div>
-                                        <div class="day-number">29</div>
-                                        <div class="day-number">30</div>
-                                        <div class="day-number">31</div>
-                                    </div>
-                                </div>
-
-                                <!-- Januari 2025 -->
-                                <div class="calendar-month">
-                                    <div class="month-header">Januari 2025</div>
-                                    <div class="calendar-days">
-                                        <div class="day-header">M</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-header">R</div>
-                                        <div class="day-header">K</div>
-                                        <div class="day-header">J</div>
-                                        <div class="day-header">S</div>
-                                        <div class="day-number"></div>
-                                        <div class="day-number"></div>
-                                        <div class="day-number"></div>
-                                        <div class="day-number">1</div>
-                                        <div class="day-number">2</div>
-                                        <div class="day-number">3</div>
-                                        <div class="day-number">4</div>
-                                        <div class="day-number">5</div>
-                                        <div class="day-number">6</div>
-                                        <div class="day-number">7</div>
-                                        <div class="day-number">8</div>
-                                        <div class="day-number">9</div>
-                                        <div class="day-number">10</div>
-                                        <div class="day-number">11</div>
-                                        <div class="day-number">12</div>
-                                        <div class="day-number">13</div>
-                                        <div class="day-number">14</div>
-                                        <div class="day-number">15</div>
-                                        <div class="day-number">16</div>
-                                        <div class="day-number">17</div>
-                                        <div class="day-number">18</div>
-                                        <div class="day-number">19</div>
-                                        <div class="day-number">20</div>
-                                        <div class="day-number">21</div>
-                                        <div class="day-number">22</div>
-                                        <div class="day-number">23</div>
-                                        <div class="day-number">24</div>
-                                        <div class="day-number">25</div>
-                                        <div class="day-number">26</div>
-                                        <div class="day-number">27</div>
-                                        <div class="day-number">28</div>
-                                        <div class="day-number">29</div>
-                                        <div class="day-number">30</div>
-                                        <div class="day-number">31</div>
-                                    </div>
-                                </div>
-
+                            <div class="calendar-grid" id="calendarGrid">
                                 <!-- Februari 2025 -->
                                 <div class="calendar-month">
                                     <div class="month-header">Februari 2025</div>
@@ -615,7 +429,7 @@
                                         <div class="day-number">7</div>
                                         <div class="day-number">8</div>
                                         <div class="day-number">9</div>
-                                        <div class="day-number">10</div>
+                                        <div class="day-number has-event" data-date="2025-02-10" data-events="Awal Kegiatan SMT Genap TA. 24/25">10</div>
                                         <div class="day-number">11</div>
                                         <div class="day-number">12</div>
                                         <div class="day-number">13</div>
@@ -684,7 +498,7 @@
                                         <div class="day-number">28</div>
                                         <div class="day-number">29</div>
                                         <div class="day-number">30</div>
-                                        <div class="day-number">31</div>
+                                        <div class="day-number has-event" data-date="2025-03-31" data-events="Libur Hari Raya Idul Fitri TA 24/25">31</div>
                                     </div>
                                 </div>
 
@@ -700,18 +514,18 @@
                                         <div class="day-header">J</div>
                                         <div class="day-header">S</div>
                                         <div class="day-number"></div>
-                                        <div class="day-number">1</div>
+                                        <div class="day-number has-event" data-date="2025-04-01" data-events="Libur Hari Raya Idul Fitri TA 24/25">1</div>
                                         <div class="day-number">2</div>
                                         <div class="day-number">3</div>
                                         <div class="day-number">4</div>
                                         <div class="day-number">5</div>
                                         <div class="day-number">6</div>
                                         <div class="day-number">7</div>
-                                        <div class="day-number">8</div>
-                                        <div class="day-number">9</div>
-                                        <div class="day-number">10</div>
-                                        <div class="day-number">11</div>
-                                        <div class="day-number">12</div>
+                                        <div class="day-number has-event" data-date="2025-04-08" data-events="Ujian Tengah Semester TA. 24/25">8</div>
+                                        <div class="day-number has-event" data-date="2025-04-09" data-events="Ujian Tengah Semester TA. 24/25">9</div>
+                                        <div class="day-number has-event" data-date="2025-04-10" data-events="Ujian Tengah Semester TA. 24/25">10</div>
+                                        <div class="day-number has-event" data-date="2025-04-11" data-events="Ujian Tengah Semester TA. 24/25">11</div>
+                                        <div class="day-number has-event" data-date="2025-04-12" data-events="Ujian Tengah Semester TA. 24/25">12</div>
                                         <div class="day-number">13</div>
                                         <div class="day-number">14</div>
                                         <div class="day-number">15</div>
@@ -849,19 +663,19 @@
                                         <div class="day-number">4</div>
                                         <div class="day-number">5</div>
                                         <div class="day-number">6</div>
-                                        <div class="day-number">7</div>
-                                        <div class="day-number">8</div>
-                                        <div class="day-number">9</div>
-                                        <div class="day-number">10</div>
-                                        <div class="day-number">11</div>
-                                        <div class="day-number">12</div>
+                                        <div class="day-number has-event" data-date="2025-07-07" data-events="Ujian Semester Genap TA 24/25">7</div>
+                                        <div class="day-number has-event" data-date="2025-07-08" data-events="Ujian Semester Genap TA 24/25">8</div>
+                                        <div class="day-number has-event" data-date="2025-07-09" data-events="Ujian Semester Genap TA 24/25">9</div>
+                                        <div class="day-number has-event" data-date="2025-07-10" data-events="Ujian Semester Genap TA 24/25">10</div>
+                                        <div class="day-number has-event" data-date="2025-07-11" data-events="Ujian Semester Genap TA 24/25">11</div>
+                                        <div class="day-number has-event" data-date="2025-07-12" data-events="Ujian Semester Genap TA 24/25">12</div>
                                         <div class="day-number">13</div>
-                                        <div class="day-number">14</div>
-                                        <div class="day-number">15</div>
-                                        <div class="day-number">16</div>
-                                        <div class="day-number">17</div>
-                                        <div class="day-number">18</div>
-                                        <div class="day-number">19</div>
+                                        <div class="day-number has-event" data-date="2025-07-14" data-events="Ujian Laporan Akhir TA 24/25">14</div>
+                                        <div class="day-number has-event" data-date="2025-07-15" data-events="Ujian Laporan Akhir TA 24/25">15</div>
+                                        <div class="day-number has-event" data-date="2025-07-16" data-events="Ujian Laporan Akhir TA 24/25">16</div>
+                                        <div class="day-number has-event" data-date="2025-07-17" data-events="Ujian Laporan Akhir TA 24/25">17</div>
+                                        <div class="day-number has-event" data-date="2025-07-18" data-events="Ujian Laporan Akhir TA 24/25">18</div>
+                                        <div class="day-number has-event" data-date="2025-07-19" data-events="Ujian Laporan Akhir TA 24/25">19</div>
                                         <div class="day-number">20</div>
                                         <div class="day-number">21</div>
                                         <div class="day-number">22</div>
@@ -870,10 +684,10 @@
                                         <div class="day-number">25</div>
                                         <div class="day-number">26</div>
                                         <div class="day-number">27</div>
-                                        <div class="day-number">28</div>
-                                        <div class="day-number">29</div>
-                                        <div class="day-number">30</div>
-                                        <div class="day-number">31</div>
+                                        <div class="day-number has-event" data-date="2025-07-28" data-events="Diskarlin TA. 25/26">28</div>
+                                        <div class="day-number has-event" data-date="2025-07-29" data-events="Diskarlin TA. 25/26">29</div>
+                                        <div class="day-number has-event" data-date="2025-07-30" data-events="Diskarlin TA. 25/26">30</div>
+                                        <div class="day-number has-event" data-date="2025-07-31" data-events="Diskarlin TA. 25/26">31</div>
                                     </div>
                                 </div>
 
@@ -889,10 +703,52 @@
                                         <div class="day-header">J</div>
                                         <div class="day-header">S</div>
                                         <div class="day-number"></div>
+                                        <div class="day-number has-event" data-date="2025-08-01" data-events="Diskarlin TA. 25/26">1</div>
+                                        <div class="day-number has-event" data-date="2025-08-02" data-events="Diskarlin TA. 25/26">2</div>
+                                        <div class="day-number">3</div>
+                                        <div class="day-number has-event" data-date="2025-08-04" data-events="Yudisium Semester Genap TA 24/25">4</div>
+                                        <div class="day-number has-event" data-date="2025-08-05" data-events="Yudisium Semester Genap TA 24/25">5</div>
+                                        <div class="day-number has-event" data-date="2025-08-06" data-events="Yudisium Semester Genap TA 24/25">6</div>
+                                        <div class="day-number has-event" data-date="2025-08-07" data-events="Yudisium Semester Genap TA 24/25">7</div>
+                                        <div class="day-number has-event" data-date="2025-08-08" data-events="Yudisium Semester Genap TA 24/25">8</div>
+                                        <div class="day-number has-event" data-date="2025-08-09" data-events="Yudisium Semester Genap TA 24/25">9</div>
+                                        <div class="day-number">10</div>
+                                        <div class="day-number">11</div>
+                                        <div class="day-number">12</div>
+                                        <div class="day-number">13</div>
+                                        <div class="day-number">14</div>
+                                        <div class="day-number">15</div>
+                                        <div class="day-number">16</div>
+                                        <div class="day-number">17</div>
+                                        <div class="day-number">18</div>
+                                        <div class="day-number">19</div>
+                                        <div class="day-number">20</div>
+                                        <div class="day-number">21</div>
+                                        <div class="day-number">22</div>
+                                        <div class="day-number has-event" data-date="2025-08-23" data-events="Wisuda ke-41">23</div>
+                                        <div class="day-number has-event" data-date="2025-08-24" data-events="Wisuda ke-41">24</div>
+                                        <div class="day-number">25</div>
+                                        <div class="day-number">26</div>
+                                        <div class="day-number">27</div>
+                                        <div class="day-number">28</div>
+                                        <div class="day-number">29</div>
+                                        <div class="day-number">30</div>
+                                        <div class="day-number">31</div>
+                                    </div>
+                                </div>
+                                 <!-- September 2025 -->
+                                <div class="calendar-month">
+                                    <div class="month-header">September 2025</div>
+                                    <div class="calendar-days">
+                                        <div class="day-header">M</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">S</div>
+                                        <div class="day-header">R</div>
+                                        <div class="day-header">K</div>
+                                        <div class="day-header">J</div>
+                                        <div class="day-header">S</div>
                                         <div class="day-number"></div>
-                                        <div class="day-number"></div>
-                                        <div class="day-number"></div>
-                                        <div class="day-number">1</div>
+                                        <div class="day-number has-event" data-date="2025-09-01" data-events="Awal Kegiatan SMT Ganjil TA. 25/26">1</div>
                                         <div class="day-number">2</div>
                                         <div class="day-number">3</div>
                                         <div class="day-number">4</div>
@@ -928,76 +784,22 @@
                             </div>
                         </div>
 
-                        <!-- Academic Information Section -->
+                        <!-- Event Detail Modal -->
+                        <div id="eventModal" class="event-modal">
+                            <div class="event-modal-content">
+                                <span class="event-modal-close" onclick="closeEventModal()">&times;</span>
+                                <div class="event-modal-header" id="modalDate"></div>
+                                <div class="event-modal-body" id="modalEvent"></div>
+                            </div>
+                        </div>
+
+                         <!-- Academic Information Section -->
                         <div class="info-section animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
                             <div class="row">
                                 <!-- Semester Ganjil -->
                                 <div class="col-lg-6 mb-4">
                                     <div class="info-card">
-                                        <h5 class="semester-title">SEMESTER GANJIL 2024/2025</h5>
-                                        <div class="event-item">
-                                            <div class="event-name">Libur Hari Raya Idul Fitri TA 24/25</div>
-                                            <div class="event-date">10-11 Apr 2024</div>
-                                        </div>
-                                        <div class="event-item">
-                                            <div class="event-name">Daftar Ulang Mhs Hari 24/25</div>
-                                            <div class="event-date">Juli 2024</div>
-                                        </div>
-                                        <div class="event-item">
-                                            <div class="event-name">DIKSARLIN TA 24/25</div>
-                                            <div class="event-date">29 Juli - 10 Agustus 2024</div>
-                                        </div>
-                                        <div class="event-item">
-                                            <div class="event-name">SISDIKTI</div>
-                                            <div class="event-date">12-15 Agustus 2024</div>
-                                        </div>
-                                        <div class="event-item">
-                                            <div class="event-name">Yudisium Semester Genap TA 23/24</div>
-                                            <div class="event-date">2 Agustus 2024</div>
-                                        </div>
-                                        <div class="event-item">
-                                            <div class="event-name">Libur Semester Genap TA 23/24</div>
-                                            <div class="event-date">5-16 Agustus 2024</div>
-                                        </div>
-                                        <div class="event-item">
-                                            <div class="event-name">Daftar Ulang SMT. Ganjil TA. 24/25</div>
-                                            <div class="event-date">5-16 Agustus 2024</div>
-                                        </div>
-                                        <div class="event-item">
-                                            <div class="event-name">Wisuda ke-40</div>
-                                            <div class="event-date">14, 15 September 2024</div>
-                                        </div>
-                                        <div class="event-item">
-                                            <div class="event-name">Awal Kegiatan SMT Ganjil TA. 24/25</div>
-                                            <div class="event-date">Senin, 2 September 2024</div>
-                                        </div>
-                                        <div class="event-item">
-                                            <div class="event-name">Semester Ganjil TA 24/25</div>
-                                            <div class="event-date">2 Sept. 2024 - 24 Jan. 2025</div>
-                                        </div>
-                                        <div class="event-item">
-                                            <div class="event-name">Libur Akhir Tahun 2024</div>
-                                            <div class="event-date">25 Desember 2024</div>
-                                        </div>
-                                        <div class="event-item">
-                                            <div class="event-name">Ujian Semester Ganjil TA 24/25</div>
-                                            <div class="event-date">13 - 17 Januari 2025</div>
-                                        </div>
-                                        <div class="event-item">
-                                            <div class="event-name">Yudisium Semester Ganjil TA 24/25</div>
-                                            <div class="event-date">24 Januari 2025</div>
-                                        </div>
-                                        <div class="event-item">
-                                            <div class="event-name">Libur Semester Ganjil TA 24/25</div>
-                                            <div class="event-date">27 Jan. - 7 Feb. 2025</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Semester Genap -->
-                                <div class="col-lg-6 mb-4">
-                                    <div class="info-card">
-                                        <h5 class="semester-title">SEMESTER GENAP 2024/2025</h5>
+                                        <h5 class="semester-title">SEMESTER GENAP</h5>
                                         <div class="event-item">
                                             <div class="event-name">Daftar Ulang SMT. Genap TA. 24/25</div>
                                             <div class="event-date">27 Jan. - 7 Feb. 2025</div>
@@ -1030,6 +832,12 @@
                                             <div class="event-name">Ujian Semester Genap TA 24/25</div>
                                             <div class="event-date">7-12 Juli 2025</div>
                                         </div>
+                                    </div>
+                                </div>
+                                <!-- Semester Genap -->
+                                <div class="col-lg-6 mb-4">
+                                    <div class="info-card">
+                                        <h5 class="semester-title">2024/2025</h5>
                                         <div class="event-item">
                                             <div class="event-name">Ujian Laporan Akhir TA 24/25</div>
                                             <div class="event-date">14-19 Juli 2025</div>
@@ -1071,49 +879,50 @@
             </div>
         </div>
         <!-- Academic Calendar Section End -->
-        
         <!-- Footer Start -->
-        <footer class="footer-gradient">
-            <div class="container py-5" style="font-family: serif;">
-                <div class="row g-4">
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <div class="fw-bold mb-3">FOLLOW US</div>
-                        <div class="d-flex mb-3">
-                            <a href="#" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
-                            <a href="#" class="social-icon me-2"><i class="fab fa-tiktok"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <img src="img/logo.png" alt="Logo" height="35" class="me-2">
-                            <div class="small">
-                                BEM POLITEKNIK NEGERI SRIWIJAYA<br>
-                                KABINET LENTERA SRIWIJAYA
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-xl-4">
-                        <div class="fw-bold mb-3">More Information</div>
-                        <a href="#" class="footer-link d-block mb-1">Contact Us</a>
-                        <a href="#" class="footer-link d-block mb-1">About Us</a>
-                        <a href="Terms and Conditions.html" class="footer-link d-block">Terms and Conditions</a>
-                    </div>
-                    <div class="col-12 col-xl-4">
-                        <div class="fw-bold mb-3">Developed By</div>
-                        <div class="small">Departemen Media Informasi</div>
-                        <div class="small">BEM POLSRI 2025</div>
-                    </div>
-                </div>
-                <hr class="my-4">
-                <div class="footer-bottom text-center small">
-                    &copy; 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
-                </div>
+  <footer class="footer-gradient pt-1">
+    <div class="container" style="font-family: serif">
+      <div class="row pb-1">
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+          <div class="fw-bold mb-3">FOLLOW US</div>
+          <div class="d-flex mb-4">
+            <a href="https://www.instagram.com/bempolsri_/" class="social-icon me-2"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://x.com/polsrimenfess" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bemkmpolsri3259" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="d-flex align-items-center">
+            <img src="img/logo.png" alt="Logo" height="35" class="me-2" />
+            <div class="small">
+              BEM POLITEKNIK NEGERI SRIWIJAYA<br />
+              KABINET LENTERA SRIWIJAYA
             </div>
-        </footer>
-        <!-- Footer End -->
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+          <div class="fw-bold mb-3">More Information</div>
+          <a href="contact.html" class="footer-link d-block mb-1">Contact Us</a>
+          <a href="about.html" class="footer-link d-block mb-1">About Us</a>
+          <a href="Terms and Conditions.html" class="footer-link d-block">
+            Terms and Conditions
+          </a>
+        </div>
+        <div class="col-12 col-xl-4">
+          <div class="fw-bold mb-3">Developed By</div>
+          <div class="small">Departemen Media Informasi</div>
+          <div class="small">BEM POLSRI 2025</div>
+        </div>
+      </div>
+      <hr class="mt-4" />
+      <div class="footer-bottom text-center small">
+        © 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+   
+     <!-- Back to Top -->
+     <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>  
 
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -1127,6 +936,240 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <!-- Calendar Click Event Script -->
+        <script>
+            // Event data mapping
+            const eventData = {
+                '2025-02-10': {
+                    date: '10 Februari 2025',
+                    event: 'Awal Kegiatan SMT Genap TA. 24/25',
+                    description: 'Hari pertama dimulainya kegiatan perkuliahan Semester Genap Tahun Akademik 2024/2025. Seluruh mahasiswa wajib hadir mengikuti kegiatan akademik sesuai jadwal.'
+                },
+                '2025-03-31': {
+                    date: '31 Maret 2025',
+                    event: 'Libur Hari Raya Idul Fitri TA 24/25',
+                    description: 'Libur nasional dalam rangka perayaan Hari Raya Idul Fitri 1446 H. Libur berlangsung selama 2 hari.'
+                },
+                '2025-04-01': {
+                    date: '1 April 2025',
+                    event: 'Libur Hari Raya Idul Fitri TA 24/25',
+                    description: 'Hari kedua libur nasional dalam rangka perayaan Hari Raya Idul Fitri 1446 H.'
+                },
+                '2025-04-08': {
+                    date: '8 April 2025',
+                    event: 'Ujian Tengah Semester TA. 24/25',
+                    description: 'Hari pertama pelaksanaan Ujian Tengah Semester (UTS) Genap Tahun Akademik 2024/2025. Evaluasi pembelajaran pertengahan semester.'
+                },
+                '2025-04-09': {
+                    date: '9 April 2025',
+                    event: 'Ujian Tengah Semester TA. 24/25',
+                    description: 'Hari kedua pelaksanaan Ujian Tengah Semester (UTS) Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-04-10': {
+                    date: '10 April 2025',
+                    event: 'Ujian Tengah Semester TA. 24/25',
+                    description: 'Hari ketiga pelaksanaan Ujian Tengah Semester (UTS) Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-04-11': {
+                    date: '11 April 2025',
+                    event: 'Ujian Tengah Semester TA. 24/25',
+                    description: 'Hari keempat pelaksanaan Ujian Tengah Semester (UTS) Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-04-12': {
+                    date: '12 April 2025',
+                    event: 'Ujian Tengah Semester TA. 24/25',
+                    description: 'Hari terakhir pelaksanaan Ujian Tengah Semester (UTS) Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-07-07': {
+                    date: '7 Juli 2025',
+                    event: 'Ujian Semester Genap TA 24/25',
+                    description: 'Hari pertama pelaksanaan Ujian Akhir Semester (UAS) Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-07-08': {
+                    date: '8 Juli 2025',
+                    event: 'Ujian Semester Genap TA 24/25',
+                    description: 'Hari kedua pelaksanaan Ujian Akhir Semester (UAS) Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-07-09': {
+                    date: '9 Juli 2025',
+                    event: 'Ujian Semester Genap TA 24/25',
+                    description: 'Hari ketiga pelaksanaan Ujian Akhir Semester (UAS) Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-07-10': {
+                    date: '10 Juli 2025',
+                    event: 'Ujian Semester Genap TA 24/25',
+                    description: 'Hari keempat pelaksanaan Ujian Akhir Semester (UAS) Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-07-11': {
+                    date: '11 Juli 2025',
+                    event: 'Ujian Semester Genap TA 24/25',
+                    description: 'Hari kelima pelaksanaan Ujian Akhir Semester (UAS) Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-07-12': {
+                    date: '12 Juli 2025',
+                    event: 'Ujian Semester Genap TA 24/25',
+                    description: 'Hari terakhir pelaksanaan Ujian Akhir Semester (UAS) Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-07-14': {
+                    date: '14 Juli 2025',
+                    event: 'Ujian Laporan Akhir TA 24/25',
+                    description: 'Hari pertama pelaksanaan ujian laporan akhir/tugas akhir untuk mahasiswa tingkat akhir Tahun Akademik 2024/2025.'
+                },
+                '2025-07-15': {
+                    date: '15 Juli 2025',
+                    event: 'Ujian Laporan Akhir TA 24/25',
+                    description: 'Hari kedua pelaksanaan ujian laporan akhir/tugas akhir untuk mahasiswa tingkat akhir Tahun Akademik 2024/2025.'
+                },
+                '2025-07-16': {
+                    date: '16 Juli 2025',
+                    event: 'Ujian Laporan Akhir TA 24/25',
+                    description: 'Hari ketiga pelaksanaan ujian laporan akhir/tugas akhir untuk mahasiswa tingkat akhir Tahun Akademik 2024/2025.'
+                },
+                '2025-07-17': {
+                    date: '17 Juli 2025',
+                    event: 'Ujian Laporan Akhir TA 24/25',
+                    description: 'Hari keempat pelaksanaan ujian laporan akhir/tugas akhir untuk mahasiswa tingkat akhir Tahun Akademik 2024/2025.'
+                },
+                '2025-07-18': {
+                    date: '18 Juli 2025',
+                    event: 'Ujian Laporan Akhir TA 24/25',
+                    description: 'Hari kelima pelaksanaan ujian laporan akhir/tugas akhir untuk mahasiswa tingkat akhir Tahun Akademik 2024/2025.'
+                },
+                '2025-07-19': {
+                    date: '19 Juli 2025',
+                    event: 'Ujian Laporan Akhir TA 24/25',
+                    description: 'Hari terakhir pelaksanaan ujian laporan akhir/tugas akhir untuk mahasiswa tingkat akhir Tahun Akademik 2024/2025.'
+                },
+                '2025-07-28': {
+                    date: '28 Juli 2025',
+                    event: 'Diskarlin TA. 25/26',
+                    description: 'Hari pertama Diskusi Karir dan Lingkungan (DISKARLIN) untuk mahasiswa baru Tahun Akademik 2025/2026. Program orientasi mahasiswa baru.'
+                },
+                '2025-07-29': {
+                    date: '29 Juli 2025',
+                    event: 'Diskarlin TA. 25/26',
+                    description: 'Hari kedua Diskusi Karir dan Lingkungan (DISKARLIN) untuk mahasiswa baru Tahun Akademik 2025/2026.'
+                },
+                '2025-07-30': {
+                    date: '30 Juli 2025',
+                    event: 'Diskarlin TA. 25/26',
+                    description: 'Hari ketiga Diskusi Karir dan Lingkungan (DISKARLIN) untuk mahasiswa baru Tahun Akademik 2025/2026.'
+                },
+                '2025-07-31': {
+                    date: '31 Juli 2025',
+                    event: 'Diskarlin TA. 25/26',
+                    description: 'Hari keempat Diskusi Karir dan Lingkungan (DISKARLIN) untuk mahasiswa baru Tahun Akademik 2025/2026.'
+                },
+                '2025-08-01': {
+                    date: '1 Agustus 2025',
+                    event: 'Diskarlin TA. 25/26',
+                    description: 'Hari kelima Diskusi Karir dan Lingkungan (DISKARLIN) untuk mahasiswa baru Tahun Akademik 2025/2026.'
+                },
+                '2025-08-02': {
+                    date: '2 Agustus 2025',
+                    event: 'Diskarlin TA. 25/26',
+                    description: 'Hari terakhir Diskusi Karir dan Lingkungan (DISKARLIN) untuk mahasiswa baru Tahun Akademik 2025/2026.'
+                },
+                '2025-08-04': {
+                    date: '4 Agustus 2025',
+                    event: 'Yudisium Semester Genap TA 24/25',
+                    description: 'Hari pertama sidang penentuan kelulusan mahasiswa untuk Semester Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-08-05': {
+                    date: '5 Agustus 2025',
+                    event: 'Yudisium Semester Genap TA 24/25',
+                    description: 'Hari kedua sidang penentuan kelulusan mahasiswa untuk Semester Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-08-06': {
+                    date: '6 Agustus 2025',
+                    event: 'Yudisium Semester Genap TA 24/25',
+                    description: 'Hari ketiga sidang penentuan kelulusan mahasiswa untuk Semester Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-08-07': {
+                    date: '7 Agustus 2025',
+                    event: 'Yudisium Semester Genap TA 24/25',
+                    description: 'Hari keempat sidang penentuan kelulusan mahasiswa untuk Semester Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-08-08': {
+                    date: '8 Agustus 2025',
+                    event: 'Yudisium Semester Genap TA 24/25',
+                    description: 'Hari kelima sidang penentuan kelulusan mahasiswa untuk Semester Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-08-09': {
+                    date: '9 Agustus 2025',
+                    event: 'Yudisium Semester Genap TA 24/25',
+                    description: 'Hari terakhir sidang penentuan kelulusan mahasiswa untuk Semester Genap Tahun Akademik 2024/2025.'
+                },
+                '2025-08-23': {
+                    date: '23 Agustus 2025',
+                    event: 'Wisuda ke-41',
+                    description: 'Hari pertama upacara wisuda ke-41 Politeknik Negeri Sriwijaya untuk lulusan yang telah menyelesaikan studi dan memenuhi persyaratan kelulusan.'
+                },
+                '2025-08-24': {
+                    date: '24 Agustus 2025',
+                    event: 'Wisuda ke-41',
+                    description: 'Hari kedua upacara wisuda ke-41 Politeknik Negeri Sriwijaya untuk lulusan yang telah menyelesaikan studi dan memenuhi persyaratan kelulusan.'
+                },
+                '2025-09-01': {
+                    date: '1 September 2025',
+                    event: 'Awal Kegiatan SMT Ganjil TA. 25/26',
+                    description: 'Hari pertama dimulainya kegiatan perkuliahan Semester Ganjil Tahun Akademik 2025/2026. Seluruh mahasiswa wajib hadir mengikuti kegiatan akademik sesuai jadwal yang telah ditetapkan.'
+                }
+            };
+
+            // Function to show event modal
+            function showEventModal(date, eventName) {
+                const modal = document.getElementById('eventModal');
+                const modalDate = document.getElementById('modalDate');
+                const modalEvent = document.getElementById('modalEvent');
+                
+                const eventInfo = eventData[date];
+                if (eventInfo) {
+                    modalDate.textContent = eventInfo.date;
+                    modalEvent.innerHTML = `
+                        <h6 style="color: #e05800; margin-bottom: 15px; font-weight: 600;">${eventInfo.event}</h6>
+                        <p style="line-height: 1.6; margin-bottom: 0;">${eventInfo.description}</p>
+                    `;
+                } else {
+                    modalDate.textContent = date;
+                    modalEvent.innerHTML = `
+                        <h6 style="color: #e05800; margin-bottom: 15px; font-weight: 600;">${eventName}</h6>
+                        <p style="line-height: 1.6; margin-bottom: 0;">Informasi detail untuk kegiatan ini akan segera tersedia. Silakan hubungi bagian akademik untuk informasi lebih lanjut.</p>
+                    `;
+                }
+                
+                modal.style.display = 'block';
+            }
+
+            // Function to close event modal
+            function closeEventModal() {
+                const modal = document.getElementById('eventModal');
+                modal.style.display = 'none';
+            }
+
+            // Add click event listeners to calendar days with events
+            document.addEventListener('DOMContentLoaded', function() {
+                const eventDays = document.querySelectorAll('.day-number.has-event');
+                
+                eventDays.forEach(function(day) {
+                    day.addEventListener('click', function() {
+                        const date = this.getAttribute('data-date');
+                        const eventName = this.getAttribute('data-events');
+                        showEventModal(date, eventName);
+                    });
+                });
+
+                // Close modal when clicking outside of it
+                window.addEventListener('click', function(event) {
+                    const modal = document.getElementById('eventModal');
+                    if (event.target === modal) {
+                        closeEventModal();
+                    }
+                });
+            });
+        </script>
     </body>
 
 </html>
+   
