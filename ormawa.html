@@ -27,7 +27,7 @@
   <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+w4hI8YzY5Z5jw5qkQYwZcNwZPbP+FZ+0rYkQ5mT1Rfbm0Bq5eUcm2s8n6d1A=="
+  integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+w4hI8YzY5Z5jw5qkQYwZcNwZPbP+FZ+0rYkQ5mT1Rfbm0Bq5eUcm2s8n6d1A="
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 />
@@ -130,7 +130,7 @@
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px) !important;
             box-shadow: 0 20px 40px rgba(248, 174, 0, 0.2);
         }
 
@@ -310,6 +310,40 @@
             height: 800px;
             border: none;
         }
+        .details-logo {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .details-container {
+            min-height: 250px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            transition: all 0.3s ease-in-out;
+            background: white;
+        }
+        .details-container:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* New CSS for the gradient shine effect */
+        .details-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #f8ae00, #e05800, transparent);
+            transform: translateX(-100%);
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .details-container:hover::before {
+            transform: translateX(0);
+        }
 
         /* Statistics Section */
 .stats-section {
@@ -353,6 +387,26 @@
     font-size: 1.1rem;
     font-weight: 400;
     opacity: 0.9;
+}
+
+/* New CSS for hover-based dropdowns */
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu .dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-menu .dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px; /* Adjust as needed */
+    display: none;
+}
+
+.dropdown-menu .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
 }
         </style>
     </head>
@@ -420,7 +474,7 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-8 hero-content text-center">
                     <h1
-        class="display-2 fw-bold text-uppercase mb-2"
+        class="display-3 fw-bold text-uppercase mb-4"
         data-aos="fade-down"
         data-aos-delay="100"
         data-aos-once="false"
@@ -462,28 +516,30 @@
             </div>
         </div>
         
-        <div class="row g-4">
+        <div class="row g-3">
             <div class="col-lg-6 col-md-6">
                 <div class="feature-card h-100 text-center">
                     <div class="feature-icon mx-auto">
-                        <i class="fas fa-landmark"></i> 
+                        <img src="img/logo.png" alt="MPM Logo" style="height: 50px;"> 
                     </div>
                     <h4 class="mb-3">MPM (Majelis Permusyawaratan Mahasiswa)</h4>
                     <p class="text-muted">
-                        Sebagai lembaga legislatif tertinggi mahasiswa, MPM bertugas mengawasi kinerja lembaga eksekutif, menampung aspirasi, dan merumuskan peraturan bagi seluruh mahasiswa.
+                        Sebagai lembaga legislatif tertinggi mahasiswa, MPM bertugas mengawasi kinerja lembaga eksekutif, menampung aspirasi di lingkungan Politeknik.
                     </p>
+                    <a href="#ormawa-details" class="btn btn-primary-custom mt-3">Selengkapnya</a>
                 </div>
             </div>
             
             <div class="col-lg-6 col-md-6">
                 <div class="feature-card h-100 text-center">
                     <div class="feature-icon mx-auto">
-                        <i class="fas fa-handshake"></i>
+                        <img src="img/logo.png" alt="BEM Logo" style="height: 50px;">
                     </div>
                     <h4 class="mb-3">BEM (Badan Eksekutif Mahasiswa)</h4>
                     <p class="text-muted">
                         Sebagai lembaga eksekutif, BEM menjalankan program kerja, mengkoordinasi kegiatan mahasiswa, dan menjadi jembatan harmonisasi antar seluruh organisasi mahasiswa di Politeknik Negeri Sriwijaya.
                     </p>
+                    <a href="#ormawa-details" class="btn btn-primary-custom mt-3">Selengkapnya</a>
                 </div>
             </div>
         </div>
@@ -495,8 +551,9 @@
                     </div>
                     <h4 class="mb-3">HMJ (Himpunan Jurusan)</h4>
                     <p class="text-muted">
-                        Berfokus pada pengembangan kompetensi akademik dan non akademik mahasiswa di jurusan masing-masing melalui kegiatan seminar, workshop, dan kajian keilmuan.
+                        Berfokus pada pengembangan kompetensi akademik dan non akademik mahasiswa di jurusan masing-masing melalui kegiatan seminar, workshop, dan lainnya.
                     </p>
+                    <a href="#ormawa-details" class="btn btn-primary-custom mt-3">Selengkapnya</a>
                 </div>
             </div>
             
@@ -507,8 +564,9 @@
                     </div>
                     <h4 class="mb-3">UKM (Unit Kegiatan Mahasiswa)</h4>
                     <p class="text-muted">
-                        Wadah bagi mahasiswa untuk mengembangkan minat dan bakat di berbagai bidang akademik maupun non-akademik.
+                        Wadah bagi mahasiswa untuk mengembangkan minat dan bakat dalam berbagai bidang akademik maupun non-akademik di Politeknik Negeri Sriwijaya.
                     </p>
+                    <a href="#ormawa-details" class="btn btn-primary-custom mt-3">Selengkapnya</a>
                 </div>
             </div>
             
@@ -521,6 +579,7 @@
                     <p class="text-muted">
                         Komunitas adalah kelompok mahasiswa yang terbentuk atas dasar minat, bakat, atau tujuan yang menjadi wadah bagi mahasiswa untuk mengembangkan dan menyalurkan kreativitas sesuai dengan minat masing
                     </p>
+                    <a href="#ormawa-details" class="btn btn-primary-custom mt-3">Selengkapnya</a>
                 </div>
             </div>
         </div>
@@ -528,14 +587,31 @@
 
 <section class="py-5">
     <div class="container text-center">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="feature-card">
-                    <h3 class="mb-4" style="color: #f8ae00;">PERDIR ORMAWA POLSRI</h3>
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold" style="color: #f8ae00;">PERATURAN DAN PEDOMAN ORMAWA POLSRI</h2>
+            </div>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-6">
+                <div class="feature-card h-100">
+                    <h3 class="mb-4" style="color: #e05800;">PERDIR ORMAWA POLSRI</h3>
                     <p class="mb-4" style="color: var(--text-light); line-height: 1.8;">
-                        Yuk, akses Peraturan Direktur (Perdir) Ormawa POLSRI seputar organisasi mahasiswa. Semua. Dokumen bisa diunduh dalam PDF dan dibaca kapan saja.
+                        Yuk, akses Peraturan Direktur (Perdir) Ormawa POLSRI seputar organisasi mahasiswa. Dokumen bisa diunduh dalam PDF dan dibaca kapan saja.
                     </p>
                     <a href="perdir.html" target="_blank" class="btn btn-primary-custom">
+                        <i class="fas fa-users me-2"></i>
+                        Lihat Sekarang
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="feature-card h-100">
+                    <h3 class="mb-4" style="color: #e05800;">PEDOMAN ORMAWA POLSRI 2025</h3>
+                    <p class="mb-4" style="color: var(--text-light); line-height: 1.8;">
+                        Yuk, akses panduan resmi Pedoman penyelenggaraan kegiatan Ormawa di POLSRI. Tersedia dalam format PDF untuk dibaca kapan saja.
+                    </p>
+                    <a href="pedoman.html" target="_blank" class="btn btn-primary-custom">
                         <i class="fas fa-users me-2"></i>
                         Lihat Sekarang
                     </a>
@@ -544,6 +620,46 @@
         </div>
     </div>
 </section>
+
+<section id="ormawa-details" class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-4">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold" style="color: #f8ae00;">INFORMASI LENGKAP ORMAWA</h2>
+                <p class="lead text-muted">Pilih Organisasi Mahasiswa untuk melihat detailnya.</p>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8 mb-4">
+                <div class="nav nav-pills nav-fill" id="ormawa-tabs" role="tablist">
+                    <a class="nav-link active" id="mpm-tab" data-bs-toggle="pill" href="#mpm-content" role="tab" aria-controls="mpm-content" aria-selected="true">MPM</a>
+                    <a class="nav-link" id="bem-tab" data-bs-toggle="pill" href="#bem-content" role="tab" aria-controls="bem-content" aria-selected="false">BEM</a>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="hmj-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">HMJ</a>
+                        <ul class="dropdown-menu" aria-labelledby="hmj-dropdown">
+                            </ul>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ukm-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">UKM</a>
+                        <ul class="dropdown-menu" aria-labelledby="ukm-dropdown">
+                            </ul>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="komunitas-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Komunitas</a>
+                        <ul class="dropdown-menu" aria-labelledby="komunitas-dropdown">
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="details-display" class="card p-4 shadow-sm details-container mt-4">
+        </div>
+
+    </div>
+</section>
+
 <section class="stats-section py-3">
     <div class="container">
         <div class="row text-center justify-content-center">
@@ -634,10 +750,13 @@
         // Loading Animation
         window.addEventListener('load', function() {
             setTimeout(() => {
-                document.getElementById('loadingOverlay').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('loadingOverlay').style.display = 'none';
-                }, 500);
+                const loadingOverlay = document.getElementById('spinner');
+                if (loadingOverlay) {
+                    loadingOverlay.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingOverlay.style.display = 'none';
+                    }, 500);
+                }
             }, 1000);
         });
 
@@ -648,16 +767,9 @@
             });
         }
 
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
         // Back to top button
         window.addEventListener('scroll', function() {
-            const backToTop = document.getElementById('backToTop');
+            const backToTop = document.querySelector('.back-to-top');
             if (window.scrollY > 300) {
                 backToTop.style.display = 'block';
             } else {
@@ -665,7 +777,13 @@
             }
         });
 
-        document.getElementById('backToTop').addEventListener('click', scrollToTop);
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
         // Counter animation
         function animateCounters() {
@@ -803,8 +921,167 @@
                 }
             });
         });
-
         
+        
+        // NEW ORMAWA Selection Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const detailsDisplay = document.getElementById('details-display');
+
+            const ormawaData = {
+                mpm: {
+                    title: 'MPM (Majelis Permusyawaratan Mahasiswa)',
+                    description: 'Sebagai lembaga legislatif tertinggi mahasiswa, MPM bertugas mengawasi kinerja lembaga eksekutif, menampung aspirasi di lingkungan Politeknik.',
+                    logo: 'img/logo.png',
+                    instagram: 'https://www.instagram.com/bempolsri_/'
+                },
+                bem: {
+                    title: 'BEM (Badan Eksekutif Mahasiswa)',
+                    description: 'Sebagai lembaga eksekutif, BEM menjalankan program kerja, mengkoordinasi kegiatan mahasiswa, dan menjadi jembatan harmonisasi antar seluruh organisasi mahasiswa di Politeknik Negeri Sriwijaya. BEM mewakili aspirasi mahasiswa dan berperan aktif dalam menciptakan iklim kampus yang dinamis dan berprestasi.',
+                    logo: 'img/logo.png',
+                    instagram: 'https://www.instagram.com/bempolsri_/'
+                },
+                hmj: {
+                    title: 'Himpunan Jurusan',
+                    description: 'HMJ merupakan organisasi yang mewadahi mahasiswa pada tingkat jurusan. Tugas utamanya adalah mengembangkan potensi akademik dan non-akademik mahasiswa melalui berbagai kegiatan seperti seminar, pelatihan, dan lomba yang relevan dengan bidang ilmu mereka.',
+                    logo: 'img/logo.png',
+                    instagram: 'https://www.instagram.com/'
+                },
+                ukm: {
+                    title: 'Unit Kegiatan Mahasiswa',
+                    description: 'UKM adalah wadah bagi mahasiswa untuk menyalurkan dan mengembangkan minat serta bakat mereka di luar kegiatan akademik. Terdapat berbagai jenis UKM, seperti olahraga, seni, penalaran, dan kerohanian, yang memungkinkan mahasiswa berinteraksi dan berprestasi sesuai passion masing-masing.',
+                    logo: 'img/logo.png',
+                    instagram: 'https://www.instagram.com/'
+                },
+                komunitas: {
+                    title: 'Komunitas',
+                    description: 'Komunitas adalah kelompok mahasiswa yang terbentuk atas dasar kesamaan minat dan hobi tertentu yang bersifat informal dan fleksibel. Komunitas menjadi wadah bagi mahasiswa untuk berbagi pengetahuan, berkolaborasi, dan mengadakan kegiatan yang dapat mempererat hubungan sosial dan meningkatkan kreativitas.',
+                    logo: 'img/logo.png',
+                    instagram: 'https://www.instagram.com/'
+                },
+                sub: {
+                    hmj: [
+                        'Teknik Sipil',
+                        'Teknik Mesin',
+                        'Teknik Elektro',
+                        'Teknik Kimia',
+                        'Akuntansi',
+                        'Administrasi Bisnis',
+                        'Teknik Komputer',
+                        'Manajemen Informatika',
+                        'Bahasa dan Pariwisata',
+                        'Rekayasa Teknologi dan Bisnis Pertanian'
+                    ],
+                    ukm: [
+                        'Keluarga Tarbiyah Islamiah (KARISMA)',
+                        'Warta Pers Sriwijaya (WPS)',
+                        'English Debating Society (EDS)',
+                        'Himpunan Bahtera Buana (HBB)',
+                        'Masyarakat Riset dan Sains (MARS)',
+                        'Olahraga',
+                        'Simpony'
+                    ],
+                    komunitas: [
+                        'Bujang Gadis Politeknik Negeri Sriwijaya (BGP)',
+                        'Automation Robotic Club of Sriwijaya (ARCOS)',
+                        'Pramuka',
+                        'Kewirausahaan'
+                    ]
+                }
+            };
+        
+            function updateDetailsDisplay(mainKey, subName = null) {
+                let data = ormawaData[mainKey];
+                let title = data.title;
+                let description = data.description;
+                let logo = data.logo;
+                let instagram = data.instagram;
+        
+                if (subName) {
+                    title = subName;
+                    // You can add specific descriptions, logos, and Instagram links for each sub-item here if you have them.
+                    description = `Informasi lebih lanjut tentang ${subName}.`;
+                }
+        
+                detailsDisplay.innerHTML = `
+                    <div class="row align-items-center">
+                        <div class="col-md-8 text-md-start text-center mb-3 mb-md-0">
+                            <h3 class="mb-3">${title}</h3>
+                            <p><b>Penjelasan:</b></p>
+                            <p>${description}</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img src="${logo}" alt="${title} Logo" class="img-fluid details-logo">
+                            <a href="${instagram}" target="_blank" class="btn btn-primary-custom d-flex justify-content-center align-items-center mt-3 mx-auto">
+                                <i class="fab fa-instagram me-2"></i>
+                                Instagram
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }
+        
+            function populateSubmenu(mainKey) {
+                const subList = ormawaData.sub[mainKey];
+                const subMenuEl = document.querySelector(`#${mainKey}-dropdown + .dropdown-menu`);
+                if (subList && subMenuEl) {
+                    subMenuEl.innerHTML = subList.map(item => `<li><a class="dropdown-item" href="#" data-ormawa-type="${mainKey}" data-sub-name="${item}">${item}</a></li>`).join('');
+                }
+            }
+        
+            // Populate all sub-menus on load
+            populateSubmenu('hmj');
+            populateSubmenu('ukm');
+            populateSubmenu('komunitas');
+        
+            // Event listeners for main tabs
+            document.querySelectorAll('#ormawa-tabs .nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const mainKey = this.id.replace('-tab', '').replace('-dropdown', '');
+                    if (!['hmj', 'ukm', 'komunitas'].includes(mainKey)) {
+                        updateDetailsDisplay(mainKey);
+                    }
+                });
+            });
+        
+            // Event listeners for sub-menu items
+            document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const mainKey = this.dataset.ormawaType;
+                    const subName = this.dataset.subName;
+                    updateDetailsDisplay(mainKey, subName);
+                });
+            });
+
+            // Handle "Selengkapnya" buttons to jump to the details section and select the correct tab
+            document.querySelectorAll('a[href="#ormawa-details"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const ormawaType = this.closest('.feature-card').querySelector('h4').innerText.toLowerCase().split(' ')[0];
+                    const tabId = `${ormawaType}-tab`;
+                    const tabEl = document.getElementById(tabId);
+                    if (tabEl) {
+                         // Remove 'active' class from all tabs
+                        document.querySelectorAll('#ormawa-tabs .nav-link').forEach(t => t.classList.remove('active'));
+                        
+                        // Add 'active' class to the correct tab
+                        tabEl.classList.add('active');
+
+                        // Since we are not using Bootstrap's default tab logic, we need to manually update the display
+                        updateDetailsDisplay(ormawaType);
+                    }
+                    document.getElementById('ormawa-details').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+             // Bootstrap's dropdown doesn't close on clicking an item, so we add this
+             $('.dropdown-menu a.dropdown-item').on('click', function() {
+                $(this).closest('.dropdown-menu').prev().dropdown('toggle');
+            });
+        
+            // Initial call to set the default content for MPM
+            updateDetailsDisplay('mpm');
+        });
     </script>
 
     <script src="js/main.js"></script>

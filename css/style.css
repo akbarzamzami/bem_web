@@ -1873,3 +1873,7 @@ body {
     line-height: 1.4;
   }
 }
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(248, 174, 0, 0.2);
+}
