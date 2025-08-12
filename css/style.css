@@ -25,7 +25,6 @@
   justify-content: center;
   transition: 0.5s;
   z-index: 99;
-  
 }
 
 /*** Button Start ***/
@@ -1344,7 +1343,7 @@
 
 .card-3 {
   perspective: 1000px;
-  height: 350px;
+  min-height: 350px;
 }
 
 .card-3-inner {
@@ -1852,4 +1851,25 @@ body {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+}
+@media (max-width: 768px) {
+  /* Perbaikan untuk tampilan mobile */
+  .koordinator-card {
+    width: 90%; /* Mengatur lebar agar ada sedikit margin di sisi */
+    margin: 0 auto 20px auto; /* Memposisikan di tengah */
+  }
+
+  .card-3-front img {
+    height: 150px; /* Menyesuaikan tinggi gambar agar kartu tidak terlalu panjang */
+  }
+
+  .koordinator-card h5.koordinator-name {
+    font-size: 1.2rem; /* Memperbesar ukuran nama */
+    margin-top: 10px;
+  }
+
+  .koordinator-card p.koordinator-description {
+    font-size: 0.9rem; /* Memperbesar ukuran deskripsi */
+    line-height: 1.4;
+  }
 }
