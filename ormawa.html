@@ -51,7 +51,7 @@
         /* Hero Section */
         .hero-section {
            
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
             position: relative;
@@ -238,6 +238,7 @@
   .hero-section {
     padding: 2rem 1rem;
     text-align: center;
+    min-height: 60vh;
   }
 
   .hero-title {
@@ -309,6 +310,50 @@
             height: 800px;
             border: none;
         }
+
+        /* Statistics Section */
+.stats-section {
+    background: var(--gradient-primary);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/><circle cx="20" cy="20" r="1" fill="white" opacity="0.1"/><circle cx="80" cy="30" r="1.5" fill="white" opacity="0.1"/></svg>');
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.stat-item {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
         </style>
     </head>
 
@@ -372,10 +417,10 @@
   </nav>
   <section class="hero-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-8 hero-content text-center">
                     <h1
-        class="display-3 fw-bold text-uppercase mb-4"
+        class="display-2 fw-bold text-uppercase mb-2"
         data-aos="fade-down"
         data-aos-delay="100"
         data-aos-once="false"
@@ -385,17 +430,17 @@
         Politeknik Negeri Sriwijaya
       </h1>
                     <p
-              class="mb-4"
+              class="mb-3 mx-auto"
               style="
                 font-family: 'Plus Jakarta Sans', sans-serif;
                 font-size: 16px;
-                text-align: justify;
+                max-width: 700px;
               "
             >
             Berdasarkan Peraturan Direktur Politeknik Negeri Sriwijaya Nomor 1 Tahun 2019 tentang Organisasi Kemahasiswaan, ditetapkan bahwa seluruh Organisasi Mahasiswa (ORMAWA) yang ada di lingkungan Politeknik Negeri Sriwijaya diklasifikasikan ke dalam lima bentuk utama.
             </p>
                     
-<div class="d-flex gap-3 flex-wrap">
+<div class="d-flex gap-3 flex-wrap justify-content-center">
     <a href="#features"  
        class="btn btn-primary-custom d-flex justify-content-center align-items-center">
         <i class="fas fa-info-circle me-2"></i>
@@ -403,19 +448,16 @@
     </a>
                     </div>
                 </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
 
-   <section id="features" class="py-5 bg-light">
+   <section id="features" class="py-3 bg-light">
     <div class="container">
-        <div class="row text-center mb-5">
+        <div class="row text-center mb-3">
             <div class="col-lg-8 mx-auto">
-                <h2 class="display-5 fw-bold mb-4" style="color: #f8ae00;">ORMAWA POLSRI</h2>
+                <h2 class="display-4 fw-bold mb-4 text-center" style="color: #f8ae00;">ORMAWA<br>POLSRI</h2>
               
             </div>
         </div>
@@ -484,7 +526,7 @@
         </div>
 </section>
 
-<section class="py-3">
+<section class="py-5">
     <div class="container text-center">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -502,8 +544,44 @@
         </div>
     </div>
 </section>
+<section class="stats-section py-3">
+    <div class="container">
+        <div class="row text-center justify-content-center">
+            <div class="col-lg-2 col-6 mb-4">
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Majelis Permusyawaratan Mahasiswa (MPM) </span>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6 mb-4">
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Badan Eksekutif Mahasiswa (BEM)</span>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6 mb-4">
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label"> Himpunan Mahasiswa Jurusan (HMJ)</span>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6 mb-4">
+                <div class="stat-item">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Unit Kegiatan Mahasiswa (UKM)</span>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6 mb-4">
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Komunitas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<footer class="footer-gradient pt-1">
+<footer class="footer-gradient pt-4">
     <div class="container" style="font-family: serif">
       <div class="row pb-1">
         <div class="col-12 col-md-6 col-xl-4 mb-4">
@@ -725,9 +803,12 @@
                 }
             });
         });
+
+        
     </script>
 
     <script src="js/main.js"></script>
+    
     </body>
 
 </html>
