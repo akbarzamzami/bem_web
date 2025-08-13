@@ -726,6 +726,8 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
     <script>
         // Loading Animation
         window.addEventListener('load', function() {
@@ -865,16 +867,18 @@
             });
         });
     
-        // Mobile menu close on link click
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarCollapse.classList.contains('show')) {
-                    bootstrap.Collapse.getInstance(navbarCollapse).hide();
-                }
-            });
-        });
-    
+document.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(link => {
+    link.addEventListener('click', function() {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        // Tambahkan null check
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+            const collapseInstance = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (collapseInstance) {
+                collapseInstance.hide();
+            }
+        }
+    });
+});
         // Add loading animation to external links
         document.querySelectorAll('a[target="_blank"]').forEach(link => {
             link.addEventListener('click', function() {
@@ -1126,19 +1130,25 @@
                 });
             });
     
-            document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const mainKey = this.dataset.ormawaType;
-                    const subName = this.dataset.subName;
-                    // Remove 'active' class from all tabs
-                    document.querySelectorAll('#ormawa-tabs .nav-link').forEach(t => t.classList.remove('active'));
-                    // Add 'active' class to the correct parent dropdown link
-                    document.getElementById(`${mainKey}-dropdown`).classList.add('active');
-    
-                    updateDetailsDisplay(mainKey, subName);
-                });
-            });
+            // Hanya target dropdown item yang memiliki data-ormawa-type
+document.querySelectorAll('.dropdown-menu .dropdown-item[data-ormawa-type]').forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const mainKey = this.dataset.ormawaType;
+        const subName = this.dataset.subName;
+        
+        // Remove 'active' class from all tabs
+        document.querySelectorAll('#ormawa-tabs .nav-link').forEach(t => t.classList.remove('active'));
+        
+        // Add 'active' class to the correct parent dropdown link
+        const targetElement = document.getElementById(`${mainKey}-dropdown`);
+        if (targetElement) {
+            targetElement.classList.add('active');
+        }
+
+        updateDetailsDisplay(mainKey, subName);
+    });
+});
     
             document.querySelectorAll('a[href="#ormawa-details"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
