@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8" />
+  <title>Organisasi Mahasiswa - BEM POLSRI</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
+
+  <link rel="icon" type="image/png" href="/img/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&family=Cinzel:wght@700&display=swap" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link href="lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+w4hI8YzY5Z5qkQYwZcNwZPbP+FZ+0rYkQ5mT1Rfbm0Bq5eUcm2s8n6d1A="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+  <link href="css/style.css" rel="stylesheet" />
+        <style>
+        :root {
+            --primary-color: #f8ae00;
+            --secondary-color: #e05800;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --bg-light: #f8f9fa;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --gradient-primary: linear-gradient(135deg, #f8ae00 0%, #e05800 100%);
+            --gradient-secondary: linear-gradient(135deg, #e05800 0%, #ff6b35 100%);
+        }
+
+        /* Hero Section */
+        .hero-section {
+           
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+.hero-section + .navbar {
+  background-color: #f8ae00 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(248, 174, 0, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+            50% { transform: scale(1.1) rotate(180deg); opacity: 0.1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Cinzel', serif;
+            background: #f8ae00;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(248, 174, 0, 0.2);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 20px 40px rgba(248, 174, 0, 0.2);
+        }
+
+        .feature-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(248, 174, 0, 0.3);
+        }
+
+        .feature-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Buttons */
+    .btn-primary-custom {
+    background: var(--gradient-primary);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3);
+}
+.btn-primary-custom:hover,
+.btn-primary-custom:hover i {
+    color: white !important;
+}
+
+
+
+        .btn-primary-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(248, 174, 0, 0.4);
+            color: white;
+        }
+
+        .btn-outline-custom {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-custom:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Section Titles */
+        h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+        }
+        /* Hero Section Responsiveness */
+@media (max-width: 767.98px) {
+  .hero-section {
+    padding: 2rem 1rem;
+    text-align: center;
+    min-height: 60vh;
+  }
+
+  .hero-title {
+    font-size: 1.75rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem !important;
+  }
+
+  .hero-section .col-lg-6 {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .hero-section .img-fluid {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .d-flex.gap-3.flex-wrap {
+    justify-content: center;
+  }
+
+  .btn-primary-custom,
+  .btn-outline-custom {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Adjust statistic numbers font size on mobile */
+@media (max-width: 575.98px) {
+  .stat-number {
+    font-size: 2rem !important;
+  }
+  .stat-label {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Navbar default background color */
+.navbar {
+  background-color: #f8ae00;
+}
+
+/* Navbar background solid on mobile */
+@media (max-width: 991.98px) {
+  .navbar {
+    background-color: #f8ae00 !important;
+    backdrop-filter: none !important;
+  }
+}
+
+.hero-section h1 {
+  font-size: 2.5rem !important;
+}
+        /* PDF Viewer Styling from the user's new code */
+        .pdf-viewer-container {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .pdf-viewer-container iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
+        .details-logo {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .details-container {
+            min-height: 250px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            transition: all 0.3s ease-in-out;
+            background: white;
+            box-shadow: 0 10px 30px rgba(248, 174, 0, 0.2);
+        }
+        .details-container:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 15px 40px rgba(248, 174, 0, 0.3);
+        }
+
+        /* Shine effect on hover - this is now optional */
+        .details-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #f8ae00, #e05800, transparent);
+            transform: translateX(-100%);
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .details-container:hover::before {
+            transform: translateX(0);
+        }
+
+        /* Statistics Section */
+.stats-section {
+    background: var(--gradient-primary);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/><circle cx="20" cy="20" r="1" fill="white" opacity="0.1"/><circle cx="80" cy="30" r="1.5" fill="white" opacity="0.1"/></svg>');
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.stat-item {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+        </style>
+    </head>
+
+    <body>
+
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative">
+    <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
+      <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
+      <div class="d-flex flex-column">
+        <span class="text-black fw-bold" style="font-size: 18px;">Kabinet Lentera Sriwijaya</span>
+        <small class="text-black" style="font-size: 14px;">BEM Politeknik Negeri Sriwijaya</small>
+      </div>
+    </a>
+  
+    <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto py-0">
+        <a class="nav-item nav-link" href="index.html">Home</a>
+        <a class="nav-item nav-link" href="about.html">About</a>
+  
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Academic Information
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+                <li>
+                    <a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a>
+                </li>
+                <li>
+                    <a class="dropdown-item active" href="ormawa.html">Organisasi Mahasiswa</a>
+                </li>
+            </ul>
+        </div>
+  
+        <div class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Campus Echo
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+    <li><a class="dropdown-item active" href="Kajian.html">Kajian</a></li>
+    <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
+    <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
+  </ul>
+</div>
+
+<a class="nav-item nav-link" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+  <section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 hero-content text-center">
+                <h1
+                    class="display-5 fw-bold text-uppercase mb-3"
+                    data-aos="fade-down"
+                    data-aos-delay="100"
+                    data-aos-once="false"
+                    style="font-family: 'Cinzel', serif; color: #f8ae00; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); letter-spacing: 2px;"
+                >
+                    Organisasi Mahasiswa 
+                    Politeknik Negeri Sriwijaya
+                </h1>
+                <p
+                    class="mb-4 mx-auto"
+                    style="
+                        font-family: 'Plus Jakarta Sans', sans-serif;
+                        font-size: 16px;
+                        max-width: 700px;
+                    "
+                >
+                    Berdasarkan Peraturan Direktur Politeknik Negeri Sriwijaya Nomor 1 Tahun 2019 tentang Organisasi Kemahasiswaan, ditetapkan bahwa seluruh Organisasi Mahasiswa (ORMAWA) yang ada di lingkungan Politeknik Negeri Sriwijaya diklasifikasikan ke dalam lima bentuk utama.
+                </p>
+                <div class="d-flex gap-3 flex-wrap justify-content-center">
+                    <a href="#features"  
+                       class="btn btn-primary-custom d-flex justify-content-center align-items-center">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Pelajari Lebih Lanjut
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+   <section id="features" class="py-3 bg-light">
+    <div class="container">
+        <div class="row text-center mb-3">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-4 fw-bold mb-4 text-center" style="color: #f8ae00;">ORMAWA<br>POLSRI</h2>
+              
+            </div>
+        </div>
+        
+        <div class="row g-3">
+            <div class="col-lg-6 col-md-6">
+                <div class="feature-card h-100 text-center">
+                    <div class="feature-icon mx-auto">
+                        <img src="img/komunitas/mpm.webp" alt="MPM Logo" style="height: 50px;"> 
+                    </div>
+                    <h4 class="mb-3">MPM (Majelis Permusyawaratan Mahasiswa)</h4>
+                    <p class="text-muted">
+                        Majelis Permusyawaratan Mahasiswa yang selanjutnya disingkat dengan sebutan MPM adalah ormawa yang menjalankan fungsi legislasi, pengawasan, dan penegakan norma ormawa.
+                    </p>
+                    <a href="#ormawa-details" class="btn btn-primary-custom mt-3">Selengkapnya</a>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-6">
+                <div class="feature-card h-100 text-center">
+                    <div class="feature-icon mx-auto">
+                        <img src="img/LOGO BEM.PNG" alt="BEM Logo" style="height: 50px;">
+                    </div>
+                    <h4 class="mb-3">BEM (Badan Eksekutif Mahasiswa)</h4>
+                    <p class="text-muted">
+                        Sebagai lembaga eksekutif, BEM menjalankan program kerja, mengkoordinasi kegiatan mahasiswa, dan menjadi jembatan harmonisasi antar seluruh organisasi mahasiswa di Politeknik Negeri Sriwijaya.
+                    </p>
+                    <a href="#ormawa-details" class="btn btn-primary-custom mt-3">Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mt-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100 text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h4 class="mb-3">HMJ (Himpunan Jurusan)</h4>
+                    <p class="text-muted">
+                        Berfokus pada pengembangan kompetensi akademik dan non akademik mahasiswa di jurusan masing-masing melalui kegiatan seminar, workshop, dan lainnya.
+                    </p>
+                    <a href="#ormawa-details" class="btn btn-primary-custom mt-3">Selengkapnya</a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100 text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h4 class="mb-3">UKM (Unit Kegiatan Mahasiswa)</h4>
+                    <p class="text-muted">
+                        Wadah bagi mahasiswa untuk mengembangkan minat dan bakat dalam berbagai bidang akademik maupun non-akademik di Politeknik Negeri Sriwijaya.
+                    </p>
+                    <a href="#ormawa-details" class="btn btn-primary-custom mt-3">Selengkapnya</a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card h-100 text-center">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h4 class="mb-3">Komunitas</h4>
+                    <p class="text-muted">
+                        Komunitas adalah kelompok mahasiswa yang terbentuk atas dasar minat, bakat, atau tujuan yang menjadi wadah bagi mahasiswa untuk mengembangkan dan menyalurkan kreativitas sesuai dengan minat masing
+                    </p>
+                    <a href="#ormawa-details" class="btn btn-primary-custom mt-3">Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section class="py-5">
+    <div class="container text-center">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold" style="color: #f8ae00;">PERATURAN DAN PEDOMAN ORMAWA POLSRI</h2>
+            </div>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-6">
+                <div class="feature-card h-100">
+                    <h3 class="mb-4" style="color: #e05800;">PERDIR ORMAWA POLSRI</h3>
+                    <p class="mb-4" style="color: var(--text-light); line-height: 1.8;">
+                        Yuk, akses Peraturan Direktur (Perdir) Ormawa POLSRI seputar organisasi mahasiswa. Dokumen bisa diunduh dalam PDF dan dibaca kapan saja.
+                    </p>
+                    <a href="perdir.html" target="_blank" class="btn btn-primary-custom">
+                        <i class="fas fa-users me-2"></i>
+                        Lihat Sekarang
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="feature-card h-100">
+                    <h3 class="mb-4" style="color: #e05800;">PEDOMAN ORMAWA POLSRI 2025</h3>
+                    <p class="mb-4" style="color: var(--text-light); line-height: 1.8;">
+                        Yuk, akses panduan resmi Pedoman penyelenggaraan kegiatan Ormawa di POLSRI. Tersedia dalam format PDF untuk dibaca kapan saja.
+                    </p>
+                    <a href="pedoman.html" target="_blank" class="btn btn-primary-custom">
+                        <i class="fas fa-users me-2"></i>
+                        Lihat Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="ormawa-details" class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-4">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold" style="color: #f8ae00;">INFORMASI LENGKAP ORMAWA</h2>
+                <p class="lead text-muted">Pilih Organisasi Mahasiswa untuk melihat detailnya.</p>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8 mb-4">
+                <div class="nav nav-pills nav-fill" id="ormawa-tabs" role="tablist">
+                    <a class="nav-link" id="mpm-tab" data-bs-toggle="pill" href="#mpm-content" role="tab" aria-controls="mpm-content" aria-selected="false">MPM</a>
+                    <a class="nav-link" id="bem-tab" data-bs-toggle="pill" href="#bem-content" role="tab" aria-controls="bem-content" aria-selected="false">BEM</a>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="hmj-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">HMJ</a>
+                        <ul class="dropdown-menu" aria-labelledby="hmj-dropdown">
+                            </ul>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ukm-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">UKM</a>
+                        <ul class="dropdown-menu" aria-labelledby="ukm-dropdown">
+                            </ul>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="komunitas-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Komunitas</a>
+                        <ul class="dropdown-menu" aria-labelledby="komunitas-dropdown">
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="details-display" class="card p-4 shadow-sm details-container mt-4">
+        </div>
+
+    </div>
+</section>
+
+<section class="stats-section py-3">
+    <div class="container">
+        <div class="row text-center justify-content-center">
+            <div class="col-lg-2 col-6 mb-4">
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Majelis Permusyawaratan Mahasiswa (MPM) </span>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6 mb-4">
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Badan Eksekutif Mahasiswa (BEM)</span>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6 mb-4">
+                <div class="stat-item">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label"> Himpunan Mahasiswa Jurusan (HMJ)</span>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6 mb-4">
+                <div class="stat-item">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Unit Kegiatan Mahasiswa (UKM)</span>
+                </div>
+            </div>
+            <div class="col-lg-2 col-6 mb-4">
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Komunitas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-gradient pt-4">
+    <div class="container" style="font-family: serif">
+      <div class="row pb-1">
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+          <div class="fw-bold mb-3">FOLLOW US</div>
+          <div class="d-flex mb-4">
+            <a href="https://www.instagram.com/bempolsri_/" class="social-icon me-2"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://x.com/polsrimenfess" class="social-icon me-2"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/@bemkmpolsri3259" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="d-flex align-items-center">
+            <img src="img/logo.png" alt="Logo" height="35" class="me-2" />
+            <div class="small">
+              BEM POLITEKNIK NEGERI SRIWIJAYA<br />
+              KABINET LENTERA SRIWIJAYA
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4 mb-4">
+          <div class="fw-bold mb-3">More Information</div>
+          <a href="contact.html" class="footer-link d-block mb-1">Contact Us</a>
+          <a href="about.html" class="footer-link d-block mb-1">About Us</a>
+          <a href="Terms and Conditions.html" class="footer-link d-block">
+            Terms and Conditions
+          </a>
+        </div>
+        <div class="col-12 col-xl-4">
+          <div class="fw-bold mb-3">Developed By</div>
+          <div class="small">Departemen Media Informasi</div>
+          <div class="small">BEM POLSRI 2025</div>
+        </div>
+      </div>
+      <hr class="mt-4" />
+      <div class="footer-bottom text-center small">
+        © 2025 Departemen Media Informasi BEM POLSRI. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        // Loading Animation
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const loadingOverlay = document.getElementById('spinner');
+                if (loadingOverlay) {
+                    loadingOverlay.style.opacity = '0';
+                    setTimeout(() => {
+                        loadingOverlay.style.display = 'none';
+                    }, 500);
+                }
+            }, 1000);
+        });
+    
+        // Smooth scrolling
+        function scrollToFeatures() {
+            document.getElementById('features').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+    
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = counter.innerText;
+                const isPercentage = target.includes('%');
+                const isNumber = !isNaN(target.replace(/\D/g, ''));
+    
+                if (isNumber && !target.includes('/')) {
+                    const count = parseInt(target.replace(/\D/g, ''));
+                    let current = 0;
+                    const increment = count / 100;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= count) {
+                            counter.innerText = target;
+                            clearInterval(timer);
+                        } else {
+                            if (isPercentage) {
+                                counter.innerText = Math.floor(current) + '%';
+                            } else {
+                                counter.innerText = Math.floor(current) + '+';
+                            }
+                        }
+                    }, 20);
+                }
+            });
+        }
+    
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+    
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+    
+                    // Animate counters when stats section is visible
+                    if (entry.target.classList.contains('stats-section')) {
+                        animateCounters();
+                    }
+                }
+            });
+        }, observerOptions);
+    
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.feature-card, .stat-item, .cta-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease-out';
+                observer.observe(el);
+            });
+    
+            // Observe stats section
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        });
+    
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(248, 174, 0, 0.98)';
+                navbar.style.backdropFilter = 'blur(15px)';
+            } else {
+                navbar.style.background = 'rgba(248, 174, 0, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            }
+        });
+    
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-section');
+            const rate = scrolled * -0.5;
+    
+            if (hero) {
+                hero.style.transform = 'translateY(' + rate + 'px)';
+            }
+        });
+    
+        // Add hover effects to social icons
+        document.querySelectorAll('.social-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.1)';
+            });
+    
+            icon.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    
+document.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(link => {
+    link.addEventListener('click', function() {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        // Tambahkan null check
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+            const collapseInstance = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (collapseInstance) {
+                collapseInstance.hide();
+            }
+        }
+    });
+});
+        // Add loading animation to external links
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (icon) {
+                    const originalClass = icon.className;
+                    icon.className = 'fas fa-spinner fa-spin';
+                    setTimeout(() => {
+                        icon.className = originalClass;
+                    }, 2000);
+                }
+            });
+        });
+    
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    
+    
+        // NEW ORMAWA Selection Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const detailsDisplay = document.getElementById('details-display');
+    
+            const ormawaData = {
+                mpm: {
+                    title: 'MPM (Majelis Permusyawaratan Mahasiswa)',
+                    description: '𝗞𝗮𝗯𝗶𝗻𝗲𝘁 𝗔𝗿𝘂𝗻𝗶𝗸𝗮 𝗔𝗱𝗶𝗸𝗮𝗿𝗮 𝗣𝗿𝗮𝗸𝗮𝗿𝘀𝗮, membawa cahaya semangat untuk menciptakan terobosan demi kesejahteraan mahasiswa. Lembaga legislatif mahasiswa Polsri yang berfungsi sebagai wadah musyawarah dan penetapan kebijakan kemahasiswaan. MPM juga mengawasi kinerja BEM demi tercapainya keseimbangan organisasi.',
+                    logo: 'img/komunitas/mpm.webp',
+                    instagram: 'https://www.instagram.com/mpm_polsri/'
+                },
+                bem: {
+                    title: 'BEM (Badan Eksekutif Mahasiswa)',
+                    description: 'adalah nama kabinet BEM yang punya semangat jadi “lentera” atau penerang bagi seluruh mahasiswa. Kabinet ini ingin jadi sumber cahaya yang membantu mahasiswa. Sebagai lembaga eksekutif, BEM menjalankan program kerja, mengkoordinasi kegiatan mahasiswa, dan menjadi jembatan harmonisasi antar seluruh organisasi mahasiswa di Politeknik Negeri Sriwijaya.',
+                    logo: 'img/logo.png',
+                    instagram: 'https://www.instagram.com/bempolsri_/'
+                },
+                hmj: {
+                    title: 'Himpunan Jurusan',
+                    description: 'HMJ merupakan organisasi yang mewadahi mahasiswa pada tingkat jurusan. Tugas utamanya adalah mengembangkan potensi akademik dan non-akademik mahasiswa melalui berbagai kegiatan seminar, pelatihan, dan lomba yang relevan dengan bidang ilmu mereka.',
+                    logo: 'img/logo.png', // Placeholder logo for the general HMJ category
+                    instagram: 'https://www.instagram.com/', // Placeholder link
+                    subItems: {
+                        'Teknik Sipil': {
+                            title: 'Himpunan Mahasiswa Teknik Sipil',
+                            description: '𝗞𝗮𝗯𝗶𝗻𝗲𝘁 𝗣𝗿𝗮𝗸𝗮𝘀𝗵𝗮 𝗠𝗮𝗻𝗱𝗮𝗹𝗮, kabinet yang berkomitmen menerangi jalan perubahan dengan semangat kebersamaan dan langkah yang terarah menuju kemajuan.HMTS adalah organisasi mahasiswa yang mewadahi mahasiswa Jurusan Teknik Sipil. Kami berfokus pada pengembangan soft skill dan hard skill melalui program-program yang relevan dengan dunia konstruksi dan infrastruktur.',
+                            logo: 'img/hmj/sipil.png', // Ganti dengan path logo HMTS
+                            instagram: 'https://www.instagram.com/hmj_sipilpolsri/' // Ganti dengan link Instagram HMTS
+                        },
+                        'Teknik Mesin': {
+                            title: 'Himpunan Mahasiswa Teknik Mesin',
+                            description: 'HMj Teknik Mesin menjadi wadah bagi mahasiswa Jurusan Teknik Mesin untuk berkontribusi dan berinovasi. Kegiatan kami meliputi workshop, kunjungan industri, dan kompetisi.',
+                            logo: 'img/hmj/mesin.png', // Ganti dengan path logo HMTM
+                            instagram: 'https://www.instagram.com/hmjmesinpolsri/' // Ganti dengan link Instagram HMTM
+                        },
+                        'Teknik Elektro': {
+                            title: 'Himpunan Mahasiswa Teknik Elektro',
+                            description: 'Tagline HMJ terbaik luar biasa, mengusung semangat keunggulan, inovasi, dan kerja sama untuk mencetak prestasi gemilang. HMJ Elektro adalah organisasi yang menampung kreativitas mahasiswa Jurusan Teknik Elektro..',
+                            logo: 'img/hmj/elektro.png', // Ganti dengan path logo HMTE
+                            instagram: 'https://www.instagram.com/hmj_elektro/' // Ganti dengan link Instagram HMTE
+                        },
+                        'Teknik Kimia': {
+                            title: 'Himpunan Mahasiswa Teknik Kimia',
+                            description: '𝗞𝗮𝗯𝗶𝗻𝗲𝘁 𝗦𝗧𝗥𝗢𝗡𝗚𝗘𝗥 𝗧𝗢𝗚𝗘𝗧𝗛𝗘𝗥, menguatkan setiap langkah melalui persatuan, solidaritas, dan dedikasi penuh. Hmj Tekkim berfokus pada pengembangan pengetahuan mahasiswa tentang industri kimia, penelitian, dan pengabdian masyarakat.',
+                            logo: 'img/hmj/Tekkim.png', // Ganti dengan path logo HMTK
+                            instagram: 'https://www.instagram.com/hmjteknikkimiapolsri/' // Ganti dengan link Instagram HMTK
+                        },
+                        'Akuntansi': {
+                            title: 'Himpunan Mahasiswa Akuntansi',
+                            description: '𝗞𝗮𝗯𝗶𝗻𝗲𝘁 𝗕𝗲𝗿𝗸𝗮𝗿𝘆𝗮 𝗠𝗲𝗻𝗴𝘂𝗸𝗶𝗿 𝗦𝗲𝗷𝗮𝗿𝗮𝗵, membangun prestasi dan mencatat jejak berharga bagi masa depan. Himpunan ini yang mewadahi mahasiswa Jurusan Akuntansi. Kami mengadakan pelatihan perpajakan, audit, dan kegiatan perlombaan ',
+                            logo: 'img/hmj/akuntansi.png', // Ganti dengan path logo HMA
+                            instagram: 'https://www.instagram.com/hmjakuntansipolsri/' // Ganti dengan link Instagram HMA
+                        },
+                        'Administrasi Bisnis': {
+                            title: 'Himpunan Mahasiswa Administrasi Bisnis',
+                            description: '𝗞𝗮𝗯𝗶𝗻𝗲𝘁 𝗦𝗮𝗺𝗮𝗻𝘃𝗮𝘆𝗮, mewujudkan sinergi dan kolaborasi untuk kemajuan bersama. Himpunan ini adalah organisasi mahasiswa Jurusan Administrasi Bisnis. Kami fokus pada pengembangan soft skill dan wawasan bisnis mahasiswa melalui seminar, studi kasus, dan simulasi bisnis.',
+                            logo: 'img/hmj/AB.png', // Ganti dengan path logo HMAB
+                            instagram: 'https://www.instagram.com/hmjabpolsri/' // Ganti dengan link Instagram HMAB
+                        },
+                        'Teknik Komputer': {
+                            title: 'Himpunan Mahasiswa Teknik Komputer',
+                            description: ' 𝗞𝗮𝗯𝗶𝗻𝗲𝘁 𝗔𝗿𝘂𝗻𝗮 𝗔𝗴𝗻𝗶𝘃𝗲𝘀𝗵𝗮, menyalakan api semangat dan kreativitas demi masa depan yang cemerlang. Himpunan ini adalah organisasi yang mewadahi mahasiswa Jurusan Teknik Komputer. Kami mengadakan workshop coding, hackathon, dan berbagai kegiatan untuk meningkatkan kompetensi di bidang IT.',
+                            logo: 'img/hmj/tekom.png', // Ganti dengan path logo HMJKom
+                            instagram: 'https://www.instagram.com/hmjteknikkomputer/' // Ganti dengan link Instagram HMJKom
+                        },
+                        'Manajemen Informatika': {
+                            title: 'Himpunan Mahasiswa Manajemen Informatika',
+                            description: '𝗞𝗮𝗯𝗶𝗻𝗲𝘁 𝗞𝗮𝗿𝘀𝗮𝗱𝗵𝗶𝗸𝗮𝗿𝗮, memiliki tekad membawa perubahan positif dalam segala aspek menuju yang lebih baik.Himpunan ini adalah himpunan yang mewadahi mahasiswa Jurusan Manajemen Informatika. Kami berfokus pada pengembangan soft skill dan hard skill di bidang IT dan manajemen proyek.',
+                            logo: 'img/hmj/mi.png', // Ganti dengan path logo HMMI
+                            instagram: 'https://www.instagram.com/hmjmi_polsri/' // Ganti dengan link Instagram HMMI
+                        },
+                        'Bahasa dan Pariwisata': {
+                            title: 'Himpunan Mahasiswa Bahasa dan Pariwisata',
+                            description: 'Tagline 𝗡𝗲𝘄 𝗦𝘁𝗲𝗽 𝗧𝗼 𝗚𝗿𝗲𝗮𝘁𝗻𝗲𝘀𝘀, melangkah dengan inovasi dan semangat baru menuju kejayaan. Himpunan ini adalah organisasi yang menampung kreativitas mahasiswa Jurusan Bahasa dan Pariwisata. Kami mengadakan pelatihan bahasa, kunjungan wisata, dan berbagai kegiatan lain untuk memperkenalkan budaya dan pariwisata.',
+                            logo: 'img/hmj/bahasa dan pariwisata.png', // Ganti dengan path logo HMP
+                            instagram: 'https://www.instagram.com/hmjbahasadanpariwisata/' // Ganti dengan link Instagram HMP
+                        },
+                        'Rekayasa Teknologi dan Bisnis Pertanian': {
+                            title: 'Himpunan Mahasiswa Rekayasa Teknologi dan Bisnis Pertanian',
+                            description: 'Himpunan ini adalah himpunan mahasiswa yang mewadahi mahasiswa Jurusan Rekayasa Teknologi dan Bisnis Pertanian. Kami fokus pada pengembangan soft skill dan wawasan bisnis mahasiswa melalui seminar, studi kasus, dan simulasi Teknologi pertanian.',
+                            logo: 'img/hmj/RTBP.png', // Ganti dengan path logo HMRTB
+                            instagram: 'https://www.instagram.com/hmjrtbppolsri/' // Ganti dengan link Instagram HMRTB
+                        }
+                    }
+                },
+                ukm: {
+                    title: 'Unit Kegiatan Mahasiswa',
+                    description: 'UKM adalah wadah bagi mahasiswa untuk menyalurkan dan mengembangkan minat serta bakat mereka di luar kegiatan akademik. Terdapat berbagai jenis UKM, seperti olahraga, seni, penalaran, dan kerohanian, yang memungkinkan mahasiswa berinteraksi dan berprestasi sesuai passion masing-masing.',
+                    logo: 'img/logo.png', // Placeholder logo
+                    instagram: 'https://www.instagram.com/', // Placeholder link
+                    subItems: {
+                        'Keluarga Tarbiyah Islamiah (KARISMA)': {
+                            title: 'UKM Keluarga Tarbiyah Islamiah (KARISMA)',
+                            description: 'UKM KARISMA adalah organisasi kerohanian yang berfokus pada pengembangan keilmuan dan praktik Islam. Kami mengadakan kajian rutin, bakti sosial, dan kegiatan dakwah lainnya.',
+                            logo: 'img/ukm/karisma.webp', // Ganti dengan path logo KARISMA
+                            instagram: 'https://www.instagram.com/ldk_karisma/' // Ganti dengan link Instagram KARISMA
+                        },
+                        'Warta Politeknik Sriwijaya (WPS)': {
+                            title: 'UKM Warta Politeknik Sriwijaya (WPS)',
+                            description: 'UKM WPS adalah organisasi pers kampus yang bergerak di bidang jurnalistik. UKM ini menerbitkan berita seputar kehidupan kampus dan isu-isu terkini.',
+                            logo: 'img/ukm/wps.webp', // Ganti dengan path logo WPS
+                            instagram: 'https://www.instagram.com/ukmwps.polsri/' // Ganti dengan link Instagram WPS
+                        },
+                        'English Debating Society (EDS)': {
+                            title: 'UKM English Debating Society (EDS)',
+                            description: 'UKM EDS adalah wadah bagi mahasiswa yang ingin mengasah kemampuan berbahasa Inggris dan berdebat. UKM ini rutin mengadakan latihan debat dan berpartisipasi dalam kompetisi di tingkat regional maupun nasional.',
+                            logo: 'img/ukm/eds.webp', // Ganti dengan path logo EDS
+                            instagram: 'https://www.instagram.com/eds.polsri/' // Ganti dengan link Instagram EDS
+                        },
+                        'UKM Himpala Bahtera Buana (HBB)': {
+                            title: 'UKM Himpala Bahtera Buana (HBB)',
+                            description: 'UKM HBB adalah organisasi yang bergerak di bidang pecinta alam. UKM ini mengadakan kegiatan pendakian, penjelajahan, dan pelestarian lingkungan.',
+                            logo: 'img/ukm/himpala.webp', // Ganti dengan path logo HBB
+                            instagram: 'https://www.instagram.com/himpalabahterabuana/' // Ganti dengan link Instagram HBB
+                        },
+                        'Mahasiswa Riset dan Sains (MARS)': {
+                            title: 'UKM Mahasiswa Riset dan Sains (MARS)',
+                            description: 'UKM MARS adalah wadah bagi mahasiswa yang memiliki minat di bidang penelitian dan sains. UKM ini mengadakan workshop penulisan karya ilmiah, riset, dan presentasi ilmiah.',
+                            logo: 'img/ukm/mars.webp', // Ganti dengan path logo MARS
+                            instagram: 'https://www.instagram.com/ukm.marspolsri/' // Ganti dengan link Instagram MARS
+                        },
+                        'Olahraga': {
+                            title: 'UKM Olahraga',
+                            description: 'UKM Olahraga mewadahi berbagai cabang olahraga seperti futsal, basket, voli, dan bulu tangkis dan cabor lainnya. UKM ini rutin mengadakan latihan dan berpartisipasi dalam kompetisi antar kampus.',
+                            logo: 'img/ukm/olahraga.webp', // Ganti dengan path logo Olahraga
+                            instagram: 'https://www.instagram.com/ukmolahragapolsri/' // Ganti dengan link Instagram Olahraga
+                        },
+                        'Simpony': {
+                            title: 'UKM Simpony',
+                            description: 'UKM Simpony adalah organisasi seni yang berfokus pada pengembangan bakat di bidang musik dan paduan suara. UKM ini rutin mengadakan konser dan pertunjukan musik di berbagai acara kampus.',
+                            logo: 'img/ukm/simpony.webp', // Ganti dengan path logo Simpony
+                            instagram: 'https://www.instagram.com/ukmsimpony/' // Ganti dengan link Instagram Simpony
+                        }
+                    }
+                },
+                komunitas: {
+                    title: 'Komunitas',
+                    description: 'Komunitas adalah kelompok mahasiswa yang terbentuk atas dasar kesamaan minat dan hobi tertentu yang bersifat informal dan fleksibel. Komunitas menjadi wadah bagi mahasiswa untuk berbagi pengetahuan, berkolaborasi, dan mengadakan kegiatan yang dapat mempererat hubungan sosial dan meningkatkan kreativitas.',
+                    logo: 'img/logo.png', // Placeholder logo
+                    instagram: 'https://www.instagram.com/', // Placeholder link
+                    subItems: {
+                        'Bujang Gadis Politeknik Negeri Sriwijaya (BGPOL)': {
+                            title: 'Komunitas Bujang Gadis Politeknik Negeri Sriwijaya (BGPOL)',
+                            description: 'Komunitas BGPOL adalah Bujang gadis Polsri kampus yang mewakili Politeknik Negeri Sriwijaya dalam berbagai acara formal dan promosi. Kami berfokus pada pengembangan public speaking, etika, dan wawasan kebudayaan.',
+                            logo: 'img/komunitas/bgp.webp', // Ganti dengan path logo BGP
+                            instagram: 'https://www.instagram.com/bg_polsri/' // Ganti dengan link Instagram BGP
+                        },
+                        'Automation Robotic Club of Sriwijaya (ARCOS)': {
+                            title: 'Komunitas Automation Robotic Club of Sriwijaya (ARCOS)',
+                            description: 'ARCOS adalah komunitas yang berfokus pada bidang robotika dan otomatisasi. KOmunitas ini berkolaborasi dalam proyek-proyek robotik dan berpartisipasi dalam kompetisi robotika.',
+                            logo: 'img/komunitas/robotik.webp', // Ganti dengan path logo ARCOS
+                            instagram: 'https://www.instagram.com/timrobotpolsri/' // Ganti dengan link Instagram ARCOS
+                        },
+                        'Pramuka': {
+                            title: 'Komunitas Pramuka',
+                            description: 'Komunitas Pramuka adalah wadah bagi mahasiswa yang ingin mengembangkan kedisiplinan, kepanduan, kepemimpinan, dan kecintaan pada alam.',
+                            logo: 'img/komunitas/pramuka.webp', // Ganti dengan path logo Pramuka
+                            instagram: 'https://www.instagram.com/pramuka.polsri/' // Ganti dengan link Instagram Pramuka
+                        },
+                        'Entrepreneur (Kewirausahaan) Polsri': {
+                            title: 'Komunitas Kewirausahaan',
+                            description: 'Komunitas Kewirausahaan adalah wadah bagi mahasiswa yang memiliki minat dalam dunia bisnis dan kewirausahaan. Komunitas ini mengadakan workshop, seminar, dan mentoring untuk membantu mahasiswa memulai usaha.',
+                            logo: 'img/komunitas/wirausaha.webp ', // Ganti dengan path logo Kewirausahaan
+                            instagram: 'https://www.instagram.com/entrepreneurpolsri/' // Ganti dengan link Instagram Kewirausahaan
+                        }
+                    }
+                }
+            };
+    
+            function updateDetailsDisplay(mainKey, subName = null) {
+                let data;
+                let label = 'Tentang:';
+                let subtitleHtml = '';
+    
+                if (subName) {
+                    data = ormawaData[mainKey].subItems[subName];
+                } else {
+                    data = ormawaData[mainKey];
+                }
+    
+                if (mainKey === 'bem') {
+                    subtitleHtml = '<h4 class="mb-3">Kabinet Lentera Sriwijaya</h4>';
+                }
+    
+                detailsDisplay.innerHTML = `
+                    <div class="row align-items-center">
+                        <div class="col-md-8 text-md-start text-center mb-3 mb-md-0">
+                            <h3 class="mb-1">${data.title}</h3>
+                            ${subtitleHtml}
+                            <p>${data.description}</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img src="${data.logo}" alt="${data.title} Logo" class="img-fluid details-logo">
+                            <a href="${data.instagram}" target="_blank" class="btn btn-primary-custom d-flex justify-content-center align-items-center mt-3 mx-auto">
+                                <i class="fab fa-instagram me-2"></i>
+                                Instagram
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }
+    
+            function populateSubmenu(mainKey) {
+                const subItems = ormawaData[mainKey].subItems;
+                const subMenuEl = document.querySelector(`#${mainKey}-dropdown + .dropdown-menu`);
+                if (subItems && subMenuEl) {
+                    subMenuEl.innerHTML = Object.keys(subItems).map(item => `<li><a class="dropdown-item" href="#" data-ormawa-type="${mainKey}" data-sub-name="${item}">${item}</a></li>`).join('');
+                }
+            }
+    
+            populateSubmenu('hmj');
+            populateSubmenu('ukm');
+            populateSubmenu('komunitas');
+    
+            document.querySelectorAll('#ormawa-tabs .nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const mainKey = this.id.replace('-tab', '').replace('-dropdown', '');
+                    if (!['hmj', 'ukm', 'komunitas'].includes(mainKey)) {
+                        updateDetailsDisplay(mainKey);
+                    }
+                });
+            });
+    
+            // Hanya target dropdown item yang memiliki data-ormawa-type
+document.querySelectorAll('.dropdown-menu .dropdown-item[data-ormawa-type]').forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const mainKey = this.dataset.ormawaType;
+        const subName = this.dataset.subName;
+        
+        // Remove 'active' class from all tabs
+        document.querySelectorAll('#ormawa-tabs .nav-link').forEach(t => t.classList.remove('active'));
+        
+        // Add 'active' class to the correct parent dropdown link
+        const targetElement = document.getElementById(`${mainKey}-dropdown`);
+        if (targetElement) {
+            targetElement.classList.add('active');
+        }
+
+        updateDetailsDisplay(mainKey, subName);
+    });
+});
+    
+            document.querySelectorAll('a[href="#ormawa-details"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const ormawaType = this.closest('.feature-card').querySelector('h4').innerText.toLowerCase().split(' ')[0];
+                    const tabId = `${ormawaType}-tab`;
+                    const tabEl = document.getElementById(tabId);
+                    if (tabEl) {
+                        document.querySelectorAll('#ormawa-tabs .nav-link').forEach(t => t.classList.remove('active'));
+                        tabEl.classList.add('active');
+                        updateDetailsDisplay(ormawaType);
+                    }
+                    document.getElementById('ormawa-details').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+    
+            updateDetailsDisplay('mpm');
+        });
+    </script>
+
+    <script src="js/main.js"></script>
+    
+    </body>
+
+</html>

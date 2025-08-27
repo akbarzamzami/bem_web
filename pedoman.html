@@ -3,35 +3,28 @@
 
   <head>
   <meta charset="utf-8" />
-  <title>Bisik Kampus - BEM POLSRI</title>
+  <title>Organisasi Mahasiswa - BEM POLSRI</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta content="" name="keywords" />
   <meta content="" name="description" />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/img/logo.png" />
 
-  <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&family=Cinzel:wght@700&display=swap" rel="stylesheet" />
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Icon Font Stylesheets -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-  <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <!-- Libraries Stylesheets -->
   <link href="lib/animate/animate.min.css" rel="stylesheet" />
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
-  <!-- Font Awesome CDN -->
-<link
+  <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+w4hI8YzY5Z5jw5qkQYwZcNwZPbP+FZ+0rYkQ5mT1Rfbm0Bq5eUcm2s8n6d1A=="
@@ -40,10 +33,8 @@
 />
 
 
-  <!-- Customized Bootstrap Stylesheet -->
   <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
         <style>
         :root {
@@ -96,7 +87,7 @@
         }
 
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 1.5rem;
             font-weight: 700;
             font-family: 'Cinzel', serif;
             background: #f8ae00;
@@ -164,77 +155,6 @@
             color: white;
         }
 
-        /* Statistics Section */
-        .stats-section {
-            background: var(--gradient-primary);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stats-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/><circle cx="20" cy="20" r="1" fill="white" opacity="0.1"/><circle cx="80" cy="30" r="1.5" fill="white" opacity="0.1"/></svg>');
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .stat-item {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            font-family: 'Cinzel', serif;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            font-weight: 400;
-            opacity: 0.9;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--bg-light) 0%, white 100%);
-            position: relative;
-        }
-
-        .cta-card {
-            background: white;
-            border-radius: 25px;
-            padding: 3rem;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-            border: 2px solid rgba(248, 174, 0, 0.2);
-        }
-
-        .cta-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent 40%, rgba(248, 174, 0, 0.05) 50%, transparent 60%);
-            animation: shine 3s infinite;
-        }
-
         @keyframes shine {
             0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
             100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
@@ -280,6 +200,11 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(248, 174, 0, 0.3);
 }
+.btn-primary-custom:hover,
+.btn-primary-custom:hover i {
+    color: white !important;
+}
+
 
 
         .btn-primary-custom:hover {
@@ -367,21 +292,34 @@
     backdrop-filter: none !important;
   }
 }
+
+.hero-section h1 {
+  font-size: 2.5rem !important; /* ubah sesuai kebutuhan */
+}
+        /* PDF Viewer Styling from the user's new code */
+        .pdf-viewer-container {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .pdf-viewer-container iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
         </style>
     </head>
 
     <body>
 
-        <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <!-- Spinner End -->
-
- <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent px-4 px-lg-5 py-3 py-lg-0 position-relative">
     <a href="index.html" class="navbar-brand ms-2 ms-lg-0 d-flex align-items-center">
       <img src="img/logo.png" alt="Logo" style="height: 40px; margin-right: 10px;">
       <div class="d-flex flex-column">
@@ -390,44 +328,40 @@
       </div>
     </a>
   
-    <!-- Toggle button for mobile -->
     <button class="navbar-toggler position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>
   
-    <!-- Collapsible content -->
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto py-0">
         <a class="nav-item nav-link" href="index.html">Home</a>
         <a class="nav-item nav-link" href="about.html">About</a>
   
-       <!-- Academic Info Dropdown -->
-       <div class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Academic Information
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="academicDropdown">
-            <li>
-                <a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="ormawa.html">Organisasi Mahasiswa</a>
-            </li>
-        </ul>
-    </div>
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="academicDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Academic Information
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="academicDropdown">
+                <li>
+                    <a class="dropdown-item" href="Academic Calendar.html">Academic Calendar</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="Scholarship Info.html">Scholarship Info</a>
+                </li>
+                <li>
+                    <a class="dropdown-item active" href="ormawa.html">Organisasi Mahasiswa</a>
+                </li>
+            </ul>
+        </div>
   
-        <!-- Campus Echo Dropdown -->
-<div class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle active" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Campus Echo
   </a>
   <ul class="dropdown-menu" aria-labelledby="campusDropdown">
-    <li><a class="dropdown-item" href="Kajian.html">Kajian</a></li>
-    <li><a class="dropdown-item active" href="Bisik Kampus.html">Bisik Kampus</a></li>
+    <li><a class="dropdown-item active" href="Kajian.html">Kajian</a></li>
+    <li><a class="dropdown-item" href="Bisik Kampus.html">Bisik Kampus</a></li>
     <li><a class="dropdown-item" href="Polsrifess.html">Polsrifess</a></li>
   </ul>
 </div>
@@ -436,169 +370,43 @@
       </div>
     </div>
   </nav>
-  <!-- Navbar end -->
-  
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content">
-                    <h1
-        class="display-3 fw-bold text-uppercase mb-4"
-        data-aos="fade-down"
-        data-aos-delay="100"
-        data-aos-once="false"
-        style="font-family: 'Cinzel', serif; color: #f8ae00; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); letter-spacing: 2px;"
-      >
-        BISIK KAMPUS
-      </h1>
-                    <p
-              class="mb-4"
-              style="
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                font-size: 16px;
-                text-align: justify;
-              "
-            >
-            Form Bisik Kampus sebagai wadah untuk menampung, menyalurkan dan menindaklanjuti setiap aspirasi Mahasiswa Politeknik Negeri Sriwijaya. Sebuah platform yang menghubungkan suara mahasiswa dengan pihak yang berwenang untuk menciptakan perubahan positif di lingkungan kampus.
-            </p>
-                    
-<div class="d-flex gap-3 flex-wrap">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeO0k_4l3ogFWdW6se2G-pEillmx1y70fTA5pn1Q3gkR6rtOQ/viewform" 
-       class="btn btn-primary-custom d-flex justify-content-center align-items-center" target="_blank">
-        <i class="fas fa-edit me-2"></i>
-        Isi Form Bisik Kampus
-    </a>
-                        <a href="#features" class="btn btn-outline-custom">
-  <i class="fas fa-info-circle me-2"></i>
-  Pelajari Lebih Lanjut
-</a>
-
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="position-relative">
-                        <img src="img/proker_bem/bisik_kampus.jpg" alt="Bisik Kampus" class="img-fluid" style="max-width: 500px; filter: drop-shadow(0 20px 40px rgba(248, 174, 0, 0.3));">
-                        <div class="position-absolute top-50 start-50 translate-middle" style="z-index: -1;">
-                            <div style="width: 400px; height: 400px; background: linear-gradient(45deg, rgba(248, 174, 0, 0.1), rgba(224, 88, 0, 0.1)); border-radius: 50%; animation: pulse 3s infinite;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Statistics Section -->
-  <section class="stats-section py-5" style="margin-bottom: 3rem;">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-3 col-6 mb-4">
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Aspirasi Terkumpul</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6 mb-4">
-                    <div class="stat-item">
-                        <span class="stat-number">99%</span>
-                        <span class="stat-label">Tingkat Respons</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6 mb-4">
-                    <div class="stat-item">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Selalu Terbuka</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-6 mb-4">
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Terjaga Privasi</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
- <!-- Features Section -->
-<section id="features" class="py-5">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="display-5 mb-3" style="font-family: 'Cinzel', serif; color: #f8ae00; font-weight: 700;">
-                Mengapa Bisik Kampus?
-            </h2>
-            <p class="lead" style="max-width: 700px; margin: 0 auto; font-family: 'Plus Jakarta Sans', sans-serif;">
-                Platform terpercaya untuk menyampaikan aspirasi, keluhan, dan saran demi kemajuan kampus bersama
-            </p>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6">
-                <div class="feature-card h-100 text-center">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h4 class="mb-3" style="color: #f8ae00;">Aman & Terpercaya</h4>
-                    <p style="font-family: 'Plus Jakarta Sans', sans-serif;">
-                        Privasi Anda terjamin. Semua aspirasi dikelola dengan standar keamanan tinggi dan kerahasiaan identitas terjaga.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6">
-                <div class="feature-card h-100 text-center">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h4 class="mb-3" style="color: #f8ae00;">Komunikasi Efektif</h4>
-                    <p style="font-family: 'Plus Jakarta Sans', sans-serif;">
-                        Jembatan komunikasi langsung antara mahasiswa dengan pihak kampus untuk solusi yang tepat sasaran.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="col-lg-4 col-md-6">
-                <div class="feature-card h-100 text-center">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h4 class="mb-3" style="color: #f8ae00;">Tindak Lanjut Cepat</h4>
-                    <p style="font-family: 'Plus Jakarta Sans', sans-serif;">
-                        Setiap aspirasi akan ditindaklanjuti dengan proses yang jelas dan transparan untuk perubahan nyata.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
- <!-- CTA Section -->
-<section class="cta-section py-5">
+<section class="post-section py-5 bg-light">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="cta-card text-center">
-                    <h2 class="mb-4" style="font-family: 'Cinzel', serif; color: #f8ae00;">
-                        Suarakan Aspirasimu Sekarang!
-                    </h2>
-                    <p class="mb-4 lead" style="font-family: 'Plus Jakarta Sans', sans-serif;">
-                        Bergabunglah dengan mahasiswa lainnya yang telah mempercayai Bisik Kampus sebagai wadah aspirasi. Setiap suara penting untuk kemajuan kampus kita bersama.
-                    </p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeO0k_4l3ogFWdW6se2G-pEillmx1y70fTA5pn1Q3gkR6rtOQ/viewform" 
-                       class="btn btn-primary-custom btn-lg" target="_blank">
-                        <i class="fas fa-edit me-2"></i>
-                        Mulai Sampaikan Aspirasi
-                    </a>
+            <div class="col-lg-10">
+                <div class="bg-white p-4 p-md-5 rounded shadow-sm">
+                    <header class="entry-header mb-4">
+                        <h1 class="entry-title fs-2 fw-bold mb-3">
+                            <a href="#" rel="bookmark" class="text-dark text-decoration-none">Pedoman Pelaksanaan Kegiatan dan Standar Mutu Organisasi Kemahasiswaan Tahun 2025 – Edisi 4</a>
+                        </h1>
+                        <div class="entry-meta d-flex flex-wrap align-items-center">
+                            <span class="featured-post badge bg-primary me-2">BEM POLSRI</span>
+                            <span class="date text-muted me-3"><i class="far fa-calendar-alt me-1"></i><time class="entry-date" datetime="2025-07-22T09:39:48+07:00">Kabinet Lentera Sriwijaya</time></span>
+                            <span class="categories-links text-muted me-3"><i class="fas fa-folder-open me-1"></i><a href="#" rel="category tag" class="text-muted text-decoration-none">Berita</a></span>
+                            <span class="author vcard text-muted"><i class="fas fa-user-circle me-1"></i><a class="url fn n text-muted text-decoration-none" href="#" title="View all posts by WD" rel="author">PEDOMAN ORMAWA</a></span>
+                        </div>
+                    </header>
+                     
+                    <div class="pdf-viewer-container mb-4">
+                        <iframe src="file/pedoman.pdf" title="PEDOMAN ORMAWA"></iframe>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <div class="fw-bold fs-6 me-3 mb-2 mb-md-0">
+                            . PEDOMAN ORGANISASI MAHASISWA POLSRI
+                        </div>
+                        <a href="file/pedoman.pdf" download class="btn btn-primary-custom d-flex align-items-center">
+                            <i class="fas fa-download me-2"></i>
+                            Download
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
- <!-- Footer Start -->
-  <footer class="footer-gradient pt-1">
+<footer class="footer-gradient pt-1">
     <div class="container" style="font-family: serif">
       <div class="row pb-1">
         <div class="col-12 col-md-6 col-xl-4 mb-4">
@@ -637,12 +445,8 @@
       </div>
     </div>
   </footer>
-  <!-- Footer End -->
-   
-     <!-- Back to Top -->
-     <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+  <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
      
-    <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -826,7 +630,6 @@
         });
     </script>
 
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
     </body>
 
