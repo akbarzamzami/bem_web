@@ -7,8 +7,6 @@
     <meta content="" name="keywords" />
     <meta content="" name="description" />
     <link rel="icon" type="image/png" href="/img/logo.png" />
-<!-- Favicon -->
-  <link rel="icon" type="image/png" href="/img/logo.png" />
 
   <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,15 +27,6 @@
   <link href="lib/animate/animate.min.css" rel="stylesheet" />
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
-  <!-- Font Awesome CDN -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  integrity="sha512-KyZXEAg3QhqLMpG8r+Knujsl5+w4hI8YzY5Z5jw5qkQYwZcNwZPbP+FZ+0rYkQ5mT1Rfbm0Bq5eUcm2s8n6d1A=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-
 
   <!-- Customized Bootstrap Stylesheet -->
   <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -57,8 +46,6 @@
     background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)), 
                 url('img/bg-beasiswa.jpg') center/cover no-repeat;
     position: relative;
-
-    /* Bayangan bawah halus */
     box-shadow: inset 0 -100px 100px -10px white;
 }
 
@@ -121,22 +108,30 @@
         }
 
          /* ------------------------------
-           SCHOLARSHIP GRID
+           SCHOLARSHIP GRID - DIPERBAIKI
         ------------------------------ */
         .scholarship-section {
             background: url('img/bg1.jpeg') center/cover no-repeat, linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1));
             background-attachment: fixed;
             border-top: 1px solid var(--gray-300);
             border-bottom: 1px solid var(--gray-300);
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
         }
         .scholarship-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             margin-bottom: 20px;
         }
+        
+        /* Responsive untuk mobile */
+        @media (max-width: 768px) {
+            .scholarship-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         .scholarship-card {
             background: #ffffff;
             border-radius: 15px;
@@ -153,8 +148,6 @@
         .scholarship-card:nth-child(2){animation-delay:0.2s;}
         .scholarship-card:nth-child(3){animation-delay:0.3s;}
         .scholarship-card:nth-child(4){animation-delay:0.4s;}
-        .scholarship-card:nth-child(5){animation-delay:0.5s;}
-        .scholarship-card:nth-child(6){animation-delay:0.6s;}
         @keyframes fadeInUp {to{opacity:1;transform:translateY(0);}}
 
         .scholarship-card:hover {
@@ -163,7 +156,7 @@
         }
         .scholarship-image {
             width: 100%;
-            height: 200px;
+            height: 400px;
             position: relative;
             overflow: hidden;
             background: linear-gradient(45deg, #e0e0e0, #f0f0f0);
@@ -190,7 +183,9 @@
             opacity: 1;
         }
         .scholarship-image img {
-            width: 100%;height: 100%;object-fit: cover;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: transform 0.4s ease;
         }
         .scholarship-card:hover .scholarship-image img {
@@ -210,7 +205,7 @@
             background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
             color:#fe8902;text-decoration:none;padding:12px 25px;border-radius:25px;font-weight:600;
             border:none;cursor:pointer;transition:var(--transition-base);
-            margin-top: 10px; /* Added margin for spacing */
+            margin-top: 10px;
         }
         .scholarship-button:hover {
             background: linear-gradient(135deg, var(--orange), var(--orange-hover));
@@ -230,14 +225,14 @@
 }
 .btn-orange {
   display: inline-block;
-  background-color: #f97316; /* orange-500 */
+  background-color: #f97316;
   color: white;
   padding: 10px 20px;
   border: 2px solid #f97316;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 600;
-  text-decoration: none; /* remove underline */
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -406,13 +401,32 @@
             <div class="btn-container">
               <a href="https://kip-kuliah.kemdiktisaintek.go.id/" class="btn-orange" target="_blank" rel="noopener">Lihat Detail Beasiswa</a>
             </div>
-
-
                     </div>
                 </article>
 
+                <!-- Scholarship Card 4 - DIPERBAIKI -->
+                <article class="scholarship-card">
+                    <div class="scholarship-image">
+                        <img src="img/Smart Scholarship.jpg" alt="Smart Scholarship">
+                    </div>
+                    <div class="scholarship-content">
+                        <h3 class="scholarship-title">Smart Scholarship</h3>
+                        <p class="card-text" style="text-align: justify;">
+            Smart Scholarship adalah program pendayagunaan zakat YBM BRILiaN di bidang pendidikan yang bertujuan menunjang kegiatan akademik 
+            guna menghasilkan SDM yang unggul, berkarakter, berkompetensi dan berdaya saing. Beasiswa ini memberikan 
+            dukungan finansial dan pembinaan karakter untuk mahasiswa berprestasi dari keluarga kurang mampu. 
+            Banefit bagi awardee adalah Subsidi UKT 2 semester, Jejaring Nasional & Internasional, Mentoring peningkatan kapasitas diri, Pengalaman pemberdayaan masyarakat.
+          </p>
+           <div class="btn-container">
+                        <a href="http://brilianscholarship.id/smartpt/pendaftaran" class="btn-orange" target="_blank" rel="noopener">Lihat Detail Beasiswa</a>
+                    </div>
+
+                    </div>
+                </article>
             </div>
         </div>
+
+        
     </section>
     <!-- Scholarship Section End -->
 
